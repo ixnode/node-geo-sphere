@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Changelogs
 
+### [0.1.2] - 2025-01-04
+
+* Update node version
+
 ### [0.1.1] - 2025-01-04
 
 * Add .nvmrc file
