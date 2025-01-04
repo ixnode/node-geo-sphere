@@ -1,0 +1,77 @@
+@use "sass:color";
+
+.world-map {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  width: 100%;
+  margin: 0;
+  border: 1px solid #a0a0a0;
+  border-radius: 8px;
+  background-color: #9bd2e5;
+  position: relative;
+
+  .world-map__title {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 8px 20px;
+    border-right: 1px solid #a0a0a0;
+    border-bottom: 1px solid #a0a0a0;
+    font-weight: bold;
+  }
+
+  .world-map__copyright {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 8px 20px;
+    border-left: 1px solid #a0a0a0;
+    border-top: 1px solid #a0a0a0;
+    font-style: italic;
+    font-size: 0.8em;
+  }
+
+  .world-map__debug {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 8px 20px;
+    border-left: 1px solid #a0a0a0;
+    border-bottom: 1px solid #a0a0a0;
+    font-style: italic;
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  svg {
+    padding: 0;
+    margin: 0;
+    display: block;
+    border-radius: 8px;
+    width: 100%;
+
+    path.country:hover {
+      fill: #b0d0b0;
+    }
+    path.place:hover {
+      stroke-width: 2px;
+    }
+    circle.place {
+      fill: #008000;
+    }
+    circle.place:hover {
+      fill: #008000;
+    }
+  }
+}
