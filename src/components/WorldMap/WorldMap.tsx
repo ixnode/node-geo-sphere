@@ -11,6 +11,7 @@ import {
     defaultMapHeight,
     defaultMapWidth
 } from "./config/config";
+import {ClickCountryData} from "./config/interfaces";
 
 /* Import types. */
 import {TypeDataSource, TypeLanguagesSupported} from "./types/types";
@@ -25,7 +26,6 @@ import {getLanguageName} from "./tools/language";
 
 /* Import Styles. */
 import './WorldMap.scss';
-import {ClickCountryData} from "./config/interfaces";
 
 /* WorldMapProps interface. */
 export interface WorldMapProps {
@@ -92,7 +92,7 @@ export const WorldMap: React.FC<WorldMapProps> = ({
      * ===========
      */
     return (
-        <div className="world-map">
+        <div className="gs-world-map">
             <div className="world-map__title">
                 {translation ? translation[getLanguageName(language)] : 'World Map'}
             </div>

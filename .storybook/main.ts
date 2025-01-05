@@ -5,6 +5,7 @@ const config: {
     framework: { name: string; options: {} };
     docs: {};
     addons: string[];
+    options: { storySort: { method: string; order: (string | string[])[] } };
     typescript: { reactDocgen: string }
 } = {
     stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -24,6 +25,16 @@ const config: {
     },
 
     staticDirs: ['./public'],
+
+    options: {
+        storySort: {
+            method: 'configure',
+            order: [
+                'Components',
+                'Helper'
+            ],
+        },
+    },
 
     webpackFinal: async (config) => {
         /* Initialization if module is undefined. */

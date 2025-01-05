@@ -149,6 +149,10 @@ Open: http://localhost:6006/
 ### Build the project
 
 ```shell
+npx tsc --noEmit
+```
+
+```shell
 npm run build
 ```
 

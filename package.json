@@ -15,7 +15,9 @@
   "files": [
     "dist",
     "src/components/WorldMap/WorldMap.scss",
+    "src/helper/Versions/Versions.scss",
     "src",
+    "package.json",
     "README.md",
     "LICENSE.md",
     "VERSION"
@@ -71,6 +73,7 @@
     "@chromatic-com/storybook": "^3.2.3",
     "@rollup/plugin-alias": "^5.1.1",
     "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-typescript": "^12.1.2",
     "@storybook/addon-essentials": "^8.4.7",
