@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Changelogs
 
+### [0.1.11] - 2025-01-11
+
+* Add debug and logo options
+* Optimize debug output
+
 ### [0.1.10] - 2025-01-11
 
 * Upgrade typescript from 4.9.5 to 5.7.3
