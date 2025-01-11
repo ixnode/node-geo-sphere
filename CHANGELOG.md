@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Changelogs
 
+### [0.1.9] - 2025-01-11
+
+* Upgrade storybook to ReactJS version 18.3.1 to avoid warnings
+
 ### [0.1.8] - 2025-01-11
 
 * Add zoom in and zoom out buttons to map
