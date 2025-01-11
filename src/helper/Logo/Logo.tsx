@@ -13,7 +13,7 @@ export interface LogoProps {
     size?: 'small'|'medium'|'large';
 
     /** Which type of logo should be shown? */
-    type?: 'css'|'svg';
+    type?: 'css'|'svg'|'icon';
 }
 
 /**
@@ -75,6 +75,14 @@ export const Logo: React.FC<LogoProps> = ({
                             <span className="letter">e</span>
                         </span>
                         <span className="development">Development</span>
+                    </span>
+                </span>
+            }
+
+            {
+                type === 'icon' && <span className={['gs-logo', 'gs-logo-icon', `gs-logo-${size}`].join(' ')}>
+                    <span className="logo">
+                        <LogoSVG/>
                     </span>
                 </span>
             }

@@ -1,5 +1,11 @@
 @use "sass:color";
 
+/* Colors. */
+$primary-color: #465ea3;
+$secondary-color: #465ea3;
+$primary-color-opposite: #fff;
+$text-color: #333;
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 .gs-logo {
@@ -8,17 +14,17 @@
     -moz-osx-font-smoothing: grayscale;
     display: inline-flex;
     font-size: 4em;
-    color: #333;
+    color: $text-color;
 
     border-style: solid;
-    border-color: #465ea3;
+    border-color: $primary-color;
     border-width: 0.05em;
     border-radius: 0.1em;
     align-items: center;
     line-height: 0.9;
 
     background-color: #fff;
-    background-image: linear-gradient(180deg, #fff 0%, #fff 50%, #e0e0e0 100%);
+    background-image: linear-gradient(180deg, $primary-color-opposite 0%, $primary-color-opposite 50%, #e0e0e0 100%);
 
     &.gs-logo-small {
         font-size: 2em;
@@ -33,8 +39,8 @@
     }
 
     .logo {
-        background-color: #465ea3;
-        background-image: linear-gradient(180deg, #667ec3 0%, #465ea3 50%, #465ea3 100%);
+        background-color: $primary-color;
+        background-image: linear-gradient(180deg, #667ec3 0%, $primary-color 50%, $primary-color 100%);
 
         display: inline-block;
         border-bottom-left-radius: 0.028em;
@@ -94,9 +100,9 @@
                 font-style: normal;
                 text-transform: lowercase;
                 font-size: 1.42em;
-                -webkit-text-stroke: .012em #fff;
+                -webkit-text-stroke: .012em $primary-color-opposite;
                 background-color: #fff;
-                background-image: linear-gradient(180deg, #fff 0%, #fff 50%, #465ea3 100%);
+                background-image: linear-gradient(180deg, $primary-color-opposite 0%, $primary-color-opposite 50%, $primary-color 100%);
                 padding: 0;
             }
 
@@ -106,7 +112,7 @@
                 font-size: 1.5em;
                 -webkit-text-stroke: .01em #fff;
                 background-color: #fff;
-                background-image: linear-gradient(180deg, #fff 0%, #fff 50%, #465ea3 100%);
+                background-image: linear-gradient(180deg, $primary-color-opposite 0%, $primary-color-opposite 50%, $primary-color 100%);
             }
 
             .i, .x {
@@ -135,6 +141,78 @@
                 }
 
                 path {
+                    stroke: $primary-color-opposite !important;
+                }
+            }
+        }
+
+        &.gs-logo-large .logo svg path {
+
+        }
+
+        &.gs-logo-medium .logo svg path {
+            stroke-width: 5px !important;
+        }
+
+        &.gs-logo-small {
+            .logo {
+                svg {
+                    #ix-o-fill, #ix-x-fill, #ix-i-fill {
+                        fill: $primary-color-opposite !important;
+                        stroke: $primary-color-opposite !important;
+                    }
+
+                    path, circle {
+                        fill: transparent !important;
+                        stroke: transparent !important;
+                        stroke-opacity: 0 !important;
+                    }
+                    circle#ix-o-fill {
+                        fill: $primary-color-opposite !important;
+                        fill-opacity: 1 !important;
+                        stroke: $primary-color-opposite !important;
+                        stroke-opacity: 1 !important;
+                    }
+                }
+            }
+        }
+    }
+
+    &.gs-logo-icon {
+        border-style: none;
+        background-color: transparent;
+        background-image: none;
+        line-height: 0;
+
+        .logo {
+            background-color: transparent;
+            background-image: none;
+            width: 1em;
+            aspect-ratio: 214.303 / 153;
+            padding: 0;
+            font-size: 1.5em;
+
+            svg {
+                width: 100%;
+                height: 100%;
+
+                /* Logo background color. */
+                #ix-o-fill, #ix-x-fill, #ix-i-fill {
+                    fill: transparent !important;
+                    stroke: transparent !important;
+                }
+
+                path {
+                    stroke: $primary-color !important;
+                }
+            }
+        }
+    }
+
+    &.gs-logo-svg, &.gs-logo-icon {
+        .logo {
+            svg {
+                path {
                     stroke-dasharray: var(--path-length, 0);
                     stroke-dashoffset: var(--path-length, 0);
                     animation: draw-path 2s linear forwards;
@@ -151,27 +229,8 @@
             }
         }
 
-        &.gs-logo-small {
-            .logo {
-                svg {
-                    #ix-o-fill, #ix-x-fill, #ix-i-fill {
-                        fill: #fff !important;
-                        stroke: #fff !important;
-                    }
-
-                    path, circle {
-                        fill: transparent !important;
-                        stroke: transparent !important;
-                        stroke-opacity: 0 !important;
-                    }
-                    circle#ix-o-fill {
-                        fill: white !important;
-                        fill-opacity: 1 !important;
-                        stroke: white !important;
-                        stroke-opacity: 1 !important;
-                    }
-                }
-            }
+        &.gs-logo-small .logo svg path {
+            stroke-width: 5px !important;
         }
     }
 }
