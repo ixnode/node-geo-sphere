@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Changelogs
 
+### [0.1.5] - 2025-01-11
+
+* Code refactoring
+* Add ixnode logo
+* Add new package.json importer
+
 ### [0.1.4] - 2025-01-05
 
 * Add Versions component to show project, framework and libraries versions.
