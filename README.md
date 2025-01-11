@@ -1,9 +1,11 @@
 # @ixnode/geo-sphere
 
 [![Release](https://img.shields.io/github/v/release/ixnode/node-geo-sphere)](https://github.com/ixnode/node-geo-sphere/releases)
-[![](https://img.shields.io/github/release-date/ixnode/node-geo-sphere)](https://github.com/twelvepics-com/php-calendar-builder/releases)
+[![Release date](https://img.shields.io/github/release-date/ixnode/node-geo-sphere)](https://github.com/twelvepics-com/php-calendar-builder/releases)
 [![npm version](https://badge.fury.io/js/@ixnode%2Fgeo-sphere.svg)](https://www.npmjs.com/package/@ixnode/geo-sphere)
-[![TypeScript](https://img.shields.io/badge/TypeScript-^4.9-555555.svg?logo=typescript&logoColor=white&labelColor=3178c6&style=flat)](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-9.html)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7.3-555555.svg?logo=typescript&logoColor=white&labelColor=3178c6&style=flat)](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-9.html)
+[![React](https://img.shields.io/badge/ReactJS-8.3.1-555555.svg?logo=react&logoColor=white&labelColor=87c2d9&style=flat)](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-9.html)
+[![Storybook](https://img.shields.io/badge/Storybook-8.4.7-555555.svg?logo=storybook&logoColor=white&labelColor=ff4785&style=flat)](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-9.html)
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 `@ixnode/geo-sphere` is a powerful and flexible Node.js package for rendering interactive maps. It supports various

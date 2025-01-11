@@ -16,6 +16,10 @@ import packageJsonStorybook from '@storybook/react/package.json' assert { type: 
 /* Build main version. */
 const versionProject = packageJsonProject.version;
 
+/* Build TypeScript version */
+const versionTypeScriptRaw = packageJsonProject.devDependencies['typescript'];
+const versionTypeScript = versionTypeScriptRaw.replace(/^([\^~])/, '');
+
 /* Build react version */
 const versionReact = packageJsonReact.version;
 
@@ -24,15 +28,15 @@ const versionStorybook = 'version' in packageJsonStorybook ? packageJsonStoryboo
 
 /* Build rollup version. */
 const versionRollupRaw = packageJsonProject.devDependencies['rollup'];
-const versionRollup = versionRollupRaw.replace(/^(\^|~)/, '');
+const versionRollup = versionRollupRaw.replace(/^([\^~])/, '');
 
-/* Build rollup version. */
+/* Build proj4 version. */
 const versionProj4Raw = packageJsonProject.dependencies['proj4'];
-const versionProj4 = versionProj4Raw.replace(/^(\^|~)/, '');
+const versionProj4 = versionProj4Raw.replace(/^([\^~])/, '');
 
-/* Build rollup version. */
+/* Build geojson version. */
 const versionGeoJsonRaw = packageJsonProject.dependencies['geojson'];
-const versionGeoJson = versionGeoJsonRaw.replace(/^(\^|~)/, '');
+const versionGeoJson = versionGeoJsonRaw.replace(/^([\^~])/, '');
 
 /**
  * Versions component.
@@ -51,13 +55,22 @@ export const Versions: React.FC<VersionsProps> = ({}) => {
     return (
         <div className="gs-versions">
             <div className="section">
-                <h2>Frameworks</h2>
+                <h2>Project</h2>
                 <div className="row">
                     <div className="label">GeoSphere Project Version</div>
                     <div className="value">
                         <a href="https://github.com/ixnode/node-geo-sphere/releases" target="_blank"
                            rel="noopener noreferrer">
                             {versionProject as string}
+                        </a>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="label">Typescript Version</div>
+                    <div className="value">
+                        <a href="https://github.com/microsoft/TypeScript/releases" target="_blank"
+                           rel="noopener noreferrer">
+                            {versionTypeScript as string}
                         </a>
                     </div>
                 </div>
