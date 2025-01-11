@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Changelogs
 
+### [0.1.6] - 2025-01-11
+
+* Upgrade react version from 17.0.2 to 18.3.1
+
 ### [0.1.5] - 2025-01-11
 
 * Code refactoring
