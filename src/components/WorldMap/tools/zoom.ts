@@ -33,6 +33,8 @@ export const calculateZoomViewBox = (
         x: viewBox.x + distanceX,
         y: viewBox.y + distanceY,
         width: newWidth,
-        height: newHeight
+        height: newHeight,
+        viewWidth: svgRectWidth,
+        viewHeight: svgRectHeight,
     };
 };

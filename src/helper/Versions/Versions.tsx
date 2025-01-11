@@ -54,69 +54,59 @@ export const Versions: React.FC<VersionsProps> = ({}) => {
      */
     return (
         <div className="gs-versions">
-            <div className="section">
-                <h2>Project</h2>
-                <div className="row">
-                    <div className="label">GeoSphere Project Version</div>
+            <div className="table-structured padded gapped">
+                <h2>Used versions</h2>
+
+                <h3>Project</h3>
+                <div className="grid">
+                    <div className="label">GeoSphere Project</div>
                     <div className="value">
                         <a href="https://github.com/ixnode/node-geo-sphere/releases" target="_blank"
                            rel="noopener noreferrer">
                             {versionProject as string}
                         </a>
                     </div>
-                </div>
-                <div className="row">
-                    <div className="label">Typescript Version</div>
+                    <div className="label">TypeScript</div>
                     <div className="value">
                         <a href="https://github.com/microsoft/TypeScript/releases" target="_blank"
                            rel="noopener noreferrer">
                             {versionTypeScript as string}
                         </a>
                     </div>
-                </div>
-                <div className="row">
-                    <div className="label">React Version</div>
+                    <div className="label">React</div>
                     <div className="value">
                         <a href="https://github.com/facebook/react/releases" target="_blank" rel="noopener noreferrer">
                             {versionReact as string}
                         </a>
                     </div>
                 </div>
-            </div>
 
-            <div className="section">
-                <h2>Tools</h2>
-                <div className="row">
-                    <div className="label">Storybook Version</div>
+                <h3>Tools</h3>
+                <div className="grid">
+                    <div className="label">Storybook</div>
                     <div className="value">
                         <a href="https://github.com/storybookjs/storybook/releases" target="_blank"
                            rel="noopener noreferrer">
                             {versionStorybook as string}
                         </a>
                     </div>
-                </div>
-                <div className="row">
-                    <div className="label">Rollup Version</div>
+                    <div className="label">Rollup</div>
                     <div className="value">
                         <a href="https://github.com/rollup/rollup/releases" target="_blank" rel="noopener noreferrer">
                             {versionRollup as string}
                         </a>
                     </div>
                 </div>
-            </div>
 
-            <div className="section">
-                <h2>Libraries</h2>
-                <div className="row">
-                    <div className="label">proj4 Version</div>
+                <h3>Libraries</h3>
+                <div className="grid">
+                    <div className="label">Proj4</div>
                     <div className="value">
                         <a href="https://github.com/proj4js/proj4js/releases" target="_blank" rel="noopener noreferrer">
                             {versionProj4 as string}
                         </a>
                     </div>
-                </div>
-                <div className="row">
-                    <div className="label">geojson Version</div>
+                    <div className="label">GeoJSON</div>
                     <div className="value">
                         <a href="https://github.com/caseycesari/GeoJSON.js/releases" target="_blank"
                            rel="noopener noreferrer">

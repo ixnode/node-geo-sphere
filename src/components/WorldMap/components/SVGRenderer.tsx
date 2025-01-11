@@ -12,8 +12,8 @@ import {
     eventWheelAsEventListener
 } from "../config/events";
 import {countryMap} from "../config/countries";
-import {defaultLanguage} from "../config/config";
-import {SVGViewBox} from "../config/interfaces";
+import {defaultDebug, defaultLanguage, defaultMapHeight, defaultMapWidth} from "../config/config";
+import {DebugContent, SVGViewBox} from "../config/interfaces";
 
 /* Import types. */
 import {TypeClickCountry} from "../types/types";
@@ -24,6 +24,7 @@ import {TypeSvgContent} from "../classes/GeoJson2Path";
 /* Import tools. */
 import {getLanguageName} from "../tools/language";
 import {calculateZoomViewBox} from "../tools/zoom";
+import {createRoot} from "react-dom/client";
 
 /* SVGRendererProps interface. */
 interface SVGRendererProps {
@@ -33,6 +34,9 @@ interface SVGRendererProps {
     language: string,
     stateZoomIn?: number,
     stateZoomOut?: number,
+    debug?: boolean,
+    width?: number,
+    height?: number,
 }
 
 /* Global variables for panning and pinchToZoom instead of useState -> accessible via addEventListener event. */
@@ -60,6 +64,9 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
     language = defaultLanguage,
     stateZoomIn = 0,
     stateZoomOut = 0,
+    debug = defaultDebug,
+    width = defaultMapWidth,
+    height = defaultMapHeight,
 }) => {
 
     /* Set states. */
@@ -143,7 +150,9 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             width: viewBox.width,
             height: viewBox.height,
             x: viewBox.x + distanceX,
-            y: viewBox.y + distanceY
+            y: viewBox.y + distanceY,
+            viewWidth: svgRect.width,
+            viewHeight: svgRect.height,
         });
 
         /* Set start point. */
@@ -331,7 +340,9 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             width: viewBox.width,
             height: viewBox.height,
             x: viewBox.x + distanceX,
-            y: viewBox.y + distanceY
+            y: viewBox.y + distanceY,
+            viewWidth: svgRect.width,
+            viewHeight: svgRect.height,
         });
 
         /* Set start point. */
@@ -391,7 +402,9 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             x: initialViewBoxRef.current?.x + distanceX,
             y: initialViewBoxRef.current?.y + distanceY,
             width: newWidth,
-            height: newHeight
+            height: newHeight,
+            viewWidth: svgRect.width,
+            viewHeight: svgRect.height,
         }, scale);
 
         /* Mark "start panning". */
@@ -560,10 +573,29 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
     ) => {
         setViewBox(viewBoxNew);
 
-        let debugContent = 'x=' + viewBox.x + '<br>y=' + viewBox.y + '<br>width=' + viewBox.width + '<br>height=' + viewBox.height;
+        if (!debug) {
+            return;
+        }
+
+        let debugContent: DebugContent = {
+            "position x": viewBox.x,
+            "position y": viewBox.y,
+            "svg width": viewBox.width,
+            "svg height": viewBox.height,
+        };
+
+        if (viewBox.viewWidth && viewBox.viewHeight) {
+            const viewRatio = viewBox.viewWidth / viewBox.viewHeight;
+            debugContent["view dimensions"] = viewBox.viewWidth.toFixed(2) + ' x ' + viewBox.viewHeight.toFixed(2) + ' (' + viewRatio.toFixed(2) + ')';
+        }
+
+        if (width && height) {
+            const ratio = width / height;
+            debugContent["given dimensions"] = width.toFixed(2) + ' x ' + height.toFixed(2) + ' (' + ratio.toFixed(2) + ')';
+        }
 
         if (scale !== null) {
-            debugContent += '<br>scale = ' + scale;
+            debugContent["scale"] = scale;
         }
 
         setDebugContent(debugContent);
@@ -581,7 +613,9 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             return;
         }
 
-        element.innerHTML = type;
+        const root = createRoot(element);
+
+        root.render(type);
     }
 
     /**
@@ -589,14 +623,27 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
      *
      * @param content
      */
-    const setDebugContent = (content: string) => {
+    const setDebugContent = (content: DebugContent) => {
         const element = document.getElementById('debug-map-content');
 
         if (!element) {
             return;
         }
 
-        element.innerHTML = content;
+        const root = createRoot(element);
+
+        root.render(
+            <div className="table-structured separated ratio-1-2">
+                <div className="grid">
+                    {Object.entries(content).map(([key, value]) => (
+                        <React.Fragment key={key}>
+                            <div className="label">{key}</div>
+                            <div className="value">{typeof value === 'number' ? value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : value}</div>
+                        </React.Fragment>
+                    ))}
+                </div>
+            </div>
+        )
     }
 
     /**
@@ -605,7 +652,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
      * @param isMousePanning
      * @param delay
      */
-    const setIsMousePanningDelay = (isMousePanning: boolean, delay: number|null = null) => {
+    const setIsMousePanningDelay = (isMousePanning: boolean, delay: number | null = null) => {
 
         if (delay === null) {
             setIsMousePanningDoing(isMousePanning);
@@ -805,6 +852,20 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
 
         /* Print debug information. */
         setDebugType('Initial render');
+
+        if (svgRef.current) {
+            const svgRect = svgRef.current.getBoundingClientRect();
+
+            /* Save new viewBox. */
+            setViewBoxAndShowDebug({
+                x: svgContent.viewBoxLeft,
+                y: svgContent.viewBoxTop,
+                width: svgContent.viewBoxWidth,
+                height: svgContent.viewBoxHeight,
+                viewWidth: svgRect.width,
+                viewHeight: svgRect.height,
+            });
+        }
 
         /* Save new viewBox. */
         setViewBoxAndShowDebug({

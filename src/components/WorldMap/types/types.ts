@@ -63,7 +63,7 @@ export type TypeFeatureMap = {
 
 export type TypeBoundingBoxType = 'country'|'all'|'europe';
 
-export type TypeDataSource = 'tiny'|'low'|'medium';
+export type TypeDataSource = 'medium'|'low'|'tiny';
 
 export type TypeCountryKey = string|null;
 

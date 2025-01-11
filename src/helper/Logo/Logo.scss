@@ -1,8 +1,8 @@
 @use "sass:color";
 
 /* Colors. */
-$primary-color: #367DE0;
-$secondary-color: #367DE0;
+$primary-color: #1d574c;
+$secondary-color: #1d574c;
 $primary-color-opposite: #fff;
 $text-color: #333;
 
@@ -130,6 +130,7 @@ $text-color: #333;
     &.gs-logo-svg {
         .logo {
             width: 1em;
+            //height: 0.713942em;
             aspect-ratio: 214.303 / 153;
             padding: .01em .1em;
             font-size: 1.5em;

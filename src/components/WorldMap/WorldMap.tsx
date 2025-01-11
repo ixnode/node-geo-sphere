@@ -4,10 +4,11 @@ import React, {useEffect, useState} from 'react';
 import {TypeCountry} from "./config/countries";
 import {zoomCountry} from "./config/general";
 import {
-    debug,
     defaultCountry,
     defaultDataSource,
+    defaultDebug,
     defaultLanguage,
+    defaultLogo,
     defaultMapHeight,
     defaultMapWidth
 } from "./config/config";
@@ -47,6 +48,12 @@ export interface WorldMapProps {
 
     /** Which language should be used? */
     language?: TypeLanguagesSupported;
+
+    /** Should the debug mode be used? */
+    debug?: boolean;
+
+    /** Should the logo be displayed? */
+    logo?: boolean;
 }
 
 /**
@@ -63,6 +70,8 @@ export const WorldMap: React.FC<WorldMapProps> = ({
     height = defaultMapHeight,
     onClickCountry = null,
     language = defaultLanguage,
+    debug = defaultDebug,
+    logo = defaultLogo,
 }) => {
 
     /* Set states. */
@@ -118,9 +127,11 @@ export const WorldMap: React.FC<WorldMapProps> = ({
                 Copyright © 2025
             </div>
 
-            <div className="world-map__logo">
-                <Logo size="small" type="css"/>
-            </div>
+            {
+                logo && <div className="world-map__logo">
+                    <Logo size="small" type="css"/>
+                </div>
+            }
 
             <button className="zoom-btn zoom-in" onClick={handleZoomIn}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -138,7 +149,12 @@ export const WorldMap: React.FC<WorldMapProps> = ({
 
             {
                 debug && <div className="world-map__debug">
-                    <div><span style={{fontWeight: 'bold'}}>Debug</span>: <span id="debug-map-type"></span></div>
+                    <div className="table-structured distance ratio-1-2">
+                        <div className="grid">
+                            <div className="label">Debug</div>
+                            <div className="value" id="debug-map-type">No interaction yet.</div>
+                        </div>
+                    </div>
                     <div id="debug-map-content"></div>
                 </div>
             }
@@ -150,6 +166,9 @@ export const WorldMap: React.FC<WorldMapProps> = ({
                     language={language}
                     stateZoomIn={stateZoomIn}
                     stateZoomOut={stateZoomOut}
+                    debug={debug}
+                    width={width}
+                    height={height}
                 />
             }
         </div>

@@ -3,7 +3,14 @@ import type { Meta, StoryObj } from '@storybook/react';
 /* Import configurations. */
 import {ClickCountryData} from "./config/interfaces";
 import {countryMap} from "./config/countries";
-import {defaultCountry, defaultDataSource, defaultLanguage, defaultMapHeight, defaultMapWidth} from "./config/config";
+import {
+    defaultCountry,
+    defaultDataSource,
+    defaultDebug,
+    defaultLanguage, defaultLogo,
+    defaultMapHeight,
+    defaultMapWidth
+} from "./config/config";
 
 /* Import classes. */
 import {WorldMap} from './WorldMap';
@@ -107,5 +114,7 @@ export const Default: Story = {
             console.log(data);
         },
         language: defaultLanguage,
+        debug: defaultDebug,
+        logo: defaultLogo,
     },
 };

@@ -17,4 +17,13 @@ export interface SVGViewBox {
     y: number;
     width: number;
     height: number;
+    viewWidth?: number;
+    viewHeight?: number;
+}
+
+/**
+ * DebugContent interface.
+ */
+export interface DebugContent {
+    [key: string]: string | number;
 }
