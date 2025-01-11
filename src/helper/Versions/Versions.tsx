@@ -10,8 +10,8 @@ export interface VersionsProps {
 
 /* Read package.json files */
 import packageJsonProject from '../../../package.json' assert { type: 'json' };
-import packageJsonReact from '../../../package.json' assert { type: 'json' };
-import packageJsonStorybook from '../../../package.json' assert { type: 'json' };
+import packageJsonReact from 'react/package.json' assert { type: 'json' };
+import packageJsonStorybook from '@storybook/react/package.json' assert { type: 'json' };
 
 /* Build main version. */
 const versionProject = packageJsonProject.version;
@@ -20,7 +20,7 @@ const versionProject = packageJsonProject.version;
 const versionReact = packageJsonReact.version;
 
 /* Build storybook version */
-const versionStorybook = packageJsonStorybook.version;
+const versionStorybook = 'version' in packageJsonStorybook ? packageJsonStorybook.version : 'n/a';
 
 /* Build rollup version. */
 const versionRollupRaw = packageJsonProject.devDependencies['rollup'];
@@ -57,7 +57,7 @@ export const Versions: React.FC<VersionsProps> = ({}) => {
                     <div className="value">
                         <a href="https://github.com/ixnode/node-geo-sphere/releases" target="_blank"
                            rel="noopener noreferrer">
-                            {versionProject}
+                            {versionProject as string}
                         </a>
                     </div>
                 </div>
@@ -65,7 +65,7 @@ export const Versions: React.FC<VersionsProps> = ({}) => {
                     <div className="label">React Version</div>
                     <div className="value">
                         <a href="https://github.com/facebook/react/releases" target="_blank" rel="noopener noreferrer">
-                            {versionReact}
+                            {versionReact as string}
                         </a>
                     </div>
                 </div>
@@ -78,7 +78,7 @@ export const Versions: React.FC<VersionsProps> = ({}) => {
                     <div className="value">
                         <a href="https://github.com/storybookjs/storybook/releases" target="_blank"
                            rel="noopener noreferrer">
-                            {versionStorybook}
+                            {versionStorybook as string}
                         </a>
                     </div>
                 </div>
@@ -86,7 +86,7 @@ export const Versions: React.FC<VersionsProps> = ({}) => {
                     <div className="label">Rollup Version</div>
                     <div className="value">
                         <a href="https://github.com/rollup/rollup/releases" target="_blank" rel="noopener noreferrer">
-                            {versionRollup}
+                            {versionRollup as string}
                         </a>
                     </div>
                 </div>
@@ -98,7 +98,7 @@ export const Versions: React.FC<VersionsProps> = ({}) => {
                     <div className="label">proj4 Version</div>
                     <div className="value">
                         <a href="https://github.com/proj4js/proj4js/releases" target="_blank" rel="noopener noreferrer">
-                            {versionProj4}
+                            {versionProj4 as string}
                         </a>
                     </div>
                 </div>
@@ -107,7 +107,7 @@ export const Versions: React.FC<VersionsProps> = ({}) => {
                     <div className="value">
                         <a href="https://github.com/caseycesari/GeoJSON.js/releases" target="_blank"
                            rel="noopener noreferrer">
-                            {versionGeoJson}
+                            {versionGeoJson as string}
                         </a>
                     </div>
                 </div>
