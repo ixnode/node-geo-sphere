@@ -1,0 +1,177 @@
+@use "sass:color";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.gs-logo {
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-flex;
+    font-size: 4em;
+    color: #333;
+
+    border-style: solid;
+    border-color: #465ea3;
+    border-width: 0.05em;
+    border-radius: 0.1em;
+    align-items: center;
+    line-height: 0.9;
+
+    background-color: #fff;
+    background-image: linear-gradient(180deg, #fff 0%, #fff 50%, #e0e0e0 100%);
+
+    &.gs-logo-small {
+        font-size: 2em;
+    }
+
+    &.gs-logo-medium {
+        font-size: 4em;
+    }
+
+    &.gs-logo-large {
+        font-size: 8em;
+    }
+
+    .logo {
+        background-color: #465ea3;
+        background-image: linear-gradient(180deg, #667ec3 0%, #465ea3 50%, #465ea3 100%);
+
+        display: inline-block;
+        border-bottom-left-radius: 0.028em;
+        border-top-left-radius: 0.028em;
+    }
+
+    .text {
+        position: relative;
+        top: 0.25em;
+        margin-left: 0.15em;
+        margin-right: 0.15em;
+        display: inline-block;
+
+        .node {
+            font-size: 1em;
+            font-weight: normal;
+            margin-left: -.05em;
+            font-style: normal;
+            line-height: 1em;
+
+            span {
+                font-size: 1em;
+                margin-left: .02em;
+                margin-right: .02em;
+            }
+
+            .point {
+                font-size: .5em;
+                margin-left: -.1em;
+                margin-right: -.1em;
+            }
+        }
+
+        .development {
+            position: absolute;
+            font-size: .3em;
+            left: 0;
+            top: -.65em;
+            vertical-align: super;
+            font-style: normal;
+            color: #a0a0a0;
+            font-weight: 100;
+            margin-top: -0.15em;
+        }
+    }
+
+    &.gs-logo-css {
+        align-items: center;
+        line-height: 0.9;
+        padding: 0;
+
+        .logo {
+            padding-right: 0.15em;
+            padding-left: 0.05em;
+
+            .i {
+                font-style: normal;
+                text-transform: lowercase;
+                font-size: 1.42em;
+                -webkit-text-stroke: .012em #fff;
+                background-color: #fff;
+                background-image: linear-gradient(180deg, #fff 0%, #fff 50%, #465ea3 100%);
+                padding: 0;
+            }
+
+            .x {
+                font-style: normal;
+                text-transform: uppercase;
+                font-size: 1.5em;
+                -webkit-text-stroke: .01em #fff;
+                background-color: #fff;
+                background-image: linear-gradient(180deg, #fff 0%, #fff 50%, #465ea3 100%);
+            }
+
+            .i, .x {
+                font-weight: bold;
+                color: transparent;
+                -webkit-background-clip: text;
+            }
+        }
+    }
+
+    &.gs-logo-svg {
+        .logo {
+            width: 1em;
+            aspect-ratio: 214.303 / 153;
+            padding: .01em .1em;
+            font-size: 1.5em;
+
+            svg {
+                width: 100%;
+                height: 100%;
+
+                /* Logo background color. */
+                #ix-o-fill, #ix-x-fill, #ix-i-fill {
+                    fill: transparent !important;
+                    stroke: transparent !important;
+                }
+
+                path {
+                    stroke-dasharray: var(--path-length, 0);
+                    stroke-dashoffset: var(--path-length, 0);
+                    animation: draw-path 2s linear forwards;
+
+                    @keyframes draw-path {
+                        from {
+                            stroke-dashoffset: var(--path-length, 0);
+                        }
+                        to {
+                            stroke-dashoffset: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.gs-logo-small {
+            .logo {
+                svg {
+                    #ix-o-fill, #ix-x-fill, #ix-i-fill {
+                        fill: #fff !important;
+                        stroke: #fff !important;
+                    }
+
+                    path, circle {
+                        fill: transparent !important;
+                        stroke: transparent !important;
+                        stroke-opacity: 0 !important;
+                    }
+                    circle#ix-o-fill {
+                        fill: white !important;
+                        fill-opacity: 1 !important;
+                        stroke: white !important;
+                        stroke-opacity: 1 !important;
+                    }
+                }
+            }
+        }
+    }
+}

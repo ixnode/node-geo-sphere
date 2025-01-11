@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="214.30333mm"
+   height="153.00053mm"
+   viewBox="-87 0 214.30333 153.00053"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg">
+  <title
+     id="title1">IXnode Logo</title>
+  <defs
+     id="defs1" />
+  <g
+     id="layer1"
+     transform="translate(-45.499462,-18.499465)">
+    <g
+       id="ix-x">
+      <path
+         style="fill:#6769a7;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-dasharray:none;stroke-opacity:1"
+         d="M 19.999996,20.000008 H 69.999994 L 88.333325,47.500007 108.33332,20.000008 H 170 l -50.00001,74.999988 50,75.000004 h -50 L 101.66666,142.5 81.666665,170 H 19.999997 L 69.999996,94.999996 Z"
+         id="ix-x-fill" />
+      <path
+         style="fill:none;stroke:#ffffff;stroke-width:3"
+         d="M 63.333333,84.999998 20,20 l 50,1e-6 24.999995,37.500006 18.333335,-27.500006 H 150 l -36.66667,55"
+         id="ix-x-lt" />
+      <path
+         style="fill:none;stroke:#ffffff;stroke-width:3"
+         d="M 94.999995,37.500007 108.33333,20 170,20.000001 113.33333,105 150,160 h -23.33333 l -18.33334,-27.5"
+         id="ix-x-rt" />
+      <path
+         style="fill:none;stroke:#ffffff;stroke-width:3"
+         d="M 126.66667,105 170,170 H 120 L 95,132.5 76.666666,160 H 40 l 36.666666,-55"
+         id="ix-x-rb" />
+      <path
+         style="fill:none;stroke:#ffffff;stroke-width:3"
+         d="M 94.999999,152.5 81.666666,170 H 19.999997 L 76.666666,85.000001 40,30.000001 h 23.333333 l 18.333334,27.5"
+         id="ix-x-lb" />
+    </g>
+    <g
+       id="ix-i">
+      <rect
+         style="fill:#6769a7;fill-opacity:1;stroke:none;stroke-width:3;stroke-dasharray:none;stroke-opacity:1"
+         id="ix-i-fill"
+         width="40"
+         height="100.00001"
+         x="-40.000004"
+         y="70" />
+      <path
+         style="fill:none;stroke:#ffffff;stroke-width:3"
+         d="M -40.000002,160 V 69.999997 L -10,69.999996 V 160 h -10"
+         id="ix-i-t" />
+      <path
+         style="fill:none;stroke:#ffffff;stroke-width:3"
+         d="M -4.583604e-7,79.999996 V 170 H -30.000001 V 79.999995 L -20,79.999996"
+         id="ix-i-b" />
+    </g>
+    <g
+       id="ix-o">
+      <circle
+         style="fill:none;fill-opacity:0.317585;stroke:#6769a7;stroke-width:10;stroke-dasharray:none;stroke-opacity:1"
+         id="ix-o-fill"
+         cx="-20"
+         cy="39.999996"
+         r="15" />
+      <path
+         style="fill:none;stroke:#ffffff;stroke-width:3"
+         id="ix-o-outer"
+         d="M -25.176381,59.318511 A 20,19.999994 0 0 1 -39.923894,38.256886 20,19.999994 0 0 1 -21.743115,20.076112 20,19.999994 0 0 1 -0.68148357,34.82362" />
+      <path
+         style="fill:none;stroke:#ffffff;stroke-width:3"
+         id="ix-o-inner"
+         d="m -17.411809,30.340747 a 10,9.9999943 0 0 1 7.373756,10.53081 10,9.9999943 0 0 1 -9.09039,9.090384 10,9.9999943 0 0 1 -10.530815,-7.373752" />
+    </g>
+  </g>
+</svg>

@@ -2,7 +2,8 @@
   "name": "@ixnode/geo-sphere",
   "version": "0.1.4",
   "description": "A Node.js package for rendering interactive world maps with Mercator projection, customizable languages, and advanced interactivity features such as zoom, pan, and click events.",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
   "exports": {
@@ -70,8 +71,12 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/plugin-syntax-import-assertions": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
     "@chromatic-com/storybook": "^3.2.3",
     "@rollup/plugin-alias": "^5.1.1",
+    "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^28.0.2",
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.0",
@@ -87,6 +92,8 @@
     "@storybook/react": "^8.4.7",
     "@storybook/react-webpack5": "^8.4.7",
     "@storybook/test": "^8.4.7",
+    "@svgr/rollup": "^8.1.0",
+    "@svgr/webpack": "^8.1.0",
     "@testing-library/jest-dom": "^5.0.0",
     "@testing-library/react": "^12.0.0",
     "@types/geojson": "^7946.0.15",

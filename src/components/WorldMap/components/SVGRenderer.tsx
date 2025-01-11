@@ -10,18 +10,18 @@ import {
     eventTouchMoveAsEventListener,
     eventTouchStartAsEventListener,
     eventWheelAsEventListener
-} from "./config/events";
-import {countryMap} from "./config/countries";
-import {defaultLanguage} from "./config/config";
+} from "../config/events";
+import {countryMap} from "../config/countries";
+import {defaultLanguage} from "../config/config";
 
 /* Import types. */
-import {TypeClickCountry} from "./types/types";
+import {TypeClickCountry} from "../types/types";
 
 /* Import classes. */
-import {TypeSvgContent} from "./classes/GeoJson2Path";
+import {TypeSvgContent} from "../classes/GeoJson2Path";
 
 /* Import tools. */
-import {getLanguageName} from "./tools/language";
+import {getLanguageName} from "../tools/language";
 
 /* SVGRendererProps interface. */
 interface SVGRendererProps {

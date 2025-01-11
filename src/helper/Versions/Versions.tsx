@@ -1,10 +1,5 @@
 import React from 'react';
 
-/* Import versions. */
-// import projectPackageJson, {version} from '../../../package.json';
-// import {version as reactVersion} from 'react/package.json';
-// import storybookPackageJson from '@storybook/react/package.json';
-
 /* Import styles. */
 import './Versions.scss';
 
@@ -14,9 +9,9 @@ export interface VersionsProps {
 }
 
 /* Read package.json files */
-const packageJsonProject = require('../../../package.json');
-const packageJsonReact = require('react/package.json');
-const packageJsonStorybook = require('@storybook/react/package.json');
+import packageJsonProject from '../../../package.json' assert { type: 'json' };
+import packageJsonReact from '../../../package.json' assert { type: 'json' };
+import packageJsonStorybook from '../../../package.json' assert { type: 'json' };
 
 /* Build main version. */
 const versionProject = packageJsonProject.version;

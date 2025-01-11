@@ -19,7 +19,7 @@ import {TypeDataSource, TypeLanguagesSupported} from "./types/types";
 /* Import classes. */
 import {TypeSvgContent} from "./classes/GeoJson2Path";
 import {WorldMapSvg} from "./classes/WorldMapSvg";
-import SVGRenderer from "./SVGRenderer";
+import SVGRenderer from "./components/SVGRenderer";
 
 /* Import tools. */
 import {getLanguageName} from "./tools/language";

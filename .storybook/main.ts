@@ -37,6 +37,7 @@ const config: {
     },
 
     webpackFinal: async (config) => {
+
         /* Initialization if module is undefined. */
         if (!config.module) {
             config.module = { rules: [] };
@@ -73,6 +74,29 @@ const config: {
                 'sass-loader',
             ],
             include: /src/,
+        });
+
+        /* Remove existing svg rule. */
+        const imageRule = config.module.rules.find((rule) => {
+            if (typeof rule !== 'string' && rule.test instanceof RegExp) {
+                return rule.test.test('.svg')
+            }
+        })
+        if (typeof imageRule !== 'string') {
+            imageRule.exclude = /\.svg$/
+        }
+
+        /* Add new svg rule (to import svg directly). */
+        config.module?.rules?.push({
+            test: /\.svg$/,
+            use: [
+                {
+                    loader: '@svgr/webpack',
+                    options: {
+                        svgo: false, // Optional: SVGO deaktivieren, falls Optimierungen nicht nötig sind
+                    },
+                },
+            ],
         });
 
         return config;

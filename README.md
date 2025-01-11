@@ -36,7 +36,7 @@ yarn add @ixnode/geo-sphere
 
 ## 🔧 Usage
 
-### Image example
+### Display example
 
 ![Basic clock.](docs/images/world-de.png "Basic world.")
 
@@ -146,11 +146,20 @@ Open: http://localhost:6006/
 
 ## 📦 Publishing to npm
 
-### Build the project
+### Check TypeScript Code
+
+* Runs the TypeScript compiler to detect errors without generating any JavaScript output
+* Should not throw an error
 
 ```shell
 npx tsc --noEmit
 ```
+
+### Build the project
+
+* Runs the build process to produce production-ready artifacts
+* Test build for a future release process to npmjs.org
+* Should not throw an error
 
 ```shell
 npm run build
@@ -158,8 +167,25 @@ npm run build
 
 ### Verify the build
 
+* Checks that the compiled code runs as expected
+* Should not throw an error
+
+#### ES Modules build
+
 ```shell
 node dist/index.js
+```
+
+or to ignore possible warnings:
+
+```shell
+node --no-warnings dist/index.js
+```
+
+#### CommonJS build
+
+```shell
+node dist/index.cjs
 ```
 
 ### Bump the version
