@@ -39,6 +39,13 @@
     font-size: 0.8em;
   }
 
+  .world-map__logo {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 0 0 5px 5px !important;
+  }
+
   .world-map__debug {
     position: absolute;
     top: 0;
@@ -52,6 +59,35 @@
     font-style: italic;
     font-size: 0.8em;
     text-align: right;
+  }
+
+  .zoom-btn {
+    position: absolute;
+    width: 31px;
+    height: 31px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #a0a0a0;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: #e0e0e0;
+    }
+
+    &.zoom-in {
+      top: 48px; /* height title + 10 */
+      left: 10px;
+    }
+
+    &.zoom-out {
+      top: 89px;
+      left: 10px;
+    }
   }
 
   svg {

@@ -44,9 +44,10 @@ export const Logo: React.FC<LogoProps> = ({
      * ============
      */
     return (
-        <>
-            {
-                type === 'css' && <span className={['gs-logo', 'gs-logo-css', `gs-logo-${size}`].join(' ')}>
+        <a href="https://ixno.de" target="_blank" rel="noopener noreferrer" className="gs-logo-link">
+            <>
+                {
+                    type === 'css' && <span className={['gs-logo', 'gs-logo-css', `gs-logo-${size}`].join(' ')}>
                     <span className="logo"><span className="i">i</span><span className="x">x</span></span>
                     <span className="text">
                         <span className="node">
@@ -59,10 +60,10 @@ export const Logo: React.FC<LogoProps> = ({
                         <span className="development">Development</span>
                     </span>
                 </span>
-            }
+                }
 
-            {
-                type === 'svg' && <span className={['gs-logo', 'gs-logo-svg', `gs-logo-${size}`].join(' ')}>
+                {
+                    type === 'svg' && <span className={['gs-logo', 'gs-logo-svg', `gs-logo-${size}`].join(' ')}>
                     <span className="logo">
                         <LogoSVG/>
                     </span>
@@ -77,15 +78,16 @@ export const Logo: React.FC<LogoProps> = ({
                         <span className="development">Development</span>
                     </span>
                 </span>
-            }
+                }
 
-            {
-                type === 'icon' && <span className={['gs-logo', 'gs-logo-icon', `gs-logo-${size}`].join(' ')}>
+                {
+                    type === 'icon' && <span className={['gs-logo', 'gs-logo-icon', `gs-logo-${size}`].join(' ')}>
                     <span className="logo">
                         <LogoSVG/>
                     </span>
                 </span>
-            }
-        </>
+                }
+            </>
+        </a>
     );
 };

@@ -13,6 +13,7 @@ import {
 } from "../config/events";
 import {countryMap} from "../config/countries";
 import {defaultLanguage} from "../config/config";
+import {SVGViewBox} from "../config/interfaces";
 
 /* Import types. */
 import {TypeClickCountry} from "../types/types";
@@ -22,21 +23,16 @@ import {TypeSvgContent} from "../classes/GeoJson2Path";
 
 /* Import tools. */
 import {getLanguageName} from "../tools/language";
+import {calculateZoomViewBox} from "../tools/zoom";
 
 /* SVGRendererProps interface. */
 interface SVGRendererProps {
-    svgContent: TypeSvgContent;
-    country: string | null;
-    onClickCountry: TypeClickCountry;
-    language: string
-}
-
-/* SVGViewBox interface. */
-interface SVGViewBox {
-    x: number;
-    y: number;
-    width: number;
-    height: number;
+    svgContent: TypeSvgContent,
+    country: string | null,
+    onClickCountry: TypeClickCountry,
+    language: string,
+    stateZoomIn?: number,
+    stateZoomOut?: number,
 }
 
 /* Global variables for panning and pinchToZoom instead of useState -> accessible via addEventListener event. */
@@ -61,7 +57,9 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
     svgContent,
     country,
     onClickCountry = null,
-    language
+    language = defaultLanguage,
+    stateZoomIn = 0,
+    stateZoomOut = 0,
 }) => {
 
     /* Set states. */
@@ -461,28 +459,85 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             // wheelDelta
         } = event;
 
-        /* Calculate scale from wheel delta. */
-        const scale = 1 + deltaY / 1000;
-
         /* Get SVG dimensions. */
         const svgRect = svgRef.current.getBoundingClientRect();
 
         const mouseX = clientX - svgRect.left;
         const mouseY = clientY - svgRect.top;
 
-        const newWidth = viewBox.width * scale;
-        const newHeight = viewBox.height * scale;
+        /* Save new viewBox. */
+        setViewBoxAndShowDebug(calculateZoomViewBox(
+            viewBox,        /* Current viewBox. */
+            svgRect.width,  /* Width of svg area. */
+            svgRect.height, /* Height of svg area. */
+            mouseX,         /* X-Position of the mouse. */
+            mouseY,         /* Y-Position of the mouse. */
+            deltaY,         /* Zoom width. */
+        ));
+    };
 
-        const distanceX = (mouseX / svgRect.width) * (viewBox.width - newWidth);
-        const distanceY = (mouseY / svgRect.height) * (viewBox.height - newHeight);
+
+
+    /**
+     * =====================
+     * D) Click Zoom Events.
+     * =====================
+     */
+
+    /**
+     * Click zoom in event.
+     */
+    const handleZoomIn = () => {
+        /* Svg is not available -> stop handle. */
+        if (!svgRef.current) {
+            return;
+        }
+
+        /* Print debug information. */
+        setDebugType('handleZoomIn');
+
+        const deltaY = -100; /* Zoom in */
+
+        /* Get SVG dimensions. */
+        const svgRect = svgRef.current.getBoundingClientRect();
 
         /* Save new viewBox. */
-        setViewBoxAndShowDebug({
-            x: viewBox.x + distanceX,
-            y: viewBox.y + distanceY,
-            width: newWidth,
-            height: newHeight
-        });
+        setViewBoxAndShowDebug(calculateZoomViewBox(
+            viewBox,            /* Current viewBox. */
+            svgRect.width,      /* Width of svg area. */
+            svgRect.height,     /* Height of svg area. */
+            svgRect.width / 2,  /* X-Position of the mouse -> in that case the center of the svg area. */
+            svgRect.height / 2, /* Y-Position of the mouse -> in that case the center of the svg area. */
+            deltaY,             /* Zoom width. */
+        ));
+    };
+
+    /**
+     * Click zoom out event.
+     */
+    const handleZoomOut = () => {
+        /* Svg is not available -> stop handle. */
+        if (!svgRef.current) {
+            return;
+        }
+
+        /* Print debug information. */
+        setDebugType('handleZoomIn');
+
+        const deltaY = 100; /* Zoom out */
+
+        /* Get SVG dimensions. */
+        const svgRect = svgRef.current.getBoundingClientRect();
+
+        /* Save new viewBox. */
+        setViewBoxAndShowDebug(calculateZoomViewBox(
+            viewBox,            /* Current viewBox. */
+            svgRect.width,      /* Width of svg area. */
+            svgRect.height,     /* Height of svg area. */
+            svgRect.width / 2,  /* X-Position of the mouse -> in that case the center of the svg area. */
+            svgRect.height / 2, /* Y-Position of the mouse -> in that case the center of the svg area. */
+            deltaY,             /* Zoom width. */
+        ));
     };
 
 
@@ -794,6 +849,24 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             });
         };
     }, [svgContent]); /* Run this effect whenever the svgContent changes. */
+
+    /**
+     * Handle zoom in trigger actions.
+     */
+    useEffect(() => {
+        if (stateZoomIn > 0) {
+            handleZoomIn();
+        }
+    }, [stateZoomIn]);
+
+    /**
+     * Handle zoom out trigger actions.
+     */
+    useEffect(() => {
+        if (stateZoomOut > 0) {
+            handleZoomOut();
+        }
+    }, [stateZoomOut]);
 
 
 
