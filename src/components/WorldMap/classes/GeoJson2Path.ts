@@ -201,19 +201,15 @@ export class GeoJson2Path {
      * @param geoJSON
      * @param boundingBox
      * @param country
-     * @param width
-     * @param height
      */
     public generateSVG(
         geoJSON: InterfaceGeoJson,
         boundingBox: TypeBoundingBox,
-        country: string|null,
-        width: number,
-        height: number
+        country: string|null
     ): TypeSvgContent {
         const viewBoxLeft = boundingBox.longitudeMin;
         const viewBoxTop = -boundingBox.latitudeMax;
-        const viewBoxWidth = (boundingBox.longitudeMax - boundingBox.longitudeMin) * width / height;
+        const viewBoxWidth = (boundingBox.longitudeMax - boundingBox.longitudeMin);
         const viewBoxHeight = boundingBox.latitudeMax - boundingBox.latitudeMin;
 
         const elements = this.convert(geoJSON, country, viewBoxWidth);

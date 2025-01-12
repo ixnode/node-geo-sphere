@@ -24,7 +24,7 @@ import {TypeSvgContent} from "../classes/GeoJson2Path";
 /* Import tools. */
 import {getLanguageName} from "../tools/language";
 import {calculateZoomViewBox} from "../tools/zoom";
-import {createRoot} from "react-dom/client";
+import {createRoot, Root} from "react-dom/client";
 
 /* SVGRendererProps interface. */
 interface SVGRendererProps {
@@ -49,6 +49,8 @@ let globalIsTouchPinchToZoomDoing = false;
 
 /* Other global variables. */
 let globalLanguage: string = defaultLanguage;
+let rootDebugMapType: Root|null = null;
+let rootDebugMapContent: Root|null = null;
 
 /**
  * SVGRenderer component.
@@ -589,6 +591,10 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             debugContent["view dimensions"] = viewBox.viewWidth.toFixed(2) + ' x ' + viewBox.viewHeight.toFixed(2) + ' (' + viewRatio.toFixed(2) + ')';
         }
 
+        if (!viewBox.viewWidth || !viewBox.viewHeight) {
+            debugContent["view dimensions"] = 'n/a';
+        }
+
         if (width && height) {
             const ratio = width / height;
             debugContent["given dimensions"] = width.toFixed(2) + ' x ' + height.toFixed(2) + ' (' + ratio.toFixed(2) + ')';
@@ -613,9 +619,11 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             return;
         }
 
-        const root = createRoot(element);
+        if (rootDebugMapType === null) {
+            rootDebugMapType = createRoot(element);
+        }
 
-        root.render(type);
+        rootDebugMapType.render(type);
     }
 
     /**
@@ -630,9 +638,11 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             return;
         }
 
-        const root = createRoot(element);
+        if (rootDebugMapContent === null) {
+            rootDebugMapContent = createRoot(element);
+        }
 
-        root.render(
+        rootDebugMapContent.render(
             <div className="table-structured separated ratio-1-2">
                 <div className="grid">
                     {Object.entries(content).map(([key, value]) => (
@@ -760,6 +770,18 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
      * 2) Use effect functions
      * =======================
      */
+
+    /**
+     * Component reloaded or updated
+     */
+    useEffect(() => {
+        rootDebugMapType = null;
+        rootDebugMapContent = null;
+    }, []);
+    useEffect(() => {
+        rootDebugMapType = null;
+        rootDebugMapContent = null;
+    }, [debug]);
 
     /**
      * Register mouse, wheel and touch events. Also add tidy up (unregister) mouse, wheel and touch events, when

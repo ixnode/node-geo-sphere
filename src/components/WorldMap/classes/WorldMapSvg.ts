@@ -49,7 +49,7 @@ export class WorldMapSvg {
 
     private dataConverter: DataConverter = new DataConverter();
 
-    private boundingBox: BoundingBox = new BoundingBox();
+    private boundingBox: BoundingBox;
 
     private geoJson2Path: GeoJson2Path;
 
@@ -86,6 +86,9 @@ export class WorldMapSvg {
         this.dataSource = options.dataSource ?? this.propertyDataSourceDefault;
         this.zoomCountry = options.zoomCountry ?? this.propertyZoomCountryDefault;
         this.language = options.language ?? this.propertyLanguageDefault;
+        this.boundingBox = new BoundingBox();
+        this.boundingBox.setWidth(this.width);
+        this.boundingBox.setHeight(this.height);
 
         /* Build GeoJson2Path with configuration. */
         this.geoJson2Path = new GeoJson2Path({
@@ -163,7 +166,9 @@ export class WorldMapSvg {
      *
      * @param country
      */
-    public generateSvgByCountry(country: string|null): TypeSvgContent {
+    public generateSvgByCountry(
+        country: string|null
+    ): TypeSvgContent {
         let boundingType = this.boundingBox.getBoundingType(this.country, this.countryKey, this.zoomCountry);
 
         /* Calculates the bounding box without gap or centering ("raw" bounding box). */
@@ -185,7 +190,7 @@ export class WorldMapSvg {
             factorGapLatitude
         );
 
-        return this.geoJson2Path.generateSVG(this.data, boundingBox, country, this.width, this.height);
+        return this.geoJson2Path.generateSVG(this.data, boundingBox, country);
     }
 
     /**

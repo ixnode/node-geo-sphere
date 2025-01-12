@@ -1,5 +1,5 @@
 import {GeometryChecker} from "./GeometryChecker";
-import {boundingBoxEuropeProj4326} from "../config/config";
+import {boundingBoxEuropeProj4326, defaultMapHeight, defaultMapWidth} from "../config/config";
 import {
     TypeBoundingBox,
     TypeBoundingBoxType, TypeCountryKey,
@@ -29,12 +29,24 @@ export class BoundingBox {
 
     private readonly coordinateConverter: CoordinateConverter = new CoordinateConverter();
 
+    private width: number|null = null;
+
+    private height: number|null  = null;
+
     /**
      * The constructor of WorldMapSvg.
      *
      * @param options
      */
     constructor(options: BoundingBoxOptions = {}) { }
+
+    public setWidth(width: number) {
+        this.width = width;
+    }
+
+    public setHeight(height: number) {
+        this.height = height;
+    }
 
     /**
      * Calculates the bounding box from the given feature map.
@@ -175,6 +187,55 @@ export class BoundingBox {
     }
 
     /**
+     * Fixes given latitude and longitude values to dimensions.
+     *
+     * @param boundingBox
+     * @param wantedWidth
+     * @param wantedHeight
+     */
+    private adjustBoundingBox = (
+        boundingBox: TypeBoundingBox,
+        wantedWidth: number,
+        wantedHeight: number
+    ) => {
+        const {longitudeMin, longitudeMax, latitudeMin, latitudeMax} = boundingBox;
+
+        const width = longitudeMax - longitudeMin;
+        const height = latitudeMax - latitudeMin;
+
+        const currentAspectRatio = width / height;
+        const wantedAspectRatio = wantedWidth / wantedHeight;
+
+        const longitudeCenter = (longitudeMin + longitudeMax) / 2;
+        const latitudeCenter = (latitudeMin + latitudeMax) / 2;
+
+        let adjustedWidth = width;
+        let adjustedHeight = height;
+
+        if (currentAspectRatio > wantedAspectRatio) {
+            adjustedHeight = width / wantedAspectRatio;
+        } else if (currentAspectRatio < wantedAspectRatio) {
+            adjustedWidth = height * wantedAspectRatio;
+        }
+
+        const newLongitudeMin = longitudeCenter - adjustedWidth / 2;
+        const newLongitudeMax = longitudeCenter + adjustedWidth / 2;
+        const newLatitudeMin = latitudeCenter - adjustedHeight / 2;
+        const newLatitudeMax = latitudeCenter + adjustedHeight / 2;
+
+        return {
+            longitudeMin: newLongitudeMin,
+            latitudeMin: newLatitudeMin,
+
+            longitudeMax: newLongitudeMax,
+            latitudeMax: newLatitudeMax,
+
+            width: newLongitudeMax - newLongitudeMin,
+            height: newLatitudeMax - newLatitudeMin,
+        };
+    };
+
+    /**
      * Calculates the bounding box from the given point.
      *
      * @param point
@@ -309,50 +370,37 @@ export class BoundingBox {
         factorGapLongitude: number,
         factorGapLatitude: number
     ): TypeBoundingBox {
-        /* Extract the current bounding box. */
-        let longitudeMin = boundingBox.longitudeMin;
-        let latitudeMin = boundingBox.latitudeMin;
-        let longitudeMax = boundingBox.longitudeMax;
-        let latitudeMax = boundingBox.latitudeMax;
+
+        /* Adjust bounding box to given width and height. */
+        boundingBox = this.adjustBoundingBox(boundingBox, width, height);
+
+        /* No gap given. */
+        if (factorGapLongitude <= 0 || factorGapLatitude <= 0) {
+            return boundingBox;
+        }
 
         /* Calculate the distance of the current bounding box. */
-        const longitudeDistance = longitudeMax - longitudeMin;
-        const latitudeDistance = latitudeMax - latitudeMin;
+        const longitudeDistance = boundingBox.longitudeMax - boundingBox.longitudeMin;
+        const latitudeDistance = boundingBox.latitudeMax - boundingBox.latitudeMin;
 
-        /* Calculate the center point of the current bounding box. */
-        const longitudeCenter = (longitudeMin + longitudeMax) / 2;
-        const latitudeCenter = (latitudeMin + latitudeMax) / 2;
+        const gapLongitude = longitudeDistance * factorGapLongitude / 2;
+        const gapLatitude = latitudeDistance * factorGapLatitude / 2;
 
-        /* Calculate the ratio of the width and height to be output and the current element. */
-        const aspectRatioOutput = width / height;
-        const aspectRatioElement = longitudeDistance / latitudeDistance;
+        const longitudeMin = boundingBox.longitudeMin - gapLongitude;
+        const longitudeMax = boundingBox.longitudeMax + gapLongitude;
 
-        /* Adjustment of width and height based on the ratio. */
-        let longitudeDistanceAdjusted: number = aspectRatioOutput < aspectRatioElement ? longitudeDistance : latitudeDistance * aspectRatioOutput;
-        let latitudeDistanceAdjusted: number = aspectRatioOutput < aspectRatioElement ? longitudeDistance / aspectRatioOutput : latitudeDistance;
-
-        const longitudeDistanceLeft = longitudeDistanceAdjusted / 2 * (aspectRatioOutput < aspectRatioElement ? 1 : 1);
-        const latitudeDistanceTop = latitudeDistanceAdjusted / 2;
-
-        const longitudeDistanceRight = longitudeDistanceAdjusted - longitudeDistanceAdjusted;
-        const latitudeDistanceBottom = latitudeDistanceAdjusted - latitudeDistanceTop;
-
-        const zoomGapBoundingBoxLongitude = factorGapLongitude * longitudeDistance;
-        const zoomGapBoundingBoxLatitude = factorGapLatitude * latitudeDistance;
-
-        const longitudeMinCalc = longitudeCenter - longitudeDistanceLeft - zoomGapBoundingBoxLongitude;
-        const latitudeMinCalc = latitudeCenter - latitudeDistanceTop - zoomGapBoundingBoxLatitude;
-
-        const longitudeMaxCalc = longitudeCenter + longitudeDistanceRight + zoomGapBoundingBoxLongitude;
-        const latitudeMaxCalc = latitudeCenter + latitudeDistanceBottom + zoomGapBoundingBoxLatitude;
+        const latitudeMin = boundingBox.latitudeMin - gapLatitude;
+        const latitudeMax = boundingBox.latitudeMax + gapLatitude;
 
         return {
-            longitudeMin: longitudeMinCalc,
-            latitudeMin: latitudeMinCalc,
-            longitudeMax: longitudeMaxCalc,
-            latitudeMax: latitudeMaxCalc,
-            width: longitudeMaxCalc - longitudeMinCalc,
-            height: latitudeMaxCalc - latitudeMinCalc
+            longitudeMin: longitudeMin,
+            longitudeMax: longitudeMax,
+
+            latitudeMin: latitudeMin,
+            latitudeMax: latitudeMax,
+
+            width: longitudeMax - longitudeMin,
+            height: latitudeMax - latitudeMin,
         };
     }
 
