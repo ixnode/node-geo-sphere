@@ -65,9 +65,8 @@ export default App;
 
 ```tsx
 import React from 'react';
-import { WorldMap } from '@ixnode/geo-sphere';
+import { WorldMap, ClickCountryData } from '@ixnode/geo-sphere';
 import '@ixnode/geo-sphere/dist/styles.css';
-import {ClickCountryData} from "../config/interfaces";
 
 const App = () => (
     <WorldMap
