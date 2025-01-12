@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Changelogs
 
+### [0.1.12] - 2025-01-12
+
+* Note the given SVG aspect ratio
+
 ### [0.1.11] - 2025-01-11
 
 * Add debug and logo options
