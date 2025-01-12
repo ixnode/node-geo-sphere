@@ -83,16 +83,27 @@ const App = () => (
 export default App;
 ```
 
+The callback function logs something like (according to clicked country):
+
+```json
+{
+  "id": "de",
+  "name": "Germany"
+}
+```
+
 ## 🔧 Props
 
-| Prop             | Type                                                                   | Default  | Description                      |
-|------------------|------------------------------------------------------------------------|----------|----------------------------------|
-| `dataSource`     | `'tiny'\|'low'\|'medium'`                                              | `'low'`  | The data source to be used.      |
-| `country`        | `string\|null`                                                         | `null`   | The country that is marked.      |
-| `width`          | `number`                                                               | `1000`   | The width of the map in pixels.  |
-| `height`         | `number`                                                               | `500`    | The height of the map in pixels. |
-| `language`       | `'cz'`\|`'de'`\|`'en'`\|`'es'`\|`'fr'`\|`'hr'`\|`'it'`\|`'pl'`\|`'sv'` | `'en'`   | The language to be used.         |
-| `onClickCountry` | `(data: ClickCountryData) => void\|null`                               | `null`   | An optional click handler.       |
+| Prop             | Type                                                                   | Default | Description                                                                                     |
+|------------------|------------------------------------------------------------------------|---------|-------------------------------------------------------------------------------------------------|
+| `dataSource`     | `'tiny'\|'low'\|'medium'`                                              | `'low'` | The data source to be used.                                                                     |
+| `country`        | `string\|null`                                                         | `null`  | The country that is marked.                                                                     |
+| `width`          | `number`                                                               | `1000`  | The width of the map in pixels. Only used for ratio. The svg is always 100% of parent element.  |
+| `height`         | `number`                                                               | `500`   | The height of the map in pixels. Only used for ratio. The svg is always 100% of parent element. |
+| `language`       | `'cz'`\|`'de'`\|`'en'`\|`'es'`\|`'fr'`\|`'hr'`\|`'it'`\|`'pl'`\|`'sv'` | `'en'`  | The language to be used.                                                                        |
+| `onClickCountry` | `(data: ClickCountryData) => void\|null`                               | `null`  | An optional click handler.                                                                      |
+| `debug`          | `boolean`                                                              | `false` | Flag to enable or disable the debug mode.                                                       |
+| `logo`           | `boolean`                                                              | `true`  | Flag to enable or disable the logo.                                                             |
 
 ### Common countries (`country`)
 
