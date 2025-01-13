@@ -454,10 +454,10 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             const hintsElement = document.querySelector('.world-map__hints') as HTMLElement;
 
             if (hintsElement) {
-                hintsElement.style.display = 'flex';
+                hintsElement.classList.add('world-map__hints--visible');
 
                 setTimeout(() => {
-                    hintsElement.style.display = 'none';
+                    hintsElement.classList.remove('world-map__hints--visible');
                 }, 2000);
             }
 
