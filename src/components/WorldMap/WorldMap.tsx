@@ -119,6 +119,10 @@ export const WorldMap: React.FC<WorldMapProps> = ({
      */
     return (
         <div className="gs-world-map">
+            <div className="world-map__hints">
+                Hold Ctrl and scroll to zoom the map.
+            </div>
+
             <div className="world-map__title">
                 {translation ? translation[getLanguageName(language)] : 'World Map'}
             </div>

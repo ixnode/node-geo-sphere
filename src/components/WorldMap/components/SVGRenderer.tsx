@@ -450,6 +450,20 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             return;
         }
 
+        if (!event.ctrlKey) {
+            const hintsElement = document.querySelector('.world-map__hints') as HTMLElement;
+
+            if (hintsElement) {
+                hintsElement.style.display = 'flex';
+
+                setTimeout(() => {
+                    hintsElement.style.display = 'none';
+                }, 2000);
+            }
+
+            return;
+        }
+
         /* Print debug information. */
         setDebugType('handleWheel');
 
