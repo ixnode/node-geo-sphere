@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Changelogs
 
+### [0.1.15] - 2025-01-13
+
+* Add ctrl hint if using wheel functionality
+
 ### [0.1.14] - 2025-01-12
 
 * Export interfaces
