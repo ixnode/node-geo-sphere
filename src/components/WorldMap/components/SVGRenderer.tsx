@@ -1,6 +1,6 @@
 import React, {useEffect, useState, useRef} from 'react';
 
-/* Import configuration. */
+/* Import configuration (WorldMap). */
 import {
     eventMouseDownAsEventListener,
     eventMouseLeaveAsEventListener,
@@ -12,8 +12,11 @@ import {
     eventWheelAsEventListener
 } from "../config/events";
 import {countryMap} from "../config/countries";
-import {defaultDebug, defaultLanguage, defaultMapHeight, defaultMapWidth} from "../config/config";
+import {defaultDebug,defaultMapHeight, defaultMapWidth} from "../config/config";
 import {DebugContent, SVGViewBox} from "../config/interfaces";
+
+/* Import configuration (global). */
+import {defaultLanguage} from "../../../config/config";
 
 /* Import types. */
 import {TypeClickCountry} from "../types/types";

@@ -2,21 +2,26 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 /* Import configurations. */
 import {ClickCountryData} from "./config/interfaces";
-import {countryMap} from "./config/countries";
 import {
-    defaultCountry,
     defaultDataSource,
     defaultDebug,
-    defaultLanguage, defaultLogo,
+    defaultLogo,
     defaultMapHeight,
     defaultMapWidth
 } from "./config/config";
+
+/* Import configurations (global). */
+import {
+    defaultCountry,
+    defaultLanguage
+} from "../../config/config";
 
 /* Import classes. */
 import {WorldMap} from './WorldMap';
 
 /* Import tools. */
 import {getLanguageName} from "./tools/language";
+import {countryMap} from "./config/countries";
 
 /* Overwrite the options definition from any[] to Record<string, string>. */
 type ArgTypesWithOptions = {

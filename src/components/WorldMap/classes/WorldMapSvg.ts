@@ -1,9 +1,11 @@
 /* Import configuration. */
 import {countryMap, TypeCountry} from "../config/countries";
-import {defaultDataSource, defaultLanguage} from "../config/config";
+import {defaultDataSource} from "../config/config";
+import {defaultLanguage} from "../../../config/config";
+import {TypeLanguagesSupported} from "../../../config/types";
 
 /* Import types. */
-import {InterfaceGeoJson, TypeLanguagesSupported, TypeCountryKey, TypeDataSource, TypeFeatureMap} from "../types/types";
+import {InterfaceGeoJson, TypeCountryKey, TypeDataSource, TypeFeatureMap} from "../types/types";
 
 /* Import classes. */
 import {BoundingBox} from "./BoundingBox";

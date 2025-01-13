@@ -1,25 +1,33 @@
 import React, {useEffect, useState} from 'react';
+import { useTranslation } from 'react-i18next';
 
-/* Import configuration. */
+/* Import configuration (global). */
+import {
+    defaultLanguage,
+    defaultCountry,
+} from "../../config/config";
+
+/* Import configuration (WorldMap). */
 import {TypeCountry} from "./config/countries";
 import {zoomCountry} from "./config/general";
 import {
-    defaultCountry,
     defaultDataSource,
     defaultDebug,
-    defaultLanguage,
     defaultLogo,
     defaultMapHeight,
     defaultMapWidth
 } from "./config/config";
 import {ClickCountryData} from "./config/interfaces";
+import {TypeLanguagesSupported} from "../../config/types";
 
 /* Import types. */
-import {TypeDataSource, TypeLanguagesSupported} from "./types/types";
+import {TypeDataSource} from "./types/types";
 
 /* Import classes. */
 import {TypeSvgContent} from "./classes/GeoJson2Path";
 import {WorldMapSvg} from "./classes/WorldMapSvg";
+
+/* Import components. */
 import SVGRenderer from "./components/SVGRenderer";
 
 /* Import tools. */
@@ -28,6 +36,9 @@ import {getLanguageName} from "./tools/language";
 /* Import Styles. */
 import './WorldMap.scss';
 import {Logo} from "../../helper/Logo/Logo";
+
+/* Import translation libraries. */
+import { i18n } from "../../config/i18n";
 
 /* WorldMapProps interface. */
 export interface WorldMapProps {
@@ -80,6 +91,9 @@ export const WorldMap: React.FC<WorldMapProps> = ({
     const [stateZoomIn, setStateZoomIn] = useState<number>(0);
     const [stateZoomOut, setStateZoomOut] = useState<number>(0);
 
+    /* Import translation. */
+    const { t } = useTranslation();
+
     /* Build WorldMapSvg instance. */
     const worldMapSvg = new WorldMapSvg({
         country, width, height, zoomCountry, language
@@ -104,6 +118,7 @@ export const WorldMap: React.FC<WorldMapProps> = ({
      * Use effect functions
      * ====================
      */
+    /* Change map properties. */
     useEffect(() => {
         worldMapSvg.setDataSource(dataSource as TypeDataSource);
         worldMapSvg.setCountry(country);
@@ -111,6 +126,11 @@ export const WorldMap: React.FC<WorldMapProps> = ({
         setTranslation(worldMapSvg.getTranslation());
         setSvgContent(worldMapSvg.generateSvgByCountry(country));
     }, [dataSource, country, width, height, language]);
+
+    /* Change default language. */
+    useEffect(() => {
+        i18n.changeLanguage(language).then();
+    }, [language]);
 
     /**
      * ===========
@@ -120,7 +140,7 @@ export const WorldMap: React.FC<WorldMapProps> = ({
     return (
         <div className="gs-world-map">
             <div className="world-map__hints">
-                Hold Ctrl and scroll to zoom the map.
+                { t('TEXT_HOLD_CTRL_AND_SCROLL' as any) }
             </div>
 
             <div className="world-map__title">

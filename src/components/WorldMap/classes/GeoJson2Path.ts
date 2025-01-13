@@ -1,9 +1,9 @@
 /* Import configuration. */
 import {countryMap} from "../config/countries";
-import {defaultLanguage} from "../config/config";
+import {defaultLanguage} from "../../../config/config";
 
 /* Import types. */
-import {InterfaceGeoJson, TypeLanguagesSupported, TypeBoundingBox} from "../types/types";
+import {InterfaceGeoJson, TypeBoundingBox} from "../types/types";
 
 /* Import tools. */
 import {getLanguageName} from "../tools/language";

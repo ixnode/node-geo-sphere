@@ -1,4 +1,4 @@
-import {TypeLanguagesSupported, TypeBoundingBox} from "../types/types";
+import {TypeBoundingBox} from "../types/types";
 
 export const boundingBoxEuropeProj4326: TypeBoundingBox = {
     longitudeMin: -31.266001,
@@ -16,10 +16,6 @@ export const proj3857 = 'EPSG:3857';
 export const defaultMapWidth = 1000;
 
 export const defaultMapHeight = 500;
-
-export const defaultCountry = 'de';
-
-export const defaultLanguage: TypeLanguagesSupported = 'en';
 
 export const defaultDataSource = 'low';
 

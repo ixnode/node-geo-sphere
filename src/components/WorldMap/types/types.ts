@@ -76,6 +76,4 @@ export type TypeBoundingBox = {
     height: number;
 };
 
-export type TypeLanguagesSupported = 'cz'|'de'|'en'|'es'|'fr'|'hr'|'it'|'pl'|'sv';
-
 export type TypeClickCountry = ((data: ClickCountryData) => void)|null;

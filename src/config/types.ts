@@ -1,0 +1,1 @@
+export type TypeLanguagesSupported = 'cz'|'de'|'en'|'es'|'fr'|'hr'|'it'|'pl'|'sv';
