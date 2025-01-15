@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Changelogs
 
+### [0.1.18] - 2025-01-15
+
+* Disable zoom with mouse wheel if strg not pressed
+  * Add hint overlay to show user information
+* SVGRenderer.tsx refactoring
+  * Fix touch events
+  * Fix mouse events
+  * Disable Standard pointer-events
+  * Delegate hover, zoom etc. to SVGRenderer.tsx
+  * Optimize click and move detection
+* Add coordinates and click position to click event (screen and svg)
+
 ### [0.1.17] - 2025-01-14
 
 * Add translations
