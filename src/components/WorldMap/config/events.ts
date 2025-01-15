@@ -13,9 +13,9 @@ export const eventMouseLeaveAsEventListener: boolean = false;
  * B) Touch Events.
  * ================
  */
-export const eventTouchStartAsEventListener: boolean = true;
-export const eventTouchMoveAsEventListener: boolean = true;
-export const eventTouchEndAsEventListener: boolean = true;
+export const eventTouchStartAsEventListener: boolean = true; /* To allow passive event listener invocation: Stop scrolling. */
+export const eventTouchMoveAsEventListener: boolean = true; /* To allow passive event listener invocation: Stop scrolling. */
+export const eventTouchEndAsEventListener: boolean = true; /* To allow passive event listener invocation: Stop scrolling. */
 
 /**
  * =========================

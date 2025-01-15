@@ -7,6 +7,28 @@ export interface ClickCountryData {
 
     /* Name of country. */
     name?: string|null;
+
+    /* Latitude on svg. */
+    latitude?: number;
+
+    /* Longitude on svg. */
+    longitude?: number;
+
+    /* Clicked position on screen. */
+    screenPosition?: {
+        /* Clicked x position on screen (longitude). */
+        x: number;
+        /* Clicked y position on screen (latitude). */
+        y: number;
+    }
+
+    /* Clicked postion on svg. */
+    svgPosition?: {
+        /* Clicked x position on svg (longitude). */
+        x: number;
+        /* Clicked y position on svg (latitude). */
+        y: number;
+    }
 }
 
 /**
@@ -26,4 +48,12 @@ export interface SVGViewBox {
  */
 export interface DebugContent {
     [key: string]: string | number;
+}
+
+/**
+ * Point interface.
+ */
+export interface Point {
+    x: number;
+    y: number;
 }

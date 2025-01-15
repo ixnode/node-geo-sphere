@@ -1,3 +1,6 @@
+import proj4 from "proj4";
+
+/* Import types. */
 import {
     InterfaceGeoJson,
     TypeGeometry,
@@ -5,8 +8,11 @@ import {
     TypePointGeometry,
     TypePolygonGeometry
 } from "../types/types";
-import proj4 from "proj4";
+
+/* Import configuration. */
 import {proj3857, proj4326} from "../config/config";
+
+/* Import classes. */
 import {GeometryChecker} from "./GeometryChecker";
 
 interface CoordinateConverterOptions {
@@ -31,8 +37,22 @@ export class CoordinateConverter {
      */
     constructor(options: CoordinateConverterOptions = {}) { }
 
+    /**
+     * Converts given WSG84 projection into mercator projection.
+     *
+     * @param coordinate
+     */
     public convertCoordinateWgs84ToMercator(coordinate: TypePoint): TypePoint {
         return proj4(proj4326, proj3857, coordinate);
+    }
+
+    /**
+     * Converts given mercator projection into WSG84 projection.
+     *
+     * @param coordinate
+     */
+    public convertCoordinateMercatorToWgs84(coordinate: TypePoint): TypePoint {
+        return proj4(proj3857, proj4326, coordinate);
     }
 
     private calculateMercatorFromPoint(geometry: TypePointGeometry): TypePointGeometry {

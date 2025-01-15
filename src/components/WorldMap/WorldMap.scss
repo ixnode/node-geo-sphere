@@ -15,7 +15,7 @@
   position: relative;
 
   .world-map__hints {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -33,6 +33,7 @@
   .world-map__hints--visible {
     opacity: 1;
     pointer-events: auto;
+    display: flex;
   }
 
   .world-map__title {
@@ -109,6 +110,10 @@
       top: 89px;
       left: 10px;
     }
+
+    svg {
+      cursor: pointer;
+    }
   }
 
   svg {
@@ -117,18 +122,43 @@
     display: block;
     border-radius: 8px;
     width: 100%;
+    pointer-events: all;
+    cursor: default;
 
-    path.country:hover {
-      fill: #b0d0b0;
+    path, circle {
+      pointer-events: none; /* Disable all pointer events -> No hover, etc. -> delegate this to SVGRenderer.tsx (hover, click, etc.) */
     }
-    path.place:hover {
-      stroke-width: 2px;
-    }
-    circle.place {
-      fill: #008000;
-    }
-    circle.place:hover {
-      fill: #008000;
-    }
+
+    //&.mouse-event {
+    //  path {
+    //    pointer-events: all;
+    //  }
+    //}
+    //
+    //&.mouse-move {
+    //  cursor: move;
+    //}
+    //
+    //&.touch-event {
+    //  path {
+    //    pointer-events: none;
+    //  }
+    //}
+    //
+    //path.country {
+    //  &:hover {
+    //    fill: #b0d0b0;
+    //  }
+    //}
+    //
+    //path.place:hover {
+    //  stroke-width: 2px;
+    //}
+    //circle.place {
+    //  fill: #008000;
+    //}
+    //circle.place:hover {
+    //  fill: #008000;
+    //}
   }
 }

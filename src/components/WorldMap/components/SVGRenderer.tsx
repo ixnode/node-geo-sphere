@@ -1,9 +1,9 @@
 import React, {useEffect, useState, useRef} from 'react';
+import {createRoot, Root} from "react-dom/client";
 
 /* Import configuration (WorldMap). */
 import {
     eventMouseDownAsEventListener,
-    eventMouseLeaveAsEventListener,
     eventMouseMoveAsEventListener,
     eventMouseUpAsEventListener,
     eventTouchEndAsEventListener,
@@ -12,8 +12,8 @@ import {
     eventWheelAsEventListener
 } from "../config/events";
 import {countryMap} from "../config/countries";
-import {defaultDebug,defaultMapHeight, defaultMapWidth} from "../config/config";
-import {DebugContent, SVGViewBox} from "../config/interfaces";
+import {defaultDebug, defaultMapHeight, defaultMapWidth} from "../config/config";
+import {ClickCountryData, DebugContent, Point, SVGViewBox} from "../config/interfaces";
 
 /* Import configuration (global). */
 import {defaultLanguage} from "../../../config/config";
@@ -27,7 +27,9 @@ import {TypeSvgContent} from "../classes/GeoJson2Path";
 /* Import tools. */
 import {getLanguageName} from "../tools/language";
 import {calculateZoomViewBox} from "../tools/zoom";
-import {createRoot, Root} from "react-dom/client";
+import {hideScrollHint, showScrollHint} from "../tools/layer";
+import {getPointFromEvent, getSvgElementFromSvg, getSvgPointFromSvg} from "../tools/interaction";
+import {CoordinateConverter} from "../classes/CoordinateConverter";
 
 /* SVGRendererProps interface. */
 interface SVGRendererProps {
@@ -43,17 +45,26 @@ interface SVGRendererProps {
 }
 
 /* Global variables for panning and pinchToZoom instead of useState -> accessible via addEventListener event. */
-let globalIsMousePanningClick = false;
-let globalIsMousePanningDoing = false;
-let globalIsTouchPanningClick = false;
-let globalIsTouchPanningDoing = false;
-let globalIsTouchPinchToZoomClick = false;
-let globalIsTouchPinchToZoomDoing = false;
+let isMouseDownGlobal = false;
+let isMouseMoveGlobal = false;
+let isTouchStartPanningGlobal = false;
+let isTouchStartPinchToZoomGlobal = false;
+let isTouchMovePanningGlobal = false;
+let isTouchMovePinchToZoomGlobal = false;
 
 /* Other global variables. */
-let globalLanguage: string = defaultLanguage;
+let languageGlobal: string = defaultLanguage;
 let rootDebugMapType: Root|null = null;
 let rootDebugMapContent: Root|null = null;
+
+/* Delays */
+const delayShowWorldMapScrollHint = 3000; /* unit in ms */
+const delayMousePanning = null;
+
+/* Timeout variables. */
+let worldMapScrollHintTimeoutId: ReturnType<typeof setTimeout> | null = null;
+
+
 
 /**
  * SVGRenderer component.
@@ -74,8 +85,13 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
     height = defaultMapHeight,
 }) => {
 
-    /* Set states. */
-    const [isMousePanningDoing, setIsMousePanningDoing] = useState(false);
+    /* Set states interaction. */
+    const [isMouseDown, setIsMouseDown] = useState(false);
+    const [isMouseMove, setIsMouseMove] = useState(false);
+    const [isTouchStart, setIsTouchStart] = useState(false);
+    const [isTouchMove, setIsTouchMove] = useState(false);
+
+    /* Set states others. */
     const [startPoint, setStartPoint] = useState({x: 0, y: 0});
     const [viewBox, setViewBox] = useState<SVGViewBox>({
         x: svgContent.viewBoxLeft,
@@ -88,9 +104,14 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
     const svgRef = useRef<SVGSVGElement>(null!);
     const initialDistanceRef = useRef<number|null>(null);
     const initialViewBoxRef = useRef<SVGViewBox|null>(null);
+    const lastEvent = useRef<
+        React.MouseEvent<SVGSVGElement, MouseEvent> | SVGSVGElementEventMap["mousedown"] |
+        React.TouchEvent<SVGSVGElement> | SVGSVGElementEventMap["touchstart"] |
+        null
+    >(null);
 
     /* Set global variables. */
-    globalLanguage = language;
+    languageGlobal = language;
 
 
 
@@ -105,12 +126,9 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
      *
      * @param event
      */
-    const handleMouseDown = (
-        event: React.MouseEvent<SVGSVGElement, MouseEvent> | SVGSVGElementEventMap["mousedown"]
-    ) => {
-
+    const handleMouseDown = (event: React.MouseEvent<SVGSVGElement, MouseEvent> | SVGSVGElementEventMap["mousedown"]) => {
         /* Print debug information. */
-        setDebugType('handleMouseDown');
+        setDebugType(handleMouseDown.name);
 
         /* Prevent event bubbling. */
         event.preventDefault();
@@ -119,7 +137,10 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         setStartPoint({ x: event.clientX, y: event.clientY });
 
         /* Mark "start panning". */
-        globalIsMousePanningClick = true;
+        setIsMouseDownGlobal(true);
+
+        /* Set last element. */
+        lastEvent.current = event;
     };
 
     /**
@@ -128,16 +149,17 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
      * @param event
      */
     const handleMouseMove = (
-        event: React.MouseEvent<SVGSVGElement, MouseEvent> | SVGSVGElementEventMap["mousemove"]
+        event:
+            React.MouseEvent<SVGSVGElement, MouseEvent> | SVGSVGElementEventMap["mousemove"]
     ) => {
 
         /* "handleMouseDown" is not triggered yet or svg is not available -> stop handle. */
-        if (!globalIsMousePanningClick || !svgRef.current) {
+        if (!isMouseDownGlobal || !svgRef.current) {
             return;
         }
 
         /* Print debug information. */
-        setDebugType('handleMouseMove');
+        setDebugType(handleMouseMove.name);
 
         /* Prevent event bubbling. */
         event.preventDefault();
@@ -165,21 +187,29 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
 
         /* Mark "start panning". */
         if (distance > 2) {
-            setIsMousePanningDoing(true);
-            globalIsMousePanningDoing = true;
+            setIsMouseMoveGlobal(true);
         }
     };
 
     /**
      * "mouseup" and "mouseleave" event.
      */
-    const handleMouseUp = () => {
+    const handleMouseUp = (event: React.MouseEvent<SVGSVGElement, MouseEvent> | SVGSVGElementEventMap["mouseup"]) => {
 
         /* Print debug information. */
-        setDebugType('handleMouseUp');
+        setDebugType(handleMouseUp.name);
+
+        /* Execute click callback function. */
+        if (!isMouseMoveGlobal && lastEvent.current !== null) {
+            handleSvgClick(lastEvent.current);
+        }
 
         /* Mark "stop panning". */
-        setIsMousePanningDelay(false, 0);
+        setIsMouseDownGlobal(false, delayMousePanning);
+        setIsMouseMoveGlobal(false, delayMousePanning);
+
+        /* Set last element. */
+        lastEvent.current = null;
     };
 
 
@@ -195,7 +225,22 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
      *
      * @param event
      */
-    const handleTouchClick = (event: React.TouchEvent<SVGSVGElement> | SVGSVGElementEventMap["touchstart"]) => {
+    const handleTouchStart = (event: React.TouchEvent<SVGSVGElement> | SVGSVGElementEventMap["touchstart"]) => {
+
+        /* Svg is not available -> stop handle. */
+        if (!svgRef.current) {
+            return;
+        }
+
+        const target = event.target as SVGElement;
+
+        /* Allow "svg path" to bubble touch events. */
+        if (target.tagName === 'path') {
+
+        }
+
+        /* Set last element. */
+        lastEvent.current = event;
 
         /**
          * Handle touch number:
@@ -205,12 +250,12 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         switch (event.touches.length) {
             /* Move map. */
             case 1:
-                handleTouchPanningClick(event);
+                handleTouchStartPanning(event);
                 break;
 
             /* Zoom map. */
             case 2:
-                handleTouchPinchToZoomClick(event);
+                handleTouchStartPinchToZoom(event);
                 break;
 
             /* Unsupported state. */
@@ -225,7 +270,10 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
      *
      * @param event
      */
-    const handleTouchPanningClick = (event: React.TouchEvent<SVGSVGElement> | SVGSVGElementEventMap["touchstart"]) => {
+    const handleTouchStartPanning = (
+        event:
+            React.TouchEvent<SVGSVGElement> | SVGSVGElementEventMap["touchstart"]
+    ) => {
 
         /* Only 1 touch is supported. */
         if (event.touches.length !== 1) {
@@ -233,7 +281,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         }
 
         /* Print debug information. */
-        setDebugType('handleTouchPanningClick');
+        setDebugType(handleTouchStartPanning.name);
 
         /* Prevent event bubbling. */
         event.preventDefault();
@@ -242,15 +290,18 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         setStartPoint({x: event.touches[0].clientX, y: event.touches[0].clientY});
 
         /* Mark "start panning". */
-        globalIsTouchPanningClick = true;
+        setIsTouchStartPanningGlobal(true);
     };
 
     /**
-     * "touchstart" event (zoom).
+     * "touchstart" event (pinch to zoom).
      *
      * @param event
      */
-    const handleTouchPinchToZoomClick = (event: React.TouchEvent<SVGSVGElement> | SVGSVGElementEventMap["touchstart"]) => {
+    const handleTouchStartPinchToZoom = (
+        event:
+            React.TouchEvent<SVGSVGElement> | SVGSVGElementEventMap["touchstart"]
+    ) => {
 
         /* Only 2 touch is supported. */
         if (event.touches.length !== 2) {
@@ -258,7 +309,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         }
 
         /* Print debug information. */
-        setDebugType('handleTouchPinchToZoomClick');
+        setDebugType(handleTouchStartPinchToZoom.name);
 
         /* Prevent event bubbling. */
         event.preventDefault();
@@ -274,7 +325,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         setStartPoint({x: event.touches[0].clientX, y: event.touches[0].clientY});
 
         /* Mark "start pinch to zoom". */
-        globalIsTouchPinchToZoomClick = true;
+        setIsTouchStartPinchToZoomGlobal(true);
     };
 
     /**
@@ -282,7 +333,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
      *
      * @param event
      */
-    const handleTouchDoing = (event: React.TouchEvent<SVGSVGElement> | SVGSVGElementEventMap["touchmove"]) => {
+    const handleTouchMove = (event: React.TouchEvent<SVGSVGElement> | SVGSVGElementEventMap["touchmove"]) => {
 
         /**
          * Handle touch number:
@@ -292,12 +343,12 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         switch (event.touches.length) {
             /* Move map. */
             case 1:
-                handleTouchPanningDoing(event);
+                handleTouchMovePanning(event);
                 break;
 
             /* Zoom map. */
             case 2:
-                handleTouchDoingPinchToZoomDoing(event);
+                handleTouchMovePinchToZoom(event);
                 break;
 
             /* Unsupported state. */
@@ -312,10 +363,10 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
      *
      * @param event
      */
-    const handleTouchPanningDoing = (event: React.TouchEvent<SVGSVGElement> | SVGSVGElementEventMap["touchmove"]) => {
+    const handleTouchMovePanning = (event: React.TouchEvent<SVGSVGElement> | SVGSVGElementEventMap["touchmove"]) => {
 
         /* handleTouchStartMove is not triggered yet or svg is not available -> stop handle. */
-        if (!globalIsTouchPanningClick || !svgRef.current) {
+        if (!isTouchStartPanningGlobal || !svgRef.current) {
             return;
         }
 
@@ -325,7 +376,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         }
 
         /* Print debug information. */
-        setDebugType('handleTouchPanningDoing');
+        setDebugType(handleTouchMovePanning.name);
 
         /* Prevent event bubbling. */
         event.preventDefault();
@@ -355,7 +406,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
 
         /* Mark "start panning". */
         if (distance > 10000) {
-            globalIsTouchPanningDoing = true;
+            setIsTouchMovePanningGlobal(true);
         }
     }
 
@@ -364,10 +415,10 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
      *
      * @param event
      */
-    const handleTouchDoingPinchToZoomDoing = (event: React.TouchEvent<SVGSVGElement> | SVGSVGElementEventMap["touchmove"]) => {
+    const handleTouchMovePinchToZoom = (event: React.TouchEvent<SVGSVGElement> | SVGSVGElementEventMap["touchmove"]) => {
 
         /* handleTouchStartZoom is not triggered yet or svg is not available -> stop handle. */
-        if (!globalIsTouchPinchToZoomClick || !svgRef.current || !initialDistanceRef.current || !initialViewBoxRef.current) {
+        if (!isTouchStartPinchToZoomGlobal || !svgRef.current || !initialDistanceRef.current || !initialViewBoxRef.current) {
             return;
         }
 
@@ -377,7 +428,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         }
 
         /* Print debug information. */
-        setDebugType('handleTouchDoingPinchToZoomDoing');
+        setDebugType(handleTouchMovePinchToZoom.name);
 
         /* Prevent event bubbling. */
         event.preventDefault();
@@ -414,25 +465,37 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
 
         /* Mark "start panning". */
         if (distance > 2) {
-            globalIsTouchPinchToZoomDoing = true;
+            setIsTouchMovePinchToZoomGlobal(true);
         }
     }
 
     /**
      * "touchend" event.
      */
-    const handleTouchEnd = () => {
+    const handleTouchEnd = (event: React.TouchEvent<SVGSVGElement> | SVGSVGElementEventMap["touchend"]) => {
 
         /* Print debug information. */
-        setDebugType('handleTouchEnd');
+        setDebugType(handleTouchEnd.name);
 
-        /* Mark "stop panning" and "pinch to zoom". */
-        setIsTouchPanningDelay(false, 50);
-        setIsTouchPinchToZoomDelay(false, 50);
+        /* Execute click callback function. */
+        if (!isTouchMovePanningGlobal && !isTouchMovePinchToZoomGlobal && lastEvent.current !== null) {
+            handleSvgClick(lastEvent.current);
+        }
+
+        /* Finish "panning". */
+        setIsTouchStartPanningGlobal(false, 50);
+        setIsTouchMovePanningGlobal(false, 50);
+
+        /* Finish "pinch to zoom". */
+        setIsTouchStartPinchToZoomGlobal(false, 50);
+        setIsTouchMovePinchToZoomGlobal(false, 50);
 
         /* Reset initial distance. */
         initialDistanceRef.current = null;
         initialViewBoxRef.current = null;
+
+        /* Reset the last element. */
+        lastEvent.current = null;
     };
 
 
@@ -454,21 +517,19 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         }
 
         if (!event.ctrlKey) {
-            const hintsElement = document.querySelector('.world-map__hints') as HTMLElement;
+            /* Show scroll hint. */
+            showScrollHint();
 
-            if (hintsElement) {
-                hintsElement.classList.add('world-map__hints--visible');
-
-                setTimeout(() => {
-                    hintsElement.classList.remove('world-map__hints--visible');
-                }, 2000);
-            }
+            /* Set timer to hide the hint. */
+            worldMapScrollHintTimeoutId = setTimeout(() => {
+                hideScrollHint();
+            }, delayShowWorldMapScrollHint);
 
             return;
         }
 
         /* Print debug information. */
-        setDebugType('handleWheel');
+        setDebugType(handleWheel.name);
 
         /* Prevent event bubbling. */
         event.preventDefault();
@@ -526,7 +587,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         }
 
         /* Print debug information. */
-        setDebugType('handleZoomIn');
+        setDebugType(handleZoomIn.name);
 
         const deltaY = -100; /* Zoom in */
 
@@ -554,7 +615,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         }
 
         /* Print debug information. */
-        setDebugType('handleZoomIn');
+        setDebugType(handleZoomIn.name);
 
         const deltaY = 100; /* Zoom out */
 
@@ -606,19 +667,28 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         if (viewBox.viewWidth && viewBox.viewHeight) {
             const viewRatio = viewBox.viewWidth / viewBox.viewHeight;
             debugContent["view dimensions"] = viewBox.viewWidth.toFixed(2) + ' x ' + viewBox.viewHeight.toFixed(2) + ' (' + viewRatio.toFixed(2) + ')';
-        }
-
-        if (!viewBox.viewWidth || !viewBox.viewHeight) {
+        } else {
             debugContent["view dimensions"] = 'n/a';
         }
 
         if (width && height) {
             const ratio = width / height;
             debugContent["given dimensions"] = width.toFixed(2) + ' x ' + height.toFixed(2) + ' (' + ratio.toFixed(2) + ')';
+        } else {
+            debugContent["given dimensions"] = 'n/a';
+        }
+
+        if (lastEvent.current !== null) {
+            const target = lastEvent.current.target as SVGPathElement;
+            debugContent['last element'] = target.tagName;
+        } else {
+            debugContent['last element'] = 'n/a';
         }
 
         if (scale !== null) {
             debugContent["scale"] = scale;
+        } else {
+            debugContent["scale"] = 'n/a';
         }
 
         setDebugContent(debugContent);
@@ -674,74 +744,179 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
     }
 
     /**
-     * setIsMousePanning with delay.
+     * setIsMouseDown (global).
      *
-     * @param isMousePanning
+     * @param isMouseDown
      * @param delay
      */
-    const setIsMousePanningDelay = (isMousePanning: boolean, delay: number | null = null) => {
+    const setIsMouseDownGlobal = (isMouseDown: boolean, delay: number | null = null) => {
 
-        if (delay === null) {
-            setIsMousePanningDoing(isMousePanning);
-            globalIsMousePanningClick = isMousePanning;
-            globalIsMousePanningDoing = isMousePanning;
+        if (delay !== null && delay > 0) {
+            window.setTimeout(() => {
+                setIsMouseDown(isMouseDown);
+                isMouseDownGlobal = isMouseDown;
+            }, delay);
             return;
         }
 
-        window.setTimeout(() => {
-            setIsMousePanningDoing(isMousePanning);
-            globalIsMousePanningClick = isMousePanning;
-            globalIsMousePanningDoing = isMousePanning;
-        }, delay);
+        setIsMouseDown(isMouseDown);
+        isMouseDownGlobal = isMouseDown;
+    }
+
+    /**
+     * setIsMouseMove (global).
+     *
+     * @param isMouseMove
+     * @param delay
+     */
+    const setIsMouseMoveGlobal = (isMouseMove: boolean, delay: number | null = null) => {
+
+        if (delay !== null && delay > 0) {
+            window.setTimeout(() => {
+                setIsMouseMove(isMouseMove);
+                isMouseMoveGlobal = isMouseMove;
+            }, delay);
+            return;
+        }
+
+        setIsMouseMove(isMouseMove);
+        isMouseMoveGlobal = isMouseMove;
+    }
+
+    /**
+     * set isTouchStartPanning with delay.
+     *
+     * @param isTouchStart
+     * @param delay
+     */
+    const setIsTouchStartPanningGlobal = (isTouchStart: boolean, delay: number|null = null) => {
+
+        if (delay !== null && delay > 0) {
+            window.setTimeout(() => {
+                setIsTouchStart(isTouchStart);
+                isTouchStartPanningGlobal = isTouchStart;
+            }, delay);
+            return;
+        }
+
+        setIsTouchStart(isTouchStart);
+        isTouchStartPanningGlobal = isTouchStart;
+    }
+
+    /**
+     * set isTouchMovePanning with delay.
+     *
+     * @param isTouchMove
+     * @param delay
+     */
+    const setIsTouchMovePanningGlobal = (isTouchMove: boolean, delay: number|null = null) => {
+
+        if (delay !== null && delay > 0) {
+            window.setTimeout(() => {
+                setIsTouchMove(isTouchMove);
+                isTouchMovePanningGlobal = isTouchMove;
+            }, delay);
+            return;
+        }
+
+        setIsTouchMove(isTouchMove);
+        isTouchMovePanningGlobal = isTouchMove;
     }
 
     /**
      * setIsMousePanning with delay.
      *
-     * @param isTouchPanning
+     * @param isTouchStart
      * @param delay
      */
-    const setIsTouchPanningDelay = (isTouchPanning: boolean, delay: number|null = null) => {
+    const setIsTouchStartPinchToZoomGlobal = (isTouchStart: boolean, delay: number|null = null) => {
 
-        if (delay === null) {
-            globalIsTouchPanningClick = isTouchPanning;
-            globalIsTouchPanningDoing = isTouchPanning;
+        if (delay !== null && delay > 0) {
+            window.setTimeout(() => {
+                setIsTouchStart(isTouchStart);
+                isTouchStartPinchToZoomGlobal = isTouchStart;
+            }, delay);
             return;
         }
 
-        window.setTimeout(() => {
-            globalIsTouchPanningClick = isTouchPanning;
-            globalIsTouchPanningDoing = isTouchPanning;
-        }, delay);
+        setIsTouchStart(isTouchStart);
+        isTouchStartPinchToZoomGlobal = isTouchStart;
     }
 
     /**
      * setIsMousePanning with delay.
      *
-     * @param isTouchPinchToZoom
+     * @param isTouchMove
      * @param delay
      */
-    const setIsTouchPinchToZoomDelay = (isTouchPinchToZoom: boolean, delay: number|null = null) => {
+    const setIsTouchMovePinchToZoomGlobal = (isTouchMove: boolean, delay: number|null = null) => {
 
-        if (delay === null) {
-            globalIsTouchPinchToZoomClick = isTouchPinchToZoom;
-            globalIsTouchPinchToZoomDoing = isTouchPinchToZoom;
+        if (delay !== null && delay > 0) {
+            window.setTimeout(() => {
+                setIsTouchMove(isTouchMove);
+                isTouchMovePinchToZoomGlobal = isTouchMove;
+            }, delay);
             return;
         }
 
-        window.setTimeout(() => {
-            globalIsTouchPinchToZoomClick = isTouchPinchToZoom;
-            globalIsTouchPinchToZoomDoing = isTouchPinchToZoom;
-        }, delay);
+        setIsTouchMove(isTouchMove);
+        isTouchMovePinchToZoomGlobal = isTouchMove;
     }
+
+    /**
+     * Handle svg click.
+     *
+     * @param event
+     */
+    const handleSvgClick = (
+        event:
+            React.MouseEvent<SVGSVGElement, MouseEvent> | SVGSVGElementEventMap["mousedown"] |
+            React.TouchEvent<SVGSVGElement> | SVGSVGElementEventMap["touchstart"]
+    ) => {
+
+        /* Print debug information. */
+        setDebugType(handleSvgClick.name);
+
+        /* Get clicked point from event. */
+        const point = getPointFromEvent(event);
+
+        /* Create point. */
+        const svgPoint = getSvgPointFromSvg(svgRef.current, point);
+
+        /* No SVGPoint found. */
+        if (!svgPoint) {
+            return null;
+        }
+
+        /* Try to get element from given event. */
+        const element = getSvgElementFromSvg(svgRef.current, svgPoint);
+
+        /* No element found. */
+        if (element === null) {
+            return;
+        }
+
+        /* Only handle path.country. */
+        if (element.tagName !== 'path' || !element.classList.contains('country')) {
+            return;
+        }
+
+        /* Handle country clicked. */
+        handleCountryClick(element, point, svgPoint);
+    };
 
     /**
      * Handle country click.
      *
-     * @param event
+     * @param element
+     * @param point
+     * @param svgPoint
      */
-
-    const handleClick = (event: Event) => {
+    const handleCountryClick = (
+        element: SVGElement,
+        point: Point|null = null,
+        svgPoint: SVGPoint|null = null
+    ) => {
 
         /* No onClickCountry found. */
         if (onClickCountry === null) {
@@ -749,18 +924,16 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         }
 
         /* Prevent click if panning or pinch-to-zoom is active. */
-        if (globalIsMousePanningDoing || globalIsTouchPanningDoing || globalIsTouchPinchToZoomDoing) {
+        if (isMouseMoveGlobal || isTouchMovePanningGlobal || isTouchMovePinchToZoomGlobal) {
             return;
         }
-
-        const target = event.target as SVGPathElement;
 
         /* No target or id found. */
-        if (!target || !target.id) {
+        if (!element || !element.id) {
             return;
         }
 
-        const id = target.id;
+        const id = element.id;
 
         /* No countryMap found. */
         if (!(id in countryMap)) {
@@ -773,11 +946,37 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
 
         const countryData = countryMap[id];
 
-        /* Return date from clicked map. */
-        onClickCountry({
+        const data = {
             id: id,
-            name: countryData[getLanguageName(globalLanguage)]
-        });
+            name: countryData[getLanguageName(languageGlobal)]
+        } as ClickCountryData;
+
+        /* Add point (screen position). */
+        if (point !== null) {
+            data.screenPosition = {
+                x: point.x,
+                y: point.y
+            };
+        }
+
+        /* Add svg and wgs84 point. */
+        if (svgPoint !== null) {
+
+            /* Transform svg coordinates (mercator) to wgs84. */
+            const coordinateConverter = new CoordinateConverter();
+            const pointWgs84 = coordinateConverter.convertCoordinateMercatorToWgs84([svgPoint.x, -svgPoint.y]);
+
+            /* Add data. */
+            data.svgPosition = {
+                x: svgPoint.x,
+                y: -svgPoint.y
+            };
+            data.latitude = pointWgs84[1];
+            data.longitude = pointWgs84[0];
+        }
+
+        /* Return date from clicked map. */
+        onClickCountry(data);
     };
 
 
@@ -799,6 +998,35 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         rootDebugMapType = null;
         rootDebugMapContent = null;
     }, [debug]);
+
+    /**
+     * Add mousedown event listener.
+     */
+    useEffect(() => {
+        document.addEventListener('mousedown', hideScrollHint);
+
+        return () => {
+            document.removeEventListener('mousedown', hideScrollHint);
+        };
+    }, []);
+
+    /**
+     * Handle zoom in trigger actions.
+     */
+    useEffect(() => {
+        if (stateZoomIn > 0) {
+            handleZoomIn();
+        }
+    }, [stateZoomIn]);
+
+    /**
+     * Handle zoom out trigger actions.
+     */
+    useEffect(() => {
+        if (stateZoomOut > 0) {
+            handleZoomOut();
+        }
+    }, [stateZoomOut]);
 
     /**
      * Register mouse, wheel and touch events. Also add tidy up (unregister) mouse, wheel and touch events, when
@@ -834,9 +1062,9 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
          * ================
          */
         /* svgElement.addEventListener('touchstart') vs. svg.onTouchStart */
-        eventTouchStartAsEventListener && svgElement.addEventListener('touchstart', handleTouchClick, { passive: false });
+        eventTouchStartAsEventListener && svgElement.addEventListener('touchstart', handleTouchStart, { passive: false });
         /* svgElement.addEventListener('touchmove') vs. svg.onTouchMove */
-        eventTouchMoveAsEventListener && svgElement.addEventListener('touchmove', handleTouchDoing, { passive: false });
+        eventTouchMoveAsEventListener && svgElement.addEventListener('touchmove', handleTouchMove, { passive: false });
         /* svgElement.addEventListener('touchend') vs. svg.onTouchEnd */
         eventTouchEndAsEventListener && svgElement.addEventListener('touchend', handleTouchEnd, { passive: false });
 
@@ -858,18 +1086,25 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
              * A) Mouse Events.
              * ================
              */
+            /* svgElement.addEventListener('mousedown') vs. svg.onMouseDown */
             eventMouseDownAsEventListener && svgElement.removeEventListener('mousedown', handleMouseDown);
+            /* svgElement.addEventListener('mousemove') vs. svg.onMouseMove */
             eventMouseMoveAsEventListener && svgElement.removeEventListener('mousemove', handleMouseMove);
+            /* svgElement.addEventListener('mouseup') vs. svg.onMouseUp */
             eventMouseUpAsEventListener && svgElement.removeEventListener('mouseup', handleMouseUp);
-            eventMouseLeaveAsEventListener && svgElement.removeEventListener('mouseleave', handleMouseUp);
+            /* svgElement.addEventListener('mouseleave') vs. svg.onMouseLeave */
+            //eventMouseLeaveAsEventListener && svgElement.removeEventListener('mouseleave', handleMouseUp);
 
             /**
              * ================
              * B) Touch Events.
              * ================
              */
-            eventTouchStartAsEventListener && svgElement.removeEventListener('touchstart', handleTouchClick);
-            eventTouchMoveAsEventListener && svgElement.removeEventListener('touchmove', handleTouchDoing);
+            /* svgElement.addEventListener('touchstart') vs. svg.onTouchStart */
+            eventTouchStartAsEventListener && svgElement.removeEventListener('touchstart', handleTouchStart);
+            /* svgElement.addEventListener('touchmove') vs. svg.onTouchMove */
+            eventTouchMoveAsEventListener && svgElement.removeEventListener('touchmove', handleTouchMove);
+            /* svgElement.addEventListener('touchend') vs. svg.onTouchEnd */
             eventTouchEndAsEventListener && svgElement.removeEventListener('touchend', handleTouchEnd);
 
             /**
@@ -877,6 +1112,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
              * C) Wheel and Zoom Events.
              * =========================
              */
+            /* svgElement.addEventListener('wheel') vs. svg.onWheel */
             eventWheelAsEventListener && svgElement.removeEventListener('wheel', handleWheel);
         };
     }, [
@@ -919,55 +1155,6 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         country
     ]); /* Run this effect whenever the svgContent or country changes. */
 
-    /**
-     * Adds click handlers to all paths with class "country" after rendering.
-     */
-    useEffect(() => {
-
-        /* Svg is not available -> stop handle. */
-        if (!svgRef.current) {
-            return;
-        }
-
-        /* Easy access. */
-        const svgElement = svgRef.current;
-
-        /* Select all paths with class "country" */
-        const countryPaths = svgElement.querySelectorAll('path.country');
-
-        /* Add event listeners to each path. */
-        countryPaths.forEach((path) => {
-            path.addEventListener('click', handleClick);
-            path.addEventListener('touchend', handleClick, { passive: false });
-        });
-
-        /* Cleanup event listeners on component unmount or when content changes. */
-        return () => {
-            countryPaths.forEach((path) => {
-                path.removeEventListener('click', handleClick);
-                path.removeEventListener('touchend', handleClick);
-            });
-        };
-    }, [svgContent]); /* Run this effect whenever the svgContent changes. */
-
-    /**
-     * Handle zoom in trigger actions.
-     */
-    useEffect(() => {
-        if (stateZoomIn > 0) {
-            handleZoomIn();
-        }
-    }, [stateZoomIn]);
-
-    /**
-     * Handle zoom out trigger actions.
-     */
-    useEffect(() => {
-        if (stateZoomOut > 0) {
-            handleZoomOut();
-        }
-    }, [stateZoomOut]);
-
 
 
     /**
@@ -980,7 +1167,17 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             xmlns="http://www.w3.org/2000/svg"
             ref={svgRef}
             id="svg-map"
-            style={{ cursor: isMousePanningDoing ? 'move' : 'default' }}
+            className={[
+                /* Mouse classes. */
+                // (isMouseDown || isMouseMove) && "mouse-event",
+                // isMouseDown && "mouse-down",
+                // isMouseMove && "mouse-move",
+
+                /* Touch classes. */
+                // (isTouchStart || isTouchMove) && "touch-event",
+                // isTouchStart && "touch-start",
+                // isTouchMove && "touch-move",
+            ].filter(Boolean).join(' ')}
             viewBox={`${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`}
             dangerouslySetInnerHTML={{ __html: svgContent.svgPaths + svgContent.svgCircles }}
 
@@ -999,8 +1196,8 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
              * B) Touch Events.
              * ================
              */
-            onTouchStart={!eventTouchStartAsEventListener ? handleTouchClick : undefined}
-            onTouchMove={!eventTouchMoveAsEventListener ? handleTouchDoing : undefined}
+            onTouchStart={!eventTouchStartAsEventListener ? handleTouchStart : undefined}
+            onTouchMove={!eventTouchMoveAsEventListener ? handleTouchMove : undefined}
             onTouchEnd={!eventTouchEndAsEventListener ? handleTouchEnd : undefined}
 
             /**
@@ -1008,7 +1205,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
              * C) Wheel and Zoom Events.
              * =========================
              */
-            onWheel={!eventWheelAsEventListener ? handleWheel: undefined}
+            onWheel={!eventWheelAsEventListener ? handleWheel : undefined}
         />
     );
 };

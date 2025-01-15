@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import { useTranslation } from 'react-i18next';
 
 /* Import configuration (global). */
@@ -19,6 +19,7 @@ import {
 } from "./config/config";
 import {ClickCountryData} from "./config/interfaces";
 import {TypeLanguagesSupported} from "../../config/types";
+import {eventWheelAsEventListener} from "./config/events";
 
 /* Import types. */
 import {TypeDataSource} from "./types/types";
@@ -32,6 +33,7 @@ import SVGRenderer from "./components/SVGRenderer";
 
 /* Import tools. */
 import {getLanguageName} from "./tools/language";
+import {hideScrollHint} from "./tools/layer";
 
 /* Import Styles. */
 import './WorldMap.scss';
@@ -85,6 +87,9 @@ export const WorldMap: React.FC<WorldMapProps> = ({
     logo = defaultLogo,
 }) => {
 
+    /* Set refs. */
+    const hintsRef = useRef<HTMLDivElement|null>(null);
+
     /* Set states. */
     const [svgContent, setSvgContent] = useState<TypeSvgContent|null>(null);
     const [translation, setTranslation] = useState<TypeCountry|null>(null);
@@ -114,6 +119,23 @@ export const WorldMap: React.FC<WorldMapProps> = ({
     };
 
     /**
+     * Function to handle mouse wheel.
+     */
+    const handleWheel = (event: React.WheelEvent<HTMLDivElement> | WheelEvent) => {
+
+        /* Hint is not available or ctrl is not pressed. */
+        if (!event.ctrlKey || !hintsRef.current) {
+            return;
+        }
+
+        /* Prevent event bubbling. */
+        event.preventDefault();
+
+        /* Show scroll hint. */
+        hideScrollHint();
+    };
+
+    /**
      * ====================
      * Use effect functions
      * ====================
@@ -132,6 +154,24 @@ export const WorldMap: React.FC<WorldMapProps> = ({
         i18n.changeLanguage(language).then();
     }, [language]);
 
+    /* Register event listener. */
+    useEffect(() => {
+
+        /* Hint is not available -> stop handle. */
+        if (!hintsRef.current) {
+            return;
+        }
+
+        let hintElement = hintsRef.current;
+
+        /* svgElement.addEventListener('wheel') vs. svg.onWheel */
+        eventWheelAsEventListener && hintElement.addEventListener('wheel', handleWheel, { passive: false });
+
+        return () => {
+            hintElement.removeEventListener('wheel', handleWheel);
+        };
+    }, []);
+
     /**
      * ===========
      * Map Builder
@@ -139,7 +179,11 @@ export const WorldMap: React.FC<WorldMapProps> = ({
      */
     return (
         <div className="gs-world-map">
-            <div className="world-map__hints">
+            <div
+                className="world-map__hints"
+                ref={hintsRef}
+                onWheel={!eventWheelAsEventListener ? handleWheel : undefined}
+            >
                 { t('TEXT_HOLD_CTRL_AND_SCROLL' as any) }
             </div>
 

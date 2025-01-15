@@ -82,18 +82,39 @@ const App = () => (
 export default App;
 ```
 
-The callback function logs something like (according to clicked country):
+The callback function logs something like (according to the clicked country and the given language):
 
 ```json
 {
   "id": "de",
-  "name": "Germany"
+  "name": "Germany",
+  "latitude": 50.304018990688554,
+  "longitude": 7.5794992771470975,
+  "screenPosition": {
+    "x": 401,
+    "y": 333
+  },
+  "svgPosition": {
+    "x": 843746,
+    "y": 6499094
+  }
 }
 ```
 
-## 🔧 Props
+| Property           | Description                                                     |
+|--------------------|-----------------------------------------------------------------|
+| `id`               | The id of clicked element.                                      |
+| `name`             | The translated name of clicked element.                         |
+| `latitude`         | The latitude value. Clicked on the map.                         |
+| `longitude`        | The longitude value. Clicked on the map.                        |
+| `screenPosition.x` | The x position of the last click. Related to the screen.        |
+| `screenPosition.y` | The y position of the last click. Related to the screen.        |
+| `svgPosition.x`    | The x position of the last click. Related to the whole svg map. |
+| `svgPosition.y`    | The x position of the last click. Related to the whole svg map. |
 
-| Prop             | Type                                                                   | Default | Description                                                                                     |
+## 🔧 Properties
+
+| Property         | Type                                                                   | Default | Description                                                                                     |
 |------------------|------------------------------------------------------------------------|---------|-------------------------------------------------------------------------------------------------|
 | `dataSource`     | `'tiny'\|'low'\|'medium'`                                              | `'low'` | The data source to be used.                                                                     |
 | `country`        | `string\|null`                                                         | `null`  | The country that is marked.                                                                     |
