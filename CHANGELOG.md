@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Changelogs
 
+### [0.1.19] - 2025-01-18
+
+* Optimize debug output
+* Show country and city hover debug information
+* Export svg styles to external scss file
+* Refactoring
+
 ### [0.1.18] - 2025-01-15
 
 * Disable zoom with mouse wheel if strg not pressed
