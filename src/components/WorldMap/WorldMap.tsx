@@ -41,6 +41,7 @@ import {Logo} from "../../helper/Logo/Logo";
 
 /* Import translation libraries. */
 import { i18n } from "../../config/i18n";
+import {idDebugMapContent, idDebugMapType} from "./config/elementNames";
 
 /* WorldMapProps interface. */
 export interface WorldMapProps {
@@ -220,10 +221,10 @@ export const WorldMap: React.FC<WorldMapProps> = ({
                     <div className="table-structured distance ratio-1-2">
                         <div className="grid">
                             <div className="label">Debug</div>
-                            <div className="value" id="debug-map-type">No interaction yet.</div>
+                            <div className="value" id={idDebugMapType}>No interaction yet.</div>
                         </div>
                     </div>
-                    <div id="debug-map-content"></div>
+                    <div id={idDebugMapContent}></div>
                 </div>
             }
             {

@@ -4,16 +4,50 @@ import {createRoot, Root} from "react-dom/client";
 /* Import configuration (WorldMap). */
 import {
     eventMouseDownAsEventListener,
+    eventMouseDownEnabled,
+    eventMouseEnterAsEventListener,
+    eventMouseEnterEnabled,
+    eventMouseLeaveAsEventListener,
+    eventMouseLeaveEnabled,
     eventMouseMoveAsEventListener,
+    eventMouseMoveEnabled,
+    eventMouseOverAsEventListener,
+    eventMouseOverEnabled,
     eventMouseUpAsEventListener,
+    eventMouseUpEnabled,
     eventTouchEndAsEventListener,
+    eventTouchEndEnabled,
     eventTouchMoveAsEventListener,
+    eventTouchMoveEnabled,
     eventTouchStartAsEventListener,
-    eventWheelAsEventListener
+    eventTouchStartEnabled,
+    eventWheelAsEventListener,
+    eventWheelEnabled,
 } from "../config/events";
 import {countryMap} from "../config/countries";
 import {defaultDebug, defaultMapHeight, defaultMapWidth} from "../config/config";
 import {ClickCountryData, DebugContent, Point, SVGViewBox} from "../config/interfaces";
+import {
+    classNameHover,
+    classNameSvgCircle,
+    classNameSvgPath,
+    eventNameMouseDown,
+    eventNameMouseEnter,
+    eventNameMouseLeave,
+    eventNameMouseMove,
+    eventNameMouseOver,
+    eventNameMouseUp,
+    eventNameTouchEnd,
+    eventNameTouchMove,
+    eventNameTouchStart,
+    eventNameWheel,
+    idDebugMapContent,
+    idDebugMapType,
+    idSvgMap,
+    tagNameCircle,
+    tagNamePath,
+    tagNameSvg,
+} from "../config/elementNames";
 
 /* Import configuration (global). */
 import {defaultLanguage} from "../../../config/config";
@@ -22,6 +56,7 @@ import {defaultLanguage} from "../../../config/config";
 import {TypeClickCountry} from "../types/types";
 
 /* Import classes. */
+import {CoordinateConverter} from "../classes/CoordinateConverter";
 import {TypeSvgContent} from "../classes/GeoJson2Path";
 
 /* Import tools. */
@@ -29,7 +64,7 @@ import {getLanguageName} from "../tools/language";
 import {calculateZoomViewBox} from "../tools/zoom";
 import {hideScrollHint, showScrollHint} from "../tools/layer";
 import {getPointFromEvent, getSvgElementFromSvg, getSvgPointFromSvg} from "../tools/interaction";
-import {CoordinateConverter} from "../classes/CoordinateConverter";
+
 
 /* SVGRendererProps interface. */
 interface SVGRendererProps {
@@ -116,6 +151,38 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
 
 
     /**
+     * ===================
+     * 1) Helper functions
+     * ===================
+     */
+
+    /**
+     * Remove hover class from path.country.
+     */
+    const removeHoverClassPathCountry = () => {
+
+        /* Find hovered elements. */
+        const paths = document.querySelectorAll(`${tagNameSvg}#${idSvgMap} ${tagNamePath}.${classNameSvgPath}.${classNameHover}`);
+
+        /* Remove hover class. */
+        paths.forEach((path) => path.classList.remove(classNameHover));
+    }
+
+    /**
+     * Remove hover class from path.country.
+     */
+    const removeHoverClassCirclePlace = () => {
+
+        /* Find hovered elements. */
+        const circles = document.querySelectorAll(`${tagNameSvg}#${idSvgMap} ${tagNameCircle}.${classNameSvgCircle}.${classNameHover}`);
+
+        /* Remove hover class. */
+        circles.forEach((circle) => circle.classList.remove(classNameHover));
+    }
+
+
+
+    /**
      * ================
      * A) Mouse Events.
      * ================
@@ -148,18 +215,101 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
      *
      * @param event
      */
-    const handleMouseMove = (
-        event:
-            React.MouseEvent<SVGSVGElement, MouseEvent> | SVGSVGElementEventMap["mousemove"]
-    ) => {
+    const handleMouseMove = (event: React.MouseEvent<SVGSVGElement, MouseEvent> | SVGSVGElementEventMap["mousemove"]) => {
 
-        /* "handleMouseDown" is not triggered yet or svg is not available -> stop handle. */
-        if (!isMouseDownGlobal || !svgRef.current) {
+        /* Svg is not available -> stop handle. */
+        if (!svgRef.current) {
             return;
         }
 
+        /* Execution depending on status. */
+        switch (isMouseDownGlobal) {
+
+            /* Handle eventNameMouseMove event with mouse down. */
+            case true:
+                handleMouseMoveWithMouseDown(event);
+                break;
+
+            /* "isMouseDownGlobal" is not triggered yet. */
+            case false:
+                handleMouseMoveWithMouseUp(event);
+                break;
+
+            /* Unexpected case. */
+            default:
+                throw new Error('Unknown value for isMouseDownGlobal.');
+        }
+    };
+
+    /**
+     * "mousemove" event with mouse up.
+     *
+     * @param event
+     */
+    const handleMouseMoveWithMouseUp = (event: React.MouseEvent<SVGSVGElement, MouseEvent> | SVGSVGElementEventMap["mousemove"]) => {
+
         /* Print debug information. */
-        setDebugType(handleMouseMove.name);
+        setDebugType(handleMouseMove.name + ` (${eventNameMouseUp})`);
+
+        /* Get clicked point from event. */
+        const point = getPointFromEvent(event);
+
+        /* Create point. */
+        const svgPoint = getSvgPointFromSvg(svgRef.current, point);
+
+        /* No SVGPoint found. */
+        if (!svgPoint) {
+            return null;
+        }
+
+        /* Try to get element from given event. */
+        const element = getSvgElementFromSvg(svgRef.current, svgPoint, [tagNamePath, tagNameCircle], tagNameCircle);
+
+        /* No element found. */
+        if (element === null) {
+
+            /* Remove hover classes. */
+            removeHoverClassPathCountry();
+            removeHoverClassCirclePlace();
+
+            /* Log position. */
+            setDebugContent({
+                "mouse position x": svgPoint.x,
+                "mouse position y": -svgPoint.y,
+            } as DebugContent);
+
+            return;
+        }
+
+        /* Handle path.country element. */
+        if (element.tagName === tagNamePath && element.classList.contains(classNameSvgPath)) {
+            handleHoverPathCountry(element, point, svgPoint);
+            return;
+        }
+
+        /* Handle circle.place element. */
+        if (element.tagName === tagNameCircle && element.classList.contains(classNameSvgCircle)) {
+            handleHoverCirclePlace(element, point, svgPoint);
+            return;
+        }
+
+        /* Log position and element type of unknown type. */
+        setDebugContent({
+            "mouse position x": svgPoint.x,
+            "mouse position y": -svgPoint.y,
+            "element type": element.tagName,
+        } as DebugContent);
+    }
+
+    /**
+     * "mousemove" event with mouse down.
+     *
+     * @param event
+     */
+    const handleMouseMoveWithMouseDown = (event: React.MouseEvent<SVGSVGElement, MouseEvent> | SVGSVGElementEventMap["mousemove"]) => {
+
+        /* Print debug information. */
+        setDebugType(handleMouseMove.name + ` (${eventNameMouseDown})`);
 
         /* Prevent event bubbling. */
         event.preventDefault();
@@ -189,10 +339,10 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         if (distance > 2) {
             setIsMouseMoveGlobal(true);
         }
-    };
+    }
 
     /**
-     * "mouseup" and "mouseleave" event.
+     * "mouseup" event.
      */
     const handleMouseUp = (event: React.MouseEvent<SVGSVGElement, MouseEvent> | SVGSVGElementEventMap["mouseup"]) => {
 
@@ -210,6 +360,37 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
 
         /* Set last element. */
         lastEvent.current = null;
+    };
+
+    /**
+     * "mouseleave" event.
+     */
+    const handleMouseLeave = (event: React.MouseEvent<SVGSVGElement, MouseEvent> | SVGSVGElementEventMap["mouseleave"]) => {
+
+        /* Print debug information. */
+        setDebugType(handleMouseLeave.name);
+
+        /* Disable isMouseDownGlobal */
+        setIsMouseDownGlobal(false);
+        setIsMouseMoveGlobal(false);
+    }
+
+    /**
+     * "mouseenter" event.
+     */
+    const handleMouseEnter = (event: React.MouseEvent<SVGSVGElement, MouseEvent> | SVGSVGElementEventMap["mouseenter"]) => {
+
+        /* Print debug information. */
+        setDebugType(handleMouseEnter.name);
+    };
+
+    /**
+     * "mouseover" event.
+     */
+    const handleMouseOver = (event: React.MouseEvent<SVGSVGElement, MouseEvent> | SVGSVGElementEventMap["mouseover"]) => {
+
+        /* Print debug information. */
+        setDebugType(handleMouseOver.name);
     };
 
 
@@ -230,13 +411,6 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         /* Svg is not available -> stop handle. */
         if (!svgRef.current) {
             return;
-        }
-
-        const target = event.target as SVGElement;
-
-        /* Allow "svg path" to bubble touch events. */
-        if (target.tagName === 'path') {
-
         }
 
         /* Set last element. */
@@ -270,10 +444,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
      *
      * @param event
      */
-    const handleTouchStartPanning = (
-        event:
-            React.TouchEvent<SVGSVGElement> | SVGSVGElementEventMap["touchstart"]
-    ) => {
+    const handleTouchStartPanning = (event: React.TouchEvent<SVGSVGElement> | SVGSVGElementEventMap["touchstart"]) => {
 
         /* Only 1 touch is supported. */
         if (event.touches.length !== 1) {
@@ -298,10 +469,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
      *
      * @param event
      */
-    const handleTouchStartPinchToZoom = (
-        event:
-            React.TouchEvent<SVGSVGElement> | SVGSVGElementEventMap["touchstart"]
-    ) => {
+    const handleTouchStartPinchToZoom = (event: React.TouchEvent<SVGSVGElement> | SVGSVGElementEventMap["touchstart"]) => {
 
         /* Only 2 touch is supported. */
         if (event.touches.length !== 2) {
@@ -700,8 +868,16 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
      * @param type
      */
     const setDebugType = (type: string) => {
-        const element = document.getElementById('debug-map-type');
 
+        /* Debug is disabled. */
+        if (!debug) {
+            return;
+        }
+
+        /* Try to get debug map type area. */
+        const element = document.getElementById(idDebugMapType);
+
+        /* Debug map type area element was not found. */
         if (!element) {
             return;
         }
@@ -719,8 +895,16 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
      * @param content
      */
     const setDebugContent = (content: DebugContent) => {
-        const element = document.getElementById('debug-map-content');
 
+        /* Debug is disabled. */
+        if (!debug) {
+            return;
+        }
+
+        /* Try to get debug map type content. */
+        const element = document.getElementById(idDebugMapContent);
+
+        /* Debug map type content element was not found. */
         if (!element) {
             return;
         }
@@ -889,7 +1073,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         }
 
         /* Try to get element from given event. */
-        const element = getSvgElementFromSvg(svgRef.current, svgPoint);
+        const element = getSvgElementFromSvg(svgRef.current, svgPoint, [tagNamePath], tagNamePath);
 
         /* No element found. */
         if (element === null) {
@@ -897,7 +1081,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         }
 
         /* Only handle path.country. */
-        if (element.tagName !== 'path' || !element.classList.contains('country')) {
+        if (element.tagName !== tagNamePath || !element.classList.contains(classNameSvgPath)) {
             return;
         }
 
@@ -933,21 +1117,21 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             return;
         }
 
-        const id = element.id;
+        const countryId = element.id;
 
         /* No countryMap found. */
-        if (!(id in countryMap)) {
+        if (!(countryId in countryMap)) {
             onClickCountry({
-                id: id
+                id: countryId
             });
 
             return;
         }
 
-        const countryData = countryMap[id];
+        const countryData = countryMap[countryId];
 
         const data = {
-            id: id,
+            id: countryId,
             name: countryData[getLanguageName(languageGlobal)]
         } as ClickCountryData;
 
@@ -979,6 +1163,102 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         onClickCountry(data);
     };
 
+    /**
+     * Handle hover path.country.
+     *
+     * @param elementPath
+     * @param point
+     * @param svgPoint
+     */
+    const handleHoverPathCountry = (
+        elementPath: SVGElement,
+        point: Point|null = null,
+        svgPoint: SVGPoint|null = null
+    ) => {
+
+        let countryId = elementPath.id;
+        let countryData = null;
+        let countryName = null;
+
+        /* No svgPoint is given. */
+        if (svgPoint === null) {
+            return;
+        }
+
+        /* Only handle svg.path[class=country] elements. */
+        if (elementPath.tagName !== tagNamePath || !elementPath.classList.contains(classNameSvgPath)) {
+            return;
+        }
+
+        /* Remove hover class from all svg.path[class=country] and svg.circle[class=place] elements. */
+        removeHoverClassPathCountry();
+        removeHoverClassCirclePlace();
+
+        /* Add hover to current element. */
+        elementPath.classList.add(classNameHover);
+
+        /* No countryMap found. */
+        if (countryId in countryMap) {
+            countryData = countryMap[countryId];
+            countryName = countryData[getLanguageName(languageGlobal)];
+        }
+
+        /* Log position and element type. */
+        setDebugContent({
+            "mouse position x": svgPoint.x,
+            "mouse position y": -svgPoint.y,
+            "element type": elementPath.tagName,
+            "element id": countryId,
+            "element name": countryName,
+        } as DebugContent);
+    };
+
+    /**
+     * Handle hover circle.place.
+     *
+     * @param elementCircle
+     * @param point
+     * @param svgPoint
+     */
+    const handleHoverCirclePlace = (
+        elementCircle: SVGElement,
+        point: Point|null = null,
+        svgPoint: SVGPoint|null = null
+    ) => {
+
+        let name = null;
+
+        /* No svgPoint is given. */
+        if (svgPoint === null) {
+            return;
+        }
+
+        /* Only handle svg.path[class=country] elements. */
+        if (elementCircle.tagName !== tagNameCircle || !elementCircle.classList.contains(classNameSvgCircle)) {
+            return;
+        }
+
+        /* Remove hover class from all svg.circle[class=place] elements. */
+        removeHoverClassCirclePlace();
+
+        /* Add hover to current element. */
+        elementCircle.classList.add(classNameHover);
+
+        /* Extract the name (title) of the circle element. */
+        const title = elementCircle.querySelector('title');
+        if (title) {
+            name = title.textContent;
+        }
+
+        /* Log position and element type. */
+        setDebugContent({
+            "mouse position x": svgPoint.x,
+            "mouse position y": -svgPoint.y,
+            "element type": elementCircle.tagName,
+            "name": name,
+        } as DebugContent);
+    }
+
 
 
     /**
@@ -1003,12 +1283,12 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
      * Add mousedown event listener.
      */
     useEffect(() => {
-        document.addEventListener('mousedown', hideScrollHint);
+        document.addEventListener(eventNameMouseDown, hideScrollHint);
 
         return () => {
-            document.removeEventListener('mousedown', hideScrollHint);
+            document.removeEventListener(eventNameMouseDown, hideScrollHint);
         };
-    }, []);
+    }, []); /* Register mousedown listener to the whole page whenever any value of this component is changed. */
 
     /**
      * Handle zoom in trigger actions.
@@ -1017,7 +1297,9 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         if (stateZoomIn > 0) {
             handleZoomIn();
         }
-    }, [stateZoomIn]);
+    }, [
+        stateZoomIn
+    ]); /* Run this effect whenever the stateZoomIn value changes. */
 
     /**
      * Handle zoom out trigger actions.
@@ -1026,7 +1308,9 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         if (stateZoomOut > 0) {
             handleZoomOut();
         }
-    }, [stateZoomOut]);
+    }, [
+        stateZoomOut
+    ]); /* Run this effect whenever the stateZoomOut value changes. */
 
     /**
      * Register mouse, wheel and touch events. Also add tidy up (unregister) mouse, wheel and touch events, when
@@ -1047,34 +1331,38 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
          * A) Mouse Events.
          * ================
          */
-        /* svgElement.addEventListener('mousedown') vs. svg.onMouseDown */
-        eventMouseDownAsEventListener && svgElement.addEventListener('mousedown', handleMouseDown, { passive: false });
-        /* svgElement.addEventListener('mousemove') vs. svg.onMouseMove */
-        eventMouseMoveAsEventListener && svgElement.addEventListener('mousemove', handleMouseMove, { passive: false });
-        /* svgElement.addEventListener('mouseup') vs. svg.onMouseUp */
-        eventMouseUpAsEventListener && svgElement.addEventListener('mouseup', handleMouseUp, { passive: false });
-        /* svgElement.addEventListener('mouseleave') vs. svg.onMouseLeave */
-        //eventMouseLeaveAsEventListener && svgElement.addEventListener('mouseleave', handleMouseUp, { passive: false });
+        /* 1) svgElement.addEventListener(eventNameMouseDown) vs. svg.onMouseDown */
+        eventMouseDownEnabled && eventMouseDownAsEventListener && svgElement.addEventListener(eventNameMouseDown, handleMouseDown, { passive: false });
+        /* 2) svgElement.addEventListener(eventNameMouseMove) vs. svg.onMouseMove */
+        eventMouseMoveEnabled && eventMouseMoveAsEventListener && svgElement.addEventListener(eventNameMouseMove, handleMouseMove, { passive: false });
+        /* 3) svgElement.addEventListener(eventNameMouseUp) vs. svg.onMouseUp */
+        eventMouseUpEnabled && eventMouseUpAsEventListener && svgElement.addEventListener(eventNameMouseUp, handleMouseUp, { passive: false });
+        /* 4) svgElement.addEventListener(eventNameMouseLeave) vs. svg.onMouseLeave */
+        eventMouseLeaveEnabled && eventMouseLeaveAsEventListener && svgElement.addEventListener(eventNameMouseLeave, handleMouseLeave, { passive: false });
+        /* 5) svgElement.addEventListener(eventNameMouseEnter) vs. svg.onMouseEnter */
+        eventMouseEnterEnabled && eventMouseEnterAsEventListener && svgElement.addEventListener(eventNameMouseEnter, handleMouseEnter, { passive: false });
+        /* 6) svgElement.addEventListener(eventNameMouseOver) vs. svg.onMouseOver */
+        eventMouseOverEnabled && eventMouseOverAsEventListener && svgElement.addEventListener(eventNameMouseOver, handleMouseOver, { passive: false });
 
         /**
          * ================
          * B) Touch Events.
          * ================
          */
-        /* svgElement.addEventListener('touchstart') vs. svg.onTouchStart */
-        eventTouchStartAsEventListener && svgElement.addEventListener('touchstart', handleTouchStart, { passive: false });
-        /* svgElement.addEventListener('touchmove') vs. svg.onTouchMove */
-        eventTouchMoveAsEventListener && svgElement.addEventListener('touchmove', handleTouchMove, { passive: false });
-        /* svgElement.addEventListener('touchend') vs. svg.onTouchEnd */
-        eventTouchEndAsEventListener && svgElement.addEventListener('touchend', handleTouchEnd, { passive: false });
+        /* 1) svgElement.addEventListener(eventNameTouchStart) vs. svg.onTouchStart */
+        eventTouchStartEnabled && eventTouchStartAsEventListener && svgElement.addEventListener(eventNameTouchStart, handleTouchStart, { passive: false });
+        /* 2) svgElement.addEventListener(eventNameTouchMove) vs. svg.onTouchMove */
+        eventTouchMoveEnabled && eventTouchMoveAsEventListener && svgElement.addEventListener(eventNameTouchMove, handleTouchMove, { passive: false });
+        /* 3) svgElement.addEventListener(eventNameTouchEnd) vs. svg.onTouchEnd */
+        eventTouchEndEnabled && eventTouchEndAsEventListener && svgElement.addEventListener(eventNameTouchEnd, handleTouchEnd, { passive: false });
 
         /**
          * =========================
          * C) Wheel and Zoom Events.
          * =========================
          */
-        /* svgElement.addEventListener('wheel') vs. svg.onWheel */
-        eventWheelAsEventListener && svgElement.addEventListener('wheel', handleWheel, { passive: false });
+        /* 1) svgElement.addEventListener(eventNameWheel) vs. svg.onWheel */
+        eventWheelEnabled && eventWheelAsEventListener && svgElement.addEventListener(eventNameWheel, handleWheel, { passive: false });
 
         /**
          * Unregister part.
@@ -1086,39 +1374,43 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
              * A) Mouse Events.
              * ================
              */
-            /* svgElement.addEventListener('mousedown') vs. svg.onMouseDown */
-            eventMouseDownAsEventListener && svgElement.removeEventListener('mousedown', handleMouseDown);
-            /* svgElement.addEventListener('mousemove') vs. svg.onMouseMove */
-            eventMouseMoveAsEventListener && svgElement.removeEventListener('mousemove', handleMouseMove);
-            /* svgElement.addEventListener('mouseup') vs. svg.onMouseUp */
-            eventMouseUpAsEventListener && svgElement.removeEventListener('mouseup', handleMouseUp);
-            /* svgElement.addEventListener('mouseleave') vs. svg.onMouseLeave */
-            //eventMouseLeaveAsEventListener && svgElement.removeEventListener('mouseleave', handleMouseUp);
+            /* 1) svgElement.addEventListener(eventNameMouseDown) vs. svg.onMouseDown */
+            eventMouseDownEnabled && eventMouseDownAsEventListener && svgElement.removeEventListener(eventNameMouseDown, handleMouseDown);
+            /* 2) svgElement.addEventListener(eventNameMouseMove) vs. svg.onMouseMove */
+            eventMouseMoveEnabled && eventMouseMoveAsEventListener && svgElement.removeEventListener(eventNameMouseMove, handleMouseMove);
+            /* 3) svgElement.addEventListener(eventNameMouseUp) vs. svg.onMouseUp */
+            eventMouseUpEnabled && eventMouseUpAsEventListener && svgElement.removeEventListener(eventNameMouseUp, handleMouseUp);
+            /* 4) svgElement.addEventListener(eventNameMouseLeave) vs. svg.onMouseLeave */
+            eventMouseLeaveEnabled && eventMouseLeaveAsEventListener && svgElement.removeEventListener(eventNameMouseLeave, handleMouseLeave);
+            /* 5) svgElement.addEventListener(eventNameMouseEnter) vs. svg.onMouseEnter */
+            eventMouseEnterEnabled && eventMouseEnterAsEventListener && svgElement.removeEventListener(eventNameMouseEnter, handleMouseEnter);
+            /* 6) svgElement.addEventListener(eventNameMouseOver) vs. svg.onMouseOver */
+            eventMouseOverEnabled && eventMouseOverAsEventListener && svgElement.removeEventListener(eventNameMouseOver, handleMouseOver);
 
             /**
              * ================
              * B) Touch Events.
              * ================
              */
-            /* svgElement.addEventListener('touchstart') vs. svg.onTouchStart */
-            eventTouchStartAsEventListener && svgElement.removeEventListener('touchstart', handleTouchStart);
-            /* svgElement.addEventListener('touchmove') vs. svg.onTouchMove */
-            eventTouchMoveAsEventListener && svgElement.removeEventListener('touchmove', handleTouchMove);
-            /* svgElement.addEventListener('touchend') vs. svg.onTouchEnd */
-            eventTouchEndAsEventListener && svgElement.removeEventListener('touchend', handleTouchEnd);
+            /* 1) svgElement.addEventListener(eventNameTouchStart) vs. svg.onTouchStart */
+            eventTouchStartEnabled && eventTouchStartAsEventListener && svgElement.removeEventListener(eventNameTouchStart, handleTouchStart);
+            /* 2) svgElement.addEventListener(eventNameTouchMove) vs. svg.onTouchMove */
+            eventTouchMoveEnabled && eventTouchMoveAsEventListener && svgElement.removeEventListener(eventNameTouchMove, handleTouchMove);
+            /* 3) svgElement.addEventListener(eventNameTouchEnd) vs. svg.onTouchEnd */
+            eventTouchEndEnabled && eventTouchEndAsEventListener && svgElement.removeEventListener(eventNameTouchEnd, handleTouchEnd);
 
             /**
              * =========================
              * C) Wheel and Zoom Events.
              * =========================
              */
-            /* svgElement.addEventListener('wheel') vs. svg.onWheel */
-            eventWheelAsEventListener && svgElement.removeEventListener('wheel', handleWheel);
+            /* 1) svgElement.addEventListener(eventNameWheel) vs. svg.onWheel */
+            eventWheelEnabled && eventWheelAsEventListener && svgElement.removeEventListener(eventNameWheel, handleWheel);
         };
     }, [
         viewBox,
         startPoint
-    ]);
+    ]); /* Run this effect whenever the viewBox or startPoint value changes. */
 
     /**
      * Initializes the rendering process.
@@ -1153,7 +1445,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
     }, [
         svgContent,
         country
-    ]); /* Run this effect whenever the svgContent or country changes. */
+    ]); /* Run this effect whenever the svgContent or country value changes. */
 
 
 
@@ -1166,7 +1458,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         <svg
             xmlns="http://www.w3.org/2000/svg"
             ref={svgRef}
-            id="svg-map"
+            id={idSvgMap}
             className={[
                 /* Mouse classes. */
                 // (isMouseDown || isMouseMove) && "mouse-event",
@@ -1186,26 +1478,29 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
              * A) Mouse Events.
              * ================
              */
-            onMouseDown={!eventMouseDownAsEventListener ? handleMouseDown : undefined}
-            onMouseMove={!eventMouseMoveAsEventListener ? handleMouseMove : undefined}
-            onMouseUp={!eventMouseUpAsEventListener ? handleMouseUp : undefined}
-            //onMouseLeave={!eventMouseLeaveAsEventListener ? handleMouseUp : undefined}
+            onMouseDown={(eventMouseDownEnabled && !eventMouseDownAsEventListener) ? handleMouseDown : undefined}
+            onMouseMove={(eventMouseMoveEnabled && !eventMouseMoveAsEventListener) ? handleMouseMove : undefined}
+            onMouseUp={(eventMouseUpEnabled && !eventMouseUpAsEventListener) ? handleMouseUp : undefined}
+            onMouseLeave={(eventMouseLeaveEnabled && !eventMouseLeaveAsEventListener) ? handleMouseLeave : undefined}
+            onMouseEnter={(eventMouseEnterEnabled && !eventMouseEnterAsEventListener) ? handleMouseEnter : undefined}
+            onMouseOver={(eventMouseOverEnabled && !eventMouseOverAsEventListener) ? handleMouseOver : undefined}
+
 
             /**
              * ================
              * B) Touch Events.
              * ================
              */
-            onTouchStart={!eventTouchStartAsEventListener ? handleTouchStart : undefined}
-            onTouchMove={!eventTouchMoveAsEventListener ? handleTouchMove : undefined}
-            onTouchEnd={!eventTouchEndAsEventListener ? handleTouchEnd : undefined}
+            onTouchStart={(eventTouchStartEnabled && !eventTouchStartAsEventListener) ? handleTouchStart : undefined}
+            onTouchMove={(eventTouchMoveEnabled && !eventTouchMoveAsEventListener) ? handleTouchMove : undefined}
+            onTouchEnd={(eventTouchEndEnabled && !eventTouchEndAsEventListener) ? handleTouchEnd : undefined}
 
             /**
              * =========================
              * C) Wheel and Zoom Events.
              * =========================
              */
-            onWheel={!eventWheelAsEventListener ? handleWheel : undefined}
+            onWheel={(eventWheelEnabled && !eventWheelAsEventListener) ? handleWheel : undefined}
         />
     );
 };

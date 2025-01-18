@@ -77,3 +77,5 @@ export type TypeBoundingBox = {
 };
 
 export type TypeClickCountry = ((data: ClickCountryData) => void)|null;
+
+export type TypeSvgElement = 'path'|'circle';

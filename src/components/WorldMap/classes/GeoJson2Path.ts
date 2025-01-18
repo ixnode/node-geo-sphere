@@ -1,6 +1,7 @@
 /* Import configuration. */
 import {countryMap} from "../config/countries";
 import {defaultLanguage} from "../../../config/config";
+import {classNameSvgPath, classNameSelected} from "../config/elementNames";
 
 /* Import types. */
 import {InterfaceGeoJson, TypeBoundingBox} from "../types/types";
@@ -25,22 +26,23 @@ interface GeoJson2PathOptions {
 /* TypeSvgPath type. */
 export type TypeSvgPath = {
     type: "path";
-    fill: string;
-    stroke: string;
-    "stroke-width": number;
-    path: string;
     id: string|null;
     name: string;
+    path: string;
+    selected: boolean;
+    fill?: string;
+    stroke?: string;
+    "stroke-width"?: number;
 }
 
 /* TypeSvgCircle type. */
 export type TypeSvgCircle = {
     type: "circle";
+    name: string;
     x: number;
     y: number;
-    r: number;
-    fill: string;
-    name: string;
+    r?: number;
+    fill?: string;
 }
 
 /* TypeSvgContent type. */
@@ -73,6 +75,121 @@ export class GeoJson2Path {
     {
         const { language = defaultLanguage, ...restOptions } = options;
         this.options = { language, ...restOptions };
+    }
+
+    /**
+     * Build TypeSvgPath and TypeSvgPath elements from given geoJSON object.
+     *
+     * @param geoJSON
+     * @param country
+     * @param boundingBoxWidth
+     */
+    public convert(
+        geoJSON: InterfaceGeoJson,
+        country: string|null,
+        boundingBoxWidth: number
+    ): (TypeSvgPath | TypeSvgCircle)[] {
+        const paths: (TypeSvgPath | TypeSvgCircle)[] = [];
+
+        const radiusCircle = this.mapWidthToPointSize(boundingBoxWidth);
+        const borderWidth = Math.round(boundingBoxWidth / 1500);
+        const languageName = getLanguageName(this.options.language);
+
+        geoJSON.features.forEach(feature => {
+            const { type, coordinates } = feature.geometry;
+
+            /**
+             * Add simple polygon.
+             */
+            if (type === 'Polygon') {
+                const sameCountry = (country ? country.toUpperCase() : null) === feature.id;
+                const id = feature.id ? feature.id.toUpperCase() : 'XX';
+                const name = id.toLowerCase() in countryMap ? countryMap[id.toLowerCase()][languageName] : id;
+
+                (coordinates as number[][][]).forEach(ring => {
+                    paths.push({
+                        type: "path",
+                        id: id,
+                        name: name ?? 'unknown',
+                        path: this.convertCoordsToPath(ring),
+                        selected: sameCountry,
+                        "stroke-width": borderWidth,
+                    });
+                });
+
+                /**
+                 * Add multi polygon.
+                 */
+            } else if (type === 'MultiPolygon') {
+                const sameCountry = (country ? country?.toUpperCase() : null) === feature.id;
+                const id = feature.id ? feature.id.toUpperCase() : 'XX';
+                const name = id.toLowerCase() in countryMap ? countryMap[id.toLowerCase()][languageName] : id;
+
+                const multiPolygonPath = (coordinates as number[][][][]).map(polygon => {
+                    return polygon.map(ring => this.convertCoordsToPath(ring)).join(' ');
+                }).join(' ');
+
+                paths.push({
+                    type: "path",
+                    id: id,
+                    name: name ?? 'unknown',
+                    path: multiPolygonPath,
+                    selected: sameCountry,
+                    "stroke-width": borderWidth,
+                });
+
+                /**
+                 * Add point.
+                 */
+            } else if (type === 'Point') {
+                const [x, y] = coordinates as number[];
+                const name = feature.name ? feature.name : 'Unknown city';
+
+                paths.push({
+                    type: "circle",
+                    name: name,
+                    x: x,
+                    y: this.invertY(y),
+                    //r: radiusCircle,
+                });
+            }
+        });
+
+        return paths;
+    }
+
+    /**
+     * Generates the svg string.
+     *
+     * @param geoJSON
+     * @param boundingBox
+     * @param country
+     */
+    public generateSVG(
+        geoJSON: InterfaceGeoJson,
+        boundingBox: TypeBoundingBox,
+        country: string|null
+    ): TypeSvgContent {
+        const viewBoxLeft = boundingBox.longitudeMin;
+        const viewBoxTop = -boundingBox.latitudeMax;
+        const viewBoxWidth = (boundingBox.longitudeMax - boundingBox.longitudeMin);
+        const viewBoxHeight = boundingBox.latitudeMax - boundingBox.latitudeMin;
+
+        const elements = this.convert(geoJSON, country, viewBoxWidth);
+
+        /* Build svg paths. */
+        const svgPaths = elements
+            .filter((element): element is TypeSvgPath => 'path' in element)
+            .map((element) => this.getSvgPath(element))
+            .join('');
+
+        /* Build svg circles. */
+        const svgCircles = elements
+            .filter((element): element is TypeSvgCircle => 'x' in element && 'y' in element)
+            .map((element) => this.getSvgCircle(element))
+            .join('');
+
+        return { svgPaths, svgCircles, viewBoxLeft, viewBoxTop, viewBoxWidth, viewBoxHeight };
     }
 
     /**
@@ -112,132 +229,36 @@ export class GeoJson2Path {
     };
 
     /**
-     * Build TypeSvgPath and TypeSvgPath elements from given geoJSON object.
+     * Build svg path element.
      *
-     * @param geoJSON
-     * @param country
-     * @param boundingBoxWidth
+     * @param element
+     * @private
      */
-    public convert(
-        geoJSON: InterfaceGeoJson,
-        country: string|null,
-        boundingBoxWidth: number
-    ): (TypeSvgPath | TypeSvgCircle)[] {
-        const paths: (TypeSvgPath | TypeSvgCircle)[] = [];
+    private getSvgPath(element: TypeSvgPath): string {
+        const {id , name, path, selected, fill, stroke, 'stroke-width': strokeWidth} = element;
 
-        const radiusCircle = this.mapWidthToPointSize(boundingBoxWidth);
-        const borderWidth = Math.round(boundingBoxWidth / 1500);
-        const languageName = getLanguageName(this.options.language);
+        const idName = id ? id.toLowerCase() : null;
 
-        geoJSON.features.forEach(feature => {
-            const { type, coordinates } = feature.geometry;
-
-            /**
-             * Add simple polygon.
-             */
-            if (type === 'Polygon') {
-                const sameCountry = (country ? country.toUpperCase() : null) === feature.id;
-                const id = feature.id ? feature.id.toUpperCase() : 'XX';
-                const name = id.toLowerCase() in countryMap ? countryMap[id.toLowerCase()][languageName] : id;
-
-                (coordinates as number[][][]).forEach(ring => {
-                    paths.push({
-                        type: "path",
-                        path: this.convertCoordsToPath(ring),
-                        fill: sameCountry ? '#c0e0c0' : '#d0d0d0',
-                        stroke: '#a0a0a0',
-                        "stroke-width": borderWidth,
-                        id: id,
-                        name: name ?? 'unknown',
-                    });
-                });
-
-            /**
-             * Add multi polygon.
-             */
-            } else if (type === 'MultiPolygon') {
-                const sameCountry = (country ? country?.toUpperCase() : null) === feature.id;
-                const id = feature.id ? feature.id.toUpperCase() : 'XX';
-                const name = id.toLowerCase() in countryMap ? countryMap[id.toLowerCase()][languageName] : id;
-
-                const multiPolygonPath = (coordinates as number[][][][]).map(polygon => {
-                    return polygon.map(ring => this.convertCoordsToPath(ring)).join(' ');
-                }).join(' ');
-
-                paths.push({
-                    type: "path",
-                    path: multiPolygonPath,
-                    fill: sameCountry ? '#c0e0c0' : '#d0d0d0',
-                    stroke: '#a0a0a0',
-                    "stroke-width": borderWidth,
-                    id: id,
-                    name: name ?? 'unknown',
-                });
-
-            /**
-             * Add point.
-             */
-            } else if (type === 'Point') {
-                const [x, y] = coordinates as number[];
-                const name = feature.name ? feature.name : 'Unknown city';
-
-                paths.push({
-                    type: "circle",
-                    x: x,
-                    y: this.invertY(y),
-                    r: radiusCircle,
-                    fill: '#008000',
-                    name: name
-                });
-            }
-        });
-
-        return paths;
-    }
+        return `
+            <path class="${[classNameSvgPath, selected ? classNameSelected : ''].filter(Boolean).join(' ')}" id="${idName}" d="${path}"${fill !== undefined ? ` fill="${fill}"` : ''}${stroke !== undefined ? ` stroke="${stroke}"` : ''}${strokeWidth !== undefined ? ` stroke-width="${strokeWidth}"` : ''}>
+                <title>${name}</title>
+            </path>
+        `;
+    };
 
     /**
-     * Generates the svg string.
+     * Build svg circle element.
      *
-     * @param geoJSON
-     * @param boundingBox
-     * @param country
+     * @param element
+     * @private
      */
-    public generateSVG(
-        geoJSON: InterfaceGeoJson,
-        boundingBox: TypeBoundingBox,
-        country: string|null
-    ): TypeSvgContent {
-        const viewBoxLeft = boundingBox.longitudeMin;
-        const viewBoxTop = -boundingBox.latitudeMax;
-        const viewBoxWidth = (boundingBox.longitudeMax - boundingBox.longitudeMin);
-        const viewBoxHeight = boundingBox.latitudeMax - boundingBox.latitudeMin;
+    private getSvgCircle(element: TypeSvgCircle): string {
+        const { x, y, r, fill, name} = element;
 
-        const elements = this.convert(geoJSON, country, viewBoxWidth);
-
-        const svgPaths = elements
-            .filter((element): element is TypeSvgPath => 'path' in element)
-            .map(({ path, fill, stroke, 'stroke-width': strokeWidth, id , name}) => {
-                const idName = id ? id.toLowerCase() : null;
-
-                return `
-                    <path id="${idName}" class="country" d="${path}" fill="${fill}" stroke="${stroke}" stroke-width="${strokeWidth}">
-                        <title>${name}</title>
-                    </path>
-                `;
-            })
-            .join('');
-
-        const svgCircles = elements
-            .filter((element): element is TypeSvgCircle => 'x' in element && 'y' in element)
-            .map(({ x, y, r, fill, name}) => {
-                return `
-                    <circle r="${r}" cx="${x}" cy="${y}" fill="${fill}" class="place">
-                        <title>${name}</title>
-                    </circle>
-                `;
-            })
-            .join('');
-
-        return { svgPaths, svgCircles, viewBoxLeft, viewBoxTop, viewBoxWidth, viewBoxHeight };
-    }
+        return `
+            <circle class="place" cx="${x}" cy="${y}"${fill !== undefined ? ` fill="${fill}"` : ''}${r !== undefined ? ` r="${r}"` : ''}>
+                <title>${name}</title>
+            </circle>
+        `;
+    };
 }
