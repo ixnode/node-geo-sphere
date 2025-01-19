@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Changelogs
 
+### [0.1.21] - 2025-01-19
+
+* Add population and translation to some european capitals
+
 ### [0.1.20] - 2025-01-19
 
 * Add translated place names
