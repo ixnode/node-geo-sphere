@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Changelogs
 
+### [0.1.27] - 2025-01-20
+
+* Hover fix if debug mode is enabled
+
 ### [0.1.26] - 2025-01-20
 
 * Implement country and place hover handler (onHoverCountry, onHoverPlace)
