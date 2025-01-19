@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Changelogs
 
+### [0.1.25] - 2025-01-19
+
+* Add new preview images
+
 ### [0.1.24] - 2025-01-19
 
 * Add priority and size to cities to optimize svg output
