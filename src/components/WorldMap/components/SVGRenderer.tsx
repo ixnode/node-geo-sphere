@@ -675,6 +675,10 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
      * =========================
      */
 
+    const isTouchpad = (event: React.WheelEvent<SVGSVGElement> | WheelEvent): boolean => {
+        return false; //Math.abs(event.deltaY) < 100;
+    };
+
     /**
      * "wheel" event.
      */
@@ -727,14 +731,17 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         const mouseX = clientX - svgRect.left;
         const mouseY = clientY - svgRect.top;
 
+        /* Normalize deltaY for touchpad and mouse. */
+        const normalizedDeltaY = isTouchpad(event) ? deltaY * 1000 : deltaY;
+
         /* Save new viewBox. */
         setViewBoxAndShowDebug(calculateZoomViewBox(
-            viewBox,        /* Current viewBox. */
-            svgRect.width,  /* Width of svg area. */
-            svgRect.height, /* Height of svg area. */
-            mouseX,         /* X-Position of the mouse. */
-            mouseY,         /* Y-Position of the mouse. */
-            deltaY,         /* Zoom width. */
+            viewBox,          /* Current viewBox. */
+            svgRect.width,    /* Width of svg area. */
+            svgRect.height,   /* Height of svg area. */
+            mouseX,           /* X-Position of the mouse. */
+            mouseY,           /* Y-Position of the mouse. */
+            normalizedDeltaY, /* Zoom width. */
         ));
     };
 
@@ -1365,6 +1372,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         let placeId = elementG.id;
         let placeData = null;
         let placeName = null;
+        let placePopulation = null;
         let placeCountry = null;
         let countryId = null;
         let countryData = null;
@@ -1384,6 +1392,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         if (placeId in cityMap) {
             placeData = cityMap[placeId] as TypeCity;
             placeName = getTranslatedNamePlace(placeData, languageGlobal);
+            placePopulation = placeData.population;
             placeCountry = placeData.country;
         }
 
@@ -1403,7 +1412,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         countryId && addHoverClass(countryId);
 
         /* Add title. */
-        addHoverTitle(countryName ?? textNotAvailable, placeName ?? textNotAvailable);
+        addHoverTitle(countryName ?? textNotAvailable, placeName ?? textNotAvailable, placePopulation);
 
         let debugContent: DebugContent = {
             "mouse position x": svgPoint.x,

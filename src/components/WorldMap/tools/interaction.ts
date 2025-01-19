@@ -260,8 +260,9 @@ export const addHoverClass = (target: SVGElement|string): void => {
  *
  * @param title
  * @param subtitle
+ * @param population
  */
-export const addHoverTitle = (title: string, subtitle: string|null = null): void => {
+export const addHoverTitle = (title: string, subtitle: string|null = null, population: number|null = null): void => {
 
     const elementTitle = document.getElementById(idWorldMapTitle);
 
@@ -282,7 +283,7 @@ export const addHoverTitle = (title: string, subtitle: string|null = null): void
     }
 
     if (elementSubtitle) {
-        elementSubtitle.textContent = subtitle;
+        elementSubtitle.textContent = subtitle + (population !== null ? (' (' + population.toLocaleString('de-DE') + ')') : null);
 
         if (subtitle.length > 0) {
             elementSubtitle.classList.add(classNameVisible);

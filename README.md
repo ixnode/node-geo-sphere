@@ -101,6 +101,17 @@ The callback function logs something like (according to the clicked country and 
 }
 ```
 
+| Property           | Description                                                     |
+|--------------------|-----------------------------------------------------------------|
+| `id`               | The id of clicked element.                                      |
+| `name`             | The translated name of clicked element.                         |
+| `latitude`         | The latitude value. Clicked on the map.                         |
+| `longitude`        | The longitude value. Clicked on the map.                        |
+| `screenPosition.x` | The x position of the last click. Related to the screen.        |
+| `screenPosition.y` | The y position of the last click. Related to the screen.        |
+| `svgPosition.x`    | The x position of the last click. Related to the whole svg map. |
+| `svgPosition.y`    | The x position of the last click. Related to the whole svg map. |
+
 ### Usage with callback function (place)
 
 ```tsx
@@ -141,17 +152,6 @@ The callback function logs something like (according to the clicked country and 
 }
 ```
 
-| Property           | Description                                                     |
-|--------------------|-----------------------------------------------------------------|
-| `id`               | The id of clicked element.                                      |
-| `name`             | The translated name of clicked element.                         |
-| `latitude`         | The latitude value. Clicked on the map.                         |
-| `longitude`        | The longitude value. Clicked on the map.                        |
-| `screenPosition.x` | The x position of the last click. Related to the screen.        |
-| `screenPosition.y` | The y position of the last click. Related to the screen.        |
-| `svgPosition.x`    | The x position of the last click. Related to the whole svg map. |
-| `svgPosition.y`    | The x position of the last click. Related to the whole svg map. |
-
 ## 🔧 Properties
 
 | Property         | Type                                                                   | Default | Description                                                                                     |
@@ -162,7 +162,7 @@ The callback function logs something like (according to the clicked country and 
 | `height`         | `number`                                                               | `500`   | The height of the map in pixels. Only used for ratio. The svg is always 100% of parent element. |
 | `language`       | `'cz'`\|`'de'`\|`'en'`\|`'es'`\|`'fr'`\|`'hr'`\|`'it'`\|`'pl'`\|`'sv'` | `'en'`  | The language to be used.                                                                        |
 | `onClickCountry` | `(data: ClickCountryData) => void\|null`                               | `null`  | An optional click handler.                                                                      |
-| `onClickPlace`   | `(data: onClickPlace) => void\|null`                                   | `null`  | An optional click handler.                                                                      |
+| `onClickPlace`   | `(data: ClickPlaceData) => void\|null`                                 | `null`  | An optional click handler.                                                                      |
 | `debug`          | `boolean`                                                              | `false` | Flag to enable or disable the debug mode.                                                       |
 | `logo`           | `boolean`                                                              | `true`  | Flag to enable or disable the logo.                                                             |
 
