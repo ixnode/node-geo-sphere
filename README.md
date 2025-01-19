@@ -65,7 +65,7 @@ export default App;
 
 ```tsx
 import React from 'react';
-import { WorldMap, ClickCountryData } from '@ixnode/geo-sphere';
+import { WorldMap, CountryData } from '@ixnode/geo-sphere';
 import '@ixnode/geo-sphere/dist/styles.css';
 
 const App = () => (
@@ -75,7 +75,7 @@ const App = () => (
         country="de"
         language="en"
         dataSource="medium"
-        onClickCountry={(data: ClickCountryData) => { console.log(data); }}
+        onClickCountry={(data: CountryData) => { console.log(data); }}
     />
 );
 
@@ -116,7 +116,7 @@ The callback function logs something like (according to the clicked country and 
 
 ```tsx
 import React from 'react';
-import { WorldMap, ClickCountryData } from '@ixnode/geo-sphere';
+import { WorldMap, PlaceData } from '@ixnode/geo-sphere';
 import '@ixnode/geo-sphere/dist/styles.css';
 
 const App = () => (
@@ -126,7 +126,7 @@ const App = () => (
         country="de"
         language="en"
         dataSource="medium"
-        onClickPlace={(data: ClickPlaceData) => { console.log(data); }}
+        onClickPlace={(data: PlaceData) => { console.log(data); }}
     />
 );
 
@@ -174,8 +174,10 @@ The callback function logs something like (according to the clicked country and 
 | `width`          | `number`                                                               | `1000`  | The width of the map in pixels. Only used for ratio. The svg is always 100% of parent element.  |
 | `height`         | `number`                                                               | `500`   | The height of the map in pixels. Only used for ratio. The svg is always 100% of parent element. |
 | `language`       | `'cz'`\|`'de'`\|`'en'`\|`'es'`\|`'fr'`\|`'hr'`\|`'it'`\|`'pl'`\|`'sv'` | `'en'`  | The language to be used.                                                                        |
-| `onClickCountry` | `(data: ClickCountryData) => void\|null`                               | `null`  | An optional click handler.                                                                      |
-| `onClickPlace`   | `(data: ClickPlaceData) => void\|null`                                 | `null`  | An optional click handler.                                                                      |
+| `onClickCountry` | `(data: CountryData) => void\|null`                                    | `null`  | An optional country click handler.                                                              |
+| `onClickPlace`   | `(data: PlaceData) => void\|null`                                      | `null`  | An optional place click handler.                                                                |
+| `onHoverCountry` | `(data: CountryData) => void\|null`                                    | `null`  | An optional country hover handler.                                                              |
+| `onHoverPlace`   | `(data: PlaceData) => void\|null`                                      | `null`  | An optional place hover handler.                                                                |
 | `debug`          | `boolean`                                                              | `false` | Flag to enable or disable the debug mode.                                                       |
 | `logo`           | `boolean`                                                              | `true`  | Flag to enable or disable the logo.                                                             |
 

@@ -1,7 +1,7 @@
 /**
- * ClickCountryData interface.
+ * CountryData interface.
  */
-export interface ClickCountryData {
+export interface CountryData {
     /* Country ID. */
     id: string;
 
@@ -32,9 +32,9 @@ export interface ClickCountryData {
 }
 
 /**
- * ClickPlaceData interface.
+ * PlaceData interface.
  */
-export interface ClickPlaceData {
+export interface PlaceData {
     /* Place ID. */
     id: string;
 

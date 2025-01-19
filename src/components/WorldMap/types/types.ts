@@ -1,7 +1,7 @@
 import { FeatureCollection } from 'geojson';
 
 /* Import interfaces. */
-import {ClickCountryData, ClickPlaceData} from "../config/interfaces";
+import {CountryData, PlaceData} from "../config/interfaces";
 import {TypeCitySize, TypeCityType} from "../config/cities";
 
 export type TypeProperties = {
@@ -83,10 +83,10 @@ export type TypeBoundingBox = {
  */
 
 /* Return ype when clicked on country. */
-export type TypeClickCountry = ((data: ClickCountryData) => void)|null;
+export type TypeClickCountry = ((data: CountryData) => void)|null;
 
 /* Return ype when clicked on place. */
-export type TypeClickPlace = ((data: ClickPlaceData) => void)|null;
+export type TypeClickPlace = ((data: PlaceData) => void)|null;
 
 
 

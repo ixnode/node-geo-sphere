@@ -17,7 +17,7 @@ import {
     defaultMapHeight,
     defaultMapWidth
 } from "./config/config";
-import {ClickCountryData, ClickPlaceData} from "./config/interfaces";
+import {CountryData, PlaceData} from "./config/interfaces";
 import {TypeLanguagesSupported} from "../../config/types";
 import {eventWheelAsEventListener} from "./config/events";
 import {idDebugMapContent, idDebugMapType, idWorldMapSubtitle, idWorldMapTitle} from "./config/elementNames";
@@ -58,10 +58,16 @@ export interface WorldMapProps {
     height?: number;
 
     /** Optional click handler (`country`) */
-    onClickCountry?: ((data: ClickCountryData) => void)|null;
+    onClickCountry?: ((data: CountryData) => void)|null;
 
-    /** Optional click handler (`country`) */
-    onClickPlace?: ((data: ClickPlaceData) => void)|null;
+    /** Optional click handler (`place`) */
+    onClickPlace?: ((data: PlaceData) => void)|null;
+
+    /** Optional hover handler (`country`) */
+    onHoverCountry?: ((data: CountryData) => void)|null;
+
+    /** Optional hover handler (`place`) */
+    onHoverPlace?: ((data: PlaceData) => void)|null;
 
     /** Which language should be used? */
     language?: TypeLanguagesSupported;
@@ -87,6 +93,8 @@ export const WorldMap: React.FC<WorldMapProps> = ({
     height = defaultMapHeight,
     onClickCountry = null,
     onClickPlace = null,
+    onHoverCountry = null,
+    onHoverPlace = null,
     language = defaultLanguage,
     debug = defaultDebug,
     logo = defaultLogo,
@@ -251,6 +259,9 @@ export const WorldMap: React.FC<WorldMapProps> = ({
 
                     onClickCountry={onClickCountry}
                     onClickPlace={onClickPlace}
+
+                    onHoverCountry={onHoverCountry}
+                    onHoverPlace={onHoverPlace}
 
                     stateZoomIn={stateZoomIn}
                     stateZoomOut={stateZoomOut}

@@ -27,7 +27,7 @@ import {
 } from "../config/events";
 import {countryMap} from "../config/countries";
 import {defaultDebug, defaultMapHeight, defaultMapWidth, scaleFactor} from "../config/config";
-import {ClickCountryData, ClickPlaceData, DebugContent, Point, SVGViewBox} from "../config/interfaces";
+import {CountryData, PlaceData, DebugContent, Point, SVGViewBox} from "../config/interfaces";
 import {
     classNameSvgCircle,
     classNameSvgG,
@@ -86,6 +86,8 @@ interface SVGRendererProps {
     country: string | null,
     onClickCountry: TypeClickCountry,
     onClickPlace: TypeClickPlace,
+    onHoverCountry: TypeClickCountry,
+    onHoverPlace: TypeClickPlace,
     language: string,
     stateZoomIn?: number,
     stateZoomOut?: number,
@@ -124,6 +126,8 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
     country,
     onClickCountry = null,
     onClickPlace = null,
+    onHoverCountry = null,
+    onHoverPlace = null,
     language = defaultLanguage,
     stateZoomIn = 0,
     stateZoomOut = 0,
@@ -149,6 +153,8 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
     const [previousDeltaY, setPreviousDeltaY] = useState<number>(0);
     const [isTouchpadThrottling, setIsTouchpadThrottling] = useState<boolean>(false);
     const [touchpadZoomTimeout, setTouchpadZoomTimeout] = useState<number|ReturnType<typeof setTimeout>|null>(null);
+    const [lastHoverCountryId, setLastHoverCountryId] = useState<string|null>(null);
+    const [lastHoverPlaceId, setLastHoverPlaceId] = useState<string|null>(null);
 
     /* Set references. */
     const svgRef = useRef<SVGSVGElement>(null!);
@@ -1238,7 +1244,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         const countryData = countryMap[countryId];
 
         /* Build click (callback) data. */
-        const clickData: ClickCountryData = {
+        const clickData: CountryData = {
             id: countryId,
             name: countryData[getLanguageNameCountry(languageGlobal)]
         };
@@ -1314,7 +1320,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         const placeData = cityMap[placeId];
 
         /* Build click (callback) data. */
-        const clickData: ClickPlaceData = {
+        const clickData: PlaceData = {
             id: placeId,
             name: getTranslatedNamePlace(placeData, languageGlobal),
             population: placeData.population,
@@ -1390,6 +1396,35 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         /* Add title. */
         addHoverTitle(countryName ?? textNotAvailable);
         removeSubtitle();
+
+        /* Element already hovered. */
+        if (!debug && (countryId in countryMap) && countryId === lastHoverCountryId) {
+            return;
+        }
+
+        /* Set last hover id. */
+        setLastHoverCountryId(countryId);
+
+        /* Execute hover callback. */
+        if (onHoverCountry !== null) {
+            onHoverCountry({
+                id: countryId,
+                name: countryName,
+                screenPosition: {
+                    x: point?.x,
+                    y: point?.y,
+                },
+                svgPosition: {
+                    x: svgPoint.x,
+                    y: svgPoint.y,
+                }
+            } as CountryData);
+        }
+
+        /* No debut output needed. */
+        if (!debug) {
+            return;
+        }
 
         /* Log position and element type. */
         setDebugContent({
@@ -1509,6 +1544,35 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         /* Add title and subtitle. */
         addHoverTitle(countryName ?? textNotAvailable);
         addHoverSubtitle(placeName ?? textNotAvailable, placePopulation, t);
+
+        /* Element already hovered. */
+        if (!debug && (placeId in cityMap) && placeId === lastHoverPlaceId) {
+            return;
+        }
+
+        /* Set last hover id. */
+        setLastHoverPlaceId(placeId);
+
+        /* Execute hover callback. */
+        if (onHoverPlace !== null) {
+            onHoverPlace({
+                id: placeId,
+                name: placeName,
+                screenPosition: {
+                    x: point?.x,
+                    y: point?.y,
+                },
+                svgPosition: {
+                    x: svgPoint.x,
+                    y: svgPoint.y,
+                }
+            } as PlaceData);
+        }
+
+        /* No debut output needed. */
+        if (!debug) {
+            return;
+        }
 
         let debugContent: DebugContent = {
             "mouse position x": svgPoint.x,

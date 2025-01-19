@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 /* Import configurations. */
-import {ClickCountryData, ClickPlaceData} from "./config/interfaces";
+import {CountryData, PlaceData} from "./config/interfaces";
 import {
     defaultDataSource,
     defaultDebug,
@@ -115,11 +115,17 @@ export const Default: Story = {
         country: defaultCountry,
         width: defaultMapWidth,
         height: defaultMapHeight,
-        onClickCountry: (data: ClickCountryData) => {
+        onClickCountry: (data: CountryData) => {
             console.log('onClickCountry', data);
         },
-        onClickPlace: (data: ClickPlaceData) => {
+        onClickPlace: (data: PlaceData) => {
             console.log('onClickPlace', data);
+        },
+        onHoverCountry: (data: CountryData) => {
+            console.log('onHoverCountry', data);
+        },
+        onHoverPlace: (data: PlaceData) => {
+            console.log('onHoverPlace', data);
         },
         language: defaultLanguage,
         debug: defaultDebug,
