@@ -1397,16 +1397,8 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         addHoverTitle(countryName ?? textNotAvailable);
         removeSubtitle();
 
-        /* Element already hovered. */
-        if (!debug && (countryId in countryMap) && countryId === lastHoverCountryId) {
-            return;
-        }
-
-        /* Set last hover id. */
-        setLastHoverCountryId(countryId);
-
         /* Execute hover callback. */
-        if (onHoverCountry !== null) {
+        if (onHoverCountry !== null && (countryId in countryMap) && countryId !== lastHoverCountryId) {
             onHoverCountry({
                 id: countryId,
                 name: countryName,
@@ -1419,6 +1411,9 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
                     y: svgPoint.y,
                 }
             } as CountryData);
+
+            /* Set last hover id. */
+            setLastHoverCountryId(countryId);
         }
 
         /* No debut output needed. */
@@ -1545,16 +1540,8 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         addHoverTitle(countryName ?? textNotAvailable);
         addHoverSubtitle(placeName ?? textNotAvailable, placePopulation, t);
 
-        /* Element already hovered. */
-        if (!debug && (placeId in cityMap) && placeId === lastHoverPlaceId) {
-            return;
-        }
-
-        /* Set last hover id. */
-        setLastHoverPlaceId(placeId);
-
         /* Execute hover callback. */
-        if (onHoverPlace !== null) {
+        if (onHoverPlace !== null && (placeId in cityMap) && placeId !== lastHoverPlaceId) {
             onHoverPlace({
                 id: placeId,
                 name: placeName,
@@ -1567,6 +1554,9 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
                     y: svgPoint.y,
                 }
             } as PlaceData);
+
+            /* Set last hover id. */
+            setLastHoverPlaceId(placeId);
         }
 
         /* No debut output needed. */
