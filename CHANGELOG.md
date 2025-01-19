@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Changelogs
 
+### [0.1.20] - 2025-01-19
+
+* Add translated place names
+* WorldMap Refactoring
+* Add place callback function
+* Update README.md
+* Improve hover events (place and country)
+
 ### [0.1.19] - 2025-01-18
 
 * Optimize debug output
