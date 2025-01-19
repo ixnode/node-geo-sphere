@@ -2,14 +2,17 @@
  * General tag names.
  */
 export const tagNameCircle = 'circle';
+export const tagNameG = 'g';
 export const tagNamePath = 'path';
 export const tagNameSvg = 'svg';
+export const tagNameTitle = 'title';
 
 /**
  * General class names.
  */
 export const classNameSelected = 'selected';
 export const classNameHover = 'hover';
+export const classNameVisible = 'visible';
 
 /**
  * General id names.
@@ -17,6 +20,8 @@ export const classNameHover = 'hover';
 export const idSvgMap = 'svg-map';
 export const idDebugMapContent = 'debug-map-content';
 export const idDebugMapType = 'debug-map-type';
+export const idWorldMapTitle = 'world-map-title';
+export const idWorldMapSubtitle = 'world-map-subtitle';
 
 /**
  * General event names.
@@ -33,11 +38,24 @@ export const eventNameTouchStart = 'touchstart';
 export const eventNameWheel = 'wheel';
 
 /**
- * Path class names.
+ * Country class names.
  */
 export const classNameSvgPath = 'country';
 
 /**
- * Circle class names.
+ * Place class names.
  */
 export const classNameSvgCircle = 'place';
+
+/**
+ * Place group class names.
+ */
+export const classNameSvgG = 'place-group';
+export const classNameSvgGCity = 'place-group-city';
+export const classNameSvgGCapital = 'place-group-capital';
+export const classNameSvgGStateCapital = 'place-group-state-capital';
+
+/**
+ * Text class names.
+ */
+export const classNameSvgText = 'title';

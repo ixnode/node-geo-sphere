@@ -5,6 +5,8 @@ import {CoordinateConverter} from "./CoordinateConverter";
 import {countriesDataLow} from "../data/geoJsonLow";
 import {countriesDataMedium} from "../data/geoJsonMedium";
 import {countriesDataTiny} from "../data/geoJsonTiny";
+import {getIdFromPlace} from "../tools/interaction";
+import {classNameSvgCircle} from "../config/elementNames";
 
 interface DataConverterOptions {
 
@@ -84,37 +86,6 @@ export class DataConverter {
     }
 
     /**
-     * Adds additional config to given country.
-     *
-     * @param geoJson
-     * @param country
-     */
-    private addConfigToSelectedCountry(geoJson: InterfaceGeoJson, country: string|null): InterfaceGeoJson {
-        const convertedFeatures = geoJson.features.map(feature => {
-            let properties = {
-                ...feature.properties
-            };
-
-            /* Adds additional configuration to given country. */
-            if (country === feature.id) {
-                properties.fill = this.propertyCountrySelectedFill;
-                properties.stroke = this.propertyCountrySelectedStroke;
-                properties["stroke-width"] = this.propertyCountrySelectedStrokeWidth;
-            }
-
-            return {
-                ...feature,
-                properties
-            };
-        });
-
-        return {
-            ...geoJson,
-            features: convertedFeatures
-        };
-    }
-
-    /**
      * Adds ids and names to geoJson object.
      *
      * @param geoJson
@@ -178,13 +149,12 @@ export class DataConverter {
             },
             properties: {
                 name: city.name,
-                fill: this.propertiesCityFill,
-                stroke: this.propertiesCityStroke,
-                "stroke-width": this.propertiesCityStrokeWidth,
-                class: "place"
+                class: classNameSvgCircle,
+                id: getIdFromPlace(city.name)
             },
             name: city.name,
-            id: `place-${city.name.toLowerCase()}`
+            country: city.country.toLowerCase(),
+            id: getIdFromPlace(city.name)
         };
     }
 
@@ -219,7 +189,6 @@ export class DataConverter {
         geoJson = this.addCountryClasses(geoJson);
         geoJson = this.addCities(geoJson);
         geoJson = this.addIdsAndNames(geoJson);
-        geoJson = this.addConfigToSelectedCountry(geoJson, country);
 
         return  this.coordinateConverter.convertToMercatorProjection(geoJson);
     }

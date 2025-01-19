@@ -6,7 +6,9 @@ $svg-path-fill-selected: #c0e0c0;
 $svg-path-fill-hover: #b0d0b0;
 $svg-path-stroke: #a0a0a0;
 $svg-circle-fill: #909090;
-$svg-circle-fill-hover: #707070;
+$svg-circle-fill-hover: #606060;
+$svg-text-fill: #909090;
+$svg-text-fill-hover: #606060;
 
 .gs-world-map {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -53,6 +55,17 @@ $svg-circle-fill-hover: #707070;
         border-right: 1px solid #a0a0a0;
         border-bottom: 1px solid #a0a0a0;
         font-weight: bold;
+
+        .world-map__subtitle {
+            margin-left: .8em;
+            font-weight: normal;
+            font-size: .8em;
+            display: none;
+
+            &.visible {
+                display: inline;
+            }
+        }
     }
 
     .world-map__copyright {
@@ -145,7 +158,7 @@ $svg-circle-fill-hover: #707070;
         pointer-events: all;
         cursor: default;
 
-        path, circle {
+        g, path, circle, text {
             pointer-events: none; /* Disable all pointer events -> No hover, etc. -> delegate this to SVGRenderer.tsx (hover, click, etc.) */
         }
 
@@ -164,14 +177,67 @@ $svg-circle-fill-hover: #707070;
             }
         }
 
-        circle.place {
-            r: .35%;
-            fill: $svg-circle-fill;
-            stroke: transparent;
-            stroke-width: 1%;
+        g.place-group {
+
+            circle.place {
+                r: 2;
+
+                fill: $svg-circle-fill;
+                stroke: transparent;
+                stroke-width: 5;
+            }
+
+            text.title {
+                font-size: 150%;
+
+                alignment-baseline: middle;
+                fill: $svg-text-fill;
+            }
 
             &.hover {
-                r: 1%;
+                circle.place {
+                    fill: $svg-circle-fill-hover;
+                }
+
+                text.title {
+                    fill: $svg-text-fill-hover;
+                }
+            }
+
+            &.place-group-capital {
+                circle.place {
+                    r: 5;
+                }
+
+                text.title {
+                    font-size: 250%;
+                    font-weight: bold;
+                }
+            }
+
+            &.place-group-state-capital {
+                circle.place {
+                    r: 3;
+                }
+
+                text.title {
+                    font-size: 180%;
+                }
+            }
+
+            &.place-group-city {
+                circle.place {
+                    r: 2;
+                }
+
+                text.title {
+                    font-size: 110%;
+                }
+            }
+
+            /* Not used anymore. */
+            circle.place.hover {
+                r: 8;
                 fill: $svg-circle-fill-hover;
                 stroke-width: 0;
             }

@@ -22,3 +22,5 @@ export const defaultDataSource = 'low';
 export const defaultDebug = false;
 
 export const defaultLogo = true;
+
+export const scaleFactor: number = 1000;

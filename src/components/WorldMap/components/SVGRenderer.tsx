@@ -25,11 +25,11 @@ import {
     eventWheelEnabled,
 } from "../config/events";
 import {countryMap} from "../config/countries";
-import {defaultDebug, defaultMapHeight, defaultMapWidth} from "../config/config";
+import {defaultDebug, defaultMapHeight, defaultMapWidth, scaleFactor} from "../config/config";
 import {ClickCountryData, DebugContent, Point, SVGViewBox} from "../config/interfaces";
 import {
-    classNameHover,
     classNameSvgCircle,
+    classNameSvgG,
     classNameSvgPath,
     eventNameMouseDown,
     eventNameMouseEnter,
@@ -45,32 +45,46 @@ import {
     idDebugMapType,
     idSvgMap,
     tagNameCircle,
+    tagNameG,
     tagNamePath,
-    tagNameSvg,
+    tagNameTitle,
 } from "../config/elementNames";
 
 /* Import configuration (global). */
 import {defaultLanguage} from "../../../config/config";
 
 /* Import types. */
-import {TypeClickCountry} from "../types/types";
+import {TypeClickCountry, TypeClickPlace, TypeSvgContent} from "../types/types";
 
 /* Import classes. */
 import {CoordinateConverter} from "../classes/CoordinateConverter";
-import {TypeSvgContent} from "../classes/GeoJson2Path";
 
 /* Import tools. */
-import {getLanguageName} from "../tools/language";
+import {getLanguageNameCountry, getLanguageNamePlace, getTranslatedNamePlace} from "../tools/language";
 import {calculateZoomViewBox} from "../tools/zoom";
 import {hideScrollHint, showScrollHint} from "../tools/layer";
-import {getPointFromEvent, getSvgElementFromSvg, getSvgPointFromSvg} from "../tools/interaction";
+import {
+    addHoverClass,
+    addHoverTitle,
+    getPointFromEvent,
+    getSvgElementFromSvg,
+    getSvgPointFromSvg,
+    removeHoverClassCirclePlace,
+    removeHoverClassGPlaceGroup,
+    removeHoverClassPathCountry,
+    resetTitle,
+    textNotAvailable
+} from "../tools/interaction";
 
+/* Import configurations. */
+import {cityMap, TypeCity} from "../config/cities";
 
 /* SVGRendererProps interface. */
 interface SVGRendererProps {
     svgContent: TypeSvgContent,
     country: string | null,
     onClickCountry: TypeClickCountry,
+    onClickPlace: TypeClickPlace,
     language: string,
     stateZoomIn?: number,
     stateZoomOut?: number,
@@ -112,6 +126,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
     svgContent,
     country,
     onClickCountry = null,
+    onClickPlace = null,
     language = defaultLanguage,
     stateZoomIn = 0,
     stateZoomOut = 0,
@@ -147,38 +162,6 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
 
     /* Set global variables. */
     languageGlobal = language;
-
-
-
-    /**
-     * ===================
-     * 1) Helper functions
-     * ===================
-     */
-
-    /**
-     * Remove hover class from path.country.
-     */
-    const removeHoverClassPathCountry = () => {
-
-        /* Find hovered elements. */
-        const paths = document.querySelectorAll(`${tagNameSvg}#${idSvgMap} ${tagNamePath}.${classNameSvgPath}.${classNameHover}`);
-
-        /* Remove hover class. */
-        paths.forEach((path) => path.classList.remove(classNameHover));
-    }
-
-    /**
-     * Remove hover class from path.country.
-     */
-    const removeHoverClassCirclePlace = () => {
-
-        /* Find hovered elements. */
-        const circles = document.querySelectorAll(`${tagNameSvg}#${idSvgMap} ${tagNameCircle}.${classNameSvgCircle}.${classNameHover}`);
-
-        /* Remove hover class. */
-        circles.forEach((circle) => circle.classList.remove(classNameHover));
-    }
 
 
 
@@ -263,7 +246,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         }
 
         /* Try to get element from given event. */
-        const element = getSvgElementFromSvg(svgRef.current, svgPoint, [tagNamePath, tagNameCircle], tagNameCircle);
+        const element = getSvgElementFromSvg(svgRef.current, point, svgPoint, [tagNamePath, tagNameG], tagNameG);
 
         /* No element found. */
         if (element === null) {
@@ -271,6 +254,10 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             /* Remove hover classes. */
             removeHoverClassPathCountry();
             removeHoverClassCirclePlace();
+            removeHoverClassGPlaceGroup();
+
+            /* Reset title. */
+            resetTitle();
 
             /* Log position. */
             setDebugContent({
@@ -293,11 +280,17 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             return;
         }
 
+        /* Handle g.place-group element. */
+        if (element.tagName === tagNameG && element.classList.contains(classNameSvgG)) {
+            handleHoverGPlaceGroup(element, point, svgPoint);
+            return;
+        }
+
         /* Log position and element type of unknown type. */
         setDebugContent({
             "mouse position x": svgPoint.x,
             "mouse position y": -svgPoint.y,
-            "element type": element.tagName,
+            "type": element.tagName,
         } as DebugContent);
     }
 
@@ -373,6 +366,14 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         /* Disable isMouseDownGlobal */
         setIsMouseDownGlobal(false);
         setIsMouseMoveGlobal(false);
+
+        /* Remover hover classes. */
+        removeHoverClassPathCountry();
+        removeHoverClassCirclePlace();
+        removeHoverClassGPlaceGroup();
+
+        /* Resets the title. */
+        resetTitle();
     }
 
     /**
@@ -573,7 +574,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         setStartPoint({x: clientX, y: clientY});
 
         /* Mark "start panning". */
-        if (distance > 10000) {
+        if (distance > 1000 / scaleFactor) {
             setIsTouchMovePanningGlobal(true);
         }
     }
@@ -632,7 +633,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         }, scale);
 
         /* Mark "start panning". */
-        if (distance > 2) {
+        if (distance > 1000 / scaleFactor) {
             setIsTouchMovePinchToZoomGlobal(true);
         }
     }
@@ -836,27 +837,27 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             const viewRatio = viewBox.viewWidth / viewBox.viewHeight;
             debugContent["view dimensions"] = viewBox.viewWidth.toFixed(2) + ' x ' + viewBox.viewHeight.toFixed(2) + ' (' + viewRatio.toFixed(2) + ')';
         } else {
-            debugContent["view dimensions"] = 'n/a';
+            debugContent["view dimensions"] = textNotAvailable;
         }
 
         if (width && height) {
             const ratio = width / height;
             debugContent["given dimensions"] = width.toFixed(2) + ' x ' + height.toFixed(2) + ' (' + ratio.toFixed(2) + ')';
         } else {
-            debugContent["given dimensions"] = 'n/a';
+            debugContent["given dimensions"] = textNotAvailable;
         }
 
         if (lastEvent.current !== null) {
             const target = lastEvent.current.target as SVGPathElement;
             debugContent['last element'] = target.tagName;
         } else {
-            debugContent['last element'] = 'n/a';
+            debugContent['last element'] = textNotAvailable;
         }
 
         if (scale !== null) {
             debugContent["scale"] = scale;
         } else {
-            debugContent["scale"] = 'n/a';
+            debugContent["scale"] = textNotAvailable;
         }
 
         setDebugContent(debugContent);
@@ -1073,20 +1074,26 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         }
 
         /* Try to get element from given event. */
-        const element = getSvgElementFromSvg(svgRef.current, svgPoint, [tagNamePath], tagNamePath);
+        const element = getSvgElementFromSvg(svgRef.current, point, svgPoint, [tagNamePath, tagNameG], tagNameG);
 
         /* No element found. */
         if (element === null) {
             return;
         }
 
-        /* Only handle path.country. */
-        if (element.tagName !== tagNamePath || !element.classList.contains(classNameSvgPath)) {
+        /* Handle path.country. */
+        if (element instanceof SVGPathElement && element.classList.contains(classNameSvgPath)) {
+            handleCountryClick(element, point, svgPoint);
             return;
         }
 
-        /* Handle country clicked. */
-        handleCountryClick(element, point, svgPoint);
+        /* Handle g.place-group. */
+        if (element instanceof SVGGElement && element.classList.contains(classNameSvgG)) {
+            handlePlaceClick(element, point, svgPoint);
+            return;
+        }
+
+        console.warn('Unsupported tag name: ' + element.tagName);
     };
 
     /**
@@ -1097,7 +1104,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
      * @param svgPoint
      */
     const handleCountryClick = (
-        element: SVGElement,
+        element: SVGPathElement,
         point: Point|null = null,
         svgPoint: SVGPoint|null = null
     ) => {
@@ -1119,7 +1126,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
 
         const countryId = element.id;
 
-        /* No countryMap found. */
+        /* No country map found. */
         if (!(countryId in countryMap)) {
             onClickCountry({
                 id: countryId
@@ -1128,16 +1135,18 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             return;
         }
 
+        /* Get country map data. */
         const countryData = countryMap[countryId];
 
-        const data = {
+        /* Build click (callback) data. */
+        const clickData = {
             id: countryId,
-            name: countryData[getLanguageName(languageGlobal)]
+            name: countryData[getLanguageNameCountry(languageGlobal)]
         } as ClickCountryData;
 
         /* Add point (screen position). */
         if (point !== null) {
-            data.screenPosition = {
+            clickData.screenPosition = {
                 x: point.x,
                 y: point.y
             };
@@ -1151,16 +1160,90 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             const pointWgs84 = coordinateConverter.convertCoordinateMercatorToWgs84([svgPoint.x, -svgPoint.y]);
 
             /* Add data. */
-            data.svgPosition = {
+            clickData.svgPosition = {
                 x: svgPoint.x,
                 y: -svgPoint.y
             };
-            data.latitude = pointWgs84[1];
-            data.longitude = pointWgs84[0];
+            clickData.latitude = pointWgs84[1];
+            clickData.longitude = pointWgs84[0];
         }
 
         /* Return date from clicked map. */
-        onClickCountry(data);
+        onClickCountry(clickData);
+    };
+
+    /**
+     * Handle place-group click.
+     *
+     * @param element
+     * @param point
+     * @param svgPoint
+     */
+    const handlePlaceClick = (
+        element: SVGGElement,
+        point: Point|null = null,
+        svgPoint: SVGPoint|null = null
+    ) => {
+
+        /* No onClickPlace found. */
+        if (onClickPlace === null) {
+            return;
+        }
+
+        /* Prevent click if panning or pinch-to-zoom is active. */
+        if (isMouseMoveGlobal || isTouchMovePanningGlobal || isTouchMovePinchToZoomGlobal) {
+            return;
+        }
+
+        /* No target or id found. */
+        if (!element || !element.id) {
+            return;
+        }
+
+        const placeId = element.id;
+
+        /* No cityMap found. */
+        if (!(placeId in cityMap)) {
+            onClickPlace({
+                id: placeId
+            });
+
+            return;
+        }
+
+        /* Get city map data. */
+        const placeData = cityMap[placeId];
+
+        /* Build click (callback) data. */
+        const clickData: ClickCountryData = {
+            id: placeId,
+            name: getTranslatedNamePlace(placeData, languageGlobal),
+        };
+
+        /* Add point (screen position). */
+        if (point !== null) {
+            clickData.screenPosition = {
+                x: point.x,
+                y: point.y,
+            };
+        }
+
+        /* Add svg and wgs84 point. */
+        if (svgPoint !== null) {
+
+            /* Add data. */
+            clickData.svgPosition = {
+                x: svgPoint.x,
+                y: -svgPoint.y
+            };
+        }
+
+        /* Add coordinate of the clicked place. */
+        clickData.latitude = placeData.coordinate[1];
+        clickData.longitude = placeData.coordinate[0];
+
+        /* Return date from clicked map. */
+        onClickPlace(clickData);
     };
 
     /**
@@ -1190,26 +1273,30 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             return;
         }
 
+        /* countryMap value found. */
+        if (countryId in countryMap) {
+            countryData = countryMap[countryId];
+            countryName = countryData[getLanguageNameCountry(languageGlobal)];
+        }
+
         /* Remove hover class from all svg.path[class=country] and svg.circle[class=place] elements. */
         removeHoverClassPathCountry();
         removeHoverClassCirclePlace();
+        removeHoverClassGPlaceGroup();
 
         /* Add hover to current element. */
-        elementPath.classList.add(classNameHover);
+        addHoverClass(elementPath);
 
-        /* No countryMap found. */
-        if (countryId in countryMap) {
-            countryData = countryMap[countryId];
-            countryName = countryData[getLanguageName(languageGlobal)];
-        }
+        /* Add title. */
+        addHoverTitle(countryName ?? textNotAvailable);
 
         /* Log position and element type. */
         setDebugContent({
             "mouse position x": svgPoint.x,
             "mouse position y": -svgPoint.y,
-            "element type": elementPath.tagName,
-            "element id": countryId,
-            "element name": countryName,
+            "type": elementPath.tagName,
+            "id": countryId,
+            "name": countryName,
         } as DebugContent);
     };
 
@@ -1238,25 +1325,101 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             return;
         }
 
+        /* Extract the name (title) of the circle element. */
+        const title = elementCircle.querySelector(tagNameTitle);
+        if (title) {
+            name = title.textContent;
+        }
+
         /* Remove hover class from all svg.circle[class=place] elements. */
         removeHoverClassCirclePlace();
 
         /* Add hover to current element. */
-        elementCircle.classList.add(classNameHover);
+        addHoverClass(elementCircle);
 
-        /* Extract the name (title) of the circle element. */
-        const title = elementCircle.querySelector('title');
-        if (title) {
-            name = title.textContent;
-        }
+        /* Add title. */
+        addHoverTitle(name ?? textNotAvailable);
 
         /* Log position and element type. */
         setDebugContent({
             "mouse position x": svgPoint.x,
             "mouse position y": -svgPoint.y,
-            "element type": elementCircle.tagName,
+            "type": elementCircle.tagName,
             "name": name,
         } as DebugContent);
+    }
+
+    /**
+     * Handle hover g.place-group.
+     *
+     * @param elementG
+     * @param point
+     * @param svgPoint
+     */
+    const handleHoverGPlaceGroup = (
+        elementG: SVGElement,
+        point: Point|null = null,
+        svgPoint: SVGPoint|null = null
+    ) => {
+
+        let placeId = elementG.id;
+        let placeData = null;
+        let placeName = null;
+        let placeCountry = null;
+        let countryId = null;
+        let countryData = null;
+        let countryName = null;
+
+        /* No svgPoint is given. */
+        if (svgPoint === null) {
+            return;
+        }
+
+        /* Only handle svg.g[class=place-group] elements. */
+        if (elementG.tagName !== tagNameG || !elementG.classList.contains(classNameSvgG)) {
+            return;
+        }
+
+        /* cityMap value found. */
+        if (placeId in cityMap) {
+            placeData = cityMap[placeId] as TypeCity;
+            placeName = getTranslatedNamePlace(placeData, languageGlobal);
+            placeCountry = placeData.country;
+        }
+
+        /* countryMap value found. */
+        if (placeCountry !== null && placeCountry in countryMap) {
+            countryId = placeCountry;
+            countryData = countryMap[placeCountry];
+            countryName = countryData[getLanguageNameCountry(languageGlobal)];
+        }
+
+        /* Remove hover class from all svg.g[class=place-group] elements. */
+        removeHoverClassPathCountry();
+        removeHoverClassGPlaceGroup();
+
+        /* Add hover to current element. */
+        addHoverClass(elementG);
+        countryId && addHoverClass(countryId);
+
+        /* Add title. */
+        addHoverTitle(countryName ?? textNotAvailable, placeName ?? textNotAvailable);
+
+        let debugContent: DebugContent = {
+            "mouse position x": svgPoint.x,
+            "mouse position y": -svgPoint.y,
+            "type": elementG.tagName,
+            "id": placeId,
+            "name": placeName,
+        } as DebugContent;
+
+        if (countryId) {
+            debugContent["id (ctry.)"] = countryId;
+            debugContent["name (ctry.)"] = countryName ?? textNotAvailable;
+        }
+
+        /* Log position and element type. */
+        setDebugContent(debugContent);
     }
 
 

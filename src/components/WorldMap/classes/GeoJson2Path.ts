@@ -1,13 +1,28 @@
 /* Import configuration. */
 import {countryMap} from "../config/countries";
 import {defaultLanguage} from "../../../config/config";
-import {classNameSvgPath, classNameSelected} from "../config/elementNames";
+import {
+    classNameSvgPath,
+    classNameSelected,
+    classNameSvgCircle,
+    classNameSvgText,
+    classNameSvgG, classNameSvgGCapital, classNameSvgGStateCapital, classNameSvgGCity
+} from "../config/elementNames";
 
 /* Import types. */
-import {InterfaceGeoJson, TypeBoundingBox} from "../types/types";
+import {InterfaceGeoJson, TypeBoundingBox, TypeSvgContent, TypeSvgCountry, TypeSvgPlace} from "../types/types";
 
 /* Import tools. */
-import {getLanguageName} from "../tools/language";
+import {getLanguageNameCountry, getTranslatedNamePlace} from "../tools/language";
+import {getCityMapElement} from "../tools/interaction";
+import {
+    cityMap,
+    distanceCityTypeNameCapital, distanceCityTypeNameCity, distanceCityTypeNameStateCapital,
+    TypeCityType,
+    typeCityTypeNameCapital,
+    typeCityTypeNameCity,
+    typeCityTypeNameStateCapital
+} from "../config/cities";
 
 /* GeoJson2PathOptions interface. */
 interface GeoJson2PathOptionsLazy {
@@ -23,37 +38,6 @@ interface GeoJson2PathOptions {
     language: string;
 }
 
-/* TypeSvgPath type. */
-export type TypeSvgPath = {
-    type: "path";
-    id: string|null;
-    name: string;
-    path: string;
-    selected: boolean;
-    fill?: string;
-    stroke?: string;
-    "stroke-width"?: number;
-}
-
-/* TypeSvgCircle type. */
-export type TypeSvgCircle = {
-    type: "circle";
-    name: string;
-    x: number;
-    y: number;
-    r?: number;
-    fill?: string;
-}
-
-/* TypeSvgContent type. */
-export type TypeSvgContent = {
-    svgPaths: string;
-    svgCircles: string;
-    viewBoxLeft: number;
-    viewBoxTop: number;
-    viewBoxWidth: number;
-    viewBoxHeight: number;
-}
 
 /**
  * Class GeoJson2Path.
@@ -88,12 +72,12 @@ export class GeoJson2Path {
         geoJSON: InterfaceGeoJson,
         country: string|null,
         boundingBoxWidth: number
-    ): (TypeSvgPath | TypeSvgCircle)[] {
-        const paths: (TypeSvgPath | TypeSvgCircle)[] = [];
+    ): (TypeSvgCountry | TypeSvgPlace)[] {
+        const svgElements: (TypeSvgCountry | TypeSvgPlace)[] = [];
 
-        const radiusCircle = this.mapWidthToPointSize(boundingBoxWidth);
-        const borderWidth = Math.round(boundingBoxWidth / 1500);
-        const languageName = getLanguageName(this.options.language);
+        //const radiusCircle = this.mapWidthToPointSize(boundingBoxWidth);
+        //const borderWidth = Math.round(boundingBoxWidth / 1500);
+        const languageName = getLanguageNameCountry(this.options.language);
 
         geoJSON.features.forEach(feature => {
             const { type, coordinates } = feature.geometry;
@@ -107,19 +91,23 @@ export class GeoJson2Path {
                 const name = id.toLowerCase() in countryMap ? countryMap[id.toLowerCase()][languageName] : id;
 
                 (coordinates as number[][][]).forEach(ring => {
-                    paths.push({
-                        type: "path",
+                    svgElements.push({
+                        /* Place properties. */
                         id: id,
-                        name: name ?? 'unknown',
-                        path: this.convertCoordsToPath(ring),
+                        name: name ?? 'Unknown country',
                         selected: sameCountry,
-                        "stroke-width": borderWidth,
-                    });
+
+                        /* Position. */
+                        path: this.convertCoordsToPath(ring),
+
+                        /* Styles. */
+                        //"stroke-width": borderWidth
+                    } as TypeSvgCountry);
                 });
 
-                /**
-                 * Add multi polygon.
-                 */
+            /**
+             * Add multi polygon.
+             */
             } else if (type === 'MultiPolygon') {
                 const sameCountry = (country ? country?.toUpperCase() : null) === feature.id;
                 const id = feature.id ? feature.id.toUpperCase() : 'XX';
@@ -129,33 +117,46 @@ export class GeoJson2Path {
                     return polygon.map(ring => this.convertCoordsToPath(ring)).join(' ');
                 }).join(' ');
 
-                paths.push({
-                    type: "path",
+                svgElements.push({
+                    /* Place properties. */
                     id: id,
-                    name: name ?? 'unknown',
-                    path: multiPolygonPath,
+                    name: name ?? 'Unknown country',
                     selected: sameCountry,
-                    "stroke-width": borderWidth,
-                });
 
-                /**
-                 * Add point.
-                 */
+                    /* Position. */
+                    path: multiPolygonPath,
+
+                    /* Styles. */
+                    //"stroke-width": borderWidth
+                } as TypeSvgCountry);
+
+            /**
+             * Add point (place).
+             */
             } else if (type === 'Point') {
                 const [x, y] = coordinates as number[];
-                const name = feature.name ? feature.name : 'Unknown city';
+                const name = feature.name ?? 'Unknown place';
+                const cityMapElement = getCityMapElement(feature.id ?? null);
 
-                paths.push({
-                    type: "circle",
+                const svgPlace: TypeSvgPlace = {
+                    /* Place properties. */
+                    id: feature.id ?? '',
                     name: name,
+                    placeType: cityMapElement ? cityMapElement.type : typeCityTypeNameCity,
+
+                    /* Position. */
                     x: x,
                     y: this.invertY(y),
+
+                    /* Styles. */
                     //r: radiusCircle,
-                });
+                };
+
+                svgElements.push(svgPlace);
             }
         });
 
-        return paths;
+        return svgElements;
     }
 
     /**
@@ -175,18 +176,19 @@ export class GeoJson2Path {
         const viewBoxWidth = (boundingBox.longitudeMax - boundingBox.longitudeMin);
         const viewBoxHeight = boundingBox.latitudeMax - boundingBox.latitudeMin;
 
+        /* Get TypeSvgCountry and TypeSvgPlace elements. */
         const elements = this.convert(geoJSON, country, viewBoxWidth);
 
-        /* Build svg paths. */
+        /* Build svg countries. */
         const svgPaths = elements
-            .filter((element): element is TypeSvgPath => 'path' in element)
-            .map((element) => this.getSvgPath(element))
+            .filter((element): element is TypeSvgCountry => 'path' in element)
+            .map((element) => this.getSvgCountry(element))
             .join('');
 
-        /* Build svg circles. */
+        /* Build svg places. */
         const svgCircles = elements
-            .filter((element): element is TypeSvgCircle => 'x' in element && 'y' in element)
-            .map((element) => this.getSvgCircle(element))
+            .filter((element): element is TypeSvgPlace => 'x' in element && 'y' in element)
+            .map((element) => this.getSvgPlace(element))
             .join('');
 
         return { svgPaths, svgCircles, viewBoxLeft, viewBoxTop, viewBoxWidth, viewBoxHeight };
@@ -229,12 +231,12 @@ export class GeoJson2Path {
     };
 
     /**
-     * Build svg path element.
+     * Build country element (svg path element).
      *
      * @param element
      * @private
      */
-    private getSvgPath(element: TypeSvgPath): string {
+    private getSvgCountry(element: TypeSvgCountry): string {
         const {id , name, path, selected, fill, stroke, 'stroke-width': strokeWidth} = element;
 
         const idName = id ? id.toLowerCase() : null;
@@ -247,18 +249,65 @@ export class GeoJson2Path {
     };
 
     /**
-     * Build svg circle element.
+     * Build place element (svg circle and text group element).
      *
      * @param element
      * @private
      */
-    private getSvgCircle(element: TypeSvgCircle): string {
-        const { x, y, r, fill, name} = element;
+    private getSvgPlace(element: TypeSvgPlace): string {
+        const {id, x, y, r, fill, name} = element;
+        const idName = id ? id.toLowerCase() : null;
+        let nameTranslated = name;
+
+        if ((id !== null) && (id in cityMap)) {
+            const dataCity = cityMap[id];
+            nameTranslated = getTranslatedNamePlace(dataCity, this.options.language);
+        }
 
         return `
-            <circle class="place" cx="${x}" cy="${y}"${fill !== undefined ? ` fill="${fill}"` : ''}${r !== undefined ? ` r="${r}"` : ''}>
-                <title>${name}</title>
-            </circle>
+            <g class="${[classNameSvgG, this.getSvgPlaceClassNameType(element.placeType)].filter(Boolean).join(' ')}" id="${idName}">
+                <circle class="${classNameSvgCircle}" cx="${x}" cy="${y}"${fill !== undefined ? ` fill="${fill}"` : ''}${r !== undefined ? ` r="${r}"` : ''}>
+                    <title>${nameTranslated}</title>
+                </circle>
+                <text class="${classNameSvgText}" x="${x + (r || distanceCityTypeNameCity) * 2 + this.getSvgPlaceTextDistance(element.placeType)}" y="${y + 2}"${fill !== undefined ? ` fill="${fill}"` : ''}>${nameTranslated}</text>
+            </g>
         `;
     };
+
+    /**
+     * Returns the SVG place class name.
+     *
+     * @param cityType
+     * @private
+     */
+    private getSvgPlaceClassNameType(cityType: TypeCityType): string {
+        if (cityType === typeCityTypeNameCapital) {
+            return classNameSvgGCapital;
+        }
+
+        if (cityType === typeCityTypeNameStateCapital) {
+            return classNameSvgGStateCapital;
+        }
+
+        return classNameSvgGCity;
+    }
+
+    /**
+     * Returns the SVG place class name.
+     *
+     * @param cityType
+     * @private
+     */
+    private getSvgPlaceTextDistance(cityType: TypeCityType): number {
+        if (cityType === typeCityTypeNameCapital) {
+            return distanceCityTypeNameCapital;
+        }
+
+        if (cityType === typeCityTypeNameStateCapital) {
+            return distanceCityTypeNameStateCapital;
+        }
+
+        return distanceCityTypeNameCity;
+    }
+
 }

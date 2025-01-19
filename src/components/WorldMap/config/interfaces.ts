@@ -32,6 +32,39 @@ export interface ClickCountryData {
 }
 
 /**
+ * ClickPlaceData interface.
+ */
+export interface ClickPlaceData {
+    /* Place ID. */
+    id: string;
+
+    /* Name of the place. */
+    name?: string|null;
+
+    /* Latitude on svg. */
+    latitude?: number;
+
+    /* Longitude on svg. */
+    longitude?: number;
+
+    /* Clicked position on screen. */
+    screenPosition?: {
+        /* Clicked x position on screen (longitude). */
+        x: number;
+        /* Clicked y position on screen (latitude). */
+        y: number;
+    }
+
+    /* Clicked postion on svg. */
+    svgPosition?: {
+        /* Clicked x position on svg (longitude). */
+        x: number;
+        /* Clicked y position on svg (latitude). */
+        y: number;
+    }
+}
+
+/**
  * SVGViewBox interface.
  */
 export interface SVGViewBox {

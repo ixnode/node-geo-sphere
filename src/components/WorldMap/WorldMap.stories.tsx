@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 /* Import configurations. */
-import {ClickCountryData} from "./config/interfaces";
+import {ClickCountryData, ClickPlaceData} from "./config/interfaces";
 import {
     defaultDataSource,
     defaultDebug,
@@ -20,7 +20,7 @@ import {
 import {WorldMap} from './WorldMap';
 
 /* Import tools. */
-import {getLanguageName} from "./tools/language";
+import {getLanguageNameCountry} from "./tools/language";
 import {countryMap} from "./config/countries";
 
 /* Overwrite the options definition from any[] to Record<string, string>. */
@@ -43,7 +43,7 @@ const language = 'en'; /* Supported languages: cz, de, en, es, fr, hr, it, pl, s
 const countryOptions: Record<string, string|null> = Object.fromEntries(
     Object.entries({
         ...Object.fromEntries(Object.values(countryMap).map((country) => [
-            country[getLanguageName(language)],
+            country[getLanguageNameCountry(language)],
             country.code
         ]))
     } as Record<string, string | null>)
@@ -116,7 +116,10 @@ export const Default: Story = {
         width: defaultMapWidth,
         height: defaultMapHeight,
         onClickCountry: (data: ClickCountryData) => {
-            console.log(data);
+            console.log('onClickCountry', data);
+        },
+        onClickPlace: (data: ClickPlaceData) => {
+            console.log('onClickPlace', data);
         },
         language: defaultLanguage,
         debug: defaultDebug,

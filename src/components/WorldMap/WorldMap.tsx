@@ -17,23 +17,24 @@ import {
     defaultMapHeight,
     defaultMapWidth
 } from "./config/config";
-import {ClickCountryData} from "./config/interfaces";
+import {ClickCountryData, ClickPlaceData} from "./config/interfaces";
 import {TypeLanguagesSupported} from "../../config/types";
 import {eventWheelAsEventListener} from "./config/events";
+import {idDebugMapContent, idDebugMapType, idWorldMapSubtitle, idWorldMapTitle} from "./config/elementNames";
 
 /* Import types. */
-import {TypeDataSource} from "./types/types";
+import {TypeDataSource, TypeSvgContent} from "./types/types";
 
 /* Import classes. */
-import {TypeSvgContent} from "./classes/GeoJson2Path";
 import {WorldMapSvg} from "./classes/WorldMapSvg";
 
 /* Import components. */
 import SVGRenderer from "./components/SVGRenderer";
 
 /* Import tools. */
-import {getLanguageName} from "./tools/language";
+import {getLanguageNameCountry} from "./tools/language";
 import {hideScrollHint} from "./tools/layer";
+import {textDefaultWorldMapSubtitle, textDefaultWorldMapTitle} from "./tools/interaction";
 
 /* Import Styles. */
 import './WorldMap.scss';
@@ -41,7 +42,6 @@ import {Logo} from "../../helper/Logo/Logo";
 
 /* Import translation libraries. */
 import { i18n } from "../../config/i18n";
-import {idDebugMapContent, idDebugMapType} from "./config/elementNames";
 
 /* WorldMapProps interface. */
 export interface WorldMapProps {
@@ -59,6 +59,9 @@ export interface WorldMapProps {
 
     /** Optional click handler (`country`) */
     onClickCountry?: ((data: ClickCountryData) => void)|null;
+
+    /** Optional click handler (`country`) */
+    onClickPlace?: ((data: ClickPlaceData) => void)|null;
 
     /** Which language should be used? */
     language?: TypeLanguagesSupported;
@@ -83,6 +86,7 @@ export const WorldMap: React.FC<WorldMapProps> = ({
     width = defaultMapWidth,
     height = defaultMapHeight,
     onClickCountry = null,
+    onClickPlace = null,
     language = defaultLanguage,
     debug = defaultDebug,
     logo = defaultLogo,
@@ -96,6 +100,8 @@ export const WorldMap: React.FC<WorldMapProps> = ({
     const [translation, setTranslation] = useState<TypeCountry|null>(null);
     const [stateZoomIn, setStateZoomIn] = useState<number>(0);
     const [stateZoomOut, setStateZoomOut] = useState<number>(0);
+    const [title, setTitle] = useState<string>(textDefaultWorldMapTitle);
+    const [subtitle, setSubtitle] = useState<string>(textDefaultWorldMapSubtitle);
 
     /* Import translation. */
     const { t } = useTranslation();
@@ -146,8 +152,15 @@ export const WorldMap: React.FC<WorldMapProps> = ({
         worldMapSvg.setDataSource(dataSource as TypeDataSource);
         worldMapSvg.setCountry(country);
 
-        setTranslation(worldMapSvg.getTranslation());
+        const translation = worldMapSvg.getTranslation();
+
+        setTranslation(translation);
         setSvgContent(worldMapSvg.generateSvgByCountry(country));
+
+        const title = translation ? translation[getLanguageNameCountry(language)] : textDefaultWorldMapTitle;
+
+        setTitle(title ?? textDefaultWorldMapTitle);
+        setSubtitle(textDefaultWorldMapSubtitle);
     }, [dataSource, country, width, height, language]);
 
     /* Change default language. */
@@ -189,7 +202,7 @@ export const WorldMap: React.FC<WorldMapProps> = ({
             </div>
 
             <div className="world-map__title">
-                {translation ? translation[getLanguageName(language)] : 'World Map'}
+                <span id={idWorldMapTitle} data-default-title={title}>{title}</span><span className="world-map__subtitle" id={idWorldMapSubtitle}></span>
             </div>
 
             <div className="world-map__copyright">
@@ -230,14 +243,19 @@ export const WorldMap: React.FC<WorldMapProps> = ({
             {
                 svgContent && <SVGRenderer
                     svgContent={svgContent}
-                    country={country}
-                    onClickCountry={onClickCountry}
-                    language={language}
-                    stateZoomIn={stateZoomIn}
-                    stateZoomOut={stateZoomOut}
-                    debug={debug}
                     width={width}
                     height={height}
+
+                    country={country}
+                    language={language}
+
+                    onClickCountry={onClickCountry}
+                    onClickPlace={onClickPlace}
+
+                    stateZoomIn={stateZoomIn}
+                    stateZoomOut={stateZoomOut}
+
+                    debug={debug}
                 />
             }
         </div>

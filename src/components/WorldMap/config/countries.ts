@@ -1,5 +1,6 @@
 export type TypeCountry = {
     code: string|null;
+
     nameCz: string;
     nameDe: string;
     nameEn: string;
@@ -276,6 +277,9 @@ export const countries: TypeCountry[] = [
     { code: "xx",  nameCz: "Neznámá země",                                        nameDe: "Unbekanntes Land",                          nameEn: "Unknown country",                                      nameEs: "País desconocido",                                 nameFr: "Pays inconnu",                             nameHr: "Nepoznata zemlja",                     nameIt: "Bonaire",                                   namePl: "Nieznany kraj",                                                   nameSv: "Okänt land"                                             }
 ];
 
+/**
+ * Convert countries to easy accessible array.
+ */
 export const countryMap: {[key: string]: TypeCountry} = countries.reduce((map, country) => {
     map[country.code ?? ''] = country;
     return map;

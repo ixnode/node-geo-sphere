@@ -10,7 +10,7 @@ import {
 } from "../types/types";
 
 /* Import configuration. */
-import {proj3857, proj4326} from "../config/config";
+import {proj3857, proj4326, scaleFactor} from "../config/config";
 
 /* Import classes. */
 import {GeometryChecker} from "./GeometryChecker";
@@ -43,7 +43,9 @@ export class CoordinateConverter {
      * @param coordinate
      */
     public convertCoordinateWgs84ToMercator(coordinate: TypePoint): TypePoint {
-        return proj4(proj4326, proj3857, coordinate);
+        const [x, y] = proj4(proj4326, proj3857, coordinate);
+
+        return [x / scaleFactor, y / scaleFactor];
     }
 
     /**
@@ -52,7 +54,9 @@ export class CoordinateConverter {
      * @param coordinate
      */
     public convertCoordinateMercatorToWgs84(coordinate: TypePoint): TypePoint {
-        return proj4(proj3857, proj4326, coordinate);
+        const [x, y] = coordinate;
+
+        return proj4(proj3857, proj4326, [x * scaleFactor, y * scaleFactor]);
     }
 
     private calculateMercatorFromPoint(geometry: TypePointGeometry): TypePointGeometry {

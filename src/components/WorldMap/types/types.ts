@@ -1,7 +1,8 @@
 import { FeatureCollection } from 'geojson';
 
 /* Import interfaces. */
-import {ClickCountryData} from "../config/interfaces";
+import {ClickCountryData, ClickPlaceData} from "../config/interfaces";
+import {TypeCityType} from "../config/cities";
 
 export type TypeProperties = {
     name?: string;
@@ -47,6 +48,7 @@ export type TypeFeature = {
     type: "Feature";
     id?: string;
     name?: string;
+    country?: string;
     geometry: TypeGeometry;
     properties: TypeProperties;
 };
@@ -76,6 +78,63 @@ export type TypeBoundingBox = {
     height: number;
 };
 
+/**
+ * Map click callback types.
+ */
+
+/* Return ype when clicked on country. */
 export type TypeClickCountry = ((data: ClickCountryData) => void)|null;
 
-export type TypeSvgElement = 'path'|'circle';
+/* Return ype when clicked on place. */
+export type TypeClickPlace = ((data: ClickPlaceData) => void)|null;
+
+
+
+/**
+ * TypeSvg types.
+ */
+
+/* Supported SVG elements. */
+export type TypeSvgElement = 'path'|'circle'|'g';
+
+/* TypeSvgCountry type. */
+export type TypeSvgCountry = {
+    /* Country properties. */
+    id: string|null;
+    name: string;
+    selected: boolean;
+
+    /* Position. */
+    path: string;
+
+    /* Styling. */
+    fill?: string;
+    stroke?: string;
+    "stroke-width"?: number;
+}
+
+/* TypeSvgPlace type. */
+export type TypeSvgPlace = {
+    /* Place properties. */
+    id: string|null;
+    name: string;
+    placeType: TypeCityType;
+
+    /* Position. */
+    x: number;
+    y: number;
+
+    /* Styling. */
+    r?: number;
+    fill?: string;
+}
+
+/* TypeSvgContent type. */
+export type TypeSvgContent = {
+    svgPaths: string;
+    svgCircles: string;
+    viewBoxLeft: number;
+    viewBoxTop: number;
+    viewBoxWidth: number;
+    viewBoxHeight: number;
+}

@@ -5,12 +5,12 @@ import {defaultLanguage} from "../../../config/config";
 import {TypeLanguagesSupported} from "../../../config/types";
 
 /* Import types. */
-import {InterfaceGeoJson, TypeCountryKey, TypeDataSource, TypeFeatureMap} from "../types/types";
+import {InterfaceGeoJson, TypeCountryKey, TypeDataSource, TypeFeatureMap, TypeSvgContent} from "../types/types";
 
 /* Import classes. */
 import {BoundingBox} from "./BoundingBox";
 import {DataConverter} from "./DataConverter";
-import {GeoJson2Path, TypeSvgContent} from "./GeoJson2Path";
+import {GeoJson2Path} from "./GeoJson2Path";
 
 /* WorldMapSvgOptions interface. */
 interface WorldMapSvgOptions {
