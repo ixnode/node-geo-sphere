@@ -47,6 +47,8 @@ export const getLanguageNamePlace = (language: string): keyof TypeCity => {
     /* Reference a real TypeCountry object structure for the check. */
     const exampleCountry: TypeCity = {
         coordinate: [.0, .0],
+        priority: 1,
+        size: 'smaller',
 
         country: '',
         type: 'city',

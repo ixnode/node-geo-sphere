@@ -2,7 +2,7 @@ import { FeatureCollection } from 'geojson';
 
 /* Import interfaces. */
 import {ClickCountryData, ClickPlaceData} from "../config/interfaces";
-import {TypeCityType} from "../config/cities";
+import {TypeCitySize, TypeCityType} from "../config/cities";
 
 export type TypeProperties = {
     name?: string;
@@ -119,6 +119,8 @@ export type TypeSvgPlace = {
     id: string|null;
     name: string;
     placeType: TypeCityType;
+    priority: number;
+    size: TypeCitySize;
 
     /* Position. */
     x: number;

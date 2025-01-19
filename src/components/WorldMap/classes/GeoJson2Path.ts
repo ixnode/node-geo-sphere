@@ -143,6 +143,8 @@ export class GeoJson2Path {
                     id: feature.id ?? '',
                     name: name,
                     placeType: cityMapElement ? cityMapElement.type : typeCityTypeNameCity,
+                    priority: cityMapElement ? cityMapElement.priority : 1,
+                    size: cityMapElement ? cityMapElement.size : 'standard',
 
                     /* Position. */
                     x: x,
@@ -255,9 +257,13 @@ export class GeoJson2Path {
      * @private
      */
     private getSvgPlace(element: TypeSvgPlace): string {
-        const {id, x, y, r, fill, name} = element;
+        const {id, x, y, r, fill, name, size, priority} = element;
         const idName = id ? id.toLowerCase() : null;
         let nameTranslated = name;
+
+        if ([3].includes(priority)) {
+            return '';
+        }
 
         if ((id !== null) && (id in cityMap)) {
             const dataCity = cityMap[id];
@@ -265,7 +271,7 @@ export class GeoJson2Path {
         }
 
         return `
-            <g class="${[classNameSvgG, this.getSvgPlaceClassNameType(element.placeType)].filter(Boolean).join(' ')}" id="${idName}">
+            <g class="${[classNameSvgG, `${classNameSvgG}-${size}`, this.getSvgPlaceClassNameType(element.placeType)].filter(Boolean).join(' ')}" id="${idName}">
                 <circle class="${classNameSvgCircle}" cx="${x}" cy="${y}"${fill !== undefined ? ` fill="${fill}"` : ''}${r !== undefined ? ` r="${r}"` : ''}>
                     <title>${nameTranslated}</title>
                 </circle>

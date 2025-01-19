@@ -221,8 +221,18 @@ $color-text: #333;
                 }
 
                 text.title {
-                    font-size: 250%;
+                    font-size: 225%;
                     font-weight: bold;
+                }
+
+                &.place-group-smaller {
+                    circle.place {
+                        r: 3;
+                    }
+
+                    text.title {
+                        font-size: 180%;
+                    }
                 }
             }
 
