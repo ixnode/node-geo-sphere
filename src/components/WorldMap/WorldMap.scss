@@ -244,6 +244,16 @@ $color-text: #333;
                 text.title {
                     font-size: 180%;
                 }
+
+                &.place-group-smaller {
+                    circle.place {
+                        r: 2;
+                    }
+
+                    text.title {
+                        font-size: 110%;
+                    }
+                }
             }
 
             &.place-group-city {
