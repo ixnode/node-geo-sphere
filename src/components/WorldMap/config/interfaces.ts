@@ -41,6 +41,9 @@ export interface ClickPlaceData {
     /* Name of the place. */
     name?: string|null;
 
+    /* Population of the place. */
+    population?: number|null;
+
     /* Latitude on svg. */
     latitude?: number;
 

@@ -1,8 +1,10 @@
 import React from "react";
+import {TFunction} from "i18next";
 
 /* Import configurations. */
 import {Point} from "../config/interfaces";
-import {TypeSvgElement} from "../types/types";
+import {cityMap, TypeCity} from "../config/cities";
+import {countryMap, TypeCountry} from "../config/countries";
 import {
     classNameHover,
     classNameSvgCircle,
@@ -17,8 +19,12 @@ import {
     tagNamePath,
     tagNameSvg
 } from "../config/elementNames";
-import {cityMap, TypeCity} from "../config/cities";
-import {countryMap, TypeCountry} from "../config/countries";
+
+/* Import types. */
+import {TypeSvgElement} from "../types/types";
+
+/* Import other tools. */
+import {ucFirst} from "./string";
 
 /**
  * Default texts
@@ -259,37 +265,82 @@ export const addHoverClass = (target: SVGElement|string): void => {
  * Adds title to map.
  *
  * @param title
- * @param subtitle
- * @param population
  */
-export const addHoverTitle = (title: string, subtitle: string|null = null, population: number|null = null): void => {
-
+export const addHoverTitle = (title: string): void => {
     const elementTitle = document.getElementById(idWorldMapTitle);
 
-    if (elementTitle) {
-        elementTitle.textContent = title;
+    if (!elementTitle) {
+        return;
     }
 
+    elementTitle.textContent = title;
+}
+
+/**
+ * Adds subtitle to map.
+ *
+ * @param subtitle
+ * @param population
+ * @param t
+ */
+export const addHoverSubtitle = (
+    subtitle: string,
+    population: number|null = null,
+    t: TFunction<"translation", undefined>|null = null
+): void => {
     const elementSubtitle = document.getElementById(idWorldMapSubtitle);
 
     if (!elementSubtitle) {
         return;
     }
 
-    if (subtitle === null) {
-        elementSubtitle.textContent = textDefaultWorldMapSubtitleEmpty;
+    let subtitleBuild = subtitle;
+
+    if (population !== null) {
+        subtitleBuild += t === null ?
+            ` (${population.toLocaleString('de-DE')})` :
+            ` (${ucFirst(t('TEXT_WORD_POPULATION' as any))}: ${population.toLocaleString('de-DE')})`
+        ;
+    }
+
+    elementSubtitle.textContent = subtitleBuild;
+
+    if (subtitleBuild.length > 0) {
+        elementSubtitle.classList.add(classNameVisible);
+    } else {
         elementSubtitle.classList.remove(classNameVisible);
+    }
+}
+
+/**
+ * Removes the title from map.
+ */
+export const removeTitle = (): void => {
+    const elementTitle = document.getElementById(idWorldMapTitle);
+
+    if (!elementTitle) {
         return;
     }
 
-    if (elementSubtitle) {
-        elementSubtitle.textContent = subtitle + (population !== null ? (' (' + population.toLocaleString('de-DE') + ')') : null);
+    elementTitle.textContent = elementTitle.dataset.defaultTitle ?? textDefaultWorldMapTitle;
+}
 
-        if (subtitle.length > 0) {
-            elementSubtitle.classList.add(classNameVisible);
-        } else {
-            elementSubtitle.classList.remove(classNameVisible);
-        }
+/**
+ * Removes the subtitle.
+ */
+export const removeSubtitle = () => {
+    const elementSubtitle = document.getElementById(idWorldMapSubtitle);
+
+    if (!elementSubtitle) {
+        return;
+    }
+
+    elementSubtitle.textContent = textDefaultWorldMapSubtitle;
+
+    if (textDefaultWorldMapSubtitle.length > 0) {
+        elementSubtitle.classList.add(classNameVisible);
+    } else {
+        elementSubtitle.classList.remove(classNameVisible);
     }
 }
 
@@ -297,24 +348,8 @@ export const addHoverTitle = (title: string, subtitle: string|null = null, popul
  * Adds default title to map.
  */
 export const resetTitle = (): void => {
-
-    const elementTitle = document.getElementById(idWorldMapTitle);
-
-    if (elementTitle) {
-        elementTitle.textContent = elementTitle.dataset.defaultTitle ?? textDefaultWorldMapTitle;
-    }
-
-    const elementSubtitle = document.getElementById(idWorldMapSubtitle);
-
-    if (elementSubtitle) {
-        elementSubtitle.textContent = textDefaultWorldMapSubtitle;
-
-        if (textDefaultWorldMapSubtitle.length > 0) {
-            elementSubtitle.classList.add(classNameVisible);
-        } else {
-            elementSubtitle.classList.remove(classNameVisible);
-        }
-    }
+    removeTitle();
+    removeSubtitle();
 }
 
 /**

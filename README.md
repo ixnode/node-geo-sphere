@@ -61,7 +61,7 @@ const App = () => (
 export default App;
 ```
 
-### Usage with callback function (country)
+### Usage with country callback function
 
 ```tsx
 import React from 'react';
@@ -112,7 +112,7 @@ The callback function logs something like (according to the clicked country and 
 | `svgPosition.x`    | The x position of the last click. Related to the whole svg map. |
 | `svgPosition.y`    | The x position of the last click. Related to the whole svg map. |
 
-### Usage with callback function (place)
+### Usage with place callback function
 
 ```tsx
 import React from 'react';
@@ -141,6 +141,7 @@ The callback function logs something like (according to the clicked country and 
   "latitude": 52.5235,
   "longitude": 13.4115,
   "name": "Berlin",
+  "population": 3662381,
   "screenPosition": {
     "x": 629,
     "y": 295 
@@ -151,6 +152,18 @@ The callback function logs something like (according to the clicked country and 
   }
 }
 ```
+
+| Property           | Description                                                     |
+|--------------------|-----------------------------------------------------------------|
+| `id`               | The id of clicked element.                                      |
+| `name`             | The translated name of clicked element.                         |
+| `population`       | The population of clicked element.                              |
+| `latitude`         | The latitude value. Clicked on the map.                         |
+| `longitude`        | The longitude value. Clicked on the map.                        |
+| `screenPosition.x` | The x position of the last click. Related to the screen.        |
+| `screenPosition.y` | The y position of the last click. Related to the screen.        |
+| `svgPosition.x`    | The x position of the last click. Related to the whole svg map. |
+| `svgPosition.y`    | The x position of the last click. Related to the whole svg map. |
 
 ## 🔧 Properties
 

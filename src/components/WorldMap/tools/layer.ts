@@ -3,7 +3,8 @@ export const classWorldMapScrollHint = 'world-map__hints';
 export const classWorldMapScrollHintVisible = 'world-map__hints--visible';
 
 /* Timeout variables. */
-export let worldMapScrollHintTimeoutId: number | null = null;
+export let worldMapScrollHintTimeoutId: number|ReturnType<typeof setTimeout>|null = null;
+export const delayShowWorldMapScrollHint = 3000; /* unit in ms */
 
 
 
@@ -11,6 +12,12 @@ export let worldMapScrollHintTimeoutId: number | null = null;
  * Show scroll hint (WorldMap).
  */
 export const showScrollHint = () => {
+
+    /* Clear timer if this is still in use. */
+    if (worldMapScrollHintTimeoutId !== null) {
+        return;
+    }
+
     const hintsElement = document.querySelector('.' + classWorldMapScrollHint) as HTMLElement;
 
     /* Hint element not found. */
@@ -34,7 +41,7 @@ export const hideScrollHint = () => {
 
     /* Clear timer if this is still in use. */
     if (worldMapScrollHintTimeoutId !== null) {
-        clearTimeout(worldMapScrollHintTimeoutId);
+        clearTimeout(worldMapScrollHintTimeoutId as number);
         worldMapScrollHintTimeoutId = null;
     }
 
@@ -52,4 +59,13 @@ export const hideScrollHint = () => {
 
     /* Hide scroll hint. */
     hintsElement.classList.remove(classWorldMapScrollHintVisible);
+}
+
+/**
+ * Hide scroll hint (WorldMap).
+ */
+export const hideScrollHintDelayed = (delay: number|null = null) => {
+    worldMapScrollHintTimeoutId = setTimeout(() => {
+        hideScrollHint();
+    }, delay ?? delayShowWorldMapScrollHint);
 }

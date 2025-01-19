@@ -198,7 +198,7 @@ export const WorldMap: React.FC<WorldMapProps> = ({
                 ref={hintsRef}
                 onWheel={!eventWheelAsEventListener ? handleWheel : undefined}
             >
-                { t('TEXT_HOLD_CTRL_AND_SCROLL' as any) }
+                <p>{ t('TEXT_HOLD_CTRL_AND_SCROLL' as any) }</p>
             </div>
 
             <div className="world-map__title">

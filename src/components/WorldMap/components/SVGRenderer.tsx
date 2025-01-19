@@ -1,5 +1,6 @@
 import React, {useEffect, useState, useRef} from 'react';
 import {createRoot, Root} from "react-dom/client";
+import {useTranslation} from "react-i18next";
 
 /* Import configuration (WorldMap). */
 import {
@@ -26,7 +27,7 @@ import {
 } from "../config/events";
 import {countryMap} from "../config/countries";
 import {defaultDebug, defaultMapHeight, defaultMapWidth, scaleFactor} from "../config/config";
-import {ClickCountryData, DebugContent, Point, SVGViewBox} from "../config/interfaces";
+import {ClickCountryData, ClickPlaceData, DebugContent, Point, SVGViewBox} from "../config/interfaces";
 import {
     classNameSvgCircle,
     classNameSvgG,
@@ -60,18 +61,18 @@ import {TypeClickCountry, TypeClickPlace, TypeSvgContent} from "../types/types";
 import {CoordinateConverter} from "../classes/CoordinateConverter";
 
 /* Import tools. */
-import {getLanguageNameCountry, getLanguageNamePlace, getTranslatedNamePlace} from "../tools/language";
+import {getLanguageNameCountry, getTranslatedNamePlace} from "../tools/language";
 import {calculateZoomViewBox} from "../tools/zoom";
-import {hideScrollHint, showScrollHint} from "../tools/layer";
+import {hideScrollHint, hideScrollHintDelayed, showScrollHint} from "../tools/layer";
 import {
-    addHoverClass,
+    addHoverClass, addHoverSubtitle,
     addHoverTitle,
     getPointFromEvent,
     getSvgElementFromSvg,
     getSvgPointFromSvg,
     removeHoverClassCirclePlace,
     removeHoverClassGPlaceGroup,
-    removeHoverClassPathCountry,
+    removeHoverClassPathCountry, removeSubtitle,
     resetTitle,
     textNotAvailable
 } from "../tools/interaction";
@@ -107,11 +108,7 @@ let rootDebugMapType: Root|null = null;
 let rootDebugMapContent: Root|null = null;
 
 /* Delays */
-const delayShowWorldMapScrollHint = 3000; /* unit in ms */
 const delayMousePanning = null;
-
-/* Timeout variables. */
-let worldMapScrollHintTimeoutId: ReturnType<typeof setTimeout> | null = null;
 
 
 
@@ -149,6 +146,9 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         width: svgContent.viewBoxWidth,
         height: svgContent.viewBoxHeight
     });
+    const [previousDeltaY, setPreviousDeltaY] = useState<number>(0);
+    const [isTouchpadThrottling, setIsTouchpadThrottling] = useState<boolean>(false);
+    const [touchpadZoomTimeout, setTouchpadZoomTimeout] = useState<number|ReturnType<typeof setTimeout>|null>(null);
 
     /* Set references. */
     const svgRef = useRef<SVGSVGElement>(null!);
@@ -162,6 +162,9 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
 
     /* Set global variables. */
     languageGlobal = language;
+
+    /* Import translation. */
+    const { t } = useTranslation();
 
 
 
@@ -675,10 +678,6 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
      * =========================
      */
 
-    const isTouchpad = (event: React.WheelEvent<SVGSVGElement> | WheelEvent): boolean => {
-        return false; //Math.abs(event.deltaY) < 100;
-    };
-
     /**
      * "wheel" event.
      */
@@ -689,14 +688,32 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             return;
         }
 
+        const isTouchpad = isTouchpadUsed(event);
+
+        if (isTouchpad) {
+            handleWheelTouchpad(event);
+            return;
+        }
+
+        handleWheelMouse(event);
+    };
+
+    /**
+     * "wheel" event (mouse).
+     */
+    const handleWheelMouse = (event: React.WheelEvent<SVGSVGElement> | WheelEvent) => {
+
+        /* Svg is not available -> stop handle. */
+        if (!svgRef.current) {
+            return;
+        }
+
         if (!event.ctrlKey) {
             /* Show scroll hint. */
             showScrollHint();
 
-            /* Set timer to hide the hint. */
-            worldMapScrollHintTimeoutId = setTimeout(() => {
-                hideScrollHint();
-            }, delayShowWorldMapScrollHint);
+            /* Hide scroll hint after some time. */
+            hideScrollHintDelayed();
 
             return;
         }
@@ -708,22 +725,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         event.preventDefault();
 
         /* Get event data. */
-        const {
-            /* type */
-            // type,
-
-            /* mouse position */
-            clientX,
-            clientY,
-
-            /* keys */
-            // altKey,
-            // shiftKey,
-
-            /* delta */
-            deltaY,
-            // wheelDelta
-        } = event;
+        const {clientX, clientY, deltaY} = event;
 
         /* Get SVG dimensions. */
         const svgRect = svgRef.current.getBoundingClientRect();
@@ -731,18 +733,108 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         const mouseX = clientX - svgRect.left;
         const mouseY = clientY - svgRect.top;
 
-        /* Normalize deltaY for touchpad and mouse. */
-        const normalizedDeltaY = isTouchpad(event) ? deltaY * 1000 : deltaY;
-
         /* Save new viewBox. */
         setViewBoxAndShowDebug(calculateZoomViewBox(
-            viewBox,          /* Current viewBox. */
-            svgRect.width,    /* Width of svg area. */
-            svgRect.height,   /* Height of svg area. */
-            mouseX,           /* X-Position of the mouse. */
-            mouseY,           /* Y-Position of the mouse. */
-            normalizedDeltaY, /* Zoom width. */
+            viewBox,        /* Current viewBox. */
+            svgRect.width,  /* Width of svg area. */
+            svgRect.height, /* Height of svg area. */
+            mouseX,         /* X-Position of the mouse. */
+            mouseY,         /* Y-Position of the mouse. */
+            deltaY,         /* Zoom width. */
         ));
+    };
+
+    /**
+     * Calculated smoothed deltaY for touchpads.
+     *
+     * @param deltaY
+     * @param smoothingFactor
+     */
+    const smoothDeltaY = (deltaY: number, smoothingFactor = 0.8): number => {
+        /* Use smoothingFactor from previousDeltaY and the rest of the new deltaY. */
+        const smoothedDeltaY = smoothingFactor * previousDeltaY + (1 - smoothingFactor) * deltaY;
+
+        setPreviousDeltaY(smoothedDeltaY);
+
+        return smoothedDeltaY * 50;
+    };
+
+    /**
+     * Resets the previousDeltaY value.
+     */
+    const resetDeltaY = () => {
+        setPreviousDeltaY(0);
+        setIsTouchpadThrottling(false);
+    };
+
+    /**
+     * Function to detect touchpad usage.
+     *
+     * @param event
+     */
+    const isTouchpadUsed = (event: React.WheelEvent<SVGSVGElement> | WheelEvent): boolean => {
+        return Math.abs(event.deltaY) < 100;
+    };
+
+    /**
+     * "wheel" event (touchpad).
+     */
+    const handleWheelTouchpad = (event: React.WheelEvent<SVGSVGElement> | WheelEvent) => {
+
+        /* Svg is not available -> stop handle. */
+        if (!svgRef.current) {
+            return;
+        }
+
+        /* Prevent event bubbling. */
+        event.preventDefault();
+
+        /* Get event data. */
+        const {deltaY} = event;
+
+        /* Normalize deltaY for touchpad. */
+        const normalizedDeltaY = smoothDeltaY(deltaY);
+
+        /* Skip some touchpad events. */
+        if (isTouchpadThrottling) {
+            return;
+        }
+
+        /* Enable throttling. */
+        setIsTouchpadThrottling(true);
+
+        /* Print debug information. */
+        setDebugType(handleWheel.name);
+
+        /* Match touchpad wheel with monitor refresh rate. */
+        requestAnimationFrame(() => {
+
+            /* Get event data. */
+            const {clientX, clientY} = event;
+
+            /* Get SVG dimensions. */
+            const svgRect = svgRef.current.getBoundingClientRect();
+
+            const mouseX = clientX - svgRect.left;
+            const mouseY = clientY - svgRect.top;
+
+            /* Clears the previousDeltaY after some time. */
+            clearTimeout(touchpadZoomTimeout as number);
+            setTouchpadZoomTimeout(setTimeout(resetDeltaY, 200));
+
+            /* Save new viewBox. */
+            setViewBoxAndShowDebug(calculateZoomViewBox(
+                viewBox,          /* Current viewBox. */
+                svgRect.width,    /* Width of svg area. */
+                svgRect.height,   /* Height of svg area. */
+                mouseX,           /* X-Position of the mouse. */
+                mouseY,           /* Y-Position of the mouse. */
+                normalizedDeltaY > 0 ? 150 : -150, /* Zoom width. */
+            ));
+
+            /* Disable throttling. */
+            setIsTouchpadThrottling(false);
+        });
     };
 
 
@@ -1146,10 +1238,10 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         const countryData = countryMap[countryId];
 
         /* Build click (callback) data. */
-        const clickData = {
+        const clickData: ClickCountryData = {
             id: countryId,
             name: countryData[getLanguageNameCountry(languageGlobal)]
-        } as ClickCountryData;
+        };
 
         /* Add point (screen position). */
         if (point !== null) {
@@ -1222,9 +1314,10 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         const placeData = cityMap[placeId];
 
         /* Build click (callback) data. */
-        const clickData: ClickCountryData = {
+        const clickData: ClickPlaceData = {
             id: placeId,
             name: getTranslatedNamePlace(placeData, languageGlobal),
+            population: placeData.population,
         };
 
         /* Add point (screen position). */
@@ -1296,6 +1389,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
 
         /* Add title. */
         addHoverTitle(countryName ?? textNotAvailable);
+        removeSubtitle();
 
         /* Log position and element type. */
         setDebugContent({
@@ -1346,6 +1440,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
 
         /* Add title. */
         addHoverTitle(name ?? textNotAvailable);
+        removeSubtitle();
 
         /* Log position and element type. */
         setDebugContent({
@@ -1372,7 +1467,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         let placeId = elementG.id;
         let placeData = null;
         let placeName = null;
-        let placePopulation = null;
+        let placePopulation: number|null = null;
         let placeCountry = null;
         let countryId = null;
         let countryData = null;
@@ -1411,8 +1506,9 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         addHoverClass(elementG);
         countryId && addHoverClass(countryId);
 
-        /* Add title. */
-        addHoverTitle(countryName ?? textNotAvailable, placeName ?? textNotAvailable, placePopulation);
+        /* Add title and subtitle. */
+        addHoverTitle(countryName ?? textNotAvailable);
+        addHoverSubtitle(placeName ?? textNotAvailable, placePopulation, t);
 
         let debugContent: DebugContent = {
             "mouse position x": svgPoint.x,
