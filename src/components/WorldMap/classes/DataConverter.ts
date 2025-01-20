@@ -1,5 +1,5 @@
 import {InterfaceGeoJson, TypeCountryKey, TypeDataSource, TypeFeature} from "../types/types";
-import {countryMap} from "../config/countries";
+import {getCountryMap, TypeCountryData} from "../config/countries";
 import {cities, TypeCity} from "../config/cities";
 import {CoordinateConverter} from "./CoordinateConverter";
 import {countriesDataLow} from "../data/geoJsonLow";
@@ -34,6 +34,8 @@ export class DataConverter {
     private readonly propertiesCityStroke: string = '#008000';
 
     private readonly propertiesCityStrokeWidth: number = 0.;
+
+    private readonly countryMap: TypeCountryData = getCountryMap();
 
     /**
      * The constructor of WorldMapSvg.
@@ -102,11 +104,11 @@ export class DataConverter {
 
             const country = id.toLowerCase();
 
-            if (!countryMap.hasOwnProperty(country)) {
+            if (!this.countryMap.hasOwnProperty(country)) {
                 return convertedFeature;
             }
 
-            convertedFeature.name = countryMap[country].nameDe;
+            convertedFeature.name = this.countryMap[country].nameDe;
 
             return convertedFeature;
         });

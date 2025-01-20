@@ -1,3 +1,8 @@
+/**
+ * General types.
+ */
+export type TypeCountryData = {[key: string]: TypeCountry};
+
 export type TypeCountry = {
     code: string|null;
 
@@ -12,6 +17,9 @@ export type TypeCountry = {
     nameSv: string;
 };
 
+/**
+ * City data.
+ */
 export const countries: TypeCountry[] = [
     /* Generell translations. */
     { code: null,  nameCz: "Žádná země",                                          nameDe: "Kein Land",                                 nameEn: "No country",                                           nameEs: "Ningún país",                                      nameFr: "Pas de pays",                              nameHr: "Nema zemlje",                          nameIt: "Nessun paese",                              namePl: "Brak kraju",                                                      nameSv: "Inget land"                                             },
@@ -278,9 +286,19 @@ export const countries: TypeCountry[] = [
 ];
 
 /**
+ * Country map cache.
+ */
+let cachedCountryMap: TypeCountryData|null = null;
+
+/**
  * Convert countries to easy accessible array.
  */
-export const countryMap: {[key: string]: TypeCountry} = countries.reduce((map, country) => {
-    map[country.code ?? ''] = country;
-    return map;
-}, {} as { [key: string]: TypeCountry });
+export const getCountryMap = (): TypeCountryData => {
+    if (cachedCountryMap === null) {
+        cachedCountryMap = countries.reduce((map, country) => {
+            map[country.code ?? ''] = country;
+            return map;
+        }, {} as TypeCountryData);
+    }
+    return cachedCountryMap;
+};

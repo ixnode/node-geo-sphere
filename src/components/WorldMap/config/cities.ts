@@ -18,6 +18,7 @@ export const distanceCityTypeNameCapital = 5;
 /**
  * General types.
  */
+export type TypeCityData = {[key: string]: TypeCity};
 export type TypeCityType = "capital"|"state-capital"|"city";
 export type TypeCitySize = "standard"|"smaller"|"bigger";
 
@@ -311,9 +312,19 @@ export const cities: TypeCity[] = [
 ];
 
 /**
-* Convert cities to easy accessible array.
+* City map cache.
 */
-export const cityMap: {[key: string]: TypeCity} = cities.reduce((map, city) => {
-    map[getIdFromPlace(city.name)] = city;
-    return map;
-}, {} as { [key: string]: TypeCity });
+let cachedCityMap: TypeCityData|null = null;
+
+/**
+ * Convert cities to easy accessible array.
+ */
+export const getCityMap = (): TypeCityData => {
+    if (cachedCityMap === null) {
+        cachedCityMap = cities.reduce((map, city) => {
+            map[getIdFromPlace(city.name)] = city;
+            return map;
+        }, {} as TypeCityData);
+    }
+    return cachedCityMap;
+};

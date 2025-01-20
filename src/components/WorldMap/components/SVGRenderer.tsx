@@ -25,7 +25,8 @@ import {
     eventWheelAsEventListener,
     eventWheelEnabled,
 } from "../config/events";
-import {countryMap} from "../config/countries";
+import {getCountryMap, TypeCountryData} from "../config/countries";
+import {getCityMap, TypeCity, TypeCityData} from "../config/cities";
 import {defaultDebug, defaultMapHeight, defaultMapWidth, scaleFactor} from "../config/config";
 import {CountryData, PlaceData, DebugContent, Point, SVGViewBox} from "../config/interfaces";
 import {
@@ -76,9 +77,6 @@ import {
     resetTitle,
     textNotAvailable
 } from "../tools/interaction";
-
-/* Import configurations. */
-import {cityMap, TypeCity} from "../config/cities";
 
 /* SVGRendererProps interface. */
 interface SVGRendererProps {
@@ -161,11 +159,17 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
     const rootDebugMapType = useRef<Root|null>(null);
     const rootDebugMapContent = useRef<Root|null>(null);
 
-    /* Set global variables. */
+    /* language references. */
     const languageReference = useRef<string>(language);
 
-    /* Delays */
+    /* Delay references. */
     const delayMousePanning = useRef<number|null>(null);
+
+    /* Data references. */
+    const countryMap = useRef<TypeCountryData>(getCountryMap());
+    const cityMap = useRef<TypeCityData>(getCityMap());
+
+
 
     /* Import translation. */
     const { t } = useTranslation();
@@ -1222,7 +1226,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         const countryId = element.id;
 
         /* No country map found. */
-        if (!(countryId in countryMap)) {
+        if (!(countryId in countryMap.current)) {
             onClickCountry({
                 id: countryId
             });
@@ -1231,7 +1235,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         }
 
         /* Get country map data. */
-        const countryData = countryMap[countryId];
+        const countryData = countryMap.current[countryId];
 
         /* Build click (callback) data. */
         const clickData: CountryData = {
@@ -1298,7 +1302,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         const placeId = element.id;
 
         /* No cityMap found. */
-        if (!(placeId in cityMap)) {
+        if (!(placeId in cityMap.current)) {
             onClickPlace({
                 id: placeId
             });
@@ -1307,7 +1311,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         }
 
         /* Get city map data. */
-        const placeData = cityMap[placeId];
+        const placeData = cityMap.current[placeId];
 
         /* Build click (callback) data. */
         const clickData: PlaceData = {
@@ -1370,8 +1374,8 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         }
 
         /* countryMap value found. */
-        if (countryId in countryMap) {
-            countryData = countryMap[countryId];
+        if (countryId in countryMap.current) {
+            countryData = countryMap.current[countryId];
             countryName = countryData[getLanguageNameCountry(languageReference.current)];
         }
 
@@ -1388,7 +1392,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         removeSubtitle();
 
         /* Execute hover callback. */
-        if (onHoverCountry !== null && (countryId in countryMap) && countryId !== lastHoverCountryId.current) {
+        if (onHoverCountry !== null && (countryId in countryMap.current) && countryId !== lastHoverCountryId.current) {
             onHoverCountry({
                 id: countryId,
                 name: countryName,
@@ -1505,17 +1509,17 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         }
 
         /* cityMap value found. */
-        if (placeId in cityMap) {
-            placeData = cityMap[placeId] as TypeCity;
+        if (placeId in cityMap.current) {
+            placeData = cityMap.current[placeId] as TypeCity;
             placeName = getTranslatedNamePlace(placeData, languageReference.current);
             placePopulation = placeData.population;
             placeCountry = placeData.country;
         }
 
         /* countryMap value found. */
-        if (placeCountry !== null && placeCountry in countryMap) {
+        if (placeCountry !== null && placeCountry in countryMap.current) {
             countryId = placeCountry;
-            countryData = countryMap[placeCountry];
+            countryData = countryMap.current[placeCountry];
             countryName = countryData[getLanguageNameCountry(languageReference.current)];
         }
 
@@ -1532,7 +1536,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         addHoverSubtitle(placeName ?? textNotAvailable, placePopulation, t);
 
         /* Execute hover callback. */
-        if (onHoverPlace !== null && (placeId in cityMap) && placeId !== lastHoverPlaceId.current) {
+        if (onHoverPlace !== null && (placeId in cityMap.current) && placeId !== lastHoverPlaceId.current) {
             let data: PlaceData = {
                 id: placeId,
                 name: placeName,

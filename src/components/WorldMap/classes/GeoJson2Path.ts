@@ -1,5 +1,5 @@
 /* Import configuration. */
-import {countryMap} from "../config/countries";
+import {getCountryMap} from "../config/countries";
 import {defaultLanguage} from "../../../config/config";
 import {
     classNameSvgPath,
@@ -16,7 +16,7 @@ import {InterfaceGeoJson, TypeBoundingBox, TypeSvgContent, TypeSvgCountry, TypeS
 import {getLanguageNameCountry, getTranslatedNamePlace} from "../tools/language";
 import {getCityMapElement} from "../tools/interaction";
 import {
-    cityMap,
+    getCityMap,
     distanceCityTypeNameCapital, distanceCityTypeNameCity, distanceCityTypeNameStateCapital,
     TypeCityType,
     typeCityTypeNameCapital,
@@ -78,6 +78,9 @@ export class GeoJson2Path {
         //const radiusCircle = this.mapWidthToPointSize(boundingBoxWidth);
         //const borderWidth = Math.round(boundingBoxWidth / 1500);
         const languageName = getLanguageNameCountry(this.options.language);
+
+        /* Get country map. */
+        const countryMap = getCountryMap();
 
         geoJSON.features.forEach(feature => {
             const { type, coordinates } = feature.geometry;
@@ -264,6 +267,8 @@ export class GeoJson2Path {
         if ([3].includes(priority)) {
             return '';
         }
+
+        const cityMap = getCityMap();
 
         if ((id !== null) && (id in cityMap)) {
             const dataCity = cityMap[id];

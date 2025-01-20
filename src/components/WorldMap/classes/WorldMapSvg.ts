@@ -1,5 +1,5 @@
 /* Import configuration. */
-import {countryMap, TypeCountry} from "../config/countries";
+import {getCountryMap, TypeCountry, TypeCountryData} from "../config/countries";
 import {defaultDataSource} from "../config/config";
 import {defaultLanguage} from "../../../config/config";
 import {TypeLanguagesSupported} from "../../../config/types";
@@ -74,6 +74,8 @@ export class WorldMapSvg {
     private readonly zoomGapBoundingBoxLongitudeFactorAll = .05;
 
     private readonly zoomGapBoundingBoxLatitudeFactorAll = .05;
+
+    private readonly countryMap: TypeCountryData = getCountryMap();
 
     /**
      * The constructor of WorldMapSvg.
@@ -201,18 +203,18 @@ export class WorldMapSvg {
      * @see countryMap
      */
     public getTranslation(): TypeCountry|null {
-        if (this.country !== null  && this.country === 'eu' && countryMap.hasOwnProperty(this.country.toLowerCase())) {
-            return countryMap[this.country.toLowerCase()];
+        if (this.country !== null  && this.country === 'eu' && this.countryMap.hasOwnProperty(this.country.toLowerCase())) {
+            return this.countryMap[this.country.toLowerCase()];
         }
 
         if (this.countryKey === null) {
             return null;
         }
 
-        if (!countryMap.hasOwnProperty(this.countryKey.toLowerCase())) {
+        if (!this.countryMap.hasOwnProperty(this.countryKey.toLowerCase())) {
             return null;
         }
 
-        return countryMap[this.countryKey.toLowerCase()];
+        return this.countryMap[this.countryKey.toLowerCase()];
     }
 }

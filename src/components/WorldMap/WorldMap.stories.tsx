@@ -21,7 +21,7 @@ import {WorldMap} from './WorldMap';
 
 /* Import tools. */
 import {getLanguageNameCountry} from "./tools/language";
-import {countryMap} from "./config/countries";
+import {getCountryMap} from "./config/countries";
 
 /* Overwrite the options definition from any[] to Record<string, string>. */
 type ArgTypesWithOptions = {
@@ -42,7 +42,7 @@ const language = 'en'; /* Supported languages: cz, de, en, es, fr, hr, it, pl, s
 /* Build options for countries. */
 const countryOptions: Record<string, string|null> = Object.fromEntries(
     Object.entries({
-        ...Object.fromEntries(Object.values(countryMap).map((country) => [
+        ...Object.fromEntries(Object.values(getCountryMap()).map((country) => [
             country[getLanguageNameCountry(language)],
             country.code
         ]))

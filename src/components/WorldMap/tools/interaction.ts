@@ -3,8 +3,8 @@ import {TFunction} from "i18next";
 
 /* Import configurations. */
 import {Point} from "../config/interfaces";
-import {cityMap, TypeCity} from "../config/cities";
-import {countryMap, TypeCountry} from "../config/countries";
+import {getCityMap, TypeCity} from "../config/cities";
+import {getCountryMap, TypeCountry} from "../config/countries";
 import {
     classNameHover,
     classNameSvgCircle,
@@ -362,6 +362,8 @@ export const getCountryMapElement = (id: string|null): TypeCountry|null => {
         return null;
     }
 
+    const countryMap = getCountryMap();
+
     if (!(id in countryMap)) {
         return null;
     }
@@ -378,6 +380,8 @@ export const getCityMapElement = (id: string|null): TypeCity|null => {
     if (id === null) {
         return null;
     }
+
+    const cityMap = getCityMap();
 
     if (!(id in cityMap)) {
         return null;
