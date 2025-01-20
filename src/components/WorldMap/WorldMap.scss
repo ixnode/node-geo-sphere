@@ -4,14 +4,15 @@
 $color-text: #333;
 
 /* SVG colors. */
-$svg-path-fill: #d0d0d0;
-$svg-path-fill-selected: #c0e0c0;
-$svg-path-fill-hover: #b0d0b0;
+$svg-path-fill: #eceff1;
+$svg-path-fill-selected: #39ac73;
+$svg-path-fill-hover-mix: #000;
+$svg-path-fill-hover-mix-percent: 80%;
 $svg-path-stroke: #a0a0a0;
-$svg-circle-fill: #909090;
-$svg-circle-fill-hover: #606060;
-$svg-text-fill: #909090;
-$svg-text-fill-hover: #606060;
+$svg-circle-fill: #333;
+$svg-circle-fill-hover: #000033;
+$svg-text-fill: #333;
+$svg-text-fill-hover: #333366;
 $color-text: #333;
 
 .gs-world-map {
@@ -25,7 +26,6 @@ $color-text: #333;
     margin: 0;
     border: 1px solid #a0a0a0;
     border-radius: 8px;
-    background-color: #9bd2e5;
     position: relative;
 
     .world-map__hints {
@@ -141,6 +141,10 @@ $color-text: #333;
         cursor: pointer;
         transition: background-color 0.2s ease;
 
+        svg {
+            width: 100%;
+        }
+
         &:hover {
             background-color: #e0e0e0;
         }
@@ -160,7 +164,7 @@ $color-text: #333;
         }
     }
 
-    svg {
+    svg#svg-map {
         padding: 0;
         margin: 0;
         display: block;
@@ -168,6 +172,7 @@ $color-text: #333;
         width: 100%;
         pointer-events: all;
         cursor: default;
+        background-color: #a7c9fc;
 
         g, path, circle, text {
             pointer-events: none; /* Disable all pointer events -> No hover, etc. -> delegate this to SVGRenderer.tsx (hover, click, etc.) */
@@ -177,14 +182,16 @@ $color-text: #333;
             fill: $svg-path-fill;
             stroke: $svg-path-stroke;
 
-            &.selected {
-                fill: $svg-path-fill-selected;
-                stroke: $svg-path-stroke;
+            &.hover {
+                fill: color.mix($svg-path-fill, $svg-path-fill-hover-mix, $svg-path-fill-hover-mix-percent);
             }
 
-            &.hover {
-                fill: $svg-path-fill-hover;
-                stroke: $svg-path-stroke;
+            &.selected {
+                fill: $svg-path-fill-selected;
+
+                &.hover {
+                    fill: color.mix($svg-path-fill-selected, $svg-path-fill-hover-mix, $svg-path-fill-hover-mix-percent);
+                }
             }
         }
 
