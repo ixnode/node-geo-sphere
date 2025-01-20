@@ -96,14 +96,6 @@ interface SVGRendererProps {
     height?: number,
 }
 
-/* Global variables for panning and pinchToZoom instead of useState -> accessible via addEventListener event. */
-let isMouseDownGlobal = false;
-let isMouseMoveGlobal = false;
-let isTouchStartPanningGlobal = false;
-let isTouchStartPinchToZoomGlobal = false;
-let isTouchMovePanningGlobal = false;
-let isTouchMovePinchToZoomGlobal = false;
-
 /* Other global variables. */
 let languageGlobal: string = defaultLanguage;
 let rootDebugMapType: Root|null = null;
@@ -135,14 +127,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
     width = defaultMapWidth,
     height = defaultMapHeight,
 }) => {
-
-    /* Set states interaction. */
-    const [isMouseDown, setIsMouseDown] = useState(false);
-    const [isMouseMove, setIsMouseMove] = useState(false);
-    const [isTouchStart, setIsTouchStart] = useState(false);
-    const [isTouchMove, setIsTouchMove] = useState(false);
-
-    /* Set states others. */
+    /* Set states (ui dependent variables). */
     const [startPoint, setStartPoint] = useState({x: 0, y: 0});
     const [viewBox, setViewBox] = useState<SVGViewBox>({
         x: svgContent.viewBoxLeft,
@@ -154,7 +139,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
     const [isTouchpadThrottling, setIsTouchpadThrottling] = useState<boolean>(false);
     const [touchpadZoomTimeout, setTouchpadZoomTimeout] = useState<number|ReturnType<typeof setTimeout>|null>(null);
 
-    /* Set references. */
+    /* General references. */
     const svgRef = useRef<SVGSVGElement>(null!);
     const initialDistanceRef = useRef<number|null>(null);
     const initialViewBoxRef = useRef<SVGViewBox|null>(null);
@@ -163,8 +148,18 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         React.TouchEvent<SVGSVGElement> | SVGSVGElementEventMap["touchstart"] |
         null
     >(null);
+
+    /* Hover state references. */
     const lastHoverCountryId = useRef<string|null>(null);
     const lastHoverPlaceId = useRef<string|null>(null);
+
+    /* Interaction state references. */
+    const isMouseDown = useRef<boolean>(false);
+    const isMouseMove = useRef<boolean>(false);
+    const isTouchStartPanning = useRef<boolean>(false);
+    const isTouchStartPinchToZoom = useRef<boolean>(false);
+    const isTouchMovePanning = useRef<boolean>(false);
+    const isTouchMovePinchToZoom = useRef<boolean>(false);
 
     /* Set global variables. */
     languageGlobal = language;
@@ -196,7 +191,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         setStartPoint({ x: event.clientX, y: event.clientY });
 
         /* Mark "start panning". */
-        setIsMouseDownGlobal(true);
+        setIsMouseDown(true);
 
         /* Set last element. */
         lastEvent.current = event;
@@ -215,7 +210,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         }
 
         /* Execution depending on status. */
-        switch (isMouseDownGlobal) {
+        switch (isMouseDown.current) {
 
             /* Handle eventNameMouseMove event with mouse down. */
             case true:
@@ -267,6 +262,10 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
 
             /* Reset title. */
             resetTitle();
+
+            /* Set last hover id. */
+            lastHoverPlaceId.current = null;
+            lastHoverCountryId.current = null;
 
             /* Log position. */
             setDebugContent({
@@ -339,7 +338,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
 
         /* Mark "start panning". */
         if (distance > 2) {
-            setIsMouseMoveGlobal(true);
+            setIsMouseMove(true);
         }
     }
 
@@ -352,13 +351,13 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         setDebugType(handleMouseUp.name);
 
         /* Execute click callback function. */
-        if (!isMouseMoveGlobal && lastEvent.current !== null) {
+        if (!isMouseMove.current && lastEvent.current !== null) {
             handleSvgClick(lastEvent.current);
         }
 
         /* Mark "stop panning". */
-        setIsMouseDownGlobal(false, delayMousePanning);
-        setIsMouseMoveGlobal(false, delayMousePanning);
+        setIsMouseDown(false, delayMousePanning);
+        setIsMouseMove(false, delayMousePanning);
 
         /* Set last element. */
         lastEvent.current = null;
@@ -373,8 +372,8 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         setDebugType(handleMouseLeave.name);
 
         /* Disable isMouseDownGlobal */
-        setIsMouseDownGlobal(false);
-        setIsMouseMoveGlobal(false);
+        setIsMouseDown(false);
+        setIsMouseMove(false);
 
         /* Remover hover classes. */
         removeHoverClassPathCountry();
@@ -471,7 +470,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         setStartPoint({x: event.touches[0].clientX, y: event.touches[0].clientY});
 
         /* Mark "start panning". */
-        setIsTouchStartPanningGlobal(true);
+        setIsTouchStartPanning(true);
     };
 
     /**
@@ -503,7 +502,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         setStartPoint({x: event.touches[0].clientX, y: event.touches[0].clientY});
 
         /* Mark "start pinch to zoom". */
-        setIsTouchStartPinchToZoomGlobal(true);
+        setIsTouchStartPinchToZoom(true);
     };
 
     /**
@@ -544,7 +543,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
     const handleTouchMovePanning = (event: React.TouchEvent<SVGSVGElement> | SVGSVGElementEventMap["touchmove"]) => {
 
         /* handleTouchStartMove is not triggered yet or svg is not available -> stop handle. */
-        if (!isTouchStartPanningGlobal || !svgRef.current) {
+        if (!isTouchStartPanning.current || !svgRef.current) {
             return;
         }
 
@@ -584,7 +583,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
 
         /* Mark "start panning". */
         if (distance > 1000 / scaleFactor) {
-            setIsTouchMovePanningGlobal(true);
+            setIsTouchMovePanning(true);
         }
     }
 
@@ -596,7 +595,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
     const handleTouchMovePinchToZoom = (event: React.TouchEvent<SVGSVGElement> | SVGSVGElementEventMap["touchmove"]) => {
 
         /* handleTouchStartZoom is not triggered yet or svg is not available -> stop handle. */
-        if (!isTouchStartPinchToZoomGlobal || !svgRef.current || !initialDistanceRef.current || !initialViewBoxRef.current) {
+        if (!isTouchStartPinchToZoom.current || !svgRef.current || !initialDistanceRef.current || !initialViewBoxRef.current) {
             return;
         }
 
@@ -643,7 +642,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
 
         /* Mark "start panning". */
         if (distance > 1000 / scaleFactor) {
-            setIsTouchMovePinchToZoomGlobal(true);
+            setIsTouchMovePinchToZoom(true);
         }
     }
 
@@ -656,17 +655,17 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         setDebugType(handleTouchEnd.name);
 
         /* Execute click callback function. */
-        if (!isTouchMovePanningGlobal && !isTouchMovePinchToZoomGlobal && lastEvent.current !== null) {
+        if (!isTouchMovePanning.current && !isTouchMovePinchToZoom.current && lastEvent.current !== null) {
             handleSvgClick(lastEvent.current);
         }
 
         /* Finish "panning". */
-        setIsTouchStartPanningGlobal(false, 50);
-        setIsTouchMovePanningGlobal(false, 50);
+        setIsTouchStartPanning(false, 50);
+        setIsTouchMovePanning(false, 50);
 
         /* Finish "pinch to zoom". */
-        setIsTouchStartPinchToZoomGlobal(false, 50);
-        setIsTouchMovePinchToZoomGlobal(false, 50);
+        setIsTouchStartPinchToZoom(false, 50);
+        setIsTouchMovePinchToZoom(false, 50);
 
         /* Reset initial distance. */
         initialDistanceRef.current = null;
@@ -1034,123 +1033,111 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
     }
 
     /**
-     * setIsMouseDown (global).
+     * setIsMouseDown with delay.
      *
-     * @param isMouseDown
+     * @param isMouseDownState
      * @param delay
      */
-    const setIsMouseDownGlobal = (isMouseDown: boolean, delay: number | null = null) => {
+    const setIsMouseDown = (isMouseDownState: boolean, delay: number | null = null) => {
 
         if (delay !== null && delay > 0) {
             window.setTimeout(() => {
-                setIsMouseDown(isMouseDown);
-                isMouseDownGlobal = isMouseDown;
+                isMouseDown.current = isMouseDownState;
             }, delay);
             return;
         }
 
-        setIsMouseDown(isMouseDown);
-        isMouseDownGlobal = isMouseDown;
+        isMouseDown.current = isMouseDownState;
     }
 
     /**
-     * setIsMouseMove (global).
+     * setIsMouseMove with delay.
      *
-     * @param isMouseMove
+     * @param isMouseMoveState
      * @param delay
      */
-    const setIsMouseMoveGlobal = (isMouseMove: boolean, delay: number | null = null) => {
+    const setIsMouseMove = (isMouseMoveState: boolean, delay: number | null = null) => {
 
         if (delay !== null && delay > 0) {
             window.setTimeout(() => {
-                setIsMouseMove(isMouseMove);
-                isMouseMoveGlobal = isMouseMove;
+                isMouseMove.current = isMouseMoveState;
             }, delay);
             return;
         }
 
-        setIsMouseMove(isMouseMove);
-        isMouseMoveGlobal = isMouseMove;
+        isMouseMove.current = isMouseMoveState;
     }
 
     /**
-     * set isTouchStartPanning with delay.
+     * setIsTouchStartPanning with delay.
      *
-     * @param isTouchStart
+     * @param isTouchStartState
      * @param delay
      */
-    const setIsTouchStartPanningGlobal = (isTouchStart: boolean, delay: number|null = null) => {
+    const setIsTouchStartPanning = (isTouchStartState: boolean, delay: number|null = null) => {
 
         if (delay !== null && delay > 0) {
             window.setTimeout(() => {
-                setIsTouchStart(isTouchStart);
-                isTouchStartPanningGlobal = isTouchStart;
+                isTouchStartPanning.current = isTouchStartState;
             }, delay);
             return;
         }
 
-        setIsTouchStart(isTouchStart);
-        isTouchStartPanningGlobal = isTouchStart;
+        isTouchStartPanning.current = isTouchStartState;
     }
 
     /**
-     * set isTouchMovePanning with delay.
+     * setIsTouchMovePanning with delay.
      *
-     * @param isTouchMove
+     * @param isTouchMoveState
      * @param delay
      */
-    const setIsTouchMovePanningGlobal = (isTouchMove: boolean, delay: number|null = null) => {
+    const setIsTouchMovePanning = (isTouchMoveState: boolean, delay: number|null = null) => {
 
         if (delay !== null && delay > 0) {
             window.setTimeout(() => {
-                setIsTouchMove(isTouchMove);
-                isTouchMovePanningGlobal = isTouchMove;
+                isTouchMovePanning.current = isTouchMoveState;
             }, delay);
             return;
         }
 
-        setIsTouchMove(isTouchMove);
-        isTouchMovePanningGlobal = isTouchMove;
+        isTouchMovePanning.current = isTouchMoveState;
     }
 
     /**
-     * setIsMousePanning with delay.
+     * setIsTouchStartPinchToZoom with delay.
      *
-     * @param isTouchStart
+     * @param isTouchStartState
      * @param delay
      */
-    const setIsTouchStartPinchToZoomGlobal = (isTouchStart: boolean, delay: number|null = null) => {
+    const setIsTouchStartPinchToZoom = (isTouchStartState: boolean, delay: number|null = null) => {
 
         if (delay !== null && delay > 0) {
             window.setTimeout(() => {
-                setIsTouchStart(isTouchStart);
-                isTouchStartPinchToZoomGlobal = isTouchStart;
+                isTouchStartPinchToZoom.current = isTouchStartState;
             }, delay);
             return;
         }
 
-        setIsTouchStart(isTouchStart);
-        isTouchStartPinchToZoomGlobal = isTouchStart;
+        isTouchStartPinchToZoom.current = isTouchStartState;
     }
 
     /**
-     * setIsMousePanning with delay.
+     * setIsTouchMovePinchToZoom with delay.
      *
-     * @param isTouchMove
+     * @param isTouchMoveState
      * @param delay
      */
-    const setIsTouchMovePinchToZoomGlobal = (isTouchMove: boolean, delay: number|null = null) => {
+    const setIsTouchMovePinchToZoom = (isTouchMoveState: boolean, delay: number|null = null) => {
 
         if (delay !== null && delay > 0) {
             window.setTimeout(() => {
-                setIsTouchMove(isTouchMove);
-                isTouchMovePinchToZoomGlobal = isTouchMove;
+                isTouchMovePinchToZoom.current = isTouchMoveState;
             }, delay);
             return;
         }
 
-        setIsTouchMove(isTouchMove);
-        isTouchMovePinchToZoomGlobal = isTouchMove;
+        isTouchMovePinchToZoom.current = isTouchMoveState;
     }
 
     /**
@@ -1220,7 +1207,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         }
 
         /* Prevent click if panning or pinch-to-zoom is active. */
-        if (isMouseMoveGlobal || isTouchMovePanningGlobal || isTouchMovePinchToZoomGlobal) {
+        if (isMouseMove.current || isTouchMovePanning.current || isTouchMovePinchToZoom.current) {
             return;
         }
 
@@ -1296,7 +1283,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         }
 
         /* Prevent click if panning or pinch-to-zoom is active. */
-        if (isMouseMoveGlobal || isTouchMovePanningGlobal || isTouchMovePinchToZoomGlobal) {
+        if (isMouseMove.current || isTouchMovePanning.current || isTouchMovePinchToZoom.current) {
             return;
         }
 
