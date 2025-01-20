@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Changelogs
 
+### [0.1.28] - 2025-01-20
+
+* Add latitude and longitude to place hover callback function
+* Add new fresh colors to country and svg map
+* Map performance optimization
+* Optimize lastHover triggering
+
 ### [0.1.27] - 2025-01-20
 
 * Hover fix if debug mode is enabled
