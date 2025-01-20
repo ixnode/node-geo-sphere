@@ -127,9 +127,6 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         width: svgContent.viewBoxWidth,
         height: svgContent.viewBoxHeight
     });
-    const [previousDeltaY, setPreviousDeltaY] = useState<number>(0);
-    const [isTouchpadThrottling, setIsTouchpadThrottling] = useState<boolean>(false);
-    const [touchpadZoomTimeout, setTouchpadZoomTimeout] = useState<number|ReturnType<typeof setTimeout>|null>(null);
 
     /* General references. */
     const svgRef = useRef<SVGSVGElement>(null!);
@@ -152,6 +149,13 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
     const isTouchStartPinchToZoom = useRef<boolean>(false);
     const isTouchMovePanning = useRef<boolean>(false);
     const isTouchMovePinchToZoom = useRef<boolean>(false);
+
+    /* Wheel references. */
+    const previousDeltaY = useRef<number>(0);
+
+    /* Touchpad references. */
+    const isTouchpadThrottling = useRef<boolean>(false);
+    const touchpadZoomTimeout = useRef<number|ReturnType<typeof setTimeout>|null>(null);
 
     /* Debug references. */
     const rootDebugMapType = useRef<Root|null>(null);
@@ -756,9 +760,9 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
      */
     const smoothDeltaY = (deltaY: number, smoothingFactor = 0.8): number => {
         /* Use smoothingFactor from previousDeltaY and the rest of the new deltaY. */
-        const smoothedDeltaY = smoothingFactor * previousDeltaY + (1 - smoothingFactor) * deltaY;
+        const smoothedDeltaY = smoothingFactor * previousDeltaY.current + (1 - smoothingFactor) * deltaY;
 
-        setPreviousDeltaY(smoothedDeltaY);
+        previousDeltaY.current = smoothedDeltaY;
 
         return smoothedDeltaY * 50;
     };
@@ -767,8 +771,8 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
      * Resets the previousDeltaY value.
      */
     const resetDeltaY = () => {
-        setPreviousDeltaY(0);
-        setIsTouchpadThrottling(false);
+        previousDeltaY.current = 0;
+        isTouchpadThrottling.current = false;
     };
 
     /**
@@ -800,12 +804,12 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         const normalizedDeltaY = smoothDeltaY(deltaY);
 
         /* Skip some touchpad events. */
-        if (isTouchpadThrottling) {
+        if (isTouchpadThrottling.current) {
             return;
         }
 
         /* Enable throttling. */
-        setIsTouchpadThrottling(true);
+        isTouchpadThrottling.current = true;
 
         /* Print debug information. */
         setDebugType(handleWheel.name);
@@ -823,8 +827,8 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             const mouseY = clientY - svgRect.top;
 
             /* Clears the previousDeltaY after some time. */
-            clearTimeout(touchpadZoomTimeout as number);
-            setTouchpadZoomTimeout(setTimeout(resetDeltaY, 200));
+            clearTimeout(touchpadZoomTimeout.current as number);
+            touchpadZoomTimeout.current = setTimeout(resetDeltaY, 200);
 
             /* Save new viewBox. */
             setViewBoxAndShowDebug(calculateZoomViewBox(
@@ -837,7 +841,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             ));
 
             /* Disable throttling. */
-            setIsTouchpadThrottling(false);
+            isTouchpadThrottling.current = false;
         });
     };
 
