@@ -153,8 +153,6 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
     const [previousDeltaY, setPreviousDeltaY] = useState<number>(0);
     const [isTouchpadThrottling, setIsTouchpadThrottling] = useState<boolean>(false);
     const [touchpadZoomTimeout, setTouchpadZoomTimeout] = useState<number|ReturnType<typeof setTimeout>|null>(null);
-    const [lastHoverCountryId, setLastHoverCountryId] = useState<string|null>(null);
-    const [lastHoverPlaceId, setLastHoverPlaceId] = useState<string|null>(null);
 
     /* Set references. */
     const svgRef = useRef<SVGSVGElement>(null!);
@@ -165,6 +163,8 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         React.TouchEvent<SVGSVGElement> | SVGSVGElementEventMap["touchstart"] |
         null
     >(null);
+    const lastHoverCountryId = useRef<string|null>(null);
+    const lastHoverPlaceId = useRef<string|null>(null);
 
     /* Set global variables. */
     languageGlobal = language;
@@ -1398,7 +1398,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         removeSubtitle();
 
         /* Execute hover callback. */
-        if (onHoverCountry !== null && (countryId in countryMap) && countryId !== lastHoverCountryId) {
+        if (onHoverCountry !== null && (countryId in countryMap) && countryId !== lastHoverCountryId.current) {
             onHoverCountry({
                 id: countryId,
                 name: countryName,
@@ -1413,7 +1413,8 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             } as CountryData);
 
             /* Set last hover id. */
-            setLastHoverCountryId(countryId);
+            lastHoverPlaceId.current = null;
+            lastHoverCountryId.current = countryId;
         }
 
         /* No debut output needed. */
@@ -1541,7 +1542,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         addHoverSubtitle(placeName ?? textNotAvailable, placePopulation, t);
 
         /* Execute hover callback. */
-        if (onHoverPlace !== null && (placeId in cityMap) && placeId !== lastHoverPlaceId) {
+        if (onHoverPlace !== null && (placeId in cityMap) && placeId !== lastHoverPlaceId.current) {
             onHoverPlace({
                 id: placeId,
                 name: placeName,
@@ -1556,7 +1557,8 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             } as PlaceData);
 
             /* Set last hover id. */
-            setLastHoverPlaceId(placeId);
+            lastHoverPlaceId.current = placeId;
+            lastHoverCountryId.current = null;
         }
 
         /* No debut output needed. */
