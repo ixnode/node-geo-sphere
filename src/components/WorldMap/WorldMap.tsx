@@ -20,7 +20,13 @@ import {
 import {CountryData, PlaceData} from "./config/interfaces";
 import {TypeLanguagesSupported} from "../../config/types";
 import {eventWheelAsEventListener} from "./config/events";
-import {idDebugMapContent, idDebugMapType, idWorldMapSubtitle, idWorldMapTitle} from "./config/elementNames";
+import {
+    eventNameWheel,
+    idDebugMapContent,
+    idDebugMapType,
+    idWorldMapSubtitle,
+    idWorldMapTitle
+} from "./config/elementNames";
 
 /* Import types. */
 import {TypeDataSource, TypeSvgContent} from "./types/types";
@@ -100,7 +106,7 @@ export const WorldMap: React.FC<WorldMapProps> = ({
     logo = defaultLogo,
 }) => {
 
-    /* Set states. */
+    /* Set states (ui dependent variables). */
     const [svgContent, setSvgContent] = useState<TypeSvgContent|null>(null);
     const [stateZoomIn, setStateZoomIn] = useState<number>(0);
     const [stateZoomOut, setStateZoomOut] = useState<number>(0);
@@ -185,10 +191,10 @@ export const WorldMap: React.FC<WorldMapProps> = ({
         let hintElement = hintsRef.current;
 
         /* svgElement.addEventListener('wheel') vs. svg.onWheel */
-        eventWheelAsEventListener && hintElement.addEventListener('wheel', handleWheel, { passive: false });
+        eventWheelAsEventListener && hintElement.addEventListener(eventNameWheel, handleWheel, { passive: false });
 
         return () => {
-            hintElement.removeEventListener('wheel', handleWheel);
+            eventWheelAsEventListener && hintElement.removeEventListener(eventNameWheel, handleWheel);
         };
     }, []);
 
