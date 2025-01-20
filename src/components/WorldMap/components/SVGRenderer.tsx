@@ -1533,18 +1533,28 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
 
         /* Execute hover callback. */
         if (onHoverPlace !== null && (placeId in cityMap) && placeId !== lastHoverPlaceId.current) {
-            onHoverPlace({
+            let data: PlaceData = {
                 id: placeId,
                 name: placeName,
-                screenPosition: {
-                    x: point?.x,
-                    y: point?.y,
-                },
                 svgPosition: {
                     x: svgPoint.x,
                     y: svgPoint.y,
                 }
-            } as PlaceData);
+            };
+
+            if (point) {
+                data.screenPosition = {
+                    x: point.x,
+                    y: point.y,
+                }
+            }
+
+            if (placeData) {
+                data.longitude = placeData.coordinate[0];
+                data.latitude = placeData.coordinate[1];
+            }
+
+            onHoverPlace(data);
 
             /* Set last hover id. */
             lastHoverPlaceId.current = placeId;
