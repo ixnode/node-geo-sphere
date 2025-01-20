@@ -96,14 +96,6 @@ interface SVGRendererProps {
     height?: number,
 }
 
-/* Other global variables. */
-let languageGlobal: string = defaultLanguage;
-let rootDebugMapType: Root|null = null;
-let rootDebugMapContent: Root|null = null;
-
-/* Delays */
-const delayMousePanning = null;
-
 
 
 /**
@@ -161,8 +153,15 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
     const isTouchMovePanning = useRef<boolean>(false);
     const isTouchMovePinchToZoom = useRef<boolean>(false);
 
+    /* Debug references. */
+    const rootDebugMapType = useRef<Root|null>(null);
+    const rootDebugMapContent = useRef<Root|null>(null);
+
     /* Set global variables. */
-    languageGlobal = language;
+    const languageReference = useRef<string>(language);
+
+    /* Delays */
+    const delayMousePanning = useRef<number|null>(null);
 
     /* Import translation. */
     const { t } = useTranslation();
@@ -356,8 +355,8 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         }
 
         /* Mark "stop panning". */
-        setIsMouseDown(false, delayMousePanning);
-        setIsMouseMove(false, delayMousePanning);
+        setIsMouseDown(false, delayMousePanning.current);
+        setIsMouseMove(false, delayMousePanning.current);
 
         /* Set last element. */
         lastEvent.current = null;
@@ -987,11 +986,11 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             return;
         }
 
-        if (rootDebugMapType === null) {
-            rootDebugMapType = createRoot(element);
+        if (rootDebugMapType.current === null) {
+            rootDebugMapType.current = createRoot(element);
         }
 
-        rootDebugMapType.render(type);
+        rootDebugMapType.current.render(type);
     }
 
     /**
@@ -1014,11 +1013,11 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             return;
         }
 
-        if (rootDebugMapContent === null) {
-            rootDebugMapContent = createRoot(element);
+        if (rootDebugMapContent.current === null) {
+            rootDebugMapContent.current = createRoot(element);
         }
 
-        rootDebugMapContent.render(
+        rootDebugMapContent.current.render(
             <div className="table-structured separated ratio-1-2">
                 <div className="grid">
                     {Object.entries(content).map(([key, value]) => (
@@ -1233,7 +1232,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         /* Build click (callback) data. */
         const clickData: CountryData = {
             id: countryId,
-            name: countryData[getLanguageNameCountry(languageGlobal)]
+            name: countryData[getLanguageNameCountry(languageReference.current)]
         };
 
         /* Add point (screen position). */
@@ -1309,7 +1308,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         /* Build click (callback) data. */
         const clickData: PlaceData = {
             id: placeId,
-            name: getTranslatedNamePlace(placeData, languageGlobal),
+            name: getTranslatedNamePlace(placeData, languageReference.current),
             population: placeData.population,
         };
 
@@ -1369,7 +1368,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         /* countryMap value found. */
         if (countryId in countryMap) {
             countryData = countryMap[countryId];
-            countryName = countryData[getLanguageNameCountry(languageGlobal)];
+            countryName = countryData[getLanguageNameCountry(languageReference.current)];
         }
 
         /* Remove hover class from all svg.path[class=country] and svg.circle[class=place] elements. */
@@ -1504,7 +1503,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         /* cityMap value found. */
         if (placeId in cityMap) {
             placeData = cityMap[placeId] as TypeCity;
-            placeName = getTranslatedNamePlace(placeData, languageGlobal);
+            placeName = getTranslatedNamePlace(placeData, languageReference.current);
             placePopulation = placeData.population;
             placeCountry = placeData.country;
         }
@@ -1513,7 +1512,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         if (placeCountry !== null && placeCountry in countryMap) {
             countryId = placeCountry;
             countryData = countryMap[placeCountry];
-            countryName = countryData[getLanguageNameCountry(languageGlobal)];
+            countryName = countryData[getLanguageNameCountry(languageReference.current)];
         }
 
         /* Remove hover class from all svg.g[class=place-group] elements. */
@@ -1582,12 +1581,12 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
      * Component reloaded or updated
      */
     useEffect(() => {
-        rootDebugMapType = null;
-        rootDebugMapContent = null;
+        rootDebugMapType.current = null;
+        rootDebugMapContent.current = null;
     }, []);
     useEffect(() => {
-        rootDebugMapType = null;
-        rootDebugMapContent = null;
+        rootDebugMapType.current = null;
+        rootDebugMapContent.current = null;
     }, [debug]);
 
     /**
