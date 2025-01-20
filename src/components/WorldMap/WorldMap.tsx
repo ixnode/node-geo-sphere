@@ -100,16 +100,16 @@ export const WorldMap: React.FC<WorldMapProps> = ({
     logo = defaultLogo,
 }) => {
 
-    /* Set refs. */
-    const hintsRef = useRef<HTMLDivElement|null>(null);
-
     /* Set states. */
     const [svgContent, setSvgContent] = useState<TypeSvgContent|null>(null);
-    const [translation, setTranslation] = useState<TypeCountry|null>(null);
     const [stateZoomIn, setStateZoomIn] = useState<number>(0);
     const [stateZoomOut, setStateZoomOut] = useState<number>(0);
-    const [title, setTitle] = useState<string>(textDefaultWorldMapTitle);
-    const [subtitle, setSubtitle] = useState<string>(textDefaultWorldMapSubtitle);
+
+    /* Set refs. */
+    const hintsRef = useRef<HTMLDivElement|null>(null);
+    const translation = useRef<TypeCountry|null>(null);
+    const title = useRef<string>(textDefaultWorldMapTitle);
+    const subtitle = useRef<string>(textDefaultWorldMapSubtitle);
 
     /* Import translation. */
     const { t } = useTranslation();
@@ -160,15 +160,13 @@ export const WorldMap: React.FC<WorldMapProps> = ({
         worldMapSvg.setDataSource(dataSource as TypeDataSource);
         worldMapSvg.setCountry(country);
 
-        const translation = worldMapSvg.getTranslation();
-
-        setTranslation(translation);
+        translation.current = worldMapSvg.getTranslation();
         setSvgContent(worldMapSvg.generateSvgByCountry(country));
 
-        const title = translation ? translation[getLanguageNameCountry(language)] : textDefaultWorldMapTitle;
+        const titleWorldMap = translation.current ? translation.current[getLanguageNameCountry(language)] : textDefaultWorldMapTitle;
 
-        setTitle(title ?? textDefaultWorldMapTitle);
-        setSubtitle(textDefaultWorldMapSubtitle);
+        title.current = titleWorldMap ?? textDefaultWorldMapTitle;
+        subtitle.current = textDefaultWorldMapSubtitle;
     }, [dataSource, country, width, height, language]);
 
     /* Change default language. */
@@ -210,7 +208,7 @@ export const WorldMap: React.FC<WorldMapProps> = ({
             </div>
 
             <div className="world-map__title">
-                <span id={idWorldMapTitle} data-default-title={title}>{title}</span><span className="world-map__subtitle" id={idWorldMapSubtitle}></span>
+                <span id={idWorldMapTitle} data-default-title={title.current}>{title.current}</span><span className="world-map__subtitle" id={idWorldMapSubtitle}></span>
             </div>
 
             <div className="world-map__copyright">
