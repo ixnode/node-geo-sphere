@@ -1,7 +1,12 @@
 /* Import configurations. */
-import {TypeCountry} from "../config/countries";
+import {getCountryMap, TypeCountry} from "../config/countries";
 import {TypeCity} from "../config/cities";
+
+/* Import other tools. */
 import {textNotAvailable} from "./interaction";
+
+/* Import types. */
+import {TypeCountryKey} from "../types/types";
 
 /**
  * Returns the language name of given language.
@@ -104,4 +109,26 @@ export const getTranslatedNamePlace = (data: TypeCity, language: string): string
     }
 
     return textNotAvailable;
+}
+
+/**
+ * Returns the translation from countryMap.
+ *
+ * @see countryMap
+ */
+export const getTranslation = (country: TypeCountryKey|null): TypeCountry|null => {
+
+    if (country === null) {
+        return null;
+    }
+
+    country = country.toLowerCase();
+
+    const countryMap = getCountryMap();
+
+    if (!countryMap.hasOwnProperty(country)) {
+        return null;
+    }
+
+    return countryMap[country];
 }

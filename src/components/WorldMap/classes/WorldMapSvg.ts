@@ -75,8 +75,6 @@ export class WorldMapSvg {
 
     private readonly zoomGapBoundingBoxLatitudeFactorAll = .05;
 
-    private readonly countryMap: TypeCountryData = getCountryMap();
-
     /**
      * The constructor of WorldMapSvg.
      *
@@ -195,26 +193,5 @@ export class WorldMapSvg {
         );
 
         return this.geoJson2Path.generateSVG(this.data, boundingBox, country);
-    }
-
-    /**
-     * Returns the translation from countryMap.
-     *
-     * @see countryMap
-     */
-    public getTranslation(): TypeCountry|null {
-        if (this.country !== null  && this.country === 'eu' && this.countryMap.hasOwnProperty(this.country.toLowerCase())) {
-            return this.countryMap[this.country.toLowerCase()];
-        }
-
-        if (this.countryKey === null) {
-            return null;
-        }
-
-        if (!this.countryMap.hasOwnProperty(this.countryKey.toLowerCase())) {
-            return null;
-        }
-
-        return this.countryMap[this.countryKey.toLowerCase()];
     }
 }

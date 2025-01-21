@@ -38,7 +38,7 @@ import {WorldMapSvg} from "./classes/WorldMapSvg";
 import SVGRenderer from "./components/SVGRenderer";
 
 /* Import tools. */
-import {getLanguageNameCountry} from "./tools/language";
+import {getLanguageNameCountry, getTranslation} from "./tools/language";
 import {hideScrollHint} from "./tools/layer";
 import {textDefaultWorldMapSubtitle, textDefaultWorldMapTitle} from "./tools/interaction";
 
@@ -113,7 +113,6 @@ export const WorldMap: React.FC<WorldMapProps> = ({
 
     /* Set refs. */
     const hintsRef = useRef<HTMLDivElement|null>(null);
-    const translation = useRef<TypeCountry|null>(null);
     const title = useRef<string>(textDefaultWorldMapTitle);
     const subtitle = useRef<string>(textDefaultWorldMapSubtitle);
 
@@ -163,13 +162,15 @@ export const WorldMap: React.FC<WorldMapProps> = ({
      */
     /* Change map properties. */
     useEffect(() => {
+        /* Set worldMapSvg properties. */
         worldMapSvg.setDataSource(dataSource as TypeDataSource);
         worldMapSvg.setCountry(country);
 
-        translation.current = worldMapSvg.getTranslation();
+        /* Get worldMapSvg properties. */
         setSvgContent(worldMapSvg.generateSvgByCountry(country));
 
-        const titleWorldMap = translation.current ? translation.current[getLanguageNameCountry(language)] : textDefaultWorldMapTitle;
+        const translation = getTranslation(country);
+        const titleWorldMap = translation ? translation[getLanguageNameCountry(language)] : textDefaultWorldMapTitle;
 
         title.current = titleWorldMap ?? textDefaultWorldMapTitle;
         subtitle.current = textDefaultWorldMapSubtitle;
