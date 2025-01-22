@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Changelogs
 
+### [0.1.31] - 2025-01-22
+
+* README.md changes
+
 ### [0.1.30] - 2025-01-22
 
 * Hover and click translation fix
