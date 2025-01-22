@@ -1625,6 +1625,9 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         /* Print debug information. */
         setDebugType('Initiate worldMapSvg');
 
+        /* Set language reference. */
+        languageReference.current = language;
+
         /* Instantiate worldMapSvg. */
         worldMapSvg.current = new WorldMapSvg({
             country, width, height, zoomCountry, language

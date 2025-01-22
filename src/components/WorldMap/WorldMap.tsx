@@ -149,21 +149,18 @@ export const WorldMap: React.FC<WorldMapProps> = ({
      * Use effect functions
      * ====================
      */
-    /* Change map properties. */
+    /* Change country or language. */
     useEffect(() => {
         const translation = getTranslation(country);
         const titleWorldMap = translation ? translation[getLanguageNameCountry(language)] : textDefaultWorldMapTitle;
 
         title.current = titleWorldMap ?? textDefaultWorldMapTitle;
         subtitle.current = textDefaultWorldMapSubtitle;
-    }, [dataSource, country, width, height, language]);
 
-    /* Change default language. */
-    useEffect(() => {
         i18n.changeLanguage(language).then();
-    }, [language]);
+    }, [country, language]);
 
-    /* Onmount effect (empty list []) */
+    /* OnMount effect (empty list []) */
     useEffect(() => {
 
         /* Hint is not available -> stop handle. */
