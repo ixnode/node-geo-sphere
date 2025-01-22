@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Changelogs
 
+### [0.1.29] - 2025-01-22
+
+* General refactoring
+* SVGRenderer.tsx Refactoring 
+* WorldMap.tsx Refactoring
+
 ### [0.1.28] - 2025-01-20
 
 * Add latitude and longitude to place hover callback function
