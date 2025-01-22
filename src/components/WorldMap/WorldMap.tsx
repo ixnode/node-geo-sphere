@@ -8,8 +8,6 @@ import {
 } from "../../config/config";
 
 /* Import configuration (WorldMap). */
-import {TypeCountry} from "./config/countries";
-import {zoomCountry} from "./config/general";
 import {
     defaultDataSource,
     defaultDebug,
@@ -29,10 +27,7 @@ import {
 } from "./config/elementNames";
 
 /* Import types. */
-import {TypeDataSource, TypeSvgContent} from "./types/types";
-
-/* Import classes. */
-import {WorldMapSvg} from "./classes/WorldMapSvg";
+import {TypeDataSource} from "./types/types";
 
 /* Import components. */
 import SVGRenderer from "./components/SVGRenderer";
@@ -107,7 +102,6 @@ export const WorldMap: React.FC<WorldMapProps> = ({
 }) => {
 
     /* Set states (ui dependent variables). */
-    const [svgContent, setSvgContent] = useState<TypeSvgContent|null>(null);
     const [stateZoomIn, setStateZoomIn] = useState<number>(0);
     const [stateZoomOut, setStateZoomOut] = useState<number>(0);
 
@@ -118,11 +112,6 @@ export const WorldMap: React.FC<WorldMapProps> = ({
 
     /* Import translation. */
     const { t } = useTranslation();
-
-    /* Build WorldMapSvg instance. */
-    const worldMapSvg = new WorldMapSvg({
-        country, width, height, zoomCountry, language
-    });
 
     /**
      * Function to handle zoom in (+).
@@ -162,13 +151,6 @@ export const WorldMap: React.FC<WorldMapProps> = ({
      */
     /* Change map properties. */
     useEffect(() => {
-        /* Set worldMapSvg properties. */
-        worldMapSvg.setDataSource(dataSource as TypeDataSource);
-        worldMapSvg.setCountry(country);
-
-        /* Get worldMapSvg properties. */
-        setSvgContent(worldMapSvg.generateSvgByCountry(country));
-
         const translation = getTranslation(country);
         const titleWorldMap = translation ? translation[getLanguageNameCountry(language)] : textDefaultWorldMapTitle;
 
@@ -181,7 +163,7 @@ export const WorldMap: React.FC<WorldMapProps> = ({
         i18n.changeLanguage(language).then();
     }, [language]);
 
-    /* Register event listener. */
+    /* Onmount effect (empty list []) */
     useEffect(() => {
 
         /* Hint is not available -> stop handle. */
@@ -254,8 +236,8 @@ export const WorldMap: React.FC<WorldMapProps> = ({
                 </div>
             }
             {
-                svgContent && <SVGRenderer
-                    svgContent={svgContent}
+                <SVGRenderer
+                    dataSource={dataSource as TypeDataSource}
                     width={width}
                     height={height}
 

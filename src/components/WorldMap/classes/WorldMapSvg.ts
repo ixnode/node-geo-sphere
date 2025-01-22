@@ -35,13 +35,13 @@ export class WorldMapSvg {
 
     private countryKey: TypeCountryKey;
 
-    private readonly width: number;
+    private width: number;
 
-    private readonly height: number;
+    private height: number;
 
     private readonly zoomCountry: boolean;
 
-    private readonly language: TypeLanguagesSupported;
+    private language: TypeLanguagesSupported;
 
     private dataSource: TypeDataSource = 'low';
 
@@ -102,6 +102,26 @@ export class WorldMapSvg {
         this.data = this.dataConverter.getPreparedData(this.dataSource, this.countryKey);
         this.dataIdMap = this.transformGeoJsonToFeatureMap(this.data);
         this.fixCountryKeyToAvailableData();
+    }
+
+    /**
+     * Sets the dimensions.
+     *
+     * @param width
+     * @param height
+     */
+    public setDimensions(width: number, height: number): void {
+        this.width = width;
+        this.height = height;
+    }
+
+    /**
+     * Sets the language.
+     *
+     * @param language
+     */
+    public setLanguage(language: TypeLanguagesSupported): void {
+        this.language = language;
     }
 
     /**

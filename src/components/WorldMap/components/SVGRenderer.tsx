@@ -51,15 +51,18 @@ import {
     tagNamePath,
     tagNameTitle,
 } from "../config/elementNames";
+import {zoomCountry} from "../config/general";
 
 /* Import configuration (global). */
 import {defaultLanguage} from "../../../config/config";
+import {TypeLanguagesSupported} from "../../../config/types";
 
 /* Import types. */
-import {TypeClickCountry, TypeClickPlace, TypeSvgContent} from "../types/types";
+import {TypeClickCountry, TypeClickPlace, TypeDataSource, TypeSvgContent} from "../types/types";
 
 /* Import classes. */
 import {CoordinateConverter} from "../classes/CoordinateConverter";
+import {WorldMapSvg} from "../classes/WorldMapSvg";
 
 /* Import tools. */
 import {getLanguageNameCountry, getTranslatedNamePlace} from "../tools/language";
@@ -80,19 +83,25 @@ import {
 
 /* SVGRendererProps interface. */
 interface SVGRendererProps {
-    svgContent: TypeSvgContent,
+    dataSource: TypeDataSource,
     country: string | null,
     onClickCountry: TypeClickCountry,
     onClickPlace: TypeClickPlace,
     onHoverCountry: TypeClickCountry,
     onHoverPlace: TypeClickPlace,
-    language: string,
+    language: TypeLanguagesSupported,
     stateZoomIn?: number,
     stateZoomOut?: number,
     debug?: boolean,
     width?: number,
     height?: number,
 }
+
+type PreviousValues = {
+    country: string | null;
+    width: number | null;
+    height: number | null;
+};
 
 
 
@@ -104,7 +113,7 @@ interface SVGRendererProps {
  * @since 0.1.0 (2024-07-14) First version.
  */
 const SVGRenderer: React.FC<SVGRendererProps> = ({
-    svgContent,
+    dataSource,
     country,
     onClickCountry = null,
     onClickPlace = null,
@@ -117,17 +126,26 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
     width = defaultMapWidth,
     height = defaultMapHeight,
 }) => {
+
     /* Set states (ui dependent variables). */
     const [startPoint, setStartPoint] = useState({x: 0, y: 0});
+    const [svgContent, setSvgContent] = useState<TypeSvgContent|null>(null);
     const [viewBox, setViewBox] = useState<SVGViewBox>({
-        x: svgContent.viewBoxLeft,
-        y: svgContent.viewBoxTop,
-        width: svgContent.viewBoxWidth,
-        height: svgContent.viewBoxHeight
+        x: 0,
+        y: 0,
+        width: width,
+        height: height
     });
+
+    /* WorldMapSvg references. */
+    const worldMapSvg = useRef<WorldMapSvg|null>(null);
+
+    /* Previous values. */
+    const previousValues = useRef<PreviousValues>({country: null, width: null, height: null});
 
     /* General references. */
     const svgRef = useRef<SVGSVGElement>(null!);
+    const isViewBoxSet = useRef<boolean>(false);
     const initialDistanceRef = useRef<number|null>(null);
     const initialViewBoxRef = useRef<SVGViewBox|null>(null);
     const lastEvent = useRef<
@@ -168,8 +186,6 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
     /* Data references. */
     const countryMap = useRef<TypeCountryData>(getCountryMap());
     const cityMap = useRef<TypeCityData>(getCityMap());
-
-
 
     /* Import translation. */
     const { t } = useTranslation();
@@ -932,6 +948,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         scale: number|null = null
     ) => {
         setViewBox(viewBoxNew);
+        isViewBoxSet.current = true;
 
         if (!debug) {
             return;
@@ -1596,6 +1613,63 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
      */
 
     /**
+     * Initializes the WorldMapSvg instance.
+     */
+    useEffect(() => {
+
+        /* SVG is not present. */
+        if (!svgRef.current) {
+            return;
+        }
+
+        /* Print debug information. */
+        setDebugType('Initiate worldMapSvg');
+
+        /* Instantiate worldMapSvg. */
+        worldMapSvg.current = new WorldMapSvg({
+            country, width, height, zoomCountry, language
+        });
+
+        /* Set worldMapSvg properties. */
+        worldMapSvg.current.setDataSource(dataSource);
+        worldMapSvg.current.setLanguage(language);
+        worldMapSvg.current.setCountry(country);
+        worldMapSvg.current.setDimensions(width, height);
+
+        /* Get and set svg content. */
+        const worldMapSvgContent = worldMapSvg.current.generateSvgByCountry(country);
+        setSvgContent(worldMapSvgContent);
+
+        /* Get dimensions of the svg element. */
+        const svgRect = svgRef.current.getBoundingClientRect();
+
+        /* Save new viewBox. */
+        if (
+            !isViewBoxSet.current ||
+            previousValues.current.country !== country ||
+            previousValues.current.width !== width ||
+            previousValues.current.height !== height
+        ) {
+            setViewBoxAndShowDebug({
+                x: worldMapSvgContent.viewBoxLeft,
+                y: worldMapSvgContent.viewBoxTop,
+                width: worldMapSvgContent.viewBoxWidth,
+                height: worldMapSvgContent.viewBoxHeight,
+                viewWidth: svgRect.width,
+                viewHeight: svgRect.height,
+            });
+
+            previousValues.current = {country, width, height};
+        }
+    }, [
+        dataSource,
+        language,
+        country,
+        width,
+        height
+    ]); /* Run this effect whenever one of the given variables changed. */
+
+    /**
      * Component reloaded or updated
      */
     useEffect(() => {
@@ -1740,41 +1814,6 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         startPoint
     ]); /* Run this effect whenever the viewBox or startPoint value changes. */
 
-    /**
-     * Initializes the rendering process.
-     */
-    useEffect(() => {
-
-        /* Print debug information. */
-        setDebugType('Initial render');
-
-        if (svgRef.current) {
-            const svgRect = svgRef.current.getBoundingClientRect();
-
-            /* Save new viewBox. */
-            setViewBoxAndShowDebug({
-                x: svgContent.viewBoxLeft,
-                y: svgContent.viewBoxTop,
-                width: svgContent.viewBoxWidth,
-                height: svgContent.viewBoxHeight,
-                viewWidth: svgRect.width,
-                viewHeight: svgRect.height,
-            });
-        }
-
-        /* Save new viewBox. */
-        setViewBoxAndShowDebug({
-            x: svgContent.viewBoxLeft,
-            y: svgContent.viewBoxTop,
-            width: svgContent.viewBoxWidth,
-            height: svgContent.viewBoxHeight
-        });
-
-    }, [
-        svgContent,
-        country
-    ]); /* Run this effect whenever the svgContent or country value changes. */
-
 
 
     /**
@@ -1799,7 +1838,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
                 // isTouchMove && "touch-move",
             ].filter(Boolean).join(' ')}
             viewBox={`${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`}
-            dangerouslySetInnerHTML={{ __html: svgContent.svgPaths + svgContent.svgCircles }}
+            dangerouslySetInnerHTML={{ __html: svgContent ? (svgContent.svgPaths + svgContent.svgCircles) : '' }}
 
             /**
              * ================
