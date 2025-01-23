@@ -1360,8 +1360,8 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         }
 
         /* Add coordinate of the clicked place. */
-        clickData.latitude = placeData.coordinate[1];
-        clickData.longitude = placeData.coordinate[0];
+        clickData.latitude = placeData.coordinate.latitude;
+        clickData.longitude = placeData.coordinate.longitude;
 
         /* Return date from clicked map. */
         onClickPlace(clickData);
@@ -1575,8 +1575,8 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             }
 
             if (placeData) {
-                data.longitude = placeData.coordinate[0];
-                data.latitude = placeData.coordinate[1];
+                data.longitude = placeData.coordinate.longitude;
+                data.latitude = placeData.coordinate.latitude;
             }
 
             onHoverPlace(data);
