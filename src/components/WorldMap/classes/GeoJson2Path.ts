@@ -16,13 +16,17 @@ import {InterfaceGeoJson, TypeBoundingBox, TypeSvgContent, TypeSvgCountry, TypeS
 import {getLanguageNameCountry, getTranslatedNamePlace} from "../tools/language";
 import {getCityMapElement} from "../tools/interaction";
 import {
+    distanceCityTypeNameCapital,
+    distanceCityTypeNameCity,
+    distanceCityTypeNameStateCapital,
     getCityMap,
-    distanceCityTypeNameCapital, distanceCityTypeNameCity, distanceCityTypeNameStateCapital,
-    TypeCityType,
     typeCityTypeNameCapital,
     typeCityTypeNameCity,
     typeCityTypeNameStateCapital
 } from "../config/cities";
+
+/* Import db types. */
+import {TypeCityType} from "../db/cities";
 
 /* GeoJson2PathOptions interface. */
 interface GeoJson2PathOptionsLazy {
@@ -91,7 +95,7 @@ export class GeoJson2Path {
             if (type === 'Polygon') {
                 const sameCountry = (country ? country.toUpperCase() : null) === feature.id;
                 const id = feature.id ? feature.id.toUpperCase() : 'XX';
-                const name = id.toLowerCase() in countryMap ? countryMap[id.toLowerCase()][languageName] : id;
+                const name = id.toLowerCase() in countryMap ? countryMap[id.toLowerCase()].translation[languageName] : id;
 
                 (coordinates as number[][][]).forEach(ring => {
                     svgElements.push({
@@ -114,7 +118,7 @@ export class GeoJson2Path {
             } else if (type === 'MultiPolygon') {
                 const sameCountry = (country ? country?.toUpperCase() : null) === feature.id;
                 const id = feature.id ? feature.id.toUpperCase() : 'XX';
-                const name = id.toLowerCase() in countryMap ? countryMap[id.toLowerCase()][languageName] : id;
+                const name = id.toLowerCase() in countryMap ? countryMap[id.toLowerCase()].translation[languageName] : id;
 
                 const multiPolygonPath = (coordinates as number[][][][]).map(polygon => {
                     return polygon.map(ring => this.convertCoordsToPath(ring)).join(' ');

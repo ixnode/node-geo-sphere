@@ -43,7 +43,7 @@ const language = 'en'; /* Supported languages: cz, de, en, es, fr, hr, it, pl, s
 const countryOptions: Record<string, string|null> = Object.fromEntries(
     Object.entries({
         ...Object.fromEntries(Object.values(getCountryMap()).map((country) => [
-            country[getLanguageNameCountry(language)],
+            country.translation[getLanguageNameCountry(language)],
             country.code
         ]))
     } as Record<string, string | null>)
@@ -74,7 +74,7 @@ const countryOptions: Record<string, string|null> = Object.fromEntries(
 /* Build options for languages. */
 const languageOptions: Record<string, string> = {
     'Croatian': 'hr',
-    'Czech': 'cz',
+    'Czech': 'cs',
     'English': 'en',
     'French': 'fr',
     'German': 'de',

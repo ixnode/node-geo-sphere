@@ -3,6 +3,11 @@ import {createRoot, Root} from "react-dom/client";
 import {useTranslation} from "react-i18next";
 
 /* Import configuration (WorldMap). */
+import {getCountryMap} from "../config/countries";
+import {getCityMap} from "../config/cities";
+import {defaultDebug, defaultMapHeight, defaultMapWidth, scaleFactor} from "../config/config";
+import {CountryData, PlaceData, DebugContent, Point, SVGViewBox} from "../config/interfaces";
+import {zoomCountry} from "../config/general";
 import {
     eventMouseDownAsEventListener,
     eventMouseDownEnabled,
@@ -25,10 +30,6 @@ import {
     eventWheelAsEventListener,
     eventWheelEnabled,
 } from "../config/events";
-import {getCountryMap, TypeCountryData} from "../config/countries";
-import {getCityMap, TypeCity, TypeCityData} from "../config/cities";
-import {defaultDebug, defaultMapHeight, defaultMapWidth, scaleFactor} from "../config/config";
-import {CountryData, PlaceData, DebugContent, Point, SVGViewBox} from "../config/interfaces";
 import {
     classNameSvgCircle,
     classNameSvgG,
@@ -51,7 +52,6 @@ import {
     tagNamePath,
     tagNameTitle,
 } from "../config/elementNames";
-import {zoomCountry} from "../config/general";
 
 /* Import configuration (global). */
 import {defaultLanguage} from "../../../config/config";
@@ -80,6 +80,10 @@ import {
     resetTitle,
     textNotAvailable
 } from "../tools/interaction";
+
+/* Import db types. */
+import {TypeCountryData} from "../db/countries";
+import {TypeCity, TypeCityData} from "../db/cities";
 
 /* SVGRendererProps interface. */
 interface SVGRendererProps {
@@ -1257,7 +1261,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         /* Build click (callback) data. */
         const clickData: CountryData = {
             id: countryId,
-            name: countryData[getLanguageNameCountry(languageReference.current)]
+            name: countryData.translation[getLanguageNameCountry(languageReference.current)]
         };
 
         /* Add point (screen position). */
@@ -1393,7 +1397,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         /* countryMap value found. */
         if (countryId in countryMap.current) {
             countryData = countryMap.current[countryId];
-            countryName = countryData[getLanguageNameCountry(languageReference.current)];
+            countryName = countryData.translation[getLanguageNameCountry(languageReference.current)];
         }
 
         /* Remove hover class from all svg.path[class=country] and svg.circle[class=place] elements. */
@@ -1537,7 +1541,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         if (placeCountry !== null && placeCountry in countryMap.current) {
             countryId = placeCountry;
             countryData = countryMap.current[placeCountry];
-            countryName = countryData[getLanguageNameCountry(languageReference.current)];
+            countryName = countryData.translation[getLanguageNameCountry(languageReference.current)];
         }
 
         /* Remove hover class from all svg.g[class=place-group] elements. */

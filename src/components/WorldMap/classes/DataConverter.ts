@@ -1,12 +1,24 @@
+/* Import configuration. */
+import {getCountryMap} from "../config/countries";
+import {classNameSvgCircle} from "../config/elementNames";
+
+/* Import types. */
 import {InterfaceGeoJson, TypeCountryKey, TypeDataSource, TypeFeature} from "../types/types";
-import {getCountryMap, TypeCountryData} from "../config/countries";
-import {cities, TypeCity} from "../config/cities";
+
+/* Import classes. */
 import {CoordinateConverter} from "./CoordinateConverter";
+
+/* Import tools. */
+import {getIdFromPlace} from "../tools/interaction";
+
+/* Import data. */
 import {countriesDataLow} from "../data/geoJsonLow";
 import {countriesDataMedium} from "../data/geoJsonMedium";
 import {countriesDataTiny} from "../data/geoJsonTiny";
-import {getIdFromPlace} from "../tools/interaction";
-import {classNameSvgCircle} from "../config/elementNames";
+
+/* Import db and db types. */
+import {cities, TypeCity} from "../db/cities";
+import {TypeCountryData} from "../db/countries";
 
 interface DataConverterOptions {
 
@@ -22,18 +34,6 @@ interface DataConverterOptions {
 export class DataConverter {
 
     private coordinateConverter: CoordinateConverter = new CoordinateConverter();
-
-    private readonly propertyCountrySelectedFill: string = '#c0e0c0';
-
-    private readonly propertyCountrySelectedStroke: string = '#a0a0a0';
-
-    private readonly propertyCountrySelectedStrokeWidth: number = .1;
-
-    private readonly propertiesCityFill: string = '#008000';
-
-    private readonly propertiesCityStroke: string = '#008000';
-
-    private readonly propertiesCityStrokeWidth: number = 0.;
 
     private readonly countryMap: TypeCountryData = getCountryMap();
 
@@ -108,7 +108,7 @@ export class DataConverter {
                 return convertedFeature;
             }
 
-            convertedFeature.name = this.countryMap[country].nameDe;
+            convertedFeature.name = this.countryMap[country].translation.de;
 
             return convertedFeature;
         });

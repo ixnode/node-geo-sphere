@@ -2,9 +2,14 @@ import React from "react";
 import {TFunction} from "i18next";
 
 /* Import configurations. */
+import {getCityMap} from "../config/cities";
+
+/* Import interfaces. */
 import {Point} from "../config/interfaces";
-import {getCityMap, TypeCity} from "../config/cities";
-import {getCountryMap, TypeCountry} from "../config/countries";
+
+/* Import db types. */
+import {getCountryMap} from "../config/countries";
+
 import {
     classNameHover,
     classNameSvgCircle,
@@ -25,6 +30,8 @@ import {TypeSvgElement} from "../types/types";
 
 /* Import other tools. */
 import {ucFirst} from "./string";
+import {TypeCountry} from "../db/countries";
+import {TypeCity} from "../db/cities";
 
 /**
  * Default texts

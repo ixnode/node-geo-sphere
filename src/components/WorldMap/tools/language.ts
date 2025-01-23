@@ -1,6 +1,5 @@
 /* Import configurations. */
-import {getCountryMap, TypeCountry} from "../config/countries";
-import {TypeCity} from "../config/cities";
+import {getCountryMap} from "../config/countries";
 
 /* Import other tools. */
 import {textNotAvailable} from "./interaction";
@@ -8,33 +7,34 @@ import {textNotAvailable} from "./interaction";
 /* Import types. */
 import {TypeCountryKey} from "../types/types";
 
+/* Import db types. */
+import {TypeCountry, TypeCountryTranslation} from "../db/countries";
+import {TypeCity, TypeCityTranslation} from "../db/cities";
+
 /**
  * Returns the language name of given language.
  *
  * @param language
  */
-export const getLanguageNameCountry = (language: string): keyof TypeCountry => {
-    /* Builds nameCz, nameDe, etc. */
-    const key = 'name' + language.charAt(0).toUpperCase() + language.slice(1);
-
-    /* Reference a real TypeCountry object structure for the check. */
-    const exampleCountry: TypeCountry = {
-        code: null,
-
-        nameCz: '',
-        nameDe: '',
-        nameEn: '',
-        nameEs: '',
-        nameFr: '',
-        nameHr: '',
-        nameIt: '',
-        namePl: '',
-        nameSv: '',
+export const getLanguageNameCountry = (language: string): keyof TypeCountryTranslation => {
+    /* Reference a real TypeCountryTranslation object structure for the check. */
+    const exampleTranslation: TypeCountryTranslation = {
+        cs: '',
+        de: '',
+        en: '',
+        es: '',
+        fr: '',
+        hr: '',
+        it: '',
+        pl: '',
+        sv: '',
     };
 
+    language = language.toLowerCase();
+
     /* Check if key exists in exampleCountry */
-    if (key in exampleCountry) {
-        return key as keyof TypeCountry;
+    if (language in exampleTranslation) {
+        return language as keyof TypeCountryTranslation;
     }
 
     throw new Error(`Invalid language key: ${language}`);
@@ -45,36 +45,25 @@ export const getLanguageNameCountry = (language: string): keyof TypeCountry => {
  *
  * @param language
  */
-export const getLanguageNamePlace = (language: string): keyof TypeCity => {
-    /* Builds nameCz, nameDe, etc. */
-    const key = 'name' + language.charAt(0).toUpperCase() + language.slice(1);
-
+export const getLanguageNamePlace = (language: string): keyof TypeCityTranslation => {
     /* Reference a real TypeCountry object structure for the check. */
-    const exampleCountry: TypeCity = {
-        coordinate: [.0, .0],
-        priority: 1,
-        size: 'smaller',
-
-        country: '',
-        type: 'city',
-
-        name: '',
-        nameCz: '',
-        nameDe: '',
-        nameEn: '',
-        nameEs: '',
-        nameFr: '',
-        nameHr: '',
-        nameIt: '',
-        namePl: '',
-        nameSv: '',
-
-        population: 0
+    const exampleTranslation: TypeCityTranslation = {
+        cs: '',
+        de: '',
+        en: '',
+        es: '',
+        fr: '',
+        hr: '',
+        it: '',
+        pl: '',
+        sv: '',
     };
 
+    language = language.toLowerCase();
+
     /* Check if key exists in exampleCountry */
-    if (key in exampleCountry) {
-        return key as keyof TypeCity;
+    if (language in exampleTranslation) {
+        return language as keyof TypeCityTranslation;
     }
 
     throw new Error(`Invalid language key: ${language}`);
@@ -92,8 +81,8 @@ export const getTranslatedNamePlace = (data: TypeCity, language: string): string
 
     let value = null;
 
-    if (languageName in data) {
-        value = data[languageName];
+    if (languageName in data.translation) {
+        value = data.translation[languageName];
     }
 
     if (value !== null) {
@@ -116,7 +105,7 @@ export const getTranslatedNamePlace = (data: TypeCity, language: string): string
  *
  * @see countryMap
  */
-export const getTranslation = (country: TypeCountryKey|null): TypeCountry|null => {
+export const getTranslation = (country: TypeCountryKey|null): TypeCountryTranslation|null => {
 
     if (country === null) {
         return null;
@@ -130,5 +119,5 @@ export const getTranslation = (country: TypeCountryKey|null): TypeCountry|null =
         return null;
     }
 
-    return countryMap[country];
+    return countryMap[country].translation;
 }

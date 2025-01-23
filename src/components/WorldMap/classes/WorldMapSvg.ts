@@ -1,5 +1,4 @@
 /* Import configuration. */
-import {getCountryMap, TypeCountry, TypeCountryData} from "../config/countries";
 import {defaultDataSource} from "../config/config";
 import {defaultLanguage} from "../../../config/config";
 import {TypeLanguagesSupported} from "../../../config/types";

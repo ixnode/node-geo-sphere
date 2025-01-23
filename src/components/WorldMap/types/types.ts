@@ -2,7 +2,9 @@ import { FeatureCollection } from 'geojson';
 
 /* Import interfaces. */
 import {CountryData, PlaceData} from "../config/interfaces";
-import {TypeCitySize, TypeCityType} from "../config/cities";
+
+/* Import db types. */
+import {TypeCitySize, TypeCityType} from "../db/cities";
 
 export type TypeProperties = {
     name?: string;

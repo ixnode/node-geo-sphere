@@ -1,0 +1,55 @@
+{
+    "$schema": "cities.schema.json",
+    "data": [
+
+        // =================
+        // European capitals
+        // =================
+        {
+            "name": "Amsterdam",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "latitude": 52.3738,
+                "longitude": 4.8910
+            },
+            "country": "nl",
+            "type": "capital",
+            "population": 934927,
+            "translation": {
+                "cs": "Amsterdam",
+                "de": "Amsterdam",
+                "en": "Amsterdam",
+                "es": "Ámsterdam",
+                "fr": "Amsterdam",
+                "hr": "Amsterdam",
+                "it": "Amsterdam",
+                "pl": "Amsterdam",
+                "sv": "Amsterdam"
+            }
+        },
+        {
+            "name": "Andorra la Vella",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "latitude": 42.5075,
+                "longitude": 1.5218
+            },
+            "country": "ad",
+            "type": "capital",
+            "population": 24382,
+            "translation": {
+                "cs": null,
+                "de": "Andorra la Vella",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        }
+    ]
+}
