@@ -23,18 +23,6 @@ import {WorldMap} from './WorldMap';
 import {getLanguageNameCountry} from "./tools/language";
 import {getCountryMap} from "./config/countries";
 
-/* Overwrite the options definition from any[] to Record<string, string>. */
-type ArgTypesWithOptions = {
-    country: {
-        control: { type: 'select' };
-        options: Record<string, string>;
-    };
-    language: {
-        control: { type: 'select' };
-        options: Record<string, string>;
-    };
-};
-
 /* Priority keys and language. */
 const priorityKeys = [null, 'all', 'eu', 'de', 'at', 'ch'];
 const language = 'en'; /* Supported languages: cz, de, en, es, fr, hr, it, pl, sv */
@@ -85,7 +73,7 @@ const languageOptions: Record<string, string> = {
 };
 
 // @ts-ignore
-const meta: Meta<typeof WorldMap & ArgTypesWithOptions> = {
+const meta: Meta<typeof WorldMap> = {
     title: 'Components/WorldMap',
     component: WorldMap,
     parameters: {
@@ -95,13 +83,13 @@ const meta: Meta<typeof WorldMap & ArgTypesWithOptions> = {
     argTypes: {
         country: {
             control: {type: 'select'},
-            // @ts-ignore
-            options: countryOptions
+            options: Object.keys(countryOptions), /* Labels to show. */
+            mapping: countryOptions /* Translate labels into internal keys. */
         },
         language: {
             control: {type: 'select'},
-            // @ts-ignore
-            options: languageOptions
+            options: Object.keys(languageOptions), /* Labels to show. */
+            mapping: languageOptions /* Translate labels into internal keys. */
         }
     },
 };

@@ -1,7 +1,7 @@
 import i18n from 'i18next';
 import {initReactI18next} from 'react-i18next';
 
-import translationCZ from '../locales/cz/translation.json';
+import translationCS from '../locales/cs/translation.json';
 import translationDE from '../locales/de/translation.json';
 import translationEN from '../locales/en/translation.json';
 import translationES from '../locales/es/translation.json';
@@ -16,7 +16,7 @@ import {defaultLanguage} from "./config";
 
 /* General translation */
 const resources = {
-    cz: { translation: translationCZ, },
+    cs: { translation: translationCS, },
     de: { translation: translationDE, },
     en: { translation: translationEN, },
     es: { translation: translationES, },
