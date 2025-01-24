@@ -1,5 +1,5 @@
 /* Import db. */
-import {countries, TypeCountryData} from "../db/countries";
+import {getCountries, TypeCountryData} from "../db/countries";
 
 /**
  * Country map cache.
@@ -11,7 +11,7 @@ let cachedCountryMap: TypeCountryData|null = null;
  */
 export const getCountryMap = (): TypeCountryData => {
     if (cachedCountryMap === null) {
-        cachedCountryMap = countries.reduce((map, country) => {
+        cachedCountryMap = getCountries().reduce((map, country) => {
             map[country.code ?? ''] = country;
             return map;
         }, {} as TypeCountryData);

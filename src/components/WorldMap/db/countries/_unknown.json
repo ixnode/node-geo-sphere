@@ -1,0 +1,19 @@
+{
+    "$schema": "_schema/countries.schema.json",
+    "data": [
+        {
+            "code": "xx",
+            "translation": {
+                "cs": "Neznámá země",
+                "de": "Unbekanntes Land",
+                "en": "Unknown country",
+                "es": "País desconocido",
+                "fr": "Pays inconnu",
+                "hr": "Nepoznata zemlja",
+                "it": "Bonaire",
+                "pl": "Nieznany kraj",
+                "sv": "Okänt land"
+            }
+        }
+    ]
+}

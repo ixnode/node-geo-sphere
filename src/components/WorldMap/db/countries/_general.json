@@ -1,0 +1,61 @@
+{
+    "$schema": "_schema/countries.schema.json",
+    "data": [
+        {
+            "code": null,
+            "translation": {
+                "cs": "Žádná země",
+                "de": "Kein Land",
+                "en": "No country",
+                "es": "Ningún país",
+                "fr": "Pas de pays",
+                "hr": "Nema zemlje",
+                "it": "Nessun paese",
+                "pl": "Brak kraju",
+                "sv": "Inget land"
+            }
+        },
+        {
+            "code": "eu",
+            "translation": {
+                "cs": "Evropská unie",
+                "de": "Europäische Union",
+                "en": "European Union",
+                "es": "Unión Europea",
+                "fr": "Union européenne",
+                "hr": "Europska unija",
+                "it": "Unione Europea",
+                "pl": "Unia Europejska",
+                "sv": "Europeiska unionen"
+            }
+        },
+        {
+            "code": "eu",
+            "translation": {
+                "cs": "Evropa",
+                "de": "Europa",
+                "en": "Europe",
+                "es": "Europa",
+                "fr": "Europe",
+                "hr": "Europa",
+                "it": "Europa",
+                "pl": "Europa",
+                "sv": "Europa"
+            }
+        },
+        {
+            "code": "all",
+            "translation": {
+                "cs": "Celý svět",
+                "de": "Gesamte Welt",
+                "en": "Entire world",
+                "es": "Todo el mundo",
+                "fr": "Tout le monde",
+                "hr": "Cijeli svijet",
+                "it": "Tutto il mondo",
+                "pl": "Cały świat",
+                "sv": "Hela världen"
+            }
+        }
+    ]
+}

@@ -1,0 +1,369 @@
+{
+    "$schema": "_schema/countries.schema.json",
+    "data": [
+        {
+            "code": "as",
+            "translation": {
+                "cs": "Americká Samoa",
+                "de": "Amerikanisch-Samoa",
+                "en": "American Samoa",
+                "es": "Samoa Americana",
+                "fr": "Samoa américaines",
+                "hr": "Američka Samoa",
+                "it": "Samoa Americane",
+                "pl": "Samoa Amerykańskie",
+                "sv": "Amerikanska Samoa"
+            }
+        },
+        {
+            "code": "au",
+            "translation": {
+                "cs": "Austrálie",
+                "de": "Australien",
+                "en": "Australia",
+                "es": "Australia",
+                "fr": "Australie",
+                "hr": "Australija",
+                "it": "Australia",
+                "pl": "Australia",
+                "sv": "Australien"
+            }
+        },
+        {
+            "code": "nz",
+            "translation": {
+                "cs": "Nový Zéland",
+                "de": "Neuseeland",
+                "en": "New Zealand",
+                "es": "Nueva Zelanda",
+                "fr": "Nouvelle-Zélande",
+                "hr": "Novi Zeland",
+                "it": "Nuova Zelanda",
+                "pl": "Nowa Zelandia",
+                "sv": "Nya Zeeland"
+            }
+        },
+        {
+            "code": "ck",
+            "translation": {
+                "cs": "Cookovy ostrovy",
+                "de": "Cookinseln",
+                "en": "Cook Islands",
+                "es": "Islas Cook",
+                "fr": "Îles Cook",
+                "hr": "Cookovi Otoci",
+                "it": "Isole Cook",
+                "pl": "Wyspy Cooka",
+                "sv": "Cooköarna"
+            }
+        },
+        {
+            "code": "fj",
+            "translation": {
+                "cs": "Fidži",
+                "de": "Fidschi",
+                "en": "Fiji",
+                "es": "Fiyi",
+                "fr": "Fidji",
+                "hr": "Fidži",
+                "it": "Figi",
+                "pl": "Fidżi",
+                "sv": "Fiji"
+            }
+        },
+        {
+            "code": "pf",
+            "translation": {
+                "cs": "Francouzská Polynésie",
+                "de": "Französisch-Polynesien",
+                "en": "French Polynesia",
+                "es": "Polinesia Francesa",
+                "fr": "Polynésie française",
+                "hr": "Francuska Polinezija",
+                "it": "Polinesia Francese",
+                "pl": "Polinezja Francuska",
+                "sv": "Franska Polynesien"
+            }
+        },
+        {
+            "code": "gu",
+            "translation": {
+                "cs": "Guam",
+                "de": "Guam",
+                "en": "Guam",
+                "es": "Guam",
+                "fr": "Guam",
+                "hr": "Guam",
+                "it": "Guam",
+                "pl": "Guam",
+                "sv": "Guam"
+            }
+        },
+        {
+            "code": "ki",
+            "translation": {
+                "cs": "Kiribati",
+                "de": "Kiribati",
+                "en": "Kiribati",
+                "es": "Kiribati",
+                "fr": "Kiribati",
+                "hr": "Kiribati",
+                "it": "Kiribati",
+                "pl": "Kiribati",
+                "sv": "Kiribati"
+            }
+        },
+        {
+            "code": "mp",
+            "translation": {
+                "cs": "Severní Mariany",
+                "de": "Nördliche Marianen",
+                "en": "Northern Mariana Islands",
+                "es": "Islas Marianas del Norte",
+                "fr": "Mariannes du Nord",
+                "hr": "Sjevernomarijanski otoci",
+                "it": "Isole Marianne Settentrionali",
+                "pl": "Mariany Północne",
+                "sv": "Nordmarianerna"
+            }
+        },
+        {
+            "code": "mh",
+            "translation": {
+                "cs": "Marshallovy ostrovy",
+                "de": "Marshallinseln",
+                "en": "Marshall Islands",
+                "es": "Islas Marshall",
+                "fr": "Îles Marshall",
+                "hr": "Maršalovi Otoci",
+                "it": "Isole Marshall",
+                "pl": "Wyspy Marshalla",
+                "sv": "Marshallöarna"
+            }
+        },
+        {
+            "code": "fm",
+            "translation": {
+                "cs": "Mikronésie",
+                "de": "Mikronesien",
+                "en": "Micronesia",
+                "es": "Micronesia",
+                "fr": "Micronésie",
+                "hr": "Mikronezija",
+                "it": "Micronesia",
+                "pl": "Mikronezja",
+                "sv": "Mikronesiska federationen"
+            }
+        },
+        {
+            "code": "um",
+            "translation": {
+                "cs": "Menší odlehlé ostrovy USA",
+                "de": "United States Minor Outlying Islands",
+                "en": "United States Minor Outlying Islands",
+                "es": "Islas Ultramarinas Menores de los Estados Unidos",
+                "fr": "Îles mineures éloignées des États-Unis",
+                "hr": "Mali udaljeni otoci SAD-a",
+                "it": "Isole minori degli Stati Uniti",
+                "pl": "Dalekie Wyspy Mniejsze Stanów Zjednoczonych",
+                "sv": "Förenta staternas mindre öar i Oceanien och Västindien"
+            }
+        },
+        {
+            "code": "nr",
+            "translation": {
+                "cs": "Nauru",
+                "de": "Nauru",
+                "en": "Nauru",
+                "es": "Nauru",
+                "fr": "Nauru",
+                "hr": "Nauru",
+                "it": "Nauru",
+                "pl": "Nauru",
+                "sv": "Nauru"
+            }
+        },
+        {
+            "code": "nc",
+            "translation": {
+                "cs": "Nová Kaledonie",
+                "de": "Neukaledonien",
+                "en": "New Caledonia",
+                "es": "Nueva Caledonia",
+                "fr": "Nouvelle-Calédonie",
+                "hr": "Nova Kaledonija",
+                "it": "Nuova Caledonia",
+                "pl": "Nowa Kaledonia",
+                "sv": "Nya Kaledonien"
+            }
+        },
+        {
+            "code": "nu",
+            "translation": {
+                "cs": "Niue",
+                "de": "Niue",
+                "en": "Niue",
+                "es": "Niue",
+                "fr": "Niue",
+                "hr": "Niue",
+                "it": "Niue",
+                "pl": "Niue",
+                "sv": "Niue"
+            }
+        },
+        {
+            "code": "nf",
+            "translation": {
+                "cs": "Norfolk",
+                "de": "Norfolkinsel",
+                "en": "Norfolk Island",
+                "es": "Isla Norfolk",
+                "fr": "Île de Norfolk",
+                "hr": "Otok Norfolk",
+                "it": "Isola di Norfolk",
+                "pl": "Norfolk",
+                "sv": "Norfolkön"
+            }
+        },
+        {
+            "code": "pw",
+            "translation": {
+                "cs": "Palau",
+                "de": "Palau",
+                "en": "Palau",
+                "es": "Palaos",
+                "fr": "Palau",
+                "hr": "Palau",
+                "it": "Palau",
+                "pl": "Palau",
+                "sv": "Palau"
+            }
+        },
+        {
+            "code": "pg",
+            "translation": {
+                "cs": "Papua Nová Guinea",
+                "de": "Papua-Neuguinea",
+                "en": "Papua New Guinea",
+                "es": "Papúa Nueva Guinea",
+                "fr": "Papouasie-Nouvelle-Guinée",
+                "hr": "Papua Nova Gvineja",
+                "it": "Papua Nuova Guinea",
+                "pl": "Papua-Nowa Gwinea",
+                "sv": "Papua Nya Guinea"
+            }
+        },
+        {
+            "code": "sb",
+            "translation": {
+                "cs": "Šalomounovy ostrovy",
+                "de": "Salomonen",
+                "en": "Solomon Islands",
+                "es": "Islas Salomón",
+                "fr": "Îles Salomon",
+                "hr": "Salomonski Otoci",
+                "it": "Isole Salomone",
+                "pl": "Wyspy Salomona",
+                "sv": "Salomonöarna"
+            }
+        },
+        {
+            "code": "tk",
+            "translation": {
+                "cs": "Tokelau",
+                "de": "Tokelau",
+                "en": "Tokelau",
+                "es": "Tokelau",
+                "fr": "Tokelau",
+                "hr": "Tokelau",
+                "it": "Tokelau",
+                "pl": "Tokelau",
+                "sv": "Tokelauöarna"
+            }
+        },
+        {
+            "code": "to",
+            "translation": {
+                "cs": "Tonga",
+                "de": "Tonga",
+                "en": "Tonga",
+                "es": "Tonga",
+                "fr": "Tonga",
+                "hr": "Tonga",
+                "it": "Tonga",
+                "pl": "Tonga",
+                "sv": "Tonga"
+            }
+        },
+        {
+            "code": "tv",
+            "translation": {
+                "cs": "Tuvalu",
+                "de": "Tuvalu",
+                "en": "Tuvalu",
+                "es": "Tuvalu",
+                "fr": "Tuvalu",
+                "hr": "Tuvalu",
+                "it": "Tuvalu",
+                "pl": "Tuvalu",
+                "sv": "Tuvalu"
+            }
+        },
+        {
+            "code": "vu",
+            "translation": {
+                "cs": "Vanuatu",
+                "de": "Vanuatu",
+                "en": "Vanuatu",
+                "es": "Vanuatu",
+                "fr": "Vanuatu",
+                "hr": "Vanuatu",
+                "it": "Vanuatu",
+                "pl": "Vanuatu",
+                "sv": "Vanuatu"
+            }
+        },
+        {
+            "code": "wf",
+            "translation": {
+                "cs": "Wallis a Futuna",
+                "de": "Wallis und Futuna",
+                "en": "Wallis and Futuna",
+                "es": "Wallis y Futuna",
+                "fr": "Wallis-et-Futuna",
+                "hr": "Wallis i Futuna",
+                "it": "Wallis e Futuna",
+                "pl": "Wallis i Futuna",
+                "sv": "Wallis- och Futunaöarna"
+            }
+        },
+        {
+            "code": "ws",
+            "translation": {
+                "cs": "Samoa",
+                "de": "Samoa",
+                "en": "Samoa",
+                "es": "Samoa",
+                "fr": "Samoa",
+                "hr": "Samoa",
+                "it": "Samoa",
+                "pl": "Samoa",
+                "sv": "Samoa"
+            }
+        },
+        {
+            "code": "tl",
+            "translation": {
+                "cs": "Východní Timor",
+                "de": "Osttimor",
+                "en": "Timor-Leste",
+                "es": "Timor Oriental",
+                "fr": "Timor oriental",
+                "hr": "Timor-Leste",
+                "it": "Timor Est",
+                "pl": "Timor Wschodni",
+                "sv": "Östtimor"
+            }
+        }
+    ]
+}

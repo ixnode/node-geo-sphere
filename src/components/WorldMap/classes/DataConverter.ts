@@ -17,7 +17,7 @@ import {countriesDataMedium} from "../data/geoJsonMedium";
 import {countriesDataTiny} from "../data/geoJsonTiny";
 
 /* Import db and db types. */
-import {cities, TypeCity} from "../db/cities";
+import {getCities, TypeCity} from "../db/cities";
 import {TypeCountryData} from "../db/countries";
 
 interface DataConverterOptions {
@@ -164,14 +164,13 @@ export class DataConverter {
      * Adds additional cities from cities.
      *
      * @param geoJson
-     * @see cities
      */
     private addCities(geoJson: InterfaceGeoJson): InterfaceGeoJson {
         if (geoJson.citiesAdded) {
             return geoJson;
         }
 
-        cities.forEach((city) => {
+        getCities().forEach((city) => {
             geoJson.features.push(this.getFeatureFromCity(city));
         });
 

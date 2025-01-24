@@ -1,0 +1,705 @@
+{
+    "$schema": "_schema/countries.schema.json",
+    "data": [
+        {
+            "code": "al",
+            "translation": {
+                "cs": "Albánie",
+                "de": "Albanien",
+                "en": "Albania",
+                "es": "Albania",
+                "fr": "Albanie",
+                "hr": "Albanija",
+                "it": "Albania",
+                "pl": "Albania",
+                "sv": "Albanien"
+            }
+        },
+        {
+            "code": "ad",
+            "translation": {
+                "cs": "Andorra",
+                "de": "Andorra",
+                "en": "Andorra",
+                "es": "Andorra",
+                "fr": "Andorre",
+                "hr": "Andora",
+                "it": "Andorra",
+                "pl": "Andora",
+                "sv": "Andorra"
+            }
+        },
+        {
+            "code": "at",
+            "translation": {
+                "cs": "Rakousko",
+                "de": "Österreich",
+                "en": "Austria",
+                "es": "Austria",
+                "fr": "Autriche",
+                "hr": "Austrija",
+                "it": "Austria",
+                "pl": "Austria",
+                "sv": "Österrike"
+            }
+        },
+        {
+            "code": "ax",
+            "translation": {
+                "cs": "Alandy",
+                "de": "Åland",
+                "en": "Åland Islands",
+                "es": "Åland",
+                "fr": "Åland",
+                "hr": "Ålandski otoci",
+                "it": "Åland",
+                "pl": "Wyspy Alandzkie",
+                "sv": "Åland"
+            }
+        },
+        {
+            "code": "by",
+            "translation": {
+                "cs": "Bělorusko",
+                "de": "Belarus",
+                "en": "Belarus",
+                "es": "Bielorrusia",
+                "fr": "Biélorussie",
+                "hr": "Bjelorusija",
+                "it": "Bielorussia",
+                "pl": "Białoruś",
+                "sv": "Belarus"
+            }
+        },
+        {
+            "code": "be",
+            "translation": {
+                "cs": "Belgie",
+                "de": "Belgien",
+                "en": "Belgium",
+                "es": "Bélgica",
+                "fr": "Belgique",
+                "hr": "Belgija",
+                "it": "Belgio",
+                "pl": "Belgia",
+                "sv": "Belgien"
+            }
+        },
+        {
+            "code": "ba",
+            "translation": {
+                "cs": "Bosna a Hercegovina",
+                "de": "Bosnien und Herzegowina",
+                "en": "Bosnia and Herzegovina",
+                "es": "Bosnia y Herzegovina",
+                "fr": "Bosnie-et-Herzégovine",
+                "hr": "Bosna i Hercegovina",
+                "it": "Bosnia ed Erzegovina",
+                "pl": "Bośnia i Hercegowina",
+                "sv": "Bosnien och Hercegovina"
+            }
+        },
+        {
+            "code": "bg",
+            "translation": {
+                "cs": "Bulharsko",
+                "de": "Bulgarien",
+                "en": "Bulgaria",
+                "es": "Bulgaria",
+                "fr": "Bulgarie",
+                "hr": "Bugarska",
+                "it": "Bulgaria",
+                "pl": "Bułgaria",
+                "sv": "Bulgarien"
+            }
+        },
+        {
+            "code": "ch",
+            "translation": {
+                "cs": "Švýcarsko",
+                "de": "Schweiz",
+                "en": "Switzerland",
+                "es": "Suiza",
+                "fr": "Suisse",
+                "hr": "Švicarska",
+                "it": "Svizzera",
+                "pl": "Szwajcaria",
+                "sv": "Schweiz"
+            }
+        },
+        {
+            "code": "de",
+            "translation": {
+                "cs": "Německo",
+                "de": "Deutschland",
+                "en": "Germany",
+                "es": "Alemania",
+                "fr": "Allemagne",
+                "hr": "Njemačka",
+                "it": "Germania",
+                "pl": "Niemcy",
+                "sv": "Tyskland"
+            }
+        },
+        {
+            "code": "hr",
+            "translation": {
+                "cs": "Chorvatsko",
+                "de": "Kroatien",
+                "en": "Croatia",
+                "es": "Croacia",
+                "fr": "Croatie",
+                "hr": "Hrvatska",
+                "it": "Croazia",
+                "pl": "Chorwacja",
+                "sv": "Kroatien"
+            }
+        },
+        {
+            "code": "cy",
+            "translation": {
+                "cs": "Kypr",
+                "de": "Zypern",
+                "en": "Cyprus",
+                "es": "Chipre",
+                "fr": "Chypre",
+                "hr": "Cipar",
+                "it": "Cipro",
+                "pl": "Cypr",
+                "sv": "Cypern"
+            }
+        },
+        {
+            "code": "cz",
+            "translation": {
+                "cs": "Česko",
+                "de": "Tschechien",
+                "en": "Czechia",
+                "es": "República Checa",
+                "fr": "République tchèque",
+                "hr": "Češka",
+                "it": "Repubblica Ceca",
+                "pl": "Czechy",
+                "sv": "Tjeckien"
+            }
+        },
+        {
+            "code": "dk",
+            "translation": {
+                "cs": "Dánsko",
+                "de": "Dänemark",
+                "en": "Denmark",
+                "es": "Dinamarca",
+                "fr": "Danemark",
+                "hr": "Danska",
+                "it": "Danimarca",
+                "pl": "Dania",
+                "sv": "Danmark"
+            }
+        },
+        {
+            "code": "ee",
+            "translation": {
+                "cs": "Estonsko",
+                "de": "Estland",
+                "en": "Estonia",
+                "es": "Estonia",
+                "fr": "Estonie",
+                "hr": "Estonija",
+                "it": "Estonia",
+                "pl": "Estonia",
+                "sv": "Estland"
+            }
+        },
+        {
+            "code": "fo",
+            "translation": {
+                "cs": "Faerské ostrovy",
+                "de": "Färöer",
+                "en": "Faroe Islands",
+                "es": "Islas Feroe",
+                "fr": "Îles Féroé",
+                "hr": "Farski otoci",
+                "it": "Isole Faroe",
+                "pl": "Wyspy Owcze",
+                "sv": "Färöarna"
+            }
+        },
+        {
+            "code": "fi",
+            "translation": {
+                "cs": "Finsko",
+                "de": "Finnland",
+                "en": "Finland",
+                "es": "Finlandia",
+                "fr": "Finlande",
+                "hr": "Finska",
+                "it": "Finlandia",
+                "pl": "Finlandia",
+                "sv": "Finland"
+            }
+        },
+        {
+            "code": "fr",
+            "translation": {
+                "cs": "Francie",
+                "de": "Frankreich",
+                "en": "France",
+                "es": "Francia",
+                "fr": "France",
+                "hr": "Francuska",
+                "it": "Francia",
+                "pl": "Francja",
+                "sv": "Frankrike"
+            }
+        },
+        {
+            "code": "gi",
+            "translation": {
+                "cs": "Gibraltar",
+                "de": "Gibraltar",
+                "en": "Gibraltar",
+                "es": "Gibraltar",
+                "fr": "Gibraltar",
+                "hr": "Gibraltar",
+                "it": "Gibilterra",
+                "pl": "Gibraltar",
+                "sv": "Gibraltar"
+            }
+        },
+        {
+            "code": "gr",
+            "translation": {
+                "cs": "Řecko",
+                "de": "Griechenland",
+                "en": "Greece",
+                "es": "Grecia",
+                "fr": "Grèce",
+                "hr": "Grčka",
+                "it": "Grecia",
+                "pl": "Grecja",
+                "sv": "Grekland"
+            }
+        },
+        {
+            "code": "hu",
+            "translation": {
+                "cs": "Maďarsko",
+                "de": "Ungarn",
+                "en": "Hungary",
+                "es": "Hungría",
+                "fr": "Hongrie",
+                "hr": "Mađarska",
+                "it": "Ungheria",
+                "pl": "Węgry",
+                "sv": "Ungern"
+            }
+        },
+        {
+            "code": "is",
+            "translation": {
+                "cs": "Island",
+                "de": "Island",
+                "en": "Iceland",
+                "es": "Islandia",
+                "fr": "Islande",
+                "hr": "Island",
+                "it": "Islanda",
+                "pl": "Islandia",
+                "sv": "Island"
+            }
+        },
+        {
+            "code": "ie",
+            "translation": {
+                "cs": "Irsko",
+                "de": "Irland",
+                "en": "Ireland",
+                "es": "Irlanda",
+                "fr": "Irlande",
+                "hr": "Irska",
+                "it": "Irlanda",
+                "pl": "Irlandia",
+                "sv": "Irland"
+            }
+        },
+        {
+            "code": "it",
+            "translation": {
+                "cs": "Itálie",
+                "de": "Italien",
+                "en": "Italy",
+                "es": "Italia",
+                "fr": "Italie",
+                "hr": "Italija",
+                "it": "Italia",
+                "pl": "Włochy",
+                "sv": "Italien"
+            }
+        },
+        {
+            "code": "lv",
+            "translation": {
+                "cs": "Lotyšsko",
+                "de": "Lettland",
+                "en": "Latvia",
+                "es": "Letonia",
+                "fr": "Lettonie",
+                "hr": "Latvija",
+                "it": "Lettonia",
+                "pl": "Łotwa",
+                "sv": "Lettland"
+            }
+        },
+        {
+            "code": "li",
+            "translation": {
+                "cs": "Lichtenštejnsko",
+                "de": "Liechtenstein",
+                "en": "Liechtenstein",
+                "es": "Liechtenstein",
+                "fr": "Liechtenstein",
+                "hr": "Lihtenštajn",
+                "it": "Liechtenstein",
+                "pl": "Liechtenstein",
+                "sv": "Liechtenstein"
+            }
+        },
+        {
+            "code": "lt",
+            "translation": {
+                "cs": "Litva",
+                "de": "Litauen",
+                "en": "Lithuania",
+                "es": "Lituania",
+                "fr": "Lituanie",
+                "hr": "Litva",
+                "it": "Lituania",
+                "pl": "Litwa",
+                "sv": "Litauen"
+            }
+        },
+        {
+            "code": "lu",
+            "translation": {
+                "cs": "Lucembursko",
+                "de": "Luxemburg",
+                "en": "Luxembourg",
+                "es": "Luxemburgo",
+                "fr": "Luxembourg",
+                "hr": "Luksemburg",
+                "it": "Lussemburgo",
+                "pl": "Luksemburg",
+                "sv": "Luxemburg"
+            }
+        },
+        {
+            "code": "mk",
+            "translation": {
+                "cs": "Severní Makedonie",
+                "de": "Nordmazedonien",
+                "en": "North Macedonia",
+                "es": "Macedonia del Norte",
+                "fr": "Macédoine du Nord",
+                "hr": "Sjeverna Makedonija",
+                "it": "Macedonia del Nord",
+                "pl": "Macedonia Północna",
+                "sv": "Nordmakedonien"
+            }
+        },
+        {
+            "code": "mt",
+            "translation": {
+                "cs": "Malta",
+                "de": "Malta",
+                "en": "Malta",
+                "es": "Malta",
+                "fr": "Malte",
+                "hr": "Malta",
+                "it": "Malta",
+                "pl": "Malta",
+                "sv": "Malta"
+            }
+        },
+        {
+            "code": "md",
+            "translation": {
+                "cs": "Moldavsko",
+                "de": "Moldau",
+                "en": "Moldova",
+                "es": "Moldavia",
+                "fr": "Moldavie",
+                "hr": "Moldavija",
+                "it": "Moldavia",
+                "pl": "Mołdawia",
+                "sv": "Moldavien"
+            }
+        },
+        {
+            "code": "mc",
+            "translation": {
+                "cs": "Monako",
+                "de": "Monaco",
+                "en": "Monaco",
+                "es": "Mónaco",
+                "fr": "Monaco",
+                "hr": "Monako",
+                "it": "Monaco",
+                "pl": "Monako",
+                "sv": "Monaco"
+            }
+        },
+        {
+            "code": "nl",
+            "translation": {
+                "cs": "Nizozemsko",
+                "de": "Niederlande",
+                "en": "Netherlands",
+                "es": "Países Bajos",
+                "fr": "Pays-Bas",
+                "hr": "Nizozemska",
+                "it": "Paesi Bassi",
+                "pl": "Holandia",
+                "sv": "Nederländerna"
+            }
+        },
+        {
+            "code": "no",
+            "translation": {
+                "cs": "Norsko",
+                "de": "Norwegen",
+                "en": "Norway",
+                "es": "Noruega",
+                "fr": "Norvège",
+                "hr": "Norveška",
+                "it": "Norvegia",
+                "pl": "Norwegia",
+                "sv": "Norge"
+            }
+        },
+        {
+            "code": "pl",
+            "translation": {
+                "cs": "Polsko",
+                "de": "Polen",
+                "en": "Poland",
+                "es": "Polonia",
+                "fr": "Pologne",
+                "hr": "Poljska",
+                "it": "Polonia",
+                "pl": "Polska",
+                "sv": "Polen"
+            }
+        },
+        {
+            "code": "pt",
+            "translation": {
+                "cs": "Portugalsko",
+                "de": "Portugal",
+                "en": "Portugal",
+                "es": "Portugal",
+                "fr": "Portugal",
+                "hr": "Portugal",
+                "it": "Portogallo",
+                "pl": "Portugalia",
+                "sv": "Portugal"
+            }
+        },
+        {
+            "code": "ro",
+            "translation": {
+                "cs": "Rumunsko",
+                "de": "Rumänien",
+                "en": "Romania",
+                "es": "Rumania",
+                "fr": "Roumanie",
+                "hr": "Rumunjska",
+                "it": "Romania",
+                "pl": "Rumunia",
+                "sv": "Rumänien"
+            }
+        },
+        {
+            "code": "ru",
+            "translation": {
+                "cs": "Rusko",
+                "de": "Russland",
+                "en": "Russian Federation",
+                "es": "Rusia",
+                "fr": "Russie",
+                "hr": "Rusija",
+                "it": "Russia",
+                "pl": "Rosja",
+                "sv": "Ryssland"
+            }
+        },
+        {
+            "code": "sm",
+            "translation": {
+                "cs": "San Marino",
+                "de": "San Marino",
+                "en": "San Marino",
+                "es": "San Marino",
+                "fr": "Saint-Marin",
+                "hr": "San Marino",
+                "it": "San Marino",
+                "pl": "San Marino",
+                "sv": "San Marino"
+            }
+        },
+        {
+            "code": "rs",
+            "translation": {
+                "cs": "Srbsko",
+                "de": "Serbien",
+                "en": "Serbia",
+                "es": "Serbia",
+                "fr": "Serbie",
+                "hr": "Srbija",
+                "it": "Serbia",
+                "pl": "Serbia",
+                "sv": "Serbien"
+            }
+        },
+        {
+            "code": "sk",
+            "translation": {
+                "cs": "Slovensko",
+                "de": "Slowakei",
+                "en": "Slovakia",
+                "es": "Eslovaquia",
+                "fr": "Slovaquie",
+                "hr": "Slovačka",
+                "it": "Slovacchia",
+                "pl": "Słowacja",
+                "sv": "Slovakien"
+            }
+        },
+        {
+            "code": "si",
+            "translation": {
+                "cs": "Slovinsko",
+                "de": "Slowenien",
+                "en": "Slovenia",
+                "es": "Eslovenia",
+                "fr": "Slovénie",
+                "hr": "Slovenija",
+                "it": "Slovenia",
+                "pl": "Słowenia",
+                "sv": "Slovenien"
+            }
+        },
+        {
+            "code": "es",
+            "translation": {
+                "cs": "Španělsko",
+                "de": "Spanien",
+                "en": "Spain",
+                "es": "España",
+                "fr": "Espagne",
+                "hr": "Španjolska",
+                "it": "Spagna",
+                "pl": "Hiszpania",
+                "sv": "Spanien"
+            }
+        },
+        {
+            "code": "se",
+            "translation": {
+                "cs": "Švédsko",
+                "de": "Schweden",
+                "en": "Sweden",
+                "es": "Suecia",
+                "fr": "Suède",
+                "hr": "Švedska",
+                "it": "Svezia",
+                "pl": "Szwecja",
+                "sv": "Sverige"
+            }
+        },
+        {
+            "code": "ua",
+            "translation": {
+                "cs": "Ukrajina",
+                "de": "Ukraine",
+                "en": "Ukraine",
+                "es": "Ucrania",
+                "fr": "Ukraine",
+                "hr": "Ukrajina",
+                "it": "Ucraina",
+                "pl": "Ukraina",
+                "sv": "Ukraina"
+            }
+        },
+        {
+            "code": "gb",
+            "translation": {
+                "cs": "Spojené království Velké Británie a Severního Irska",
+                "de": "Vereinigtes Königreich",
+                "en": "United Kingdom of Great Britain and Northern Ireland",
+                "es": "Reino Unido",
+                "fr": "Royaume-Uni",
+                "hr": "Ujedinjeno Kraljevstvo",
+                "it": "Regno Unito",
+                "pl": "Wielka Brytania",
+                "sv": "Storbritannien"
+            }
+        },
+        {
+            "code": "va",
+            "translation": {
+                "cs": "Vatikán",
+                "de": "Vatikanstadt",
+                "en": "Holy See",
+                "es": "Vaticano, Ciudad del",
+                "fr": "Cité du Vatican",
+                "hr": "Vatikanski Grad",
+                "it": "Città del Vaticano",
+                "pl": "Watykan",
+                "sv": "Vatikanstaten"
+            }
+        },
+        {
+            "code": "im",
+            "translation": {
+                "cs": "Ostrov Man",
+                "de": "Insel Man",
+                "en": "Isle of Man",
+                "es": "Isla de Man",
+                "fr": "Île de Man",
+                "hr": "Otok Man",
+                "it": "Isola di Man",
+                "pl": "Wyspa Man",
+                "sv": "Isle of Man"
+            }
+        },
+        {
+            "code": "me",
+            "translation": {
+                "cs": "Černá Hora",
+                "de": "Montenegro",
+                "en": "Montenegro",
+                "es": "Montenegro",
+                "fr": "Monténégro",
+                "hr": "Crna Gora",
+                "it": "Montenegro",
+                "pl": "Czarnogóra",
+                "sv": "Montenegro"
+            }
+        },
+        {
+            "code": "xk",
+            "translation": {
+                "cs": "Kosovo",
+                "de": "Kosovo",
+                "en": "Kosovo",
+                "es": "Kosovo",
+                "fr": "Kosovo",
+                "hr": "Kosovo",
+                "it": "Kosovo",
+                "pl": "Kosowo",
+                "sv": "Kosovo"
+            }
+        }
+    ]
+}

@@ -1,0 +1,733 @@
+{
+    "$schema": "_schema/countries.schema.json",
+    "data": [
+        {
+            "code": "af",
+            "translation": {
+                "cs": "Afghánistán",
+                "de": "Afghanistan",
+                "en": "Afghanistan",
+                "es": "Afganistán",
+                "fr": "Afghanistan",
+                "hr": "Afganistan",
+                "it": "Afghanistan",
+                "pl": "Afganistan",
+                "sv": "Afghanistan"
+            }
+        },
+        {
+            "code": "am",
+            "translation": {
+                "cs": "Arménie",
+                "de": "Armenien",
+                "en": "Armenia",
+                "es": "Armenia",
+                "fr": "Arménie",
+                "hr": "Armenija",
+                "it": "Armenia",
+                "pl": "Armenia",
+                "sv": "Armenien"
+            }
+        },
+        {
+            "code": "az",
+            "translation": {
+                "cs": "Ázerbájdžán",
+                "de": "Aserbaidschan",
+                "en": "Azerbaijan",
+                "es": "Azerbaiyán",
+                "fr": "Azerbaïdjan",
+                "hr": "Azerbajdžan",
+                "it": "Azerbaijan",
+                "pl": "Azerbejdżan",
+                "sv": "Azerbajdzjan"
+            }
+        },
+        {
+            "code": "bh",
+            "translation": {
+                "cs": "Bahrajn",
+                "de": "Bahrain",
+                "en": "Bahrain",
+                "es": "Baréin",
+                "fr": "Bahreïn",
+                "hr": "Bahrein",
+                "it": "Bahrein",
+                "pl": "Bahrajn",
+                "sv": "Bahrain"
+            }
+        },
+        {
+            "code": "bd",
+            "translation": {
+                "cs": "Bangladéš",
+                "de": "Bangladesch",
+                "en": "Bangladesh",
+                "es": "Bangladés",
+                "fr": "Bangladesh",
+                "hr": "Bangladeš",
+                "it": "Bangladesh",
+                "pl": "Bangladesz",
+                "sv": "Bangladesh"
+            }
+        },
+        {
+            "code": "bt",
+            "translation": {
+                "cs": "Bhútán",
+                "de": "Bhutan",
+                "en": "Bhutan",
+                "es": "Bután",
+                "fr": "Bhoutan",
+                "hr": "Butan",
+                "it": "Bhutan",
+                "pl": "Bhutan",
+                "sv": "Bhutan"
+            }
+        },
+        {
+            "code": "bn",
+            "translation": {
+                "cs": "Brunej",
+                "de": "Brunei",
+                "en": "Brunei Darussalam",
+                "es": "Brunéi",
+                "fr": "Brunei",
+                "hr": "Brunej",
+                "it": "Brunei",
+                "pl": "Brunei",
+                "sv": "Brunei"
+            }
+        },
+        {
+            "code": "kh",
+            "translation": {
+                "cs": "Kambodža",
+                "de": "Kambodscha",
+                "en": "Cambodia",
+                "es": "Camboya",
+                "fr": "Cambodge",
+                "hr": "Kambodža",
+                "it": "La Cambogia",
+                "pl": "Kambodża",
+                "sv": "Kambodja"
+            }
+        },
+        {
+            "code": "cn",
+            "translation": {
+                "cs": "Čína",
+                "de": "Volksrepublik China",
+                "en": "China",
+                "es": "China",
+                "fr": "République populaire de Chine",
+                "hr": "Kina",
+                "it": "Repubblica Popolare Cinese",
+                "pl": "Chiny",
+                "sv": "Kina"
+            }
+        },
+        {
+            "code": "cx",
+            "translation": {
+                "cs": "Vánoční ostrov",
+                "de": "Weihnachtsinsel",
+                "en": "Christmas Island",
+                "es": "Isla de Navidad",
+                "fr": "Île de Noël",
+                "hr": "Božićni otok",
+                "it": "Isola di Natale",
+                "pl": "Wyspa Bożego Narodzenia",
+                "sv": "Julön"
+            }
+        },
+        {
+            "code": "cc",
+            "translation": {
+                "cs": "Kokosové ostrovy",
+                "de": "Kokosinseln",
+                "en": "Cocos Islands",
+                "es": "Islas Cocos",
+                "fr": "Îles Cocos",
+                "hr": "Kokosovi (Keelingovi) otoci",
+                "it": "Isole Cocos",
+                "pl": "Wyspy Kokosowe",
+                "sv": "Kokosöarna"
+            }
+        },
+        {
+            "code": "io",
+            "translation": {
+                "cs": "Britské indickooceánské území",
+                "de": "Britisches Territorium im Indischen Ozean",
+                "en": "British Indian Ocean Territory",
+                "es": "Territorio Británico del Océano Índico",
+                "fr": "Territoire britannique de l'océan Indien",
+                "hr": "Britanski Indijskooceanski teritorij",
+                "it": "Territorio britannico dell'Oceano Indiano",
+                "pl": "Brytyjskie Terytorium Oceanu Indyjskiego",
+                "sv": "Brittiska territoriet i Indiska Oceanen"
+            }
+        },
+        {
+            "code": "ge",
+            "translation": {
+                "cs": "Gruzie",
+                "de": "Georgien",
+                "en": "Georgia",
+                "es": "Georgia",
+                "fr": "Géorgie",
+                "hr": "Gruzija",
+                "it": "Georgia",
+                "pl": "Gruzja",
+                "sv": "Georgien"
+            }
+        },
+        {
+            "code": "hk",
+            "translation": {
+                "cs": "Hongkong",
+                "de": "Hongkong",
+                "en": "Hong Kong",
+                "es": "Hong Kong",
+                "fr": "Hong Kong",
+                "hr": "PUP Hong Kong Kina",
+                "it": "Hong Kong",
+                "pl": "Hongkong",
+                "sv": "Hongkong"
+            }
+        },
+        {
+            "code": "in",
+            "translation": {
+                "cs": "Indie",
+                "de": "Indien",
+                "en": "India",
+                "es": "India",
+                "fr": "Inde",
+                "hr": "Indija",
+                "it": "India",
+                "pl": "Indie",
+                "sv": "Indien"
+            }
+        },
+        {
+            "code": "id",
+            "translation": {
+                "cs": "Indonésie",
+                "de": "Indonesien",
+                "en": "Indonesia",
+                "es": "Indonesia",
+                "fr": "Indonésie",
+                "hr": "Indonezija",
+                "it": "Indonesia",
+                "pl": "Indonezja",
+                "sv": "Indonesien"
+            }
+        },
+        {
+            "code": "ir",
+            "translation": {
+                "cs": "Írán",
+                "de": "Iran",
+                "en": "Iran",
+                "es": "Irán",
+                "fr": "Iran",
+                "hr": "Iran",
+                "it": "Iran",
+                "pl": "Iran",
+                "sv": "Iran"
+            }
+        },
+        {
+            "code": "iq",
+            "translation": {
+                "cs": "Irák",
+                "de": "Irak",
+                "en": "Iraq",
+                "es": "Irak",
+                "fr": "Irak",
+                "hr": "Irak",
+                "it": "Iraq",
+                "pl": "Irak",
+                "sv": "Irak"
+            }
+        },
+        {
+            "code": "il",
+            "translation": {
+                "cs": "Izrael",
+                "de": "Israel",
+                "en": "Israel",
+                "es": "Israel",
+                "fr": "Israël",
+                "hr": "Izrael",
+                "it": "Israele",
+                "pl": "Izrael",
+                "sv": "Israel"
+            }
+        },
+        {
+            "code": "jp",
+            "translation": {
+                "cs": "Japonsko",
+                "de": "Japan",
+                "en": "Japan",
+                "es": "Japón",
+                "fr": "Japon",
+                "hr": "Japan",
+                "it": "Giappone",
+                "pl": "Japonia",
+                "sv": "Japan"
+            }
+        },
+        {
+            "code": "jo",
+            "translation": {
+                "cs": "Jordánsko",
+                "de": "Jordanien",
+                "en": "Jordan",
+                "es": "Jordania",
+                "fr": "Jordanie",
+                "hr": "Jordan",
+                "it": "Giordania",
+                "pl": "Jordania",
+                "sv": "Jordanien"
+            }
+        },
+        {
+            "code": "kz",
+            "translation": {
+                "cs": "Kazachstán",
+                "de": "Kasachstan",
+                "en": "Kazakhstan",
+                "es": "Kazajistán",
+                "fr": "Kazakhstan",
+                "hr": "Kazahstan",
+                "it": "Kazakistan",
+                "pl": "Kazachstan",
+                "sv": "Kazakstan"
+            }
+        },
+        {
+            "code": "kp",
+            "translation": {
+                "cs": "Severní Korea",
+                "de": "Nordkorea",
+                "en": "North Korea",
+                "es": "Corea del Norte",
+                "fr": "Corée du Nord",
+                "hr": "Sjeverna Koreja",
+                "it": "Corea del Nord",
+                "pl": "Korea Północna",
+                "sv": "Nordkorea"
+            }
+        },
+        {
+            "code": "kr",
+            "translation": {
+                "cs": "Jižní Korea",
+                "de": "Südkorea",
+                "en": "South Korea",
+                "es": "Corea del Sur",
+                "fr": "Corée du Sud",
+                "hr": "Južna Koreja",
+                "it": "Corea del Sud",
+                "pl": "Korea Południowa",
+                "sv": "Sydkorea"
+            }
+        },
+        {
+            "code": "kw",
+            "translation": {
+                "cs": "Kuvajt",
+                "de": "Kuwait",
+                "en": "Kuwait",
+                "es": "Kuwait",
+                "fr": "Koweït",
+                "hr": "Kuvajt",
+                "it": "Kuwait",
+                "pl": "Kuwejt",
+                "sv": "Kuwait"
+            }
+        },
+        {
+            "code": "kg",
+            "translation": {
+                "cs": "Kyrgyzstán",
+                "de": "Kirgisistan",
+                "en": "Kyrgyzstan",
+                "es": "Kirguistán",
+                "fr": "Kirghizistan",
+                "hr": "Kirgistan",
+                "it": "Kirghizistan",
+                "pl": "Kirgistan",
+                "sv": "Kirgizistan"
+            }
+        },
+        {
+            "code": "la",
+            "translation": {
+                "cs": "Laos",
+                "de": "Laos",
+                "en": "Lao People's Democratic Republic",
+                "es": "Laos",
+                "fr": "Laos",
+                "hr": "Laos",
+                "it": "Laos",
+                "pl": "Laos",
+                "sv": "Laos"
+            }
+        },
+        {
+            "code": "lb",
+            "translation": {
+                "cs": "Libanon",
+                "de": "Libanon",
+                "en": "Lebanon",
+                "es": "Líbano",
+                "fr": "Liban",
+                "hr": "Libanon",
+                "it": "Libano",
+                "pl": "Liban",
+                "sv": "Libanon"
+            }
+        },
+        {
+            "code": "mo",
+            "translation": {
+                "cs": "Macao",
+                "de": "Macau",
+                "en": "Macao",
+                "es": "Macao",
+                "fr": "Macao",
+                "hr": "PUP Makao Kina",
+                "it": "Macao",
+                "pl": "Makau",
+                "sv": "Macao"
+            }
+        },
+        {
+            "code": "my",
+            "translation": {
+                "cs": "Malajsie",
+                "de": "Malaysia",
+                "en": "Malaysia",
+                "es": "Malasia",
+                "fr": "Malaisie",
+                "hr": "Malezija",
+                "it": "Malesia",
+                "pl": "Malezja",
+                "sv": "Malaysia"
+            }
+        },
+        {
+            "code": "mv",
+            "translation": {
+                "cs": "Maledivy",
+                "de": "Malediven",
+                "en": "Maldives",
+                "es": "Maldivas",
+                "fr": "Maldives",
+                "hr": "Maldivi",
+                "it": "Maldive",
+                "pl": "Malediwy",
+                "sv": "Maldiverna"
+            }
+        },
+        {
+            "code": "mn",
+            "translation": {
+                "cs": "Mongolsko",
+                "de": "Mongolei",
+                "en": "Mongolia",
+                "es": "Mongolia",
+                "fr": "Mongolie",
+                "hr": "Mongolija",
+                "it": "Mongolia",
+                "pl": "Mongolia",
+                "sv": "Mongoliet"
+            }
+        },
+        {
+            "code": "mm",
+            "translation": {
+                "cs": "Myanmar",
+                "de": "Myanmar",
+                "en": "Myanmar",
+                "es": "Birmania",
+                "fr": "Myanmar",
+                "hr": "Mjanmar (Burma)",
+                "it": "Myanmar",
+                "pl": "Mjanma",
+                "sv": "Myanmar"
+            }
+        },
+        {
+            "code": "np",
+            "translation": {
+                "cs": "Nepál",
+                "de": "Nepal",
+                "en": "Nepal",
+                "es": "Nepal",
+                "fr": "Népal",
+                "hr": "Nepal",
+                "it": "Nepal",
+                "pl": "Nepal",
+                "sv": "Nepal"
+            }
+        },
+        {
+            "code": "om",
+            "translation": {
+                "cs": "Omán",
+                "de": "Oman",
+                "en": "Oman",
+                "es": "Omán",
+                "fr": "Oman",
+                "hr": "Oman",
+                "it": "Oman",
+                "pl": "Oman",
+                "sv": "Oman"
+            }
+        },
+        {
+            "code": "pk",
+            "translation": {
+                "cs": "Pákistán",
+                "de": "Pakistan",
+                "en": "Pakistan",
+                "es": "Pakistán",
+                "fr": "Pakistan",
+                "hr": "Pakistan",
+                "it": "Pakistan",
+                "pl": "Pakistan",
+                "sv": "Pakistan"
+            }
+        },
+        {
+            "code": "ph",
+            "translation": {
+                "cs": "Filipíny",
+                "de": "Philippinen",
+                "en": "Philippines",
+                "es": "Filipinas",
+                "fr": "Philippines",
+                "hr": "Filipini",
+                "it": "Filippine",
+                "pl": "Filipiny",
+                "sv": "Filippinerna"
+            }
+        },
+        {
+            "code": "qa",
+            "translation": {
+                "cs": "Katar",
+                "de": "Katar",
+                "en": "Qatar",
+                "es": "Catar",
+                "fr": "Qatar",
+                "hr": "Katar",
+                "it": "Qatar",
+                "pl": "Katar",
+                "sv": "Qatar"
+            }
+        },
+        {
+            "code": "sa",
+            "translation": {
+                "cs": "Saúdská Arábie",
+                "de": "Saudi-Arabien",
+                "en": "Saudi Arabia",
+                "es": "Arabia Saudita",
+                "fr": "Arabie saoudite",
+                "hr": "Saudijska Arabija",
+                "it": "Arabia Saudita",
+                "pl": "Arabia Saudyjska",
+                "sv": "Saudiarabien"
+            }
+        },
+        {
+            "code": "sg",
+            "translation": {
+                "cs": "Singapur",
+                "de": "Singapur",
+                "en": "Singapore",
+                "es": "Singapur",
+                "fr": "Singapour",
+                "hr": "Singapur",
+                "it": "Singapore",
+                "pl": "Singapur",
+                "sv": "Singapore"
+            }
+        },
+        {
+            "code": "lk",
+            "translation": {
+                "cs": "Srí Lanka",
+                "de": "Sri Lanka",
+                "en": "Sri Lanka",
+                "es": "Sri Lanka",
+                "fr": "Sri Lanka",
+                "hr": "Šri Lanka",
+                "it": "Sri Lanka",
+                "pl": "Sri Lanka",
+                "sv": "Sri Lanka"
+            }
+        },
+        {
+            "code": "sy",
+            "translation": {
+                "cs": "Sýrie",
+                "de": "Syrien",
+                "en": "Syrian Arab Republic",
+                "es": "Siria",
+                "fr": "Syrie",
+                "hr": "Sirija",
+                "it": "Siria",
+                "pl": "Syria",
+                "sv": "Syrien"
+            }
+        },
+        {
+            "code": "tw",
+            "translation": {
+                "cs": "Tchaj-wan",
+                "de": "Republik China",
+                "en": "Taiwan",
+                "es": "Taiwán (República de China)",
+                "fr": "République de Chine",
+                "hr": "Tajvan",
+                "it": "Repubblica di Cina",
+                "pl": "Tajwan",
+                "sv": "Taiwan"
+            }
+        },
+        {
+            "code": "tj",
+            "translation": {
+                "cs": "Tádžikistán",
+                "de": "Tadschikistan",
+                "en": "Tajikistan",
+                "es": "Tayikistán",
+                "fr": "Tadjikistan",
+                "hr": "Tadžikistan",
+                "it": "Tagikistan",
+                "pl": "Tadżykistan",
+                "sv": "Tadzjikistan"
+            }
+        },
+        {
+            "code": "th",
+            "translation": {
+                "cs": "Thajsko",
+                "de": "Thailand",
+                "en": "Thailand",
+                "es": "Tailandia",
+                "fr": "Thaïlande",
+                "hr": "Tajland",
+                "it": "Tailandia",
+                "pl": "Tajlandia",
+                "sv": "Thailand"
+            }
+        },
+        {
+            "code": "tr",
+            "translation": {
+                "cs": "Turecko",
+                "de": "Türkei",
+                "en": "Turkey",
+                "es": "Turquía",
+                "fr": "Turquie",
+                "hr": "Turska",
+                "it": "Turchia",
+                "pl": "Turcja",
+                "sv": "Turkiet"
+            }
+        },
+        {
+            "code": "tm",
+            "translation": {
+                "cs": "Turkmenistán",
+                "de": "Turkmenistan",
+                "en": "Turkmenistan",
+                "es": "Turkmenistán",
+                "fr": "Turkménistan",
+                "hr": "Turkmenistan",
+                "it": "Turkmenistan",
+                "pl": "Turkmenistan",
+                "sv": "Turkmenistan"
+            }
+        },
+        {
+            "code": "ae",
+            "translation": {
+                "cs": "Spojené arabské emiráty",
+                "de": "Vereinigte Arabische Emirate",
+                "en": "United Arab Emirates",
+                "es": "Emiratos Árabes Unidos",
+                "fr": "Émirats arabes unis",
+                "hr": "Ujedinjeni Arapski Emirati",
+                "it": "Emirati Arabi Uniti",
+                "pl": "Zjednoczone Emiraty Arabskie",
+                "sv": "Förenade Arabemiraten"
+            }
+        },
+        {
+            "code": "uz",
+            "translation": {
+                "cs": "Uzbekistán",
+                "de": "Usbekistan",
+                "en": "Uzbekistan",
+                "es": "Uzbekistán",
+                "fr": "Ouzbékistan",
+                "hr": "Uzbekistan",
+                "it": "Uzbekistan",
+                "pl": "Uzbekistan",
+                "sv": "Uzbekistan"
+            }
+        },
+        {
+            "code": "vn",
+            "translation": {
+                "cs": "Vietnam",
+                "de": "Vietnam",
+                "en": "Viet Nam",
+                "es": "Vietnam",
+                "fr": "Vietnam",
+                "hr": "Vijetnam",
+                "it": "Vietnam",
+                "pl": "Wietnam",
+                "sv": "Vietnam"
+            }
+        },
+        {
+            "code": "ye",
+            "translation": {
+                "cs": "Jemen",
+                "de": "Jemen",
+                "en": "Yemen",
+                "es": "Yemen",
+                "fr": "Yémen",
+                "hr": "Jemen",
+                "it": "Yemen",
+                "pl": "Jemen",
+                "sv": "Jemen"
+            }
+        },
+        {
+            "code": "ps",
+            "translation": {
+                "cs": "Palestinská autonomie",
+                "de": "Palästina",
+                "en": "Palestine",
+                "es": "Palestina",
+                "fr": "Palestine",
+                "hr": "Palestinsko područje",
+                "it": "Palestina",
+                "pl": "Palestyna",
+                "sv": "Palestina"
+            }
+        }
+    ]
+}

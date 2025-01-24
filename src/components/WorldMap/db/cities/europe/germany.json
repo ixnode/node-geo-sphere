@@ -1,0 +1,350 @@
+{
+    "$schema": "../_schema/cities.schema.json",
+    "data": [
+        {
+            "name": "Bremen",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 8.8064,
+                "latitude": 53.0736
+            },
+            "country": "de",
+            "type": "state-capital",
+            "population": 577026,
+            "translation": {
+                "cs": "Brémy",
+                "de": "Bremen",
+                "en": "Bremen",
+                "es": "Bremen",
+                "fr": "Brême",
+                "hr": "Bremen",
+                "it": "Brema",
+                "pl": "Brema",
+                "sv": "Bremen"
+            }
+        },
+        {
+            "name": "Dresden",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 13.7373,
+                "latitude": 51.0504
+            },
+            "country": "de",
+            "type": "state-capital",
+            "population": 566222,
+            "translation": {
+                "cs": "Drážďany",
+                "de": "Dresden",
+                "en": "Dresden",
+                "es": "Dresde",
+                "fr": "Dresde",
+                "hr": "Dresden",
+                "it": "Dresda",
+                "pl": "Drezno",
+                "sv": "Dresden"
+            }
+        },
+        {
+            "name": "Düsseldorf",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 6.7833,
+                "latitude": 51.2333
+            },
+            "country": "de",
+            "type": "state-capital",
+            "population": 631217,
+            "translation": {
+                "cs": "Düsseldorf",
+                "de": "Düsseldorf",
+                "en": "Düsseldorf",
+                "es": "Düsseldorf",
+                "fr": "Düsseldorf",
+                "hr": "Düsseldorf",
+                "it": "Düsseldorf",
+                "pl": "Düsseldorf",
+                "sv": "Düsseldorf"
+            }
+        },
+        {
+            "name": "Erfurt",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 11.0333,
+                "latitude": 50.9833
+            },
+            "country": "de",
+            "type": "state-capital",
+            "population": 215675,
+            "translation": {
+                "cs": "Erfurt",
+                "de": "Erfurt",
+                "en": "Erfurt",
+                "es": "Érfurt",
+                "fr": "Erfurt",
+                "hr": "Erfurt",
+                "it": "Erfurt",
+                "pl": "Erfurt",
+                "sv": "Erfurt"
+            }
+        },
+        {
+            "name": "Hamburg",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 9.9937,
+                "latitude": 53.5511
+            },
+            "country": "de",
+            "type": "state-capital",
+            "population": 1910160,
+            "translation": {
+                "cs": "Hamburk",
+                "de": "Hamburg",
+                "en": "Hamburg",
+                "es": "Hamburgo",
+                "fr": "Hambourg",
+                "hr": "Hamburg",
+                "it": "Amburgo",
+                "pl": "Hamburg",
+                "sv": "Hamburg"
+            }
+        },
+        {
+            "name": "Hannover",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 9.7356,
+                "latitude": 52.3739
+            },
+            "country": "de",
+            "type": "state-capital",
+            "population": 548186,
+            "translation": {
+                "cs": "Hannover",
+                "de": "Hannover",
+                "en": "Hanover",
+                "es": "Hannover",
+                "fr": "Hanovre",
+                "hr": "Hannover",
+                "it": "Hannover",
+                "pl": "Hanower",
+                "sv": "Hannover"
+            }
+        },
+        {
+            "name": "Kiel",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 10.1373,
+                "latitude": 54.3218
+            },
+            "country": "de",
+            "type": "state-capital",
+            "population": 248873,
+            "translation": {
+                "cs": "Kiel",
+                "de": "Kiel",
+                "en": "Kiel",
+                "es": "Kiel",
+                "fr": "Kiel",
+                "hr": "Kiel",
+                "it": "Kiel",
+                "pl": "Kilonia",
+                "sv": "Kiel"
+            }
+        },
+        {
+            "name": "Magdeburg",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 11.6167,
+                "latitude": 52.1333
+            },
+            "country": "de",
+            "type": "state-capital",
+            "population": 240114,
+            "translation": {
+                "cs": "Magdeburg",
+                "de": "Magdeburg",
+                "en": "Magdeburg",
+                "es": "Magdeburgo",
+                "fr": "Magdebourg",
+                "hr": "Magdeburg",
+                "it": "Magdeburgo",
+                "pl": "Magdeburg",
+                "sv": "Magdeburg"
+            }
+        },
+        {
+            "name": "Mainz",
+            "priority": 2,
+            "size": "smaller",
+            "coordinate": {
+                "longitude": 8.2473,
+                "latitude": 49.9929
+            },
+            "country": "de",
+            "type": "state-capital",
+            "population": 222889,
+            "translation": {
+                "cs": "Mohuč",
+                "de": "Mainz",
+                "en": "Mainz",
+                "es": "Maguncia",
+                "fr": "Mayence",
+                "hr": "Mainz",
+                "it": "Magonza",
+                "pl": "Moguncja",
+                "sv": "Mainz"
+            }
+        },
+        {
+            "name": "München",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 11.5761,
+                "latitude": 48.1372
+            },
+            "country": "de",
+            "type": "state-capital",
+            "population": 1510378,
+            "translation": {
+                "cs": "Mnichov",
+                "de": "München",
+                "en": "Munich",
+                "es": "Múnich",
+                "fr": "Munich",
+                "hr": "München",
+                "it": "Monaco di Baviera",
+                "pl": "Monachium",
+                "sv": "München"
+            }
+        },
+        {
+            "name": "Potsdam",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 13.0636,
+                "latitude": 52.3918
+            },
+            "country": "de",
+            "type": "state-capital",
+            "population": 187119,
+            "translation": {
+                "cs": "Postupim",
+                "de": "Potsdam",
+                "en": "Potsdam",
+                "es": "Potsdam",
+                "fr": "Potsdam",
+                "hr": "Potsdam",
+                "it": "Potsdam",
+                "pl": "Poczdam",
+                "sv": "Potsdam"
+            }
+        },
+        {
+            "name": "Saarbrücken",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 7.0000,
+                "latitude": 49.2333
+            },
+            "country": "de",
+            "type": "state-capital",
+            "population": 183509,
+            "translation": {
+                "cs": "Saarbrücken",
+                "de": "Saarbrücken",
+                "en": "Saarbrücke ",
+                "es": "Saarbrücken",
+                "fr": "Sarrebruck",
+                "hr": "Saarbrücken",
+                "it": "Saarbrücken",
+                "pl": "Saarbrücken",
+                "sv": "Saarbrücken"
+            }
+        },
+        {
+            "name": "Schwerin",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 11.4144,
+                "latitude": 53.6285
+            },
+            "country": "de",
+            "type": "state-capital",
+            "population": 98733,
+            "translation": {
+                "cs": "Schwerin",
+                "de": "Schwerin",
+                "en": "Schwerin",
+                "es": "Schwerin",
+                "fr": "Schwerin",
+                "hr": "Schwerin",
+                "it": "Schwerin",
+                "pl": "Schwerin",
+                "sv": "Schwerin"
+            }
+        },
+        {
+            "name": "Stuttgart",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 9.18333,
+                "latitude": 48.7833
+            },
+            "country": "de",
+            "type": "state-capital",
+            "population": 633484,
+            "translation": {
+                "cs": "Stuttgart",
+                "de": "Stuttgart",
+                "en": "Stuttgart",
+                "es": "Stuttgart",
+                "fr": "Stuttgart",
+                "hr": "Stuttgart",
+                "it": "Stoccarda",
+                "pl": "Stuttgart",
+                "sv": "Stuttgart"
+            }
+        },
+        {
+            "name": "Wiesbaden",
+            "priority": 2,
+            "size": "smaller",
+            "coordinate": {
+                "longitude": 8.2398,
+                "latitude": 50.0782
+            },
+            "country": "de",
+            "type": "state-capital",
+            "population": 285522,
+            "translation": {
+                "cs": "Wiesbaden",
+                "de": "Wiesbaden",
+                "en": "Wiesbaden",
+                "es": "Wiesbaden",
+                "fr": "Wiesbaden",
+                "hr": "Wiesbaden",
+                "it": "Wiesbaden",
+                "pl": "Wiesbaden",
+                "sv": "Wiesbaden"
+            }
+        }
+    ]
+}

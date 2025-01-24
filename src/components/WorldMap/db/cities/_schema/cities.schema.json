@@ -45,7 +45,7 @@
                         "enum": ["capital", "state-capital", "city"]
                     },
                     "population": {
-                        "type": "number"
+                        "type": ["number", "null"]
                     },
                     "translation": {
                         "type": "object",

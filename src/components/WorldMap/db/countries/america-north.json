@@ -1,0 +1,551 @@
+{
+    "$schema": "_schema/countries.schema.json",
+    "data": [
+        {
+            "code": "ai",
+            "translation": {
+                "cs": "Anguilla",
+                "de": "Anguilla",
+                "en": "Anguilla",
+                "es": "Anguila",
+                "fr": "Anguilla",
+                "hr": "Angvila",
+                "it": "Anguilla",
+                "pl": "Anguilla",
+                "sv": "Anguilla"
+            }
+        },
+        {
+            "code": "ag",
+            "translation": {
+                "cs": "Antigua a Barbuda",
+                "de": "Antigua und Barbuda",
+                "en": "Antigua and Barbuda",
+                "es": "Antigua y Barbuda",
+                "fr": "Antigua-et-Barbuda",
+                "hr": "Antigva i Barbuda",
+                "it": "Antigua e Barbuda",
+                "pl": "Antigua i Barbuda",
+                "sv": "Antigua och Barbuda"
+            }
+        },
+        {
+            "code": "aw",
+            "translation": {
+                "cs": "Aruba",
+                "de": "Aruba",
+                "en": "Aruba",
+                "es": "Aruba",
+                "fr": "Aruba",
+                "hr": "Aruba",
+                "it": "Aruba",
+                "pl": "Aruba",
+                "sv": "Aruba"
+            }
+        },
+        {
+            "code": "bs",
+            "translation": {
+                "cs": "Bahamy",
+                "de": "Bahamas",
+                "en": "Bahamas",
+                "es": "Bahamas",
+                "fr": "Bahamas",
+                "hr": "Bahami",
+                "it": "Bahamas",
+                "pl": "Bahamy",
+                "sv": "Bahamas"
+            }
+        },
+        {
+            "code": "bb",
+            "translation": {
+                "cs": "Barbados",
+                "de": "Barbados",
+                "en": "Barbados",
+                "es": "Barbados",
+                "fr": "Barbade",
+                "hr": "Barbados",
+                "it": "Barbados",
+                "pl": "Barbados",
+                "sv": "Barbados"
+            }
+        },
+        {
+            "code": "bz",
+            "translation": {
+                "cs": "Belize",
+                "de": "Belize",
+                "en": "Belize",
+                "es": "Belice",
+                "fr": "Belize",
+                "hr": "Belize",
+                "it": "Belize",
+                "pl": "Belize",
+                "sv": "Belize"
+            }
+        },
+        {
+            "code": "bm",
+            "translation": {
+                "cs": "Bermudy",
+                "de": "Bermuda",
+                "en": "Bermuda",
+                "es": "Bermudas",
+                "fr": "Bermudes",
+                "hr": "Bermudi",
+                "it": "Bermuda",
+                "pl": "Bermudy",
+                "sv": "Bermuda"
+            }
+        },
+        {
+            "code": "vg",
+            "translation": {
+                "cs": "Britské Panenské ostrovy",
+                "de": "Britische Jungferninseln",
+                "en": "Virgin Islands",
+                "es": "Islas Vírgenes Británicas",
+                "fr": "Îles Vierges britanniques",
+                "hr": "Britanski Djevičanski otoci",
+                "it": "Isole Vergini britanniche",
+                "pl": "Brytyjskie Wyspy Dziewicze",
+                "sv": "Brittiska Jungfruöarna"
+            }
+        },
+        {
+            "code": "ca",
+            "translation": {
+                "cs": "Kanada",
+                "de": "Kanada",
+                "en": "Canada",
+                "es": "Canadá",
+                "fr": "Canada",
+                "hr": "Kanada",
+                "it": "Canada",
+                "pl": "Kanada",
+                "sv": "Kanada"
+            }
+        },
+        {
+            "code": "ky",
+            "translation": {
+                "cs": "Kajmanské ostrovy",
+                "de": "Kaimaninseln",
+                "en": "Cayman Islands",
+                "es": "Islas Caimán",
+                "fr": "Îles Caïmans",
+                "hr": "Kajmanski otoci",
+                "it": "Isole Cayman",
+                "pl": "Kajmany",
+                "sv": "Caymanöarna"
+            }
+        },
+        {
+            "code": "cr",
+            "translation": {
+                "cs": "Kostarika",
+                "de": "Costa Rica",
+                "en": "Costa Rica",
+                "es": "Costa Rica",
+                "fr": "Costa Rica",
+                "hr": "Kostarika",
+                "it": "Costa Rica",
+                "pl": "Kostaryka",
+                "sv": "Costa Rica"
+            }
+        },
+        {
+            "code": "cu",
+            "translation": {
+                "cs": "Kuba",
+                "de": "Kuba",
+                "en": "Cuba",
+                "es": "Cuba",
+                "fr": "Cuba",
+                "hr": "Kuba",
+                "it": "Cuba",
+                "pl": "Kuba",
+                "sv": "Kuba"
+            }
+        },
+        {
+            "code": "cw",
+            "translation": {
+                "cs": "Curaçao",
+                "de": "Curaçao",
+                "en": "Curaçao",
+                "es": "Curazao",
+                "fr": "Curaçao",
+                "hr": "Curaçao",
+                "it": "Curaçao",
+                "pl": "Curaçao",
+                "sv": "Curaçao"
+            }
+        },
+        {
+            "code": "dm",
+            "translation": {
+                "cs": "Dominika",
+                "de": "Dominica",
+                "en": "Dominica",
+                "es": "Dominica",
+                "fr": "Dominique",
+                "hr": "Dominika",
+                "it": "Dominica",
+                "pl": "Dominika",
+                "sv": "Dominica"
+            }
+        },
+        {
+            "code": "do",
+            "translation": {
+                "cs": "Dominikánská republika",
+                "de": "Dominikanische Republik",
+                "en": "Dominican Republic",
+                "es": "República Dominicana",
+                "fr": "République dominicaine",
+                "hr": "Dominikanska Republika",
+                "it": "Repubblica Dominicana",
+                "pl": "Dominikana",
+                "sv": "Dominikanska republiken"
+            }
+        },
+        {
+            "code": "sv",
+            "translation": {
+                "cs": "Salvador",
+                "de": "El Salvador",
+                "en": "El Salvador",
+                "es": "El Salvador",
+                "fr": "Salvador",
+                "hr": "Salvador",
+                "it": "El Salvador",
+                "pl": "Salwador",
+                "sv": "El Salvador"
+            }
+        },
+        {
+            "code": "gl",
+            "translation": {
+                "cs": "Grónsko",
+                "de": "Grönland",
+                "en": "Greenland",
+                "es": "Groenlandia",
+                "fr": "Groenland",
+                "hr": "Grenland",
+                "it": "Groenlandia",
+                "pl": "Grenlandia",
+                "sv": "Grönland"
+            }
+        },
+        {
+            "code": "gd",
+            "translation": {
+                "cs": "Grenada",
+                "de": "Grenada",
+                "en": "Grenada",
+                "es": "Granada",
+                "fr": "Grenade",
+                "hr": "Grenada",
+                "it": "Grenada",
+                "pl": "Grenada",
+                "sv": "Grenada"
+            }
+        },
+        {
+            "code": "gp",
+            "translation": {
+                "cs": "Guadeloupe",
+                "de": "Guadeloupe",
+                "en": "Guadeloupe",
+                "es": "Guadalupe",
+                "fr": "Guadeloupe",
+                "hr": "Guadalupe",
+                "it": "Guadalupa",
+                "pl": "Gwadelupa",
+                "sv": "Guadeloupe"
+            }
+        },
+        {
+            "code": "gt",
+            "translation": {
+                "cs": "Guatemala",
+                "de": "Guatemala",
+                "en": "Guatemala",
+                "es": "Guatemala",
+                "fr": "Guatemala",
+                "hr": "Gvatemala",
+                "it": "Guatemala",
+                "pl": "Gwatemala",
+                "sv": "Guatemala"
+            }
+        },
+        {
+            "code": "ht",
+            "translation": {
+                "cs": "Haiti",
+                "de": "Haiti",
+                "en": "Haiti",
+                "es": "Haití",
+                "fr": "Haïti",
+                "hr": "Haiti",
+                "it": "Haiti",
+                "pl": "Haiti",
+                "sv": "Haiti"
+            }
+        },
+        {
+            "code": "hn",
+            "translation": {
+                "cs": "Honduras",
+                "de": "Honduras",
+                "en": "Honduras",
+                "es": "Honduras",
+                "fr": "Honduras",
+                "hr": "Honduras",
+                "it": "Honduras",
+                "pl": "Honduras",
+                "sv": "Honduras"
+            }
+        },
+        {
+            "code": "jm",
+            "translation": {
+                "cs": "Jamajka",
+                "de": "Jamaika",
+                "en": "Jamaica",
+                "es": "Jamaica",
+                "fr": "Jamaïque",
+                "hr": "Jamajka",
+                "it": "Giamaica",
+                "pl": "Jamajka",
+                "sv": "Jamaica"
+            }
+        },
+        {
+            "code": "mq",
+            "translation": {
+                "cs": "Martinik",
+                "de": "Martinique",
+                "en": "Martinique",
+                "es": "Martinica",
+                "fr": "Martinique",
+                "hr": "Martinique",
+                "it": "Martinica",
+                "pl": "Martynika",
+                "sv": "Martinique"
+            }
+        },
+        {
+            "code": "mx",
+            "translation": {
+                "cs": "Mexiko",
+                "de": "Mexiko",
+                "en": "Mexico",
+                "es": "México",
+                "fr": "Mexique",
+                "hr": "Meksiko",
+                "it": "Messico",
+                "pl": "Meksyk",
+                "sv": "Mexiko"
+            }
+        },
+        {
+            "code": "pm",
+            "translation": {
+                "cs": "Saint Pierre a Miquelon",
+                "de": "Saint-Pierre und Miquelon",
+                "en": "Saint Pierre and Miquelon",
+                "es": "San Pedro y Miquelón",
+                "fr": "Saint-Pierre-et-Miquelon",
+                "hr": "Saint-Pierre-et-Miquelon",
+                "it": "Saint-Pierre e Miquelon",
+                "pl": "Saint-Pierre i Miquelon",
+                "sv": "Saint-Pierre och Miquelon"
+            }
+        },
+        {
+            "code": "ms",
+            "translation": {
+                "cs": "Montserrat",
+                "de": "Montserrat",
+                "en": "Montserrat",
+                "es": "Montserrat",
+                "fr": "Montserrat",
+                "hr": "Montserrat",
+                "it": "Montserrat",
+                "pl": "Montserrat",
+                "sv": "Montserrat"
+            }
+        },
+        {
+            "code": "kn",
+            "translation": {
+                "cs": "Svatý Kryštof a Nevis",
+                "de": "St. Kitts und Nevis",
+                "en": "Saint Kitts and Nevis",
+                "es": "San Cristóbal y Nieves",
+                "fr": "Saint-Kitts-et-Nevis",
+                "hr": "Sveti Kristofor i Nevis",
+                "it": "Saint Kitts e Nevis",
+                "pl": "Saint Kitts i Nevis",
+                "sv": "Saint Kitts och Nevis"
+            }
+        },
+        {
+            "code": "ni",
+            "translation": {
+                "cs": "Nikaragua",
+                "de": "Nicaragua",
+                "en": "Nicaragua",
+                "es": "Nicaragua",
+                "fr": "Nicaragua",
+                "hr": "Nikaragva",
+                "it": "Nicaragua",
+                "pl": "Nikaragua",
+                "sv": "Nicaragua"
+            }
+        },
+        {
+            "code": "pa",
+            "translation": {
+                "cs": "Panama",
+                "de": "Panama",
+                "en": "Panama",
+                "es": "Panamá",
+                "fr": "Panama",
+                "hr": "Panama",
+                "it": "Panama",
+                "pl": "Panama",
+                "sv": "Panama"
+            }
+        },
+        {
+            "code": "pr",
+            "translation": {
+                "cs": "Portoriko",
+                "de": "Puerto Rico",
+                "en": "Puerto Rico",
+                "es": "Puerto Rico",
+                "fr": "Porto Rico",
+                "hr": "Portoriko",
+                "it": "Porto Rico",
+                "pl": "Portoryko",
+                "sv": "Puerto Rico"
+            }
+        },
+        {
+            "code": "lc",
+            "translation": {
+                "cs": "Svatá Lucie",
+                "de": "St. Lucia",
+                "en": "Saint Lucia",
+                "es": "Santa Lucía",
+                "fr": "Sainte-Lucie",
+                "hr": "Sveta Lucija",
+                "it": "Santa Lucia",
+                "pl": "Saint Lucia",
+                "sv": "Saint Lucia"
+            }
+        },
+        {
+            "code": "vc",
+            "translation": {
+                "cs": "Svatý Vincenc a Grenadiny",
+                "de": "St. Vincent und die Grenadinen",
+                "en": "Saint Vincent and the Grenadines",
+                "es": "San Vicente y las Granadinas",
+                "fr": "Saint-Vincent-et-les-Grenadines",
+                "hr": "Sveti Vincent i Grenadini",
+                "it": "Saint Vincent e Grenadine",
+                "pl": "Saint Vincent i Grenadyny",
+                "sv": "Saint Vincent och Grenadinerna"
+            }
+        },
+        {
+            "code": "tt",
+            "translation": {
+                "cs": "Trinidad a Tobago",
+                "de": "Trinidad und Tobago",
+                "en": "Trinidad and Tobago",
+                "es": "Trinidad y Tobago",
+                "fr": "Trinité-et-Tobago",
+                "hr": "Trinidad i Tobago",
+                "it": "Trinidad e Tobago",
+                "pl": "Trynidad i Tobago",
+                "sv": "Trinidad och Tobago"
+            }
+        },
+        {
+            "code": "tc",
+            "translation": {
+                "cs": "Turks a Caicos",
+                "de": "Turks- und Caicosinseln",
+                "en": "Turks and Caicos Islands",
+                "es": "Islas Turcas y Caicos",
+                "fr": "Îles Turks et Caïques",
+                "hr": "Otoci Turks i Caicos",
+                "it": "Isole Turks e Caicos",
+                "pl": "Turks i Caicos",
+                "sv": "Turks- och Caicosöarna"
+            }
+        },
+        {
+            "code": "vi",
+            "translation": {
+                "cs": "Americké Panenské ostrovy",
+                "de": "Amerikanische Jungferninseln",
+                "en": "Virgin Islands",
+                "es": "Islas Vírgenes de los Estados Unidos",
+                "fr": "Îles Vierges américaines",
+                "hr": "Američki Djevičanski otoci",
+                "it": "Isole Vergini Americane",
+                "pl": "Wyspy Dziewicze Stanów Zjednoczonych",
+                "sv": "Amerikanska Jungfruöarna"
+            }
+        },
+        {
+            "code": "us",
+            "translation": {
+                "cs": "Spojené státy americké",
+                "de": "Vereinigte Staaten",
+                "en": "United States of America",
+                "es": "Estados Unidos",
+                "fr": "États-Unis",
+                "hr": "Sjedinjene Američke Države",
+                "it": "Stati Uniti d'America",
+                "pl": "Stany Zjednoczone",
+                "sv": "USA"
+            }
+        },
+        {
+            "code": "sx",
+            "translation": {
+                "cs": "Svatý Martin (nizozemská část)",
+                "de": "Sint Maarten",
+                "en": "Sint Maarten",
+                "es": "San Martín",
+                "fr": "Sint Maarten",
+                "hr": "Sint Maarten",
+                "it": "Sint Maarten",
+                "pl": "Sint Maarten",
+                "sv": "Sint Maarten"
+            }
+        },
+        {
+            "code": "bq",
+            "translation": {
+                "cs": "Bonaire, Svatý Eustach a Saba",
+                "de": "Bonaire",
+                "en": "Bonaire",
+                "es": "Bonaire, San Eustaquio y Saba",
+                "fr": "Bonaire",
+                "hr": "Karipski otoci Nizozemske",
+                "it": "Bonaire",
+                "pl": "Bonaire, Sint Eustatius i Saba",
+                "sv": "Bonaire, Sint Eustatius and Saba"
+            }
+        }
+    ]
+}

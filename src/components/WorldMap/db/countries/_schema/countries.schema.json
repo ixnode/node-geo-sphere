@@ -13,8 +13,8 @@
                 "type": "object",
                 "properties": {
                     "code": {
-                        "type": "string",
-                        "pattern": "^[a-z]{2}$"
+                        "type": ["string", "null"],
+                        "pattern": "^[a-z]{2,3}$"
                     },
                     "translation": {
                         "type": "object",

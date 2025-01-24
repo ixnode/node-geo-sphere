@@ -1,0 +1,1109 @@
+{
+    "$schema": "_schema/cities.schema.json",
+    "data": [
+        {
+            "name": "Abu Dhabi",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 54.3705,
+                "latitude": 24.4764
+            },
+            "country": "ae",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Abu Dhabi",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Amman",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 35.9349,
+                "latitude": 31.9394
+            },
+            "country": "jo",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Amman",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Ankara",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 32.8560,
+                "latitude": 39.9439
+            },
+            "country": "tr",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Ankara",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Ashgabat",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 58.3794,
+                "latitude": 37.9509
+            },
+            "country": "tm",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Ashgabat",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Astana",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 71.4475,
+                "latitude": 51.1796
+            },
+            "country": "kz",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Astana",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Baghdad",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 44.3922,
+                "latitude": 33.3157
+            },
+            "country": "iq",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Baghdad",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Baku",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 49.8932,
+                "latitude": 40.3834
+            },
+            "country": "az",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Baku",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Bandar Seri Begawan",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 114.9425,
+                "latitude": 4.9431
+            },
+            "country": "bn",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Bandar Seri Begawan",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Bangkok",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 100.5020,
+                "latitude": 13.7573
+            },
+            "country": "th",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Bangkok",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Beijing",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 116.3958,
+                "latitude": 39.9056
+            },
+            "country": "cn",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Beijing",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Beirut",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 35.5134,
+                "latitude": 33.8872
+            },
+            "country": "lb",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Beirut",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Bishkek",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 74.5984,
+                "latitude": 42.8679
+            },
+            "country": "kg",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Bishkek",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Colombo",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 79.8572,
+                "latitude": 6.9155
+            },
+            "country": "lk",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Colombo",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Damascus",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 36.2939,
+                "latitude": 33.5158
+            },
+            "country": "sy",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Damascus",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Dhaka",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 90.3978,
+                "latitude": 23.7106
+            },
+            "country": "bd",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Dhaka",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Dili",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 125.5880,
+                "latitude": -8.5662
+            },
+            "country": "tl",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Dili",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Doha",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 51.5082,
+                "latitude": 25.2948
+            },
+            "country": "qa",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Doha",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Dushanbe",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 68.7738,
+                "latitude": 38.5737
+            },
+            "country": "tj",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Dushanbe",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Hanoi",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 105.8372,
+                "latitude": 21.0341
+            },
+            "country": "vn",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Hanoi",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Islamabad",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 73.0946,
+                "latitude": 33.6751
+            },
+            "country": "pk",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Islamabad",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Jakarta",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 106.8063,
+                "latitude": -6.1862
+            },
+            "country": "id",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Jakarta",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Jerusalem",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 35.2007,
+                "latitude": 31.7857
+            },
+            "country": "il",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Jerusalem",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Kabul",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 69.1952,
+                "latitude": 34.5155
+            },
+            "country": "af",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Kabul",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Kathmandu",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 85.3157,
+                "latitude": 27.7058
+            },
+            "country": "np",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Kathmandu",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Kuala Lumpur",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 101.7077,
+                "latitude": 3.1502
+            },
+            "country": "my",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Kuala Lumpur",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Kuwait City",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 47.9824,
+                "latitude": 29.3721
+            },
+            "country": "kw",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Kuwait City",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Male",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 73.5109,
+                "latitude": 4.1742
+            },
+            "country": "mv",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Male",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Manama",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 50.5354,
+                "latitude": 26.1921
+            },
+            "country": "bh",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Manama",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Manila",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 120.9726,
+                "latitude": 14.5790
+            },
+            "country": "ph",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Manila",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Muscat",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 58.5922,
+                "latitude": 23.6086
+            },
+            "country": "om",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Muscat",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Naypyidaw",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 96.1345,
+                "latitude": 19.7540
+            },
+            "country": "mm",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Naypyidaw",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "New Delhi",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 77.2250,
+                "latitude": 28.6353
+            },
+            "country": "in",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "New Delhi",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Nicosia",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 33.3736,
+                "latitude": 35.1676
+            },
+            "country": "cy",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Nicosia",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Phnom Penh",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 104.8984,
+                "latitude": 11.5434
+            },
+            "country": "kh",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Phnom Penh",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Pyongyang",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 125.7468,
+                "latitude": 39.0187
+            },
+            "country": "kp",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Pyongyang",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Riyadh",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 46.6977,
+                "latitude": 24.6748
+            },
+            "country": "sa",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Riyadh",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Sanaa",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 44.2081,
+                "latitude": 15.3556
+            },
+            "country": "ye",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Sanaa",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Seoul",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 126.9828,
+                "latitude": 37.5139
+            },
+            "country": "kr",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Seoul",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Singapore",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 103.8500,
+                "latitude": 1.2894
+            },
+            "country": "sg",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Singapore",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Taipei",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 121.5645,
+                "latitude": 25.0338
+            },
+            "country": "tw",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Taipei",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Tashkent",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 69.2481,
+                "latitude": 41.3193
+            },
+            "country": "uz",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Tashkent",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Tbilisi",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 44.7930,
+                "latitude": 41.7010
+            },
+            "country": "ge",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Tbilisi",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Tehran",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 51.4358,
+                "latitude": 35.7061
+            },
+            "country": "ir",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Tehran",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Thimphu",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 89.6730,
+                "latitude": 27.4405
+            },
+            "country": "bt",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Thimphu",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Tokyo",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 139.6823,
+                "latitude": 35.6785
+            },
+            "country": "jp",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Tokyo",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Ulaanbaatar",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 106.9220,
+                "latitude": 47.9138
+            },
+            "country": "mn",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Ulaanbaatar",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Vientiane",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 102.6137,
+                "latitude": 17.9689
+            },
+            "country": "la",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Vientiane",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Yerevan",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 44.5090,
+                "latitude": 40.1596
+            },
+            "country": "am",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Yerevan",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        }
+    ]
+}

@@ -1,0 +1,603 @@
+{
+    "$schema": "_schema/cities.schema.json",
+    "data": [
+        {
+            "name": "Adamstown",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -130.1027,
+                "latitude": -25.0662
+            },
+            "country": "pn",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Adamstown",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Alofi",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -169.9237,
+                "latitude": -19.0565
+            },
+            "country": "nu",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Alofi",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Apia",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -171.7518,
+                "latitude": -13.8314
+            },
+            "country": "ws",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Apia",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Avarua",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -159.7658,
+                "latitude": -21.2039
+            },
+            "country": "ck",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Avarua",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Bairiki",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 172.9784,
+                "latitude": 1.3282
+            },
+            "country": "ki",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Bairiki",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Canberra",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 149.1286,
+                "latitude": -35.2820
+            },
+            "country": "au",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Canberra",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Flying Fish Cove",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 105.6807,
+                "latitude": -10.4286
+            },
+            "country": "cx",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Flying Fish Cove",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Garapan",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 145.7197,
+                "latitude": 15.2069
+            },
+            "country": "mp",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Garapan",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Hagatna",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 144.7470,
+                "latitude": 13.4667
+            },
+            "country": "gu",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Hagatna",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Honiara",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 159.9500,
+                "latitude": -9.4333
+            },
+            "country": "sb",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Honiara",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Kingston",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 167.9666,
+                "latitude": -29.0545
+            },
+            "country": "nf",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Kingston",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Majuro",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 171.3667,
+                "latitude": 7.1167
+            },
+            "country": "mh",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Majuro",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Mata-Utu",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -176.1430,
+                "latitude": -13.2784
+            },
+            "country": "wf",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Mata-Utu",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Melekeok",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 134.6241,
+                "latitude": 7.5007
+            },
+            "country": "pw",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Melekeok",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Noumea",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 166.4581,
+                "latitude": -22.2758
+            },
+            "country": "nc",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Noumea",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Nuku'alofa",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -175.2164,
+                "latitude": -21.1360
+            },
+            "country": "to",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Nuku'alofa",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Pago Pago",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -170.7009,
+                "latitude": -14.2793
+            },
+            "country": "as",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Pago Pago",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Palikir",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 158.1854,
+                "latitude": 6.9177
+            },
+            "country": "fm",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Palikir",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Papeete",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -149.5696,
+                "latitude": -17.5350
+            },
+            "country": "pf",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Papeete",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Port Moresby",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 147.1969,
+                "latitude": -9.4656
+            },
+            "country": "pg",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Port Moresby",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Port Vila",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 168.3210,
+                "latitude": -17.7404
+            },
+            "country": "vu",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Port Vila",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Suva",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 178.4419,
+                "latitude": -18.1416
+            },
+            "country": "fj",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Suva",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Vaiaku",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 179.1983,
+                "latitude": -8.5210
+            },
+            "country": "tv",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Vaiaku",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Wellington",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 174.7762,
+                "latitude": -41.2865
+            },
+            "country": "nz",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Wellington",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "West Island",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 96.8283,
+                "latitude": -12.1869
+            },
+            "country": "cc",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "West Island",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Yaren",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 166.9196,
+                "latitude": -0.5434
+            },
+            "country": "nr",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Yaren",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        }
+    ]
+}

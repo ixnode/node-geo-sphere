@@ -1,0 +1,1339 @@
+{
+    "$schema": "_schema/cities.schema.json",
+    "data": [
+        {
+            "name": "Abuja",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 7.4891,
+                "latitude": 9.0580
+            },
+            "country": "ng",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Abuja",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Accra",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -0.2074,
+                "latitude": 5.5401
+            },
+            "country": "gh",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Accra",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Addis Ababa",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 38.7575,
+                "latitude": 9.0084
+            },
+            "country": "et",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Addis Ababa",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Algiers",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 3.0597,
+                "latitude": 36.7755
+            },
+            "country": "dz",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Algiers",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Antananarivo",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 47.5237,
+                "latitude": -18.9201
+            },
+            "country": "mg",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Antananarivo",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Asmara",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 38.9183,
+                "latitude": 15.3315
+            },
+            "country": "er",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Asmara",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Bamako",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -7.9864,
+                "latitude": 12.6530
+            },
+            "country": "ml",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Bamako",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Bangui",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 18.5873,
+                "latitude": 4.3621
+            },
+            "country": "cf",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Bangui",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Banjul",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -16.6775,
+                "latitude": 13.4399
+            },
+            "country": "gm",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Banjul",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Bissau",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -15.5875,
+                "latitude": 11.8598
+            },
+            "country": "gw",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Bissau",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Brazzaville",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 15.2662,
+                "latitude": -4.2767
+            },
+            "country": "cg",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Brazzaville",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Bujumbura",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 29.3622,
+                "latitude": -3.3818
+            },
+            "country": "bi",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Bujumbura",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Cairo",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 31.2272,
+                "latitude": 30.0571
+            },
+            "country": "eg",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Cairo",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Conakry",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -13.6785,
+                "latitude": 9.5370
+            },
+            "country": "gn",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Conakry",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Dakar",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -17.4439,
+                "latitude": 14.6953
+            },
+            "country": "sn",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Dakar",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Djibouti",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 43.1425,
+                "latitude": 11.5806
+            },
+            "country": "dj",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Djibouti",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Dodoma",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 35.7497,
+                "latitude": -6.1670
+            },
+            "country": "tz",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Dodoma",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "El Aaiun",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -13.2033,
+                "latitude": 27.1536
+            },
+            "country": "eh",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "El Aaiun",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Freetown",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -13.2659,
+                "latitude": 8.4697
+            },
+            "country": "sl",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Freetown",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Gaborone",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 25.9089,
+                "latitude": -24.6570
+            },
+            "country": "bw",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Gaborone",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Harare",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 31.0496,
+                "latitude": -17.8227
+            },
+            "country": "zw",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Harare",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Jamestown",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -5.7181,
+                "latitude": -15.9244
+            },
+            "country": "sh",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Jamestown",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Juba",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 31.6046,
+                "latitude": 4.8496
+            },
+            "country": "ss",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Juba",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Kampala",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 32.5714,
+                "latitude": 0.3133
+            },
+            "country": "ug",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Kampala",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Khartoum",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 32.5322,
+                "latitude": 15.5501
+            },
+            "country": "sd",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Khartoum",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Kigali",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 30.0619,
+                "latitude": -1.9441
+            },
+            "country": "rw",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Kigali",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Kinshasa",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 15.3271,
+                "latitude": -4.3369
+            },
+            "country": "cd",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Kinshasa",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Libreville",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 9.4496,
+                "latitude": 0.3858
+            },
+            "country": "ga",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Libreville",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Lilongwe",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 33.7703,
+                "latitude": -13.9899
+            },
+            "country": "mw",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Lilongwe",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Lome",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 1.2255,
+                "latitude": 6.1228
+            },
+            "country": "tg",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Lome",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Luanda",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 13.2306,
+                "latitude": -8.8159
+            },
+            "country": "ao",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Luanda",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Lusaka",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 28.2809,
+                "latitude": -15.4145
+            },
+            "country": "zm",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Lusaka",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Malabo",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 8.7741,
+                "latitude": 3.7523
+            },
+            "country": "gq",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Malabo",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Mamoudzou",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 45.2278,
+                "latitude": -12.7806
+            },
+            "country": "yt",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Mamoudzou",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Maputo",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 32.5804,
+                "latitude": -25.9686
+            },
+            "country": "mz",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Maputo",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Maseru",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 27.4854,
+                "latitude": -29.2976
+            },
+            "country": "ls",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Maseru",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Mbabane",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 31.1410,
+                "latitude": -26.3186
+            },
+            "country": "sz",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Mbabane",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Mogadishu",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 45.3426,
+                "latitude": 2.0411
+            },
+            "country": "so",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Mogadishu",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Monrovia",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -10.8047,
+                "latitude": 6.3106
+            },
+            "country": "lr",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Monrovia",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Moroni",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 43.2412,
+                "latitude": -11.7004
+            },
+            "country": "km",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Moroni",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "N'Djamena",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 15.0355,
+                "latitude": 12.1121
+            },
+            "country": "td",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "N'Djamena",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Nairobi",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 36.7965,
+                "latitude": -1.2762
+            },
+            "country": "ke",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Nairobi",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Niamey",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 2.1157,
+                "latitude": 13.5164
+            },
+            "country": "ne",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Niamey",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Nouakchott",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -15.9900,
+                "latitude": 18.0669
+            },
+            "country": "mr",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Nouakchott",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Ouagadougou",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -1.5352,
+                "latitude": 12.3569
+            },
+            "country": "bf",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Ouagadougou",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Port Louis",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 57.4896,
+                "latitude": -20.1654
+            },
+            "country": "mu",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Port Louis",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Porto-Novo",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 2.6323,
+                "latitude": 6.4779
+            },
+            "country": "bj",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Porto-Novo",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Praia",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -23.5153,
+                "latitude": 14.9195
+            },
+            "country": "cv",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Praia",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Pretoria",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 28.1876,
+                "latitude": -25.7463
+            },
+            "country": "za",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Pretoria",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Rabat",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -6.8704,
+                "latitude": 33.9905
+            },
+            "country": "ma",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Rabat",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Saint Denis",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 55.4603,
+                "latitude": -20.8732
+            },
+            "country": "re",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Saint Denis",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Sao Tome",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 6.7311,
+                "latitude": 0.3360
+            },
+            "country": "st",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Sao Tome",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Tripoli",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 13.1897,
+                "latitude": 32.8830
+            },
+            "country": "ly",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Tripoli",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Tunis",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 10.1761,
+                "latitude": 36.8117
+            },
+            "country": "tn",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Tunis",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Victoria",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 55.4500,
+                "latitude": -4.6167
+            },
+            "country": "sc",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Victoria",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Windhoek",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 17.0805,
+                "latitude": -22.5749
+            },
+            "country": "na",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Windhoek",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Yamoussoukro",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -5.2728,
+                "latitude": 6.8067
+            },
+            "country": "ci",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Yamoussoukro",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Yaounde",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 11.5217,
+                "latitude": 3.8612
+            },
+            "country": "cm",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Yaounde",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        }
+    ]
+}

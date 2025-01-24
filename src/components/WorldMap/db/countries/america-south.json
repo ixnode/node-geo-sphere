@@ -1,0 +1,201 @@
+{
+    "$schema": "_schema/countries.schema.json",
+    "data": [
+        {
+            "code": "ar",
+            "translation": {
+                "cs": "Argentina",
+                "de": "Argentinien",
+                "en": "Argentina",
+                "es": "Argentina",
+                "fr": "Argentine",
+                "hr": "Argentina",
+                "it": "Argentina",
+                "pl": "Argentyna",
+                "sv": "Argentina"
+            }
+        },
+        {
+            "code": "bo",
+            "translation": {
+                "cs": "Bolívie",
+                "de": "Bolivien",
+                "en": "Bolivia",
+                "es": "Bolivia",
+                "fr": "Bolivie",
+                "hr": "Bolivija",
+                "it": "Bolivia",
+                "pl": "Boliwia",
+                "sv": "Bolivia"
+            }
+        },
+        {
+            "code": "br",
+            "translation": {
+                "cs": "Brazílie",
+                "de": "Brasilien",
+                "en": "Brazil",
+                "es": "Brasil",
+                "fr": "Brésil",
+                "hr": "Brazil",
+                "it": "Brasile",
+                "pl": "Brazylia",
+                "sv": "Brasilien"
+            }
+        },
+        {
+            "code": "cl",
+            "translation": {
+                "cs": "Chile",
+                "de": "Chile",
+                "en": "Chile",
+                "es": "Chile",
+                "fr": "Chili",
+                "hr": "Čile",
+                "it": "Cile",
+                "pl": "Chile",
+                "sv": "Chile"
+            }
+        },
+        {
+            "code": "co",
+            "translation": {
+                "cs": "Kolumbie",
+                "de": "Kolumbien",
+                "en": "Colombia",
+                "es": "Colombia",
+                "fr": "Colombie",
+                "hr": "Kolumbija",
+                "it": "Colombia",
+                "pl": "Kolumbia",
+                "sv": "Colombia"
+            }
+        },
+        {
+            "code": "ec",
+            "translation": {
+                "cs": "Ekvádor",
+                "de": "Ecuador",
+                "en": "Ecuador",
+                "es": "Ecuador",
+                "fr": "Équateur",
+                "hr": "Ekvador",
+                "it": "Ecuador",
+                "pl": "Ekwador",
+                "sv": "Ecuador"
+            }
+        },
+        {
+            "code": "fk",
+            "translation": {
+                "cs": "Falklandy (Malvíny)",
+                "de": "Falklandinseln",
+                "en": "Falkland Islands",
+                "es": "Islas Malvinas",
+                "fr": "Îles Falkland",
+                "hr": "Falklandski otoci",
+                "it": "Isole Falkland",
+                "pl": "Falklandy",
+                "sv": "Falklandsöarna"
+            }
+        },
+        {
+            "code": "gf",
+            "translation": {
+                "cs": "Francouzská Guyana",
+                "de": "Französisch-Guayana",
+                "en": "French Guiana",
+                "es": "Guayana Francesa",
+                "fr": "Guyane française",
+                "hr": "Francuska Gijana",
+                "it": "Guiana Francese",
+                "pl": "Gujana Francuska",
+                "sv": "Franska Guyana"
+            }
+        },
+        {
+            "code": "gy",
+            "translation": {
+                "cs": "Guyana",
+                "de": "Guyana",
+                "en": "Guyana",
+                "es": "Guyana",
+                "fr": "Guyana",
+                "hr": "Gvajana",
+                "it": "Guyana",
+                "pl": "Gujana",
+                "sv": "Guyana"
+            }
+        },
+        {
+            "code": "py",
+            "translation": {
+                "cs": "Paraguay",
+                "de": "Paraguay",
+                "en": "Paraguay",
+                "es": "Paraguay",
+                "fr": "Paraguay",
+                "hr": "Paragvaj",
+                "it": "Paraguay",
+                "pl": "Paragwaj",
+                "sv": "Paraguay"
+            }
+        },
+        {
+            "code": "pe",
+            "translation": {
+                "cs": "Peru",
+                "de": "Peru",
+                "en": "Peru",
+                "es": "Perú",
+                "fr": "Pérou",
+                "hr": "Peru",
+                "it": "Perù",
+                "pl": "Peru",
+                "sv": "Peru"
+            }
+        },
+        {
+            "code": "sr",
+            "translation": {
+                "cs": "Surinam",
+                "de": "Suriname",
+                "en": "Suriname",
+                "es": "Surinam",
+                "fr": "Suriname",
+                "hr": "Surinam",
+                "it": "Suriname",
+                "pl": "Surinam",
+                "sv": "Surinam"
+            }
+        },
+        {
+            "code": "uy",
+            "translation": {
+                "cs": "Uruguay",
+                "de": "Uruguay",
+                "en": "Uruguay",
+                "es": "Uruguay",
+                "fr": "Uruguay",
+                "hr": "Urugvaj",
+                "it": "Uruguay",
+                "pl": "Urugwaj",
+                "sv": "Uruguay"
+            }
+        },
+        {
+            "code": "ve",
+            "translation": {
+                "cs": "Venezuela",
+                "de": "Venezuela",
+                "en": "Venezuela",
+                "es": "Venezuela",
+                "fr": "Venezuela",
+                "hr": "Venezuela",
+                "it": "Venezuela",
+                "pl": "Wenezuela",
+                "sv": "Venezuela"
+            }
+        }
+    ]
+}

@@ -1,0 +1,1155 @@
+{
+    "$schema": "_schema/cities.schema.json",
+    "data": [
+        {
+            "name": "Amsterdam",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 4.8910,
+                "latitude": 52.3738
+            },
+            "country": "nl",
+            "type": "capital",
+            "population": 934927,
+            "translation": {
+                "cs": "Amsterdam",
+                "de": "Amsterdam",
+                "en": "Amsterdam",
+                "es": "Ámsterdam",
+                "fr": "Amsterdam",
+                "hr": "Amsterdam",
+                "it": "Amsterdam",
+                "pl": "Amsterdam",
+                "sv": "Amsterdam"
+            }
+        },
+        {
+            "name": "Andorra la Vella",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 1.5218,
+                "latitude": 42.5075
+            },
+            "country": "ad",
+            "type": "capital",
+            "population": 24382,
+            "translation": {
+                "cs": null,
+                "de": "Andorra la Vella",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Athen",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 23.7166,
+                "latitude": 37.9792
+            },
+            "country": "gr",
+            "type": "capital",
+            "population": 643452,
+            "translation": {
+                "cs": "Athény",
+                "de": "Athen",
+                "en": "Athens",
+                "es": "Atenas",
+                "fr": "Athènes",
+                "hr": "Atena",
+                "it": "Atene",
+                "pl": "Ateny",
+                "sv": "Aten"
+            }
+        },
+        {
+            "name": "Belgrad",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 20.4781,
+                "latitude": 44.8048
+            },
+            "country": "rs",
+            "type": "capital",
+            "population": 1383875,
+            "translation": {
+                "cs": null,
+                "de": "Belgrad",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Berlin",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 13.4115,
+                "latitude": 52.5235
+            },
+            "country": "de",
+            "type": "capital",
+            "population": 3662381,
+            "translation": {
+                "cs": "Berlín",
+                "de": "Berlin",
+                "en": "Berlin",
+                "es": "Berlín",
+                "fr": "Berlin",
+                "hr": "Berlin",
+                "it": "Berlino",
+                "pl": "Berlin",
+                "sv": "Berlin"
+            }
+        },
+        {
+            "name": "Bern",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 7.4481,
+                "latitude": 46.9480
+            },
+            "country": "ch",
+            "type": "capital",
+            "population": 136988,
+            "translation": {
+                "cs": "Bern",
+                "de": "Bern",
+                "en": "Bern",
+                "es": "Berna",
+                "fr": "Berne",
+                "hr": "Bern",
+                "it": "Berna",
+                "pl": "Berno",
+                "sv": "Bern"
+            }
+        },
+        {
+            "name": "Bratislava",
+            "priority": 1,
+            "size": "smaller",
+            "coordinate": {
+                "longitude": 17.1547,
+                "latitude": 48.2116
+            },
+            "country": "sk",
+            "type": "capital",
+            "population": 476922,
+            "translation": {
+                "cs": "Bratislava",
+                "de": "Bratislava",
+                "en": "Bratislava",
+                "es": "Bratislava",
+                "fr": "Bratislava",
+                "hr": "Bratislava",
+                "it": "Bratislava",
+                "pl": "Bratysława",
+                "sv": "Bratislava"
+            }
+        },
+        {
+            "name": "Brüssel",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 4.3676,
+                "latitude": 50.8371
+            },
+            "country": "be",
+            "type": "capital",
+            "population": 188737,
+            "translation": {
+                "cs": "Brusel",
+                "de": "Brüssel",
+                "en": "Brussels",
+                "es": "Bruselas",
+                "fr": "Bruxelles",
+                "hr": "Bruxelles",
+                "it": "Bruxelles",
+                "pl": "Bruksela",
+                "sv": "Bryssel"
+            }
+        },
+        {
+            "name": "Budapest",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 19.0408,
+                "latitude": 47.4984
+            },
+            "country": "hu",
+            "type": "capital",
+            "population": 1671004,
+            "translation": {
+                "cs": "Budapešť",
+                "de": "Budapest",
+                "en": "Budapest",
+                "es": "Budapest",
+                "fr": "Budapest",
+                "hr": "Budimpešta",
+                "it": "Budapest",
+                "pl": "Budapeszt",
+                "sv": "Budapest"
+            }
+        },
+        {
+            "name": "Bukarest",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 26.0979,
+                "latitude": 44.4479
+            },
+            "country": "ro",
+            "type": "capital",
+            "population": 1716961,
+            "translation": {
+                "cs": "Bukurešť",
+                "de": "Bukarest",
+                "en": "Bucharest",
+                "es": "Bucarest",
+                "fr": "Bucarest",
+                "hr": "Bukurešt",
+                "it": "Bucarest",
+                "pl": "Bukareszt",
+                "sv": "Bukarest"
+            }
+        },
+        {
+            "name": "Chișinău",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 28.8497,
+                "latitude": 47.0167
+            },
+            "country": "md",
+            "type": "capital",
+            "population": 532513,
+            "translation": {
+                "cs": null,
+                "de": "Chișinău",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Douglas",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -4.4821,
+                "latitude": 54.1670
+            },
+            "country": "im",
+            "type": "capital",
+            "population": 26997,
+            "translation": {
+                "cs": "Douglas",
+                "de": "Douglas",
+                "en": "Douglas",
+                "es": "Douglas",
+                "fr": "Douglas",
+                "hr": "Douglas",
+                "it": "Douglas",
+                "pl": "Douglas",
+                "sv": "Douglas"
+            }
+        },
+        {
+            "name": "Dublin",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -6.2675,
+                "latitude": 53.3441
+            },
+            "country": "ie",
+            "type": "capital",
+            "population": 592713,
+            "translation": {
+                "cs": "Dublin",
+                "de": "Dublin",
+                "en": "Dublin",
+                "es": "Dublín",
+                "fr": "Dublin",
+                "hr": "Dublin",
+                "it": "Dublino",
+                "pl": "Dublin",
+                "sv": "Dublin"
+            }
+        },
+        {
+            "name": "Gibraltar",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -5.3453,
+                "latitude": 36.1377
+            },
+            "country": "gi",
+            "type": "capital",
+            "population": 34571,
+            "translation": {
+                "cs": "Gibraltar",
+                "de": "Gibraltar",
+                "en": "Gibraltar",
+                "es": "Gibraltar",
+                "fr": "Gibraltar",
+                "hr": "Gibraltar",
+                "it": "Gibilterra",
+                "pl": "Gibraltar",
+                "sv": "Gibraltar"
+            }
+        },
+        {
+            "name": "Helsinki",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 24.9384,
+                "latitude": 60.1699
+            },
+            "country": "fi",
+            "type": "capital",
+            "population": 664028,
+            "translation": {
+                "cs": "Helsinky",
+                "de": "Helsinki",
+                "en": "Helsinki",
+                "es": "Helsinki",
+                "fr": "Helsinki",
+                "hr": "Helsinki",
+                "it": "Helsinki",
+                "pl": "Helsinki",
+                "sv": "Helsingfors"
+            }
+        },
+        {
+            "name": "Kiew",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 30.5367,
+                "latitude": 50.4422
+            },
+            "country": "ua",
+            "type": "capital",
+            "population": 2952301,
+            "translation": {
+                "cs": "Kyjev",
+                "de": "Kiew",
+                "en": "Kyiv",
+                "es": "Kiev",
+                "fr": "Kiev",
+                "hr": "Kijev",
+                "it": "Kiev",
+                "pl": "Kijów",
+                "sv": "Kiev"
+            }
+        },
+        {
+            "name": "Kopenhagen",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 12.5681,
+                "latitude": 55.6763
+            },
+            "country": "dk",
+            "type": "capital",
+            "population": 653664,
+            "translation": {
+                "cs": "Kodaň",
+                "de": "Kopenhagen",
+                "en": "Copenhagen",
+                "es": "Copenhague",
+                "fr": "Copenhague",
+                "hr": "Kopenhagen",
+                "it": "Copenaghen",
+                "pl": "Kopenhaga",
+                "sv": "Köpenhamn"
+            }
+        },
+        {
+            "name": "Lissabon",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -9.1355,
+                "latitude": 38.7072
+            },
+            "country": "pt",
+            "type": "capital",
+            "population": 545796,
+            "translation": {
+                "cs": "Lisabon",
+                "de": "Lissabon",
+                "en": "Lisbon",
+                "es": "Lisboa",
+                "fr": "Lisbonne",
+                "hr": "Lisabon",
+                "it": "Lisbona",
+                "pl": "Lizbona",
+                "sv": "Lissabon"
+            }
+        },
+        {
+            "name": "Ljubljana",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 14.5060,
+                "latitude": 46.0514
+            },
+            "country": "si",
+            "type": "capital",
+            "population": 288382,
+            "translation": {
+                "cs": null,
+                "de": "Ljubljana",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "London",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -0.1262,
+                "latitude": 51.5002
+            },
+            "country": "gb",
+            "type": "capital",
+            "population": 8866180,
+            "translation": {
+                "cs": "Londýn",
+                "de": "London",
+                "en": "London",
+                "es": "Londres",
+                "fr": "Londres",
+                "hr": "London",
+                "it": "Londra",
+                "pl": "Londyn",
+                "sv": "London"
+            }
+        },
+        {
+            "name": "Longyearbyen",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 15.6488,
+                "latitude": 78.2186
+            },
+            "country": "sj",
+            "type": "capital",
+            "population": 2530,
+            "translation": {
+                "cs": null,
+                "de": "Longyearbyen",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Luxemburg",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 6.1296,
+                "latitude": 49.6100
+            },
+            "country": "lu",
+            "type": "capital",
+            "population": 132780,
+            "translation": {
+                "cs": "Lucemburk",
+                "de": "Luxemburg",
+                "en": "Luxembourg",
+                "es": "Luxemburgo",
+                "fr": "Luxembourg",
+                "hr": "Luxembourg",
+                "it": "Lussemburgo",
+                "pl": "Luksemburg",
+                "sv": "Luxemburg"
+            }
+        },
+        {
+            "name": "Madrid",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -3.7033,
+                "latitude": 40.4167
+            },
+            "country": "es",
+            "type": "capital",
+            "population": 3280782,
+            "translation": {
+                "cs": "Madrid",
+                "de": "Madrid",
+                "en": "Madrid",
+                "es": "Madrid",
+                "fr": "Madrid",
+                "hr": "Madrid",
+                "it": "Madrid",
+                "pl": "Madryt",
+                "sv": "Madrid"
+            }
+        },
+        {
+            "name": "Minsk",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 27.5766,
+                "latitude": 53.9678
+            },
+            "country": "by",
+            "type": "capital",
+            "population": 1996553,
+            "translation": {
+                "cs": "Minsk",
+                "de": "Minsk",
+                "en": "Minsk",
+                "es": "Minsk",
+                "fr": "Minsk",
+                "hr": "Minsk",
+                "it": "Minsk",
+                "pl": "Mińsk",
+                "sv": "Minsk"
+            }
+        },
+        {
+            "name": "Monaco",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 7.4189,
+                "latitude": 43.7325
+            },
+            "country": "mc",
+            "type": "capital",
+            "population": 39520,
+            "translation": {
+                "cs": "Monako",
+                "de": "Monaco",
+                "en": "Monaco",
+                "es": "Mónaco",
+                "fr": "Monaco",
+                "hr": "Monako",
+                "it": "Monaco",
+                "pl": "Monako",
+                "sv": "Monaco"
+            }
+        },
+        {
+            "name": "Moskau",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 37.6176,
+                "latitude": 55.7558
+            },
+            "country": "ru",
+            "type": "capital",
+            "population": 11503501,
+            "translation": {
+                "cs": "Moskva",
+                "de": "Moskau",
+                "en": "Moscow",
+                "es": "Moscú",
+                "fr": "Moscou",
+                "hr": "Moskva",
+                "it": "Mosca",
+                "pl": "Moskwa",
+                "sv": "Moskva"
+            }
+        },
+        {
+            "name": "Oslo",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 10.7387,
+                "latitude": 59.9138
+            },
+            "country": "no",
+            "type": "capital",
+            "population": 717710,
+            "translation": {
+                "cs": "Oslo",
+                "de": "Oslo",
+                "en": "Oslo",
+                "es": "Oslo",
+                "fr": "Oslo",
+                "hr": "Oslo",
+                "it": "Oslo",
+                "pl": "Oslo",
+                "sv": "Oslo"
+            }
+        },
+        {
+            "name": "Paris",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 2.3510,
+                "latitude": 48.8567
+            },
+            "country": "fr",
+            "type": "capital",
+            "population": 2113705,
+            "translation": {
+                "cs": "Paříž",
+                "de": "Paris",
+                "en": "Paris",
+                "es": "París",
+                "fr": "Paris",
+                "hr": "Pariz",
+                "it": "Parigi",
+                "pl": "Paryż",
+                "sv": "Paris"
+            }
+        },
+        {
+            "name": "Podgorica",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 19.2595,
+                "latitude": 42.4602
+            },
+            "country": "me",
+            "type": "capital",
+            "population": 150977,
+            "translation": {
+                "cs": null,
+                "de": "Podgorica",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Prag",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 14.4205,
+                "latitude": 50.0878
+            },
+            "country": "cz",
+            "type": "capital",
+            "population": 1357326,
+            "translation": {
+                "cs": "Praha",
+                "de": "Prag",
+                "en": "Prague",
+                "es": "Praga",
+                "fr": "Prague",
+                "hr": "Prag",
+                "it": "Praga",
+                "pl": "Praga",
+                "sv": "Prag"
+            }
+        },
+        {
+            "name": "Pristina",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 21.1788,
+                "latitude": 42.6740
+            },
+            "country": "xk",
+            "type": "capital",
+            "population": 198897,
+            "translation": {
+                "cs": null,
+                "de": "Pristina",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Reykjavik",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -21.8952,
+                "latitude": 64.1353
+            },
+            "country": "is",
+            "type": "capital",
+            "population": 139875,
+            "translation": {
+                "cs": "Reykjavík",
+                "de": "Reykjavik",
+                "en": "Reykjavík",
+                "es": "Reikiavik",
+                "fr": "Reykjavik",
+                "hr": "Reykjavik",
+                "it": "Reykjavík",
+                "pl": "Reykjavík",
+                "sv": "Reykjavík"
+            }
+        },
+        {
+            "name": "Riga",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 24.1048,
+                "latitude": 56.9465
+            },
+            "country": "lv",
+            "type": "capital",
+            "population": 611824,
+            "translation": {
+                "cs": "Riga",
+                "de": "Riga",
+                "en": "Riga",
+                "es": "Riga",
+                "fr": "Riga",
+                "hr": "Riga",
+                "it": "Riga",
+                "pl": "Ryga",
+                "sv": "Riga"
+            }
+        },
+        {
+            "name": "Rom",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 12.4823,
+                "latitude": 41.8955
+            },
+            "country": "it",
+            "type": "capital",
+            "population": 2749031,
+            "translation": {
+                "cs": "Řím",
+                "de": "Rom",
+                "en": "Rome",
+                "es": "Roma",
+                "fr": "Rome",
+                "hr": "Rim",
+                "it": "Roma",
+                "pl": "Rzym",
+                "sv": "Rom"
+            }
+        },
+        {
+            "name": "Saint Helier",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -2.1071,
+                "latitude": 49.1919
+            },
+            "country": "je",
+            "type": "capital",
+            "population": 33522,
+            "translation": {
+                "cs": null,
+                "de": "Saint Helier",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Saint Peter Port",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -2.5522,
+                "latitude": 49.4660
+            },
+            "country": "gg",
+            "type": "capital",
+            "population": 18798,
+            "translation": {
+                "cs": null,
+                "de": "Saint Peter Port",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "San Marino",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 12.4578,
+                "latitude": 43.9424
+            },
+            "country": "sm",
+            "type": "capital",
+            "population": 4101,
+            "translation": {
+                "cs": "San Marino",
+                "de": "San Marino",
+                "en": "San Marino",
+                "es": "San Marino",
+                "fr": "Saint-Marin",
+                "hr": "San Marino",
+                "it": "San Marino",
+                "pl": "San Marino",
+                "sv": "San Marino"
+            }
+        },
+        {
+            "name": "Sarajevo",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 18.4214,
+                "latitude": 43.8608
+            },
+            "country": "ba",
+            "type": "capital",
+            "population": 291422,
+            "translation": {
+                "cs": "Sarajevo",
+                "de": "Sarajevo",
+                "en": "Sarajevo",
+                "es": "Sarajevo",
+                "fr": "Sarajevo",
+                "hr": "Sarajevo",
+                "it": "Sarajevo",
+                "pl": "Sarajewo",
+                "sv": "Sarajevo"
+            }
+        },
+        {
+            "name": "Skopje",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 21.4361,
+                "latitude": 42.0024
+            },
+            "country": "mk",
+            "type": "capital",
+            "population": 526502,
+            "translation": {
+                "cs": null,
+                "de": "Skopje",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Sofia",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 23.3238,
+                "latitude": 42.7105
+            },
+            "country": "bg",
+            "type": "capital",
+            "population": 1190256,
+            "translation": {
+                "cs": "Sofie",
+                "de": "Sofia",
+                "en": "Sofia",
+                "es": "Sofía",
+                "fr": "Sofia",
+                "hr": "Sofija",
+                "it": "Sofia",
+                "pl": "Sofia",
+                "sv": "Sofia"
+            }
+        },
+        {
+            "name": "Stockholm",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 18.0645,
+                "latitude": 59.3328
+            },
+            "country": "se",
+            "type": "capital",
+            "population": 949761,
+            "translation": {
+                "cs": "Stockholm",
+                "de": "Stockholm",
+                "en": "Stockholm",
+                "es": "Estocolmo",
+                "fr": "Stockholm",
+                "hr": "Stockholm",
+                "it": "Stoccolma",
+                "pl": "Sztokholm",
+                "sv": "Stockholm"
+            }
+        },
+        {
+            "name": "Tallinn",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 24.7545,
+                "latitude": 59.4389
+            },
+            "country": "ee",
+            "type": "capital",
+            "population": 461602,
+            "translation": {
+                "cs": null,
+                "de": "Tallinn",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Tirana",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 19.8172,
+                "latitude": 41.3317
+            },
+            "country": "al",
+            "type": "capital",
+            "population": 389323,
+            "translation": {
+                "cs": null,
+                "de": "Tirana",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Tórshavn",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -6.7719,
+                "latitude": 62.0177
+            },
+            "country": "fo",
+            "type": "capital",
+            "population": 13958,
+            "translation": {
+                "cs": null,
+                "de": "Tórshavn",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Vaduz",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 9.5215,
+                "latitude": 47.1411
+            },
+            "country": "li",
+            "type": "capital",
+            "population": 5771,
+            "translation": {
+                "cs": "Vaduz",
+                "de": "Vaduz",
+                "en": "Vaduz",
+                "es": "Vaduz",
+                "fr": "Vaduz",
+                "hr": "Vaduz",
+                "it": "Vaduz",
+                "pl": "Vaduz",
+                "sv": "Vaduz"
+            }
+        },
+        {
+            "name": "Valletta",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 14.5189,
+                "latitude": 35.9042
+            },
+            "country": "mt",
+            "type": "capital",
+            "population": 5859,
+            "translation": {
+                "cs": null,
+                "de": "Valletta",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Vilnius",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 25.2799,
+                "latitude": 54.6896
+            },
+            "country": "lt",
+            "type": "capital",
+            "population": 569902,
+            "translation": {
+                "cs": null,
+                "de": "Vilnius",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Warschau",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 21.0122,
+                "latitude": 52.2297
+            },
+            "country": "pl",
+            "type": "capital",
+            "population": 1861975,
+            "translation": {
+                "cs": "Varšava",
+                "de": "Warschau",
+                "en": "Warsaw",
+                "es": "Varsovia",
+                "fr": "Varsovie",
+                "hr": "Varšava",
+                "it": "Varsavia",
+                "pl": "Warszawa",
+                "sv": "Warszawa"
+            }
+        },
+        {
+            "name": "Wien",
+            "priority": 1,
+            "size": "smaller",
+            "coordinate": {
+                "longitude": 16.3728,
+                "latitude": 48.2092
+            },
+            "country": "at",
+            "type": "capital",
+            "population": 1982442,
+            "translation": {
+                "cs": "Vídeň",
+                "de": "Wien",
+                "en": "Vienna",
+                "es": "Viena",
+                "fr": "Vienne",
+                "hr": "Beč",
+                "it": "Vienna",
+                "pl": "Wiedeń",
+                "sv": "Wien"
+            }
+        },
+        {
+            "name": "Zagreb",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 15.9785,
+                "latitude": 45.8150
+            },
+            "country": "hr",
+            "type": "capital",
+            "population": 758941,
+            "translation": {
+                "cs": "Záhřeb",
+                "de": "Zagreb",
+                "en": "Zagreb",
+                "es": "Zagreb",
+                "fr": "Zagreb",
+                "hr": "Zagreb",
+                "it": "Zagabria",
+                "pl": "Zagrzeb",
+                "sv": "Zagreb"
+            }
+        }
+    ]
+}

@@ -1,0 +1,1178 @@
+{
+    "$schema": "_schema/cities.schema.json",
+    "data": [
+        {
+            "name": "Asuncion",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -57.6362,
+                "latitude": -25.3005
+            },
+            "country": "py",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Asuncion",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Basse-Terre",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -61.7220,
+                "latitude": 15.9985
+            },
+            "country": "gp",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Basse-Terre",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Basseterre",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -62.7138,
+                "latitude": 17.2968
+            },
+            "country": "kn",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Basseterre",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Belmopan",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -88.7713,
+                "latitude": 17.2534
+            },
+            "country": "bz",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Belmopan",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Bogota",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -74.0962,
+                "latitude": 4.6473
+            },
+            "country": "co",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Bogota",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Brasilia",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -47.9292,
+                "latitude": -15.7801
+            },
+            "country": "br",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Brasilia",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Bridgetown",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -59.6105,
+                "latitude": 13.0935
+            },
+            "country": "bb",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Bridgetown",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Buenos Aires",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -58.4173,
+                "latitude": -34.6118
+            },
+            "country": "ar",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Buenos Aires",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Caracas",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -66.8983,
+                "latitude": 10.4961
+            },
+            "country": "ve",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Caracas",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Castries",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -60.0018,
+                "latitude": 13.9972
+            },
+            "country": "lc",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Castries",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Cayenne",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -52.3303,
+                "latitude": 4.9346
+            },
+            "country": "gf",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Cayenne",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Charlotte Amalie",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -64.9326,
+                "latitude": 18.3405
+            },
+            "country": "vi",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Charlotte Amalie",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Cockburn Town",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -71.1363,
+                "latitude": 21.4608
+            },
+            "country": "tc",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Cockburn Town",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Fort-de-France",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -61.0760,
+                "latitude": 14.5997
+            },
+            "country": "mq",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Fort-de-France",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "George Town",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -81.3857,
+                "latitude": 19.3022
+            },
+            "country": "ky",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "George Town",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Georgetown",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -58.1548,
+                "latitude": 6.8046
+            },
+            "country": "gy",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Georgetown",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Guatemala",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -90.5328,
+                "latitude": 14.6248
+            },
+            "country": "gt",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Guatemala",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Hamilton",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -64.7820,
+                "latitude": 32.2930
+            },
+            "country": "bm",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Hamilton",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Havana",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -82.3667,
+                "latitude": 23.1333
+            },
+            "country": "cu",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Havana",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Kingston",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -76.7920,
+                "latitude": 17.9927
+            },
+            "country": "jm",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Kingston",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Kingstown",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -61.2653,
+                "latitude": 13.2035
+            },
+            "country": "vc",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Kingstown",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Lima",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -77.0465,
+                "latitude": -12.0931
+            },
+            "country": "pe",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Lima",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Managua",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -86.2734,
+                "latitude": 12.1475
+            },
+            "country": "ni",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Managua",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Mexico City",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -99.1276,
+                "latitude": 19.4271
+            },
+            "country": "mx",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Mexico City",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Montevideo",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -56.0675,
+                "latitude": -34.8941
+            },
+            "country": "uy",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Montevideo",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Nassau",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -77.3390,
+                "latitude": 25.0661
+            },
+            "country": "bs",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Nassau",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Nuuk",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -51.7214,
+                "latitude": 64.1836
+            },
+            "country": "gl",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Nuuk",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Oranjestad",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -70.0265,
+                "latitude": 12.5246
+            },
+            "country": "aw",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Oranjestad",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Ottawa",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -75.6979,
+                "latitude": 45.4235
+            },
+            "country": "ca",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Ottawa",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Panama City",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -79.5188,
+                "latitude": 8.9943
+            },
+            "country": "pa",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Panama City",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Paramaribo",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -55.1679,
+                "latitude": 5.8232
+            },
+            "country": "sr",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Paramaribo",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Plymouth",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -62.2014,
+                "latitude": 16.6802
+            },
+            "country": "ms",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Plymouth",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Port of Spain",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -61.4789,
+                "latitude": 10.6596
+            },
+            "country": "tt",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Port of Spain",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Port-au-Prince",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -72.3288,
+                "latitude": 18.5392
+            },
+            "country": "ht",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Port-au-Prince",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Quito",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -78.5243,
+                "latitude": -0.2295
+            },
+            "country": "ec",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Quito",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Road Town",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -64.6235,
+                "latitude": 18.4328
+            },
+            "country": "vg",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Road Town",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Roseau",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -61.3900,
+                "latitude": 15.2976
+            },
+            "country": "dm",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Roseau",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Saint George's",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -61.7486,
+                "latitude": 12.0540
+            },
+            "country": "gd",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Saint George's",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Saint John's",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -61.8456,
+                "latitude": 17.1175
+            },
+            "country": "ag",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Saint John's",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Saint-Pierre",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -56.1968,
+                "latitude": 46.7878
+            },
+            "country": "pm",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Saint-Pierre",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "San Jose",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -84.1002,
+                "latitude": 9.9402
+            },
+            "country": "cr",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "San Jose",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "San Juan",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -66.0667,
+                "latitude": 18.4500
+            },
+            "country": "pr",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "San Juan",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "San Salvador",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -89.2073,
+                "latitude": 13.7034
+            },
+            "country": "sv",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "San Salvador",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Santiago",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -70.6420,
+                "latitude": -33.4691
+            },
+            "country": "cl",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Santiago",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Santo Domingo",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -69.8908,
+                "latitude": 18.4790
+            },
+            "country": "do",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Santo Domingo",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Stanley",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -57.8492,
+                "latitude": -51.7010
+            },
+            "country": "fk",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Stanley",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Sucre",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -65.2559,
+                "latitude": -19.0421
+            },
+            "country": "bo",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Sucre",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Tegucigalpa",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -87.2063,
+                "latitude": 14.0821
+            },
+            "country": "hn",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Tegucigalpa",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "The Valley",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -63.0669,
+                "latitude": 18.2249
+            },
+            "country": "ai",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "The Valley",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Washington, D.C.",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -77.0241,
+                "latitude": 38.8921
+            },
+            "country": "us",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Washington, D.C.",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        },
+        {
+            "name": "Willemstad",
+            "priority": 1,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -68.9335,
+                "latitude": 12.1034
+            },
+            "country": "an",
+            "type": "capital",
+            "population": null,
+            "translation": {
+                "cs": null,
+                "de": "Willemstad",
+                "en": null,
+                "es": null,
+                "fr": null,
+                "hr": null,
+                "it": null,
+                "pl": null,
+                "sv": null
+            }
+        }
+    ]
+}

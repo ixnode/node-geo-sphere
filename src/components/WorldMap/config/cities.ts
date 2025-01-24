@@ -1,5 +1,5 @@
 /* Import db. */
-import {cities, TypeCityData} from "../db/cities";
+import {getCities, TypeCityData} from "../db/cities";
 
 /* Import tools. */
 import {getIdFromPlace} from "../tools/interaction";
@@ -28,7 +28,7 @@ let cachedCityMap: TypeCityData|null = null;
  */
 export const getCityMap = (): TypeCityData => {
     if (cachedCityMap === null) {
-        cachedCityMap = cities.reduce((map, city) => {
+        cachedCityMap = getCities().reduce((map, city) => {
             map[getIdFromPlace(city.name)] = city;
             return map;
         }, {} as TypeCityData);

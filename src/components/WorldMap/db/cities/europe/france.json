@@ -1,0 +1,396 @@
+{
+    "$schema": "../_schema/cities.schema.json",
+    "data": [
+        {
+            "name": "Lyon",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 4.8343,
+                "latitude": 45.7634
+            },
+            "country": "fr",
+            "type": "state-capital",
+            "population": 520774,
+            "translation": {
+                "cs": "Lyon",
+                "de": "Lyon",
+                "en": "Lyon",
+                "es": "Lyon",
+                "fr": "Lyon",
+                "hr": "Lyon",
+                "it": "Lione",
+                "pl": "Lyon",
+                "sv": "Lyon"
+            }
+        },
+        {
+            "name": "Dijon",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 5.0167,
+                "latitude": 47.3167
+            },
+            "country": "fr",
+            "type": "state-capital",
+            "population": 159941,
+            "translation": {
+                "cs": "Dijon",
+                "de": "Dijon",
+                "en": "Dijon",
+                "es": "Dijon",
+                "fr": "Dijon",
+                "hr": "Dijon",
+                "it": "Digione",
+                "pl": "Dijon",
+                "sv": "Dijon"
+            }
+        },
+        {
+            "name": "Rennes",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -1.6794,
+                "latitude": 48.1147
+            },
+            "country": "fr",
+            "type": "state-capital",
+            "population": 227830,
+            "translation": {
+                "cs": "Rennes",
+                "de": "Rennes",
+                "en": "Rennes",
+                "es": "Rennes",
+                "fr": "Rennes",
+                "hr": "Rennes",
+                "it": "Rennes",
+                "pl": "Rennes",
+                "sv": "Rennes"
+            }
+        },
+        {
+            "name": "Orléans",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 1.9090,
+                "latitude": 47.9025
+            },
+            "country": "fr",
+            "type": "state-capital",
+            "population": 116344,
+            "translation": {
+                "cs": "Orléans",
+                "de": "Orléans",
+                "en": "Orléans",
+                "es": "Orleans",
+                "fr": "Orléans",
+                "hr": "Orléans",
+                "it": "Orléans",
+                "pl": "Orlean",
+                "sv": "Orléans"
+            }
+        },
+        {
+            "name": "Cayenne",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -52.3260,
+                "latitude": 4.9372
+            },
+            "country": "fr",
+            "type": "state-capital",
+            "population": 63956,
+            "translation": {
+                "cs": "Cayenne",
+                "de": "Cayenne",
+                "en": "Cayenne",
+                "es": "Cayena",
+                "fr": "Cayenne",
+                "hr": "Cayenne",
+                "it": "Caienna",
+                "pl": "Kajenna",
+                "sv": "Cayenne"
+            }
+        },
+        {
+            "name": "Straßburg",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 7.7500,
+                "latitude": 48.5800
+            },
+            "country": "fr",
+            "type": "state-capital",
+            "population": 291313,
+            "translation": {
+                "cs": "Štrasburk",
+                "de": "Straßburg",
+                "en": "Strasbourg",
+                "es": "Estrasburgo",
+                "fr": "Strasbourg",
+                "hr": "Strasbourg",
+                "it": "Strasburgo",
+                "pl": "Strasburg",
+                "sv": "Strasbourg"
+            }
+        },
+        {
+            "name": "Basse-Terre",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -61.6667,
+                "latitude": 16.1500
+            },
+            "country": "fr",
+            "type": "state-capital",
+            "population": 9419,
+            "translation": {
+                "cs": "Basse-Terre",
+                "de": "Basse-Terre",
+                "en": "Basse-Terre",
+                "es": "Basse-Terre",
+                "fr": "Basse-Terre",
+                "hr": "Basse-Terre",
+                "it": "Basse-Terre",
+                "pl": "Basse-Terre",
+                "sv": "Basse-Terre"
+            }
+        },
+        {
+            "name": "Lille",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 3.0573,
+                "latitude": 50.6293
+            },
+            "country": "fr",
+            "type": "state-capital",
+            "population": 238695,
+            "translation": {
+                "cs": "Lille",
+                "de": "Lille",
+                "en": "Lille",
+                "es": "Lille",
+                "fr": "Lilla",
+                "hr": "Lille",
+                "it": "Lilla",
+                "pl": "Lille",
+                "sv": "Lille"
+            }
+        },
+        {
+            "name": "Ajaccio",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 8.7369,
+                "latitude": 41.9267
+            },
+            "country": "fr",
+            "type": "state-capital",
+            "population": 75343,
+            "translation": {
+                "cs": "Ajaccio",
+                "de": "Ajaccio",
+                "en": "Ajaccio",
+                "es": "Ajaccio",
+                "fr": "Ajaccio",
+                "hr": "Ajaccio",
+                "it": "Ajaccio",
+                "pl": "Ajaccio",
+                "sv": "Ajaccio"
+            }
+        },
+        {
+            "name": "Fort-de-France",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -61.0833,
+                "latitude": 14.6000
+            },
+            "country": "fr",
+            "type": "state-capital",
+            "population": 75165,
+            "translation": {
+                "cs": "Fort-de-France",
+                "de": "Fort-de-France",
+                "en": "Fort-de-France",
+                "es": "Fort-de-France",
+                "fr": "Fort-de-France",
+                "hr": "Fort-de-France",
+                "it": "Fort-de-France",
+                "pl": "Fort-de-France",
+                "sv": "Fort-de-France"
+            }
+        },
+        {
+            "name": "Mamoudzou",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 45.2278,
+                "latitude": -12.7806
+            },
+            "country": "fr",
+            "type": "state-capital",
+            "population": 71437,
+            "translation": {
+                "cs": "Mamoudzou",
+                "de": "Mamoudzou",
+                "en": "Mamoudzou",
+                "es": "Mamoudzou",
+                "fr": "Mamoudzou",
+                "hr": "Mamoudzou",
+                "it": "Mamoudzou",
+                "pl": "Mamoudzou",
+                "sv": "Mamoudzou"
+            }
+        },
+        {
+            "name": "Rouen",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 1.1000,
+                "latitude": 49.4400
+            },
+            "country": "fr",
+            "type": "state-capital",
+            "population": 116331,
+            "translation": {
+                "cs": "Rouen",
+                "de": "Rouen",
+                "en": "Rouen",
+                "es": "Ruan",
+                "fr": "Rouen",
+                "hr": "Rouen",
+                "it": "Rouen",
+                "pl": "Rouen",
+                "sv": "Rouen"
+            }
+        },
+        {
+            "name": "Bordeaux",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -0.5808,
+                "latitude": 44.8362
+            },
+            "country": "fr",
+            "type": "state-capital",
+            "population": 265328,
+            "translation": {
+                "cs": "Bordeaux",
+                "de": "Bordeaux",
+                "en": "Bordeaux",
+                "es": "Burdeos",
+                "fr": "Bordeaux",
+                "hr": "Bordeaux",
+                "it": "Bordeaux",
+                "pl": "Bordeaux",
+                "sv": "Bordeaux"
+            }
+        },
+        {
+            "name": "Toulouse",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 1.4440,
+                "latitude": 43.6045
+            },
+            "country": "fr",
+            "type": "state-capital",
+            "population": 511684,
+            "translation": {
+                "cs": "Toulouse",
+                "de": "Toulouse",
+                "en": "Toulouse",
+                "es": "Toulouse",
+                "fr": "Toulouse",
+                "hr": "Toulouse",
+                "it": "Tolosa",
+                "pl": "Tuluza",
+                "sv": "Toulouse"
+            }
+        },
+        {
+            "name": "Nantes",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -1.5528,
+                "latitude": 47.2181
+            },
+            "country": "fr",
+            "type": "state-capital",
+            "population": 325070,
+            "translation": {
+                "cs": "Nantes",
+                "de": "Nantes",
+                "en": "Nantes",
+                "es": "Nantes",
+                "fr": "Nantes",
+                "hr": "Nantes",
+                "it": "Nantes",
+                "pl": "Nantes",
+                "sv": "Nantes"
+            }
+        },
+        {
+            "name": "Marseille",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 5.3700,
+                "latitude": 43.2964
+            },
+            "country": "fr",
+            "type": "state-capital",
+            "population": 877215,
+            "translation": {
+                "cs": "Marseille",
+                "de": "Marseille",
+                "en": "Marseille",
+                "es": "Marsella",
+                "fr": "Marseille",
+                "hr": "Marseille",
+                "it": "Marsiglia",
+                "pl": "Marsylia",
+                "sv": "Marseille"
+            }
+        },
+        {
+            "name": "Saint-Denis",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 55.4481,
+                "latitude": -20.8789
+            },
+            "country": "fr",
+            "type": "state-capital",
+            "population": 156149,
+            "translation": {
+                "cs": "Saint-Denis",
+                "de": "Saint-Denis",
+                "en": "Saint-Denis",
+                "es": "Saint-Denis",
+                "fr": "Saint-Denis",
+                "hr": "Saint-Denis",
+                "it": "Saint-Denis",
+                "pl": "Saint-Denis",
+                "sv": "Saint-Denis"
+            }
+        }
+    ]
+}

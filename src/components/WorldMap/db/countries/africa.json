@@ -1,0 +1,831 @@
+{
+    "$schema": "_schema/countries.schema.json",
+    "data": [
+        {
+            "code": "dz",
+            "translation": {
+                "cs": "Alžírsko",
+                "de": "Algerien",
+                "en": "Algeria",
+                "es": "Argelia",
+                "fr": "Algérie",
+                "hr": "Alžir",
+                "it": "Algeria",
+                "pl": "Algieria",
+                "sv": "Algeriet"
+            }
+        },
+        {
+            "code": "ao",
+            "translation": {
+                "cs": "Angola",
+                "de": "Angola",
+                "en": "Angola",
+                "es": "Angola",
+                "fr": "Angola",
+                "hr": "Angola",
+                "it": "Angola",
+                "pl": "Angola",
+                "sv": "Angola"
+            }
+        },
+        {
+            "code": "sh",
+            "translation": {
+                "cs": "Svatá Helena, Ascension a Tristan da Cunha",
+                "de": "St. Helena",
+                "en": "Saint Helena",
+                "es": "Santa Elena, Ascensión y Tristán de Acuña",
+                "fr": "Sainte-Hélène",
+                "hr": "Sveta Helena",
+                "it": "Sant'Elena",
+                "pl": "Wyspa Świętej Heleny, Wyspa Wniebowstąpienia i Tristan da Cunha",
+                "sv": "Sankta Helena"
+            }
+        },
+        {
+            "code": "bj",
+            "translation": {
+                "cs": "Benin",
+                "de": "Benin",
+                "en": "Benin",
+                "es": "Benín",
+                "fr": "Bénin",
+                "hr": "Benin",
+                "it": "Benin",
+                "pl": "Benin",
+                "sv": "Benin"
+            }
+        },
+        {
+            "code": "bw",
+            "translation": {
+                "cs": "Botswana",
+                "de": "Botswana",
+                "en": "Botswana",
+                "es": "Botsuana",
+                "fr": "Botswana",
+                "hr": "Bocvana",
+                "it": "Botswana",
+                "pl": "Botswana",
+                "sv": "Botswana"
+            }
+        },
+        {
+            "code": "bf",
+            "translation": {
+                "cs": "Burkina Faso",
+                "de": "Burkina Faso",
+                "en": "Burkina Faso",
+                "es": "Burkina Faso",
+                "fr": "Burkina Faso",
+                "hr": "Burkina Faso",
+                "it": "Burkina Faso",
+                "pl": "Burkina Faso",
+                "sv": "Burkina Faso"
+            }
+        },
+        {
+            "code": "bi",
+            "translation": {
+                "cs": "Burundi",
+                "de": "Burundi",
+                "en": "Burundi",
+                "es": "Burundi",
+                "fr": "Burundi",
+                "hr": "Burundi",
+                "it": "Burundi",
+                "pl": "Burundi",
+                "sv": "Burundi"
+            }
+        },
+        {
+            "code": "cm",
+            "translation": {
+                "cs": "Kamerun",
+                "de": "Kamerun",
+                "en": "Cameroon",
+                "es": "Camerún",
+                "fr": "Cameroun",
+                "hr": "Kamerun",
+                "it": "Camerun",
+                "pl": "Kamerun",
+                "sv": "Kamerun"
+            }
+        },
+        {
+            "code": "cv",
+            "translation": {
+                "cs": "Kapverdy",
+                "de": "Kap Verde",
+                "en": "Cabo Verde",
+                "es": "Cabo Verde",
+                "fr": "Cap-Vert",
+                "hr": "Zelenortska Republika",
+                "it": "Capo Verde",
+                "pl": "Republika Zielonego Przylądka",
+                "sv": "Kap Verde"
+            }
+        },
+        {
+            "code": "cf",
+            "translation": {
+                "cs": "Středoafrická republika",
+                "de": "Zentralafrikanische Republik",
+                "en": "Central African Republic",
+                "es": "República Centroafricana",
+                "fr": "République centrafricaine",
+                "hr": "Srednjoafrička Republika",
+                "it": "Repubblica Centrafricana",
+                "pl": "Republika Środkowoafrykańska",
+                "sv": "Centralafrikanska republiken"
+            }
+        },
+        {
+            "code": "td",
+            "translation": {
+                "cs": "Čad",
+                "de": "Tschad",
+                "en": "Chad",
+                "es": "Chad",
+                "fr": "Tchad",
+                "hr": "Čad",
+                "it": "Ciad",
+                "pl": "Czad",
+                "sv": "Tchad"
+            }
+        },
+        {
+            "code": "km",
+            "translation": {
+                "cs": "Komory",
+                "de": "Komoren",
+                "en": "Comoros",
+                "es": "Comoras",
+                "fr": "Comores",
+                "hr": "Komori",
+                "it": "Comore",
+                "pl": "Komory",
+                "sv": "Komorerna"
+            }
+        },
+        {
+            "code": "cg",
+            "translation": {
+                "cs": "Kongo",
+                "de": "Kongo",
+                "en": "Congo",
+                "es": "República del Congo",
+                "fr": "Congo",
+                "hr": "Kongo - Brazzaville",
+                "it": "Congo",
+                "pl": "Kongo",
+                "sv": "Kongo-Brazzaville"
+            }
+        },
+        {
+            "code": "dj",
+            "translation": {
+                "cs": "Džibutsko",
+                "de": "Dschibuti",
+                "en": "Djibouti",
+                "es": "Yibuti",
+                "fr": "Djibouti",
+                "hr": "Džibuti",
+                "it": "Gibuti",
+                "pl": "Dżibuti",
+                "sv": "Djibouti"
+            }
+        },
+        {
+            "code": "eg",
+            "translation": {
+                "cs": "Egypt",
+                "de": "Ägypten",
+                "en": "Egypt",
+                "es": "Egipto",
+                "fr": "Égypte",
+                "hr": "Egipat",
+                "it": "Egitto",
+                "pl": "Egipt",
+                "sv": "Egypten"
+            }
+        },
+        {
+            "code": "gq",
+            "translation": {
+                "cs": "Rovníková Guinea",
+                "de": "Äquatorialguinea",
+                "en": "Equatorial Guinea",
+                "es": "Guinea Ecuatorial",
+                "fr": "Guinée équatoriale",
+                "hr": "Ekvatorska Gvineja",
+                "it": "Guinea Equatoriale",
+                "pl": "Gwinea Równikowa",
+                "sv": "Ekvatorialguinea"
+            }
+        },
+        {
+            "code": "er",
+            "translation": {
+                "cs": "Eritrea",
+                "de": "Eritrea",
+                "en": "Eritrea",
+                "es": "Eritrea",
+                "fr": "Érythrée",
+                "hr": "Eritreja",
+                "it": "Eritrea",
+                "pl": "Erytrea",
+                "sv": "Eritrea"
+            }
+        },
+        {
+            "code": "et",
+            "translation": {
+                "cs": "Etiopie",
+                "de": "Äthiopien",
+                "en": "Ethiopia",
+                "es": "Etiopía",
+                "fr": "Éthiopie",
+                "hr": "Etiopija",
+                "it": "Etiopia",
+                "pl": "Etiopia",
+                "sv": "Etiopien"
+            }
+        },
+        {
+            "code": "ga",
+            "translation": {
+                "cs": "Gabon",
+                "de": "Gabun",
+                "en": "Gabon",
+                "es": "Gabón",
+                "fr": "Gabon",
+                "hr": "Gabon",
+                "it": "Gabon",
+                "pl": "Gabon",
+                "sv": "Gabon"
+            }
+        },
+        {
+            "code": "gm",
+            "translation": {
+                "cs": "Gambie",
+                "de": "Gambia",
+                "en": "Gambia",
+                "es": "Gambia",
+                "fr": "Gambie",
+                "hr": "Gambija",
+                "it": "Gambia",
+                "pl": "Gambia",
+                "sv": "Gambia"
+            }
+        },
+        {
+            "code": "gh",
+            "translation": {
+                "cs": "Ghana",
+                "de": "Ghana",
+                "en": "Ghana",
+                "es": "Ghana",
+                "fr": "Ghana",
+                "hr": "Gana",
+                "it": "Ghana",
+                "pl": "Ghana",
+                "sv": "Ghana"
+            }
+        },
+        {
+            "code": "gw",
+            "translation": {
+                "cs": "Guinea-Bissau",
+                "de": "Guinea-Bissau",
+                "en": "Guinea-Bissau",
+                "es": "Guinea-Bisáu",
+                "fr": "Guinée-Bissau",
+                "hr": "Gvineja Bisau",
+                "it": "Guinea-Bissau",
+                "pl": "Gwinea Bissau",
+                "sv": "Guinea-Bissau"
+            }
+        },
+        {
+            "code": "gn",
+            "translation": {
+                "cs": "Guinea",
+                "de": "Guinea",
+                "en": "Guinea",
+                "es": "Guinea",
+                "fr": "Guinée",
+                "hr": "Gvineja",
+                "it": "Guinea",
+                "pl": "Gwinea",
+                "sv": "Guinea"
+            }
+        },
+        {
+            "code": "ci",
+            "translation": {
+                "cs": "Pobřeží slonoviny",
+                "de": "Elfenbeinküste",
+                "en": "Côte d'Ivoire",
+                "es": "Costa de Marfil",
+                "fr": "Côte d'Ivoire",
+                "hr": "Obala Bjelokosti",
+                "it": "Costa d'Avorio",
+                "pl": "Wybrzeże Kości Słoniowej",
+                "sv": "Elfenbenskusten"
+            }
+        },
+        {
+            "code": "ke",
+            "translation": {
+                "cs": "Keňa",
+                "de": "Kenia",
+                "en": "Kenya",
+                "es": "Kenia",
+                "fr": "Kenya",
+                "hr": "Kenija",
+                "it": "Kenya",
+                "pl": "Kenia",
+                "sv": "Kenya"
+            }
+        },
+        {
+            "code": "ls",
+            "translation": {
+                "cs": "Lesotho",
+                "de": "Lesotho",
+                "en": "Lesotho",
+                "es": "Lesoto",
+                "fr": "Lesotho",
+                "hr": "Lesoto",
+                "it": "Lesotho",
+                "pl": "Lesotho",
+                "sv": "Lesotho"
+            }
+        },
+        {
+            "code": "lr",
+            "translation": {
+                "cs": "Libérie",
+                "de": "Liberia",
+                "en": "Liberia",
+                "es": "Liberia",
+                "fr": "Libéria",
+                "hr": "Liberija",
+                "it": "Liberia",
+                "pl": "Liberia",
+                "sv": "Liberia"
+            }
+        },
+        {
+            "code": "ly",
+            "translation": {
+                "cs": "Libye",
+                "de": "Libyen",
+                "en": "Libya",
+                "es": "Libia",
+                "fr": "Libye",
+                "hr": "Libija",
+                "it": "Libia",
+                "pl": "Libia",
+                "sv": "Libyen"
+            }
+        },
+        {
+            "code": "mg",
+            "translation": {
+                "cs": "Madagaskar",
+                "de": "Madagaskar",
+                "en": "Madagascar",
+                "es": "Madagascar",
+                "fr": "Madagascar",
+                "hr": "Madagaskar",
+                "it": "Madagascar",
+                "pl": "Madagaskar",
+                "sv": "Madagaskar"
+            }
+        },
+        {
+            "code": "mw",
+            "translation": {
+                "cs": "Malawi",
+                "de": "Malawi",
+                "en": "Malawi",
+                "es": "Malaui",
+                "fr": "Malawi",
+                "hr": "Malavi",
+                "it": "Malawi",
+                "pl": "Malawi",
+                "sv": "Malawi"
+            }
+        },
+        {
+            "code": "ml",
+            "translation": {
+                "cs": "Mali",
+                "de": "Mali",
+                "en": "Mali",
+                "es": "Malí",
+                "fr": "Mali",
+                "hr": "Mali",
+                "it": "Mali",
+                "pl": "Mali",
+                "sv": "Mali"
+            }
+        },
+        {
+            "code": "mr",
+            "translation": {
+                "cs": "Mauritánie",
+                "de": "Mauretanien",
+                "en": "Mauritania",
+                "es": "Mauritania",
+                "fr": "Mauritanie",
+                "hr": "Mauretanija",
+                "it": "Mauritania",
+                "pl": "Mauretania",
+                "sv": "Mauretanien"
+            }
+        },
+        {
+            "code": "mu",
+            "translation": {
+                "cs": "Mauricius",
+                "de": "Mauritius",
+                "en": "Mauritius",
+                "es": "Mauricio",
+                "fr": "Île Maurice",
+                "hr": "Mauricijus",
+                "it": "Mauritius",
+                "pl": "Mauritius",
+                "sv": "Mauritius"
+            }
+        },
+        {
+            "code": "yt",
+            "translation": {
+                "cs": "Mayotte",
+                "de": "Mayotte",
+                "en": "Mayotte",
+                "es": "Mayotte",
+                "fr": "Mayotte",
+                "hr": "Mayotte",
+                "it": "Mayotte",
+                "pl": "Majotta",
+                "sv": "Mayotte"
+            }
+        },
+        {
+            "code": "ma",
+            "translation": {
+                "cs": "Maroko",
+                "de": "Marokko",
+                "en": "Morocco",
+                "es": "Marruecos",
+                "fr": "Maroc",
+                "hr": "Maroko",
+                "it": "Marocco",
+                "pl": "Maroko",
+                "sv": "Marocko"
+            }
+        },
+        {
+            "code": "mz",
+            "translation": {
+                "cs": "Mosambik",
+                "de": "Mosambik",
+                "en": "Mozambique",
+                "es": "Mozambique",
+                "fr": "Mozambique",
+                "hr": "Mozambik",
+                "it": "Mozambico",
+                "pl": "Mozambik",
+                "sv": "Moçambique"
+            }
+        },
+        {
+            "code": "na",
+            "translation": {
+                "cs": "Namibie",
+                "de": "Namibia",
+                "en": "Namibia",
+                "es": "Namibia",
+                "fr": "Namibie",
+                "hr": "Namibija",
+                "it": "Namibia",
+                "pl": "Namibia",
+                "sv": "Namibia"
+            }
+        },
+        {
+            "code": "ne",
+            "translation": {
+                "cs": "Niger",
+                "de": "Niger",
+                "en": "Niger",
+                "es": "Níger",
+                "fr": "Niger",
+                "hr": "Niger",
+                "it": "Niger",
+                "pl": "Niger",
+                "sv": "Niger"
+            }
+        },
+        {
+            "code": "ng",
+            "translation": {
+                "cs": "Nigérie",
+                "de": "Nigeria",
+                "en": "Nigeria",
+                "es": "Nigeria",
+                "fr": "Nigeria",
+                "hr": "Nigerija",
+                "it": "Nigeria",
+                "pl": "Nigeria",
+                "sv": "Nigeria"
+            }
+        },
+        {
+            "code": "st",
+            "translation": {
+                "cs": "Svatý Tomáš a Princův ostrov",
+                "de": "São Tomé und Príncipe",
+                "en": "Sao Tome and Principe",
+                "es": "Santo Tomé y Príncipe",
+                "fr": "São Tomé et Príncipe",
+                "hr": "Sveti Toma i Princip",
+                "it": "São Tomé e Príncipe",
+                "pl": "Wyspy Świętego Tomasza i Książęca",
+                "sv": "São Tomé och Príncipe"
+            }
+        },
+        {
+            "code": "re",
+            "translation": {
+                "cs": "Réunion",
+                "de": "Réunion",
+                "en": "Réunion",
+                "es": "Reunión",
+                "fr": "Réunion",
+                "hr": "Réunion",
+                "it": "Riunione",
+                "pl": "Reunion",
+                "sv": "Réunion"
+            }
+        },
+        {
+            "code": "rw",
+            "translation": {
+                "cs": "Rwanda",
+                "de": "Ruanda",
+                "en": "Rwanda",
+                "es": "Ruanda",
+                "fr": "Rwanda",
+                "hr": "Ruanda",
+                "it": "Ruanda",
+                "pl": "Rwanda",
+                "sv": "Rwanda"
+            }
+        },
+        {
+            "code": "sn",
+            "translation": {
+                "cs": "Senegal",
+                "de": "Senegal",
+                "en": "Senegal",
+                "es": "Senegal",
+                "fr": "Sénégal",
+                "hr": "Senegal",
+                "it": "Senegal",
+                "pl": "Senegal",
+                "sv": "Senegal"
+            }
+        },
+        {
+            "code": "sc",
+            "translation": {
+                "cs": "Seychely",
+                "de": "Seychellen",
+                "en": "Seychelles",
+                "es": "Seychelles",
+                "fr": "Seychelles",
+                "hr": "Sejšeli",
+                "it": "Seychelles",
+                "pl": "Seszele",
+                "sv": "Seychellerna"
+            }
+        },
+        {
+            "code": "sl",
+            "translation": {
+                "cs": "Sierra Leone",
+                "de": "Sierra Leone",
+                "en": "Sierra Leone",
+                "es": "Sierra Leona",
+                "fr": "Sierra Leone",
+                "hr": "Sijera Leone",
+                "it": "Sierra Leone",
+                "pl": "Sierra Leone",
+                "sv": "Sierra Leone"
+            }
+        },
+        {
+            "code": "so",
+            "translation": {
+                "cs": "Somálsko",
+                "de": "Somalia",
+                "en": "Somalia",
+                "es": "Somalia",
+                "fr": "Somalie",
+                "hr": "Somalija",
+                "it": "Somalia",
+                "pl": "Somalia",
+                "sv": "Somalia"
+            }
+        },
+        {
+            "code": "sol",
+            "translation": {
+                "cs": "Somaliland",
+                "de": "Somalia",
+                "en": "Somaliland",
+                "es": "Somalilandia",
+                "fr": "Somaliland",
+                "hr": "Somaliland",
+                "it": "Somaliland",
+                "pl": "Somaliland",
+                "sv": "Somaliland"
+            }
+        },
+        {
+            "code": "za",
+            "translation": {
+                "cs": "Jihoafrická republika",
+                "de": "Südafrika",
+                "en": "South Africa",
+                "es": "Sudáfrica",
+                "fr": "Afrique du Sud",
+                "hr": "Južnoafrička Republika",
+                "it": "Sudafrica",
+                "pl": "Południowa Afryka",
+                "sv": "Sydafrika"
+            }
+        },
+        {
+            "code": "sd",
+            "translation": {
+                "cs": "Súdán",
+                "de": "Sudan",
+                "en": "Sudan",
+                "es": "Sudán",
+                "fr": "Soudan",
+                "hr": "Sudan",
+                "it": "Sudan",
+                "pl": "Sudan",
+                "sv": "Sudan"
+            }
+        },
+        {
+            "code": "sz",
+            "translation": {
+                "cs": "Svazijsko",
+                "de": "Eswatini",
+                "en": "Eswatini",
+                "es": "Suazilandia",
+                "fr": "Eswatini",
+                "hr": "Esvatini",
+                "it": "Eswatini",
+                "pl": "Eswatini",
+                "sv": "Swaziland"
+            }
+        },
+        {
+            "code": "tz",
+            "translation": {
+                "cs": "Tanzanie",
+                "de": "Tansania",
+                "en": "Tanzania",
+                "es": "Tanzania",
+                "fr": "Tanzanie",
+                "hr": "Tanzanija",
+                "it": "Tanzania",
+                "pl": "Tanzania",
+                "sv": "Tanzania"
+            }
+        },
+        {
+            "code": "tg",
+            "translation": {
+                "cs": "Togo",
+                "de": "Togo",
+                "en": "Togo",
+                "es": "Togo",
+                "fr": "Togo",
+                "hr": "Togo",
+                "it": "Togo",
+                "pl": "Togo",
+                "sv": "Togo"
+            }
+        },
+        {
+            "code": "tn",
+            "translation": {
+                "cs": "Tunisko",
+                "de": "Tunesien",
+                "en": "Tunisia",
+                "es": "Túnez",
+                "fr": "Tunisie",
+                "hr": "Tunis",
+                "it": "Tunisia",
+                "pl": "Tunezja",
+                "sv": "Tunisien"
+            }
+        },
+        {
+            "code": "ug",
+            "translation": {
+                "cs": "Uganda",
+                "de": "Uganda",
+                "en": "Uganda",
+                "es": "Uganda",
+                "fr": "Ouganda",
+                "hr": "Uganda",
+                "it": "Uganda",
+                "pl": "Uganda",
+                "sv": "Uganda"
+            }
+        },
+        {
+            "code": "cd",
+            "translation": {
+                "cs": "Konžská demokratická republika",
+                "de": "Kongo",
+                "en": "Congo",
+                "es": "República Democrática del Congo",
+                "fr": "Congo",
+                "hr": "Kongo - Kinshasa",
+                "it": "Congo",
+                "pl": "Demokratyczna Republika Konga",
+                "sv": "Kongo-Kinshasa"
+            }
+        },
+        {
+            "code": "zm",
+            "translation": {
+                "cs": "Zambie",
+                "de": "Sambia",
+                "en": "Zambia",
+                "es": "Zambia",
+                "fr": "Zambie",
+                "hr": "Zambija",
+                "it": "Zambia",
+                "pl": "Zambia",
+                "sv": "Zambia"
+            }
+        },
+        {
+            "code": "zw",
+            "translation": {
+                "cs": "Zimbabwe",
+                "de": "Simbabwe",
+                "en": "Zimbabwe",
+                "es": "Zimbabue",
+                "fr": "Zimbabwe",
+                "hr": "Zimbabve",
+                "it": "Zimbabwe",
+                "pl": "Zimbabwe",
+                "sv": "Zimbabwe"
+            }
+        },
+        {
+            "code": "ss",
+            "translation": {
+                "cs": "Jižní Súdán",
+                "de": "Südsudan",
+                "en": "South Sudan",
+                "es": "Sudán del Sur",
+                "fr": "Soudan du Sud",
+                "hr": "Južni Sudan",
+                "it": "Sud Sudan",
+                "pl": "Sudan Południowy",
+                "sv": "Sydsudan"
+            }
+        },
+        {
+            "code": "eh",
+            "translation": {
+                "cs": "Západní Sahara",
+                "de": "Westsahara",
+                "en": "Western Sahara",
+                "es": "República Árabe Saharaui Democrática",
+                "fr": "Sahara occidental",
+                "hr": "Zapadna Sahara",
+                "it": "Sahara occidentale",
+                "pl": "Sahara Zachodnia",
+                "sv": "Västsahara"
+            }
+        }
+    ]
+}

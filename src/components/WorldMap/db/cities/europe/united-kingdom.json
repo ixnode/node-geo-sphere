@@ -1,0 +1,74 @@
+{
+    "$schema": "../_schema/cities.schema.json",
+    "data": [
+        {
+            "name": "Belfast",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -5.9264,
+                "latitude": 54.6079
+            },
+            "country": "gb",
+            "type": "state-capital",
+            "population": 342560,
+            "translation": {
+                "cs": "Belfast",
+                "de": "Belfast",
+                "en": "Belfast",
+                "es": "Belfast",
+                "fr": "Belfast",
+                "hr": "Belfast",
+                "it": "Belfast",
+                "pl": "Belfast",
+                "sv": "Belfast"
+            }
+        },
+        {
+            "name": "Cardiff",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -3.1791,
+                "latitude": 51.4816
+            },
+            "country": "gb",
+            "type": "state-capital",
+            "population": 369202,
+            "translation": {
+                "cs": "Cardiff",
+                "de": "Cardiff",
+                "en": "Cardiff",
+                "es": "Cardiff",
+                "fr": "Cardiff",
+                "hr": "Cardiff",
+                "it": "Cardiff",
+                "pl": "Cardiff",
+                "sv": "Cardiff"
+            }
+        },
+        {
+            "name": "Edinburgh",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -3.1883,
+                "latitude": 55.9533
+            },
+            "country": "gb",
+            "type": "state-capital",
+            "population": 527620,
+            "translation": {
+                "cs": "Edinburgh",
+                "de": "Edinburgh",
+                "en": "Edinburgh",
+                "es": "Edimburgo",
+                "fr": "Édimbourg",
+                "hr": "Edinburgh",
+                "it": "Edimburgo",
+                "pl": "Edynburg",
+                "sv": "Edinburgh"
+            }
+        }
+    ]
+}
