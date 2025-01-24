@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Changelogs
 
+### [0.1.32] - 2025-01-24
+
+* Switch country and city data to json data
+* Country data refactoring
+* City data refactoring (coordinate as object)
+* Add gb state capitals
+* Add french regions
+* Translation refactoring
+
 ### [0.1.31] - 2025-01-22
 
 * README.md changes
