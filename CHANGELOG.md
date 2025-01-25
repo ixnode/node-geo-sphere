@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Changelogs
 
+### [0.1.33] - 2025-01-25
+
+* Fix argTypes, select type with labels
+* Add german states
+* Add state to cities
+* Add state to germany
+* Add country and state to place hover data
+* Adds coordinateDisplay to cities to be able to move them on the map
+
 ### [0.1.32] - 2025-01-24
 
 * Switch country and city data to json data
