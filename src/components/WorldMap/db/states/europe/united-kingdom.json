@@ -1,0 +1,77 @@
+{
+    "$schema": "../_schema/states.schema.json",
+    "data": [
+        {
+            "name": "England",
+            "code": "gb-eng",
+            "country": "gb",
+            "population": 57106398,
+            "area": 130395,
+            "translation": {
+                "cs": "Anglie",
+                "de": "England",
+                "en": "England",
+                "es": "Inglaterra",
+                "fr": "Angleterre",
+                "hr": "Engleska",
+                "it": "Inghilterra",
+                "pl": "Anglia",
+                "sv": "England"
+            }
+        },
+        {
+            "name": "Scotland",
+            "code": "gb-sct",
+            "country": "gb",
+            "population": 5436600,
+            "area": 77910,
+            "translation": {
+                "cs": "Skotsko",
+                "de": "Schottland",
+                "en": "Scotland",
+                "es": "Escocia",
+                "fr": "Écosse",
+                "hr": "Škotska",
+                "it": "Scozia",
+                "pl": "Szkocja",
+                "sv": "Skottland"
+            }
+        },
+        {
+            "name": "Wales",
+            "code": "gb-wls",
+            "country": "gb",
+            "population": 3138631,
+            "area": 20735,
+            "translation": {
+                "cs": "Wales",
+                "de": "Wales",
+                "en": "Wales",
+                "es": "Gales",
+                "fr": "Pays de Galles",
+                "hr": "Wales",
+                "it": "Galles",
+                "pl": "Walia",
+                "sv": "Wales"
+            }
+        },
+        {
+            "name": "Northern Ireland",
+            "code": "gb-nir",
+            "country": "gb",
+            "population": 1881641,
+            "area": 13843,
+            "translation": {
+                "cs": "Severní Irsko",
+                "de": "Nordirland",
+                "en": "Northern Ireland",
+                "es": "Irlanda del Norte",
+                "fr": "Irlande du Nord",
+                "hr": "Sjeverna Irska",
+                "it": "Irlanda del Nord",
+                "pl": "Irlandia Północna",
+                "sv": "Nordirland"
+            }
+        }
+    ]
+}

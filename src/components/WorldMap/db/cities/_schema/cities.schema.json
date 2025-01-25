@@ -25,7 +25,8 @@
                     "type": "string"
                 },
                 "state": {
-                    "type": ["string", "null"]
+                    "type": ["string", "null"],
+                    "pattern": "^[a-z]{2}-[a-z]{2,3}$"
                 },
                 "priority": {
                     "type": "integer",

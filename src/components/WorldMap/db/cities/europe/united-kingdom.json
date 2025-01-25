@@ -3,7 +3,7 @@
     "data": [
         {
             "name": "Belfast",
-            "state": null,
+            "state": "gb-nir",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -27,7 +27,7 @@
         },
         {
             "name": "Cardiff",
-            "state": null,
+            "state": "gb-wls",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -51,7 +51,7 @@
         },
         {
             "name": "Edinburgh",
-            "state": null,
+            "state": "gb-sct",
             "priority": 2,
             "size": "standard",
             "coordinate": {

@@ -459,7 +459,7 @@
         },
         {
             "name": "London",
-            "state": null,
+            "state": "gb-eng",
             "priority": 1,
             "size": "standard",
             "coordinate": {

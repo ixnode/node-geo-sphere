@@ -1,9 +1,18 @@
 /* Import europa states. */
 import statesEuropaGermany from './states/europe/germany.json';
+import statesEuropaUnitedKingdom from './states/europe/united-kingdom.json';
+
+/* Import types. */
 import {TypeTranslation} from "./_types/types";
 import {TypeCity} from "./cities";
+
+/* Import interfaces. */
 import {Point, StateData} from "../config/interfaces";
+
+/* Import configuration. */
 import {defaultLanguage} from "../../../config/config";
+
+/* Import tools. */
 import {getTranslatedName} from "../tools/language";
 
 /**
@@ -44,6 +53,7 @@ export const getStates = (): TypeState[] => {
 
         /* Europa cities. */
         ...(statesEuropaGermany.data as TypeState[]),
+        ...(statesEuropaUnitedKingdom.data as TypeState[]),
 
         /* Oceania cities. */
     ];
