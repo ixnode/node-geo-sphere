@@ -3,7 +3,7 @@
     "data": [
         {
             "name": "Bremen",
-            "state": null,
+            "state": "de-hb",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -27,7 +27,7 @@
         },
         {
             "name": "Dresden",
-            "state": null,
+            "state": "de-sn",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -51,7 +51,7 @@
         },
         {
             "name": "Düsseldorf",
-            "state": null,
+            "state": "de-nw",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -75,7 +75,7 @@
         },
         {
             "name": "Erfurt",
-            "state": null,
+            "state": "de-th",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -99,7 +99,7 @@
         },
         {
             "name": "Hamburg",
-            "state": null,
+            "state": "de-hh",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -123,7 +123,7 @@
         },
         {
             "name": "Hannover",
-            "state": null,
+            "state": "de-ni",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -147,7 +147,7 @@
         },
         {
             "name": "Kiel",
-            "state": null,
+            "state": "de-sh",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -171,7 +171,7 @@
         },
         {
             "name": "Magdeburg",
-            "state": null,
+            "state": "de-st",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -195,7 +195,7 @@
         },
         {
             "name": "Mainz",
-            "state": null,
+            "state": "de-rp",
             "priority": 2,
             "size": "smaller",
             "coordinate": {
@@ -219,7 +219,7 @@
         },
         {
             "name": "München",
-            "state": null,
+            "state": "de-by",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -243,7 +243,7 @@
         },
         {
             "name": "Potsdam",
-            "state": null,
+            "state": "de-bb",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -267,7 +267,7 @@
         },
         {
             "name": "Saarbrücken",
-            "state": null,
+            "state": "de-sl",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -291,7 +291,7 @@
         },
         {
             "name": "Schwerin",
-            "state": null,
+            "state": "de-mv",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -315,7 +315,7 @@
         },
         {
             "name": "Stuttgart",
-            "state": null,
+            "state": "de-bw",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -339,7 +339,7 @@
         },
         {
             "name": "Wiesbaden",
-            "state": null,
+            "state": "de-he",
             "priority": 2,
             "size": "smaller",
             "coordinate": {
