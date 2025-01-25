@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Changelogs
 
+### [0.1.34] - 2025-01-25
+
+* Add states from uk
+
 ### [0.1.33] - 2025-01-25
 
 * Fix argTypes, select type with labels
