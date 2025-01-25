@@ -99,7 +99,7 @@
         },
         {
             "name": "Berlin",
-            "state": null,
+            "state": "de-be",
             "priority": 1,
             "size": "standard",
             "coordinate": {
