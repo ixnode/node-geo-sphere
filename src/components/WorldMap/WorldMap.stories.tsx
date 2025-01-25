@@ -20,8 +20,10 @@ import {
 import {WorldMap} from './WorldMap';
 
 /* Import tools. */
-import {getLanguageNameCountry} from "./tools/language";
-import {getCountryMap} from "./config/countries";
+import {getTranslatedName} from "./tools/language";
+
+/* Import db data. */
+import {getCountryMap} from "./db/countries";
 
 /* Priority keys and language. */
 const priorityKeys = [null, 'all', 'eu', 'de', 'at', 'ch'];
@@ -31,7 +33,7 @@ const language = 'en'; /* Supported languages: cz, de, en, es, fr, hr, it, pl, s
 const countryOptions: Record<string, string|null> = Object.fromEntries(
     Object.entries({
         ...Object.fromEntries(Object.values(getCountryMap()).map((country) => [
-            country.translation[getLanguageNameCountry(language)],
+            getTranslatedName(country, language),
             country.code
         ]))
     } as Record<string, string | null>)

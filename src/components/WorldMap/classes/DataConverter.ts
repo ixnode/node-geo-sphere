@@ -1,5 +1,4 @@
 /* Import configuration. */
-import {getCountryMap} from "../config/countries";
 import {classNameSvgCircle} from "../config/elementNames";
 
 /* Import types. */
@@ -16,9 +15,9 @@ import {countriesDataLow} from "../data/geoJsonLow";
 import {countriesDataMedium} from "../data/geoJsonMedium";
 import {countriesDataTiny} from "../data/geoJsonTiny";
 
-/* Import db and db types. */
+/* Import db data and types. */
 import {getCities, TypeCity} from "../db/cities";
-import {TypeCountryData} from "../db/countries";
+import {getCountryMap, TypeCountryData} from "../db/countries";
 
 interface DataConverterOptions {
 

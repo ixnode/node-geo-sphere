@@ -1,15 +1,10 @@
 import React from "react";
 import {TFunction} from "i18next";
 
-/* Import configurations. */
-import {getCityMap} from "../config/cities";
-
 /* Import interfaces. */
 import {Point} from "../config/interfaces";
 
-/* Import db types. */
-import {getCountryMap} from "../config/countries";
-
+/* Import configuration. */
 import {
     classNameHover,
     classNameSvgCircle,
@@ -30,8 +25,10 @@ import {TypeSvgElement} from "../types/types";
 
 /* Import other tools. */
 import {ucFirst} from "./string";
-import {TypeCountry} from "../db/countries";
-import {TypeCity} from "../db/cities";
+
+/* Import db data and types. */
+import {getCountryMap, TypeCountry} from "../db/countries";
+import {getCityMap, TypeCity} from "../db/cities";
 
 /**
  * Default texts
@@ -287,11 +284,13 @@ export const addHoverTitle = (title: string): void => {
  * Adds subtitle to map.
  *
  * @param subtitle
+ * @param state
  * @param population
  * @param t
  */
 export const addHoverSubtitle = (
     subtitle: string,
+    state: string|null = null,
     population: number|null = null,
     t: TFunction<"translation", undefined>|null = null
 ): void => {
@@ -302,6 +301,10 @@ export const addHoverSubtitle = (
     }
 
     let subtitleBuild = subtitle;
+
+    if (state !== null) {
+        subtitleBuild += `, ${state}`;
+    }
 
     if (population !== null) {
         subtitleBuild += t === null ?

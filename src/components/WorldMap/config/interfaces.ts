@@ -1,3 +1,6 @@
+/* Import types. */
+import {TypeTranslation} from "../db/_types/types";
+
 /**
  * CountryData interface.
  */
@@ -32,6 +35,45 @@ export interface CountryData {
 }
 
 /**
+ * StateData interface.
+ */
+export interface StateData {
+    /* State ID. */
+    id: string;
+
+    /* Name of the state. */
+    name?: string|null;
+
+    /* Population of the state. */
+    population: number|null;
+
+    /* Area size of the state. */
+    area: number|null;
+
+    /* Latitude on svg. */
+    latitude?: number;
+
+    /* Longitude on svg. */
+    longitude?: number;
+
+    /* Clicked position on screen. */
+    screenPosition?: {
+        /* Clicked x position on screen (longitude). */
+        x: number;
+        /* Clicked y position on screen (latitude). */
+        y: number;
+    }
+
+    /* Clicked postion on svg. */
+    svgPosition?: {
+        /* Clicked x position on svg (longitude). */
+        x: number;
+        /* Clicked y position on svg (latitude). */
+        y: number;
+    }
+}
+
+/**
  * PlaceData interface.
  */
 export interface PlaceData {
@@ -40,6 +82,12 @@ export interface PlaceData {
 
     /* Name of the place. */
     name?: string|null;
+
+    /* State of the place. */
+    state?: StateData|null;
+
+    /* Country of the place. */
+    country?: CountryData|null;
 
     /* Population of the place. */
     population?: number|null;

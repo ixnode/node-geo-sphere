@@ -1,5 +1,4 @@
 /* Import configuration. */
-import {getCountryMap} from "../config/countries";
 import {defaultLanguage} from "../../../config/config";
 import {
     classNameSvgPath,
@@ -13,20 +12,20 @@ import {
 import {InterfaceGeoJson, TypeBoundingBox, TypeSvgContent, TypeSvgCountry, TypeSvgPlace} from "../types/types";
 
 /* Import tools. */
-import {getLanguageNameCountry, getTranslatedNamePlace} from "../tools/language";
+import {getLanguageName, getTranslatedName} from "../tools/language";
 import {getCityMapElement} from "../tools/interaction";
 import {
     distanceCityTypeNameCapital,
     distanceCityTypeNameCity,
     distanceCityTypeNameStateCapital,
-    getCityMap,
     typeCityTypeNameCapital,
     typeCityTypeNameCity,
     typeCityTypeNameStateCapital
 } from "../config/cities";
 
-/* Import db types. */
-import {TypeCityType} from "../db/cities";
+/* Import db data and types. */
+import {getCityMap, TypeCityType} from "../db/cities";
+import {getCountryMap} from "../db/countries";
 
 /* GeoJson2PathOptions interface. */
 interface GeoJson2PathOptionsLazy {
@@ -81,7 +80,7 @@ export class GeoJson2Path {
 
         //const radiusCircle = this.mapWidthToPointSize(boundingBoxWidth);
         //const borderWidth = Math.round(boundingBoxWidth / 1500);
-        const languageName = getLanguageNameCountry(this.options.language);
+        const languageName = getLanguageName(this.options.language);
 
         /* Get country map. */
         const countryMap = getCountryMap();
@@ -276,7 +275,7 @@ export class GeoJson2Path {
 
         if ((id !== null) && (id in cityMap)) {
             const dataCity = cityMap[id];
-            nameTranslated = getTranslatedNamePlace(dataCity, this.options.language);
+            nameTranslated = getTranslatedName(dataCity, this.options.language);
         }
 
         return `

@@ -33,7 +33,7 @@ import {TypeDataSource} from "./types/types";
 import SVGRenderer from "./components/SVGRenderer";
 
 /* Import tools. */
-import {getLanguageNameCountry, getTranslation} from "./tools/language";
+import {getLanguageName, getTranslationCountry} from "./tools/language";
 import {hideScrollHint} from "./tools/layer";
 import {textDefaultWorldMapSubtitle, textDefaultWorldMapTitle} from "./tools/interaction";
 
@@ -151,8 +151,8 @@ export const WorldMap: React.FC<WorldMapProps> = ({
      */
     /* Change country or language. */
     useEffect(() => {
-        const translation = getTranslation(country);
-        const titleWorldMap = translation ? translation[getLanguageNameCountry(language)] : textDefaultWorldMapTitle;
+        const translation = getTranslationCountry(country);
+        const titleWorldMap = translation ? translation[getLanguageName(language)] : textDefaultWorldMapTitle;
 
         title.current = titleWorldMap ?? textDefaultWorldMapTitle;
         subtitle.current = textDefaultWorldMapSubtitle;

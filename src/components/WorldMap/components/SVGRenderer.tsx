@@ -3,8 +3,6 @@ import {createRoot, Root} from "react-dom/client";
 import {useTranslation} from "react-i18next";
 
 /* Import configuration (WorldMap). */
-import {getCountryMap} from "../config/countries";
-import {getCityMap} from "../config/cities";
 import {defaultDebug, defaultMapHeight, defaultMapWidth, scaleFactor} from "../config/config";
 import {CountryData, PlaceData, DebugContent, Point, SVGViewBox} from "../config/interfaces";
 import {zoomCountry} from "../config/general";
@@ -65,7 +63,7 @@ import {CoordinateConverter} from "../classes/CoordinateConverter";
 import {WorldMapSvg} from "../classes/WorldMapSvg";
 
 /* Import tools. */
-import {getLanguageNameCountry, getTranslatedNamePlace} from "../tools/language";
+import {getTranslatedName} from "../tools/language";
 import {calculateZoomViewBox} from "../tools/zoom";
 import {hideScrollHint, hideScrollHintDelayed, showScrollHint} from "../tools/layer";
 import {
@@ -81,9 +79,10 @@ import {
     textNotAvailable
 } from "../tools/interaction";
 
-/* Import db types. */
-import {TypeCountryData} from "../db/countries";
-import {TypeCity, TypeCityData} from "../db/cities";
+/* Import db data and types. */
+import {getCountryByCountryCode, getCountryByPlace, getCountryMap, TypeCountryData} from "../db/countries";
+import {getCityMap, getPlaceByPlaceId, getPlaceDataByPlace, TypeCityData} from "../db/cities";
+import {getStateByPlace} from "../db/states";
 
 /* SVGRendererProps interface. */
 interface SVGRendererProps {
@@ -1261,7 +1260,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         /* Build click (callback) data. */
         const clickData: CountryData = {
             id: countryId,
-            name: countryData.translation[getLanguageNameCountry(languageReference.current)]
+            name: getTranslatedName(countryData, languageReference.current)
         };
 
         /* Add point (screen position). */
@@ -1337,7 +1336,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         /* Build click (callback) data. */
         const clickData: PlaceData = {
             id: placeId,
-            name: getTranslatedNamePlace(placeData, languageReference.current),
+            name: getTranslatedName(placeData, languageReference.current),
             population: placeData.population,
         };
 
@@ -1397,7 +1396,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         /* countryMap value found. */
         if (countryId in countryMap.current) {
             countryData = countryMap.current[countryId];
-            countryName = countryData.translation[getLanguageNameCountry(languageReference.current)];
+            countryName = getTranslatedName(countryData, languageReference.current);
         }
 
         /* Remove hover class from all svg.path[class=country] and svg.circle[class=place] elements. */
@@ -1510,15 +1509,6 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         svgPoint: SVGPoint|null = null
     ) => {
 
-        let placeId = elementG.id;
-        let placeData = null;
-        let placeName = null;
-        let placePopulation: number|null = null;
-        let placeCountry = null;
-        let countryId = null;
-        let countryData = null;
-        let countryName = null;
-
         /* No svgPoint is given. */
         if (svgPoint === null) {
             return;
@@ -1529,20 +1519,20 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             return;
         }
 
-        /* cityMap value found. */
-        if (placeId in cityMap.current) {
-            placeData = cityMap.current[placeId] as TypeCity;
-            placeName = getTranslatedNamePlace(placeData, languageReference.current);
-            placePopulation = placeData.population;
-            placeCountry = placeData.country;
-        }
+        /* Place variables. */
+        const placeId = elementG.id;
+        const placeData = getPlaceByPlaceId(placeId);
+        const placeName = placeData ? getTranslatedName(placeData, languageReference.current) : null;
 
-        /* countryMap value found. */
-        if (placeCountry !== null && placeCountry in countryMap.current) {
-            countryId = placeCountry;
-            countryData = countryMap.current[placeCountry];
-            countryName = countryData.translation[getLanguageNameCountry(languageReference.current)];
-        }
+        /* State variables. */
+        const stateData = placeData ? getStateByPlace(placeData) : null;
+        const stateName = stateData ? getTranslatedName(stateData, languageReference.current) : null;
+        const stateId = stateData ? stateData.code : null;
+
+        /* Country variables. */
+        const countryData = placeData ? getCountryByPlace(placeData) : null;
+        const countryName = countryData ? getTranslatedName(countryData, languageReference.current) : null;
+        const countryId = countryData ? countryData.code : null;
 
         /* Remove hover class from all svg.g[class=place-group] elements. */
         removeHoverClassPathCountry();
@@ -1554,31 +1544,23 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
 
         /* Add title and subtitle. */
         addHoverTitle(countryName ?? textNotAvailable);
-        addHoverSubtitle(placeName ?? textNotAvailable, placePopulation, t);
+        addHoverSubtitle(
+            placeName ?? textNotAvailable,
+            stateName ? stateName : null,
+            placeData ? placeData.population : null,
+            t
+        );
 
         /* Execute hover callback. */
-        if (onHoverPlace !== null && (placeId in cityMap.current) && placeId !== lastHoverPlaceId.current) {
-            let data: PlaceData = {
-                id: placeId,
-                name: placeName,
-                svgPosition: {
-                    x: svgPoint.x,
-                    y: svgPoint.y,
-                }
-            };
+        if (onHoverPlace !== null && placeData && placeId !== lastHoverPlaceId.current) {
+            let data: PlaceData = getPlaceDataByPlace(
+                placeData,
+                point,
+                svgPoint,
+                languageReference.current
+            );
 
-            if (point) {
-                data.screenPosition = {
-                    x: point.x,
-                    y: point.y,
-                }
-            }
-
-            if (placeData) {
-                data.longitude = placeData.coordinate.longitude;
-                data.latitude = placeData.coordinate.latitude;
-            }
-
+            /* Execute hover callback. */
             onHoverPlace(data);
 
             /* Set last hover id. */
