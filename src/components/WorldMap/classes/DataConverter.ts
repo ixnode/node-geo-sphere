@@ -108,7 +108,7 @@ export class DataConverter {
                 return convertedFeature;
             }
 
-            convertedFeature.name = this.countryMap[country].translation.de;
+            convertedFeature.name = this.countryMap[country].translation.de ?? 'n/a';
 
             return convertedFeature;
         });

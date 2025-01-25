@@ -3,6 +3,7 @@
     "data": [
         {
             "name": "Abuja",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -26,6 +27,7 @@
         },
         {
             "name": "Accra",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -49,6 +51,7 @@
         },
         {
             "name": "Addis Ababa",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -72,6 +75,7 @@
         },
         {
             "name": "Algiers",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -95,6 +99,7 @@
         },
         {
             "name": "Antananarivo",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -118,6 +123,7 @@
         },
         {
             "name": "Asmara",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -141,6 +147,7 @@
         },
         {
             "name": "Bamako",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -164,6 +171,7 @@
         },
         {
             "name": "Bangui",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -187,6 +195,7 @@
         },
         {
             "name": "Banjul",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -210,6 +219,7 @@
         },
         {
             "name": "Bissau",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -233,6 +243,7 @@
         },
         {
             "name": "Brazzaville",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -256,6 +267,7 @@
         },
         {
             "name": "Bujumbura",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -279,6 +291,7 @@
         },
         {
             "name": "Cairo",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -302,6 +315,7 @@
         },
         {
             "name": "Conakry",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -325,6 +339,7 @@
         },
         {
             "name": "Dakar",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -348,6 +363,7 @@
         },
         {
             "name": "Djibouti",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -371,6 +387,7 @@
         },
         {
             "name": "Dodoma",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -394,6 +411,7 @@
         },
         {
             "name": "El Aaiun",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -417,6 +435,7 @@
         },
         {
             "name": "Freetown",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -440,6 +459,7 @@
         },
         {
             "name": "Gaborone",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -463,6 +483,7 @@
         },
         {
             "name": "Harare",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -486,6 +507,7 @@
         },
         {
             "name": "Jamestown",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -509,6 +531,7 @@
         },
         {
             "name": "Juba",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -532,6 +555,7 @@
         },
         {
             "name": "Kampala",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -555,6 +579,7 @@
         },
         {
             "name": "Khartoum",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -578,6 +603,7 @@
         },
         {
             "name": "Kigali",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -601,6 +627,7 @@
         },
         {
             "name": "Kinshasa",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -624,6 +651,7 @@
         },
         {
             "name": "Libreville",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -647,6 +675,7 @@
         },
         {
             "name": "Lilongwe",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -670,6 +699,7 @@
         },
         {
             "name": "Lome",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -693,6 +723,7 @@
         },
         {
             "name": "Luanda",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -716,6 +747,7 @@
         },
         {
             "name": "Lusaka",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -739,6 +771,7 @@
         },
         {
             "name": "Malabo",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -762,6 +795,7 @@
         },
         {
             "name": "Mamoudzou",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -785,6 +819,7 @@
         },
         {
             "name": "Maputo",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -808,6 +843,7 @@
         },
         {
             "name": "Maseru",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -831,6 +867,7 @@
         },
         {
             "name": "Mbabane",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -854,6 +891,7 @@
         },
         {
             "name": "Mogadishu",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -877,6 +915,7 @@
         },
         {
             "name": "Monrovia",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -900,6 +939,7 @@
         },
         {
             "name": "Moroni",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -923,6 +963,7 @@
         },
         {
             "name": "N'Djamena",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -946,6 +987,7 @@
         },
         {
             "name": "Nairobi",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -969,6 +1011,7 @@
         },
         {
             "name": "Niamey",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -992,6 +1035,7 @@
         },
         {
             "name": "Nouakchott",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -1015,6 +1059,7 @@
         },
         {
             "name": "Ouagadougou",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -1038,6 +1083,7 @@
         },
         {
             "name": "Port Louis",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -1061,6 +1107,7 @@
         },
         {
             "name": "Porto-Novo",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -1084,6 +1131,7 @@
         },
         {
             "name": "Praia",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -1107,6 +1155,7 @@
         },
         {
             "name": "Pretoria",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -1130,6 +1179,7 @@
         },
         {
             "name": "Rabat",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -1153,6 +1203,7 @@
         },
         {
             "name": "Saint Denis",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -1176,6 +1227,7 @@
         },
         {
             "name": "Sao Tome",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -1199,6 +1251,7 @@
         },
         {
             "name": "Tripoli",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -1222,6 +1275,7 @@
         },
         {
             "name": "Tunis",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -1245,6 +1299,7 @@
         },
         {
             "name": "Victoria",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -1268,6 +1323,7 @@
         },
         {
             "name": "Windhoek",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -1291,6 +1347,7 @@
         },
         {
             "name": "Yamoussoukro",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -1314,6 +1371,7 @@
         },
         {
             "name": "Yaounde",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {

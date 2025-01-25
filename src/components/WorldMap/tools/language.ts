@@ -8,17 +8,17 @@ import {textNotAvailable} from "./interaction";
 import {TypeCountryKey} from "../types/types";
 
 /* Import db types. */
-import {TypeCountry, TypeCountryTranslation} from "../db/countries";
-import {TypeCity, TypeCityTranslation} from "../db/cities";
+import {TypeCity} from "../db/cities";
+import {TypeTranslation} from "../db/_types/typws";
 
 /**
  * Returns the language name of given language.
  *
  * @param language
  */
-export const getLanguageNameCountry = (language: string): keyof TypeCountryTranslation => {
+export const getLanguageNameCountry = (language: string): keyof TypeTranslation => {
     /* Reference a real TypeCountryTranslation object structure for the check. */
-    const exampleTranslation: TypeCountryTranslation = {
+    const exampleTranslation: TypeTranslation = {
         cs: '',
         de: '',
         en: '',
@@ -34,7 +34,7 @@ export const getLanguageNameCountry = (language: string): keyof TypeCountryTrans
 
     /* Check if key exists in exampleCountry */
     if (language in exampleTranslation) {
-        return language as keyof TypeCountryTranslation;
+        return language as keyof TypeTranslation;
     }
 
     throw new Error(`Invalid language key: ${language}`);
@@ -45,9 +45,9 @@ export const getLanguageNameCountry = (language: string): keyof TypeCountryTrans
  *
  * @param language
  */
-export const getLanguageNamePlace = (language: string): keyof TypeCityTranslation => {
+export const getLanguageNamePlace = (language: string): keyof TypeTranslation => {
     /* Reference a real TypeCountry object structure for the check. */
-    const exampleTranslation: TypeCityTranslation = {
+    const exampleTranslation: TypeTranslation = {
         cs: '',
         de: '',
         en: '',
@@ -63,7 +63,7 @@ export const getLanguageNamePlace = (language: string): keyof TypeCityTranslatio
 
     /* Check if key exists in exampleCountry */
     if (language in exampleTranslation) {
-        return language as keyof TypeCityTranslation;
+        return language as keyof TypeTranslation;
     }
 
     throw new Error(`Invalid language key: ${language}`);
@@ -105,7 +105,7 @@ export const getTranslatedNamePlace = (data: TypeCity, language: string): string
  *
  * @see countryMap
  */
-export const getTranslation = (country: TypeCountryKey|null): TypeCountryTranslation|null => {
+export const getTranslation = (country: TypeCountryKey|null): TypeTranslation|null => {
 
     if (country === null) {
         return null;

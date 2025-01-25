@@ -7,22 +7,12 @@ import countriesAmericaSouth from './countries/america-south.json';
 import countriesAsia from './countries/asia.json';
 import countriesEurope from './countries/europe.json';
 import countriesOceania from './countries/oceania.json';
+import {TypeTranslation} from "./_types/typws";
 
 /**
  * General types.
  */
 export type TypeCountryData = {[key: string]: TypeCountry};
-export type TypeCountryTranslation = {
-    cs: string; /* Czech */
-    de: string; /* German */
-    en: string; /* English */
-    es: string; /* Spanish */
-    fr: string; /* French */
-    hr: string; /* Croatian */
-    it: string; /* Italian */
-    pl: string; /* Polish */
-    sv: string; /* Swedish */
-};
 
 /**
  * Country type
@@ -30,7 +20,7 @@ export type TypeCountryTranslation = {
 export type TypeCountry = {
     code: string|null;
 
-    translation: TypeCountryTranslation;
+    translation: TypeTranslation;
 };
 
 export const getCountries = (): TypeCountry[] => {

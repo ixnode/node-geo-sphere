@@ -3,6 +3,7 @@
     "data": [
         {
             "name": "Belfast",
+            "state": null,
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -26,6 +27,7 @@
         },
         {
             "name": "Cardiff",
+            "state": null,
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -49,6 +51,7 @@
         },
         {
             "name": "Edinburgh",
+            "state": null,
             "priority": 2,
             "size": "standard",
             "coordinate": {

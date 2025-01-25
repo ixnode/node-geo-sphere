@@ -3,6 +3,7 @@
     "data": [
         {
             "name": "Adamstown",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -26,6 +27,7 @@
         },
         {
             "name": "Alofi",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -49,6 +51,7 @@
         },
         {
             "name": "Apia",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -72,6 +75,7 @@
         },
         {
             "name": "Avarua",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -95,6 +99,7 @@
         },
         {
             "name": "Bairiki",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -118,6 +123,7 @@
         },
         {
             "name": "Canberra",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -141,6 +147,7 @@
         },
         {
             "name": "Flying Fish Cove",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -164,6 +171,7 @@
         },
         {
             "name": "Garapan",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -187,6 +195,7 @@
         },
         {
             "name": "Hagatna",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -210,6 +219,7 @@
         },
         {
             "name": "Honiara",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -233,6 +243,7 @@
         },
         {
             "name": "Kingston",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -256,6 +267,7 @@
         },
         {
             "name": "Majuro",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -279,6 +291,7 @@
         },
         {
             "name": "Mata-Utu",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -302,6 +315,7 @@
         },
         {
             "name": "Melekeok",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -325,6 +339,7 @@
         },
         {
             "name": "Noumea",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -348,6 +363,7 @@
         },
         {
             "name": "Nuku'alofa",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -371,6 +387,7 @@
         },
         {
             "name": "Pago Pago",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -394,6 +411,7 @@
         },
         {
             "name": "Palikir",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -417,6 +435,7 @@
         },
         {
             "name": "Papeete",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -440,6 +459,7 @@
         },
         {
             "name": "Port Moresby",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -463,6 +483,7 @@
         },
         {
             "name": "Port Vila",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -486,6 +507,7 @@
         },
         {
             "name": "Suva",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -509,6 +531,7 @@
         },
         {
             "name": "Vaiaku",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -532,6 +555,7 @@
         },
         {
             "name": "Wellington",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -555,6 +579,7 @@
         },
         {
             "name": "West Island",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -578,6 +603,7 @@
         },
         {
             "name": "Yaren",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {

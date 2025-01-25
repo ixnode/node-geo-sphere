@@ -3,6 +3,7 @@
     "data": [
         {
             "name": "Lyon",
+            "state": null,
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -26,6 +27,7 @@
         },
         {
             "name": "Dijon",
+            "state": null,
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -49,6 +51,7 @@
         },
         {
             "name": "Rennes",
+            "state": null,
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -72,6 +75,7 @@
         },
         {
             "name": "Orléans",
+            "state": null,
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -95,6 +99,7 @@
         },
         {
             "name": "Cayenne",
+            "state": null,
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -118,6 +123,7 @@
         },
         {
             "name": "Straßburg",
+            "state": null,
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -141,6 +147,7 @@
         },
         {
             "name": "Basse-Terre",
+            "state": null,
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -164,6 +171,7 @@
         },
         {
             "name": "Lille",
+            "state": null,
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -187,6 +195,7 @@
         },
         {
             "name": "Ajaccio",
+            "state": null,
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -210,6 +219,7 @@
         },
         {
             "name": "Fort-de-France",
+            "state": null,
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -233,6 +243,7 @@
         },
         {
             "name": "Mamoudzou",
+            "state": null,
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -256,6 +267,7 @@
         },
         {
             "name": "Rouen",
+            "state": null,
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -279,6 +291,7 @@
         },
         {
             "name": "Bordeaux",
+            "state": null,
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -302,6 +315,7 @@
         },
         {
             "name": "Toulouse",
+            "state": null,
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -325,6 +339,7 @@
         },
         {
             "name": "Nantes",
+            "state": null,
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -348,6 +363,7 @@
         },
         {
             "name": "Marseille",
+            "state": null,
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -371,6 +387,7 @@
         },
         {
             "name": "Saint-Denis",
+            "state": null,
             "priority": 2,
             "size": "standard",
             "coordinate": {

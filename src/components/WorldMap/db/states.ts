@@ -1,21 +1,11 @@
 /* Import europa states. */
 import statesEuropaGermany from './states/europe/germany.json';
+import {TypeTranslation} from "./_types/typws";
 
 /**
  * General types.
  */
 export type TypeStateData = {[key: string]: TypeState};
-export type TypeStateTranslation = {
-    cs: string|null; /* Czech */
-    de: string|null; /* German */
-    en: string|null; /* English */
-    es: string|null; /* Spanish */
-    fr: string|null; /* French */
-    hr: string|null; /* Croatian */
-    it: string|null; /* Italian */
-    pl: string|null; /* Polish */
-    sv: string|null; /* Swedish */
-};
 
 /**
 * State type
@@ -29,7 +19,7 @@ export type TypeState = {
     population: number|null;
     area: number|null;
 
-    translation: TypeStateTranslation;
+    translation: TypeTranslation;
 }
 
 export const getStates = (): TypeState[] => {

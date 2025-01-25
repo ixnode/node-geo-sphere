@@ -9,6 +9,7 @@ import citiesOceania from './cities/oceania.json';
 import citiesEuropaFrance from './cities/europe/france.json';
 import citiesEuropaGermany from './cities/europe/germany.json';
 import citiesEuropaUnitedKingdom from './cities/europe/united-kingdom.json';
+import {TypeTranslation} from "./_types/typws";
 
 /**
  * General types.
@@ -19,17 +20,6 @@ export type TypeCitySize = "standard"|"smaller"|"bigger";
 export type TypeCityCoordinate = {
     longitude: number;
     latitude: number;
-};
-export type TypeCityTranslation = {
-    cs: string|null; /* Czech */
-    de: string|null; /* German */
-    en: string|null; /* English */
-    es: string|null; /* Spanish */
-    fr: string|null; /* French */
-    hr: string|null; /* Croatian */
-    it: string|null; /* Italian */
-    pl: string|null; /* Polish */
-    sv: string|null; /* Swedish */
 };
 
 /**
@@ -44,8 +34,9 @@ export type TypeCity = {
     type: TypeCityType;
 
     name: string;
+    state: string|null;
 
-    translation: TypeCityTranslation;
+    translation: TypeTranslation;
 
     population: number|null;
 }

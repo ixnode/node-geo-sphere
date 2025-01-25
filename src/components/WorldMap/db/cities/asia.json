@@ -3,6 +3,7 @@
     "data": [
         {
             "name": "Abu Dhabi",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -26,6 +27,7 @@
         },
         {
             "name": "Amman",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -49,6 +51,7 @@
         },
         {
             "name": "Ankara",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -72,6 +75,7 @@
         },
         {
             "name": "Ashgabat",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -95,6 +99,7 @@
         },
         {
             "name": "Astana",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -118,6 +123,7 @@
         },
         {
             "name": "Baghdad",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -141,6 +147,7 @@
         },
         {
             "name": "Baku",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -164,6 +171,7 @@
         },
         {
             "name": "Bandar Seri Begawan",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -187,6 +195,7 @@
         },
         {
             "name": "Bangkok",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -210,6 +219,7 @@
         },
         {
             "name": "Beijing",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -233,6 +243,7 @@
         },
         {
             "name": "Beirut",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -256,6 +267,7 @@
         },
         {
             "name": "Bishkek",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -279,6 +291,7 @@
         },
         {
             "name": "Colombo",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -302,6 +315,7 @@
         },
         {
             "name": "Damascus",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -325,6 +339,7 @@
         },
         {
             "name": "Dhaka",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -348,6 +363,7 @@
         },
         {
             "name": "Dili",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -371,6 +387,7 @@
         },
         {
             "name": "Doha",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -394,6 +411,7 @@
         },
         {
             "name": "Dushanbe",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -417,6 +435,7 @@
         },
         {
             "name": "Hanoi",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -440,6 +459,7 @@
         },
         {
             "name": "Islamabad",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -463,6 +483,7 @@
         },
         {
             "name": "Jakarta",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -486,6 +507,7 @@
         },
         {
             "name": "Jerusalem",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -509,6 +531,7 @@
         },
         {
             "name": "Kabul",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -532,6 +555,7 @@
         },
         {
             "name": "Kathmandu",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -555,6 +579,7 @@
         },
         {
             "name": "Kuala Lumpur",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -578,6 +603,7 @@
         },
         {
             "name": "Kuwait City",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -601,6 +627,7 @@
         },
         {
             "name": "Male",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -624,6 +651,7 @@
         },
         {
             "name": "Manama",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -647,6 +675,7 @@
         },
         {
             "name": "Manila",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -670,6 +699,7 @@
         },
         {
             "name": "Muscat",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -693,6 +723,7 @@
         },
         {
             "name": "Naypyidaw",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -716,6 +747,7 @@
         },
         {
             "name": "New Delhi",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -739,6 +771,7 @@
         },
         {
             "name": "Nicosia",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -762,6 +795,7 @@
         },
         {
             "name": "Phnom Penh",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -785,6 +819,7 @@
         },
         {
             "name": "Pyongyang",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -808,6 +843,7 @@
         },
         {
             "name": "Riyadh",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -831,6 +867,7 @@
         },
         {
             "name": "Sanaa",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -854,6 +891,7 @@
         },
         {
             "name": "Seoul",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -877,6 +915,7 @@
         },
         {
             "name": "Singapore",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -900,6 +939,7 @@
         },
         {
             "name": "Taipei",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -923,6 +963,7 @@
         },
         {
             "name": "Tashkent",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -946,6 +987,7 @@
         },
         {
             "name": "Tbilisi",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -969,6 +1011,7 @@
         },
         {
             "name": "Tehran",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -992,6 +1035,7 @@
         },
         {
             "name": "Thimphu",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -1015,6 +1059,7 @@
         },
         {
             "name": "Tokyo",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -1038,6 +1083,7 @@
         },
         {
             "name": "Ulaanbaatar",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -1061,6 +1107,7 @@
         },
         {
             "name": "Vientiane",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -1084,6 +1131,7 @@
         },
         {
             "name": "Yerevan",
+            "state": null,
             "priority": 1,
             "size": "standard",
             "coordinate": {
