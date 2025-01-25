@@ -1,4 +1,5 @@
 /* Import europa states. */
+import statesEuropaFrance from './states/europe/france.json';
 import statesEuropaGermany from './states/europe/germany.json';
 import statesEuropaUnitedKingdom from './states/europe/united-kingdom.json';
 
@@ -52,6 +53,7 @@ export const getStates = (): TypeState[] => {
         /* Asia cities. */
 
         /* Europa cities. */
+        ...(statesEuropaFrance.data as TypeState[]),
         ...(statesEuropaGermany.data as TypeState[]),
         ...(statesEuropaUnitedKingdom.data as TypeState[]),
 

@@ -651,7 +651,7 @@
         },
         {
             "name": "Paris",
-            "state": null,
+            "state": "fr-idf",
             "priority": 1,
             "size": "standard",
             "coordinate": {

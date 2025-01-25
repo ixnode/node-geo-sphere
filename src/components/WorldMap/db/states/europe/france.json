@@ -1,0 +1,329 @@
+{
+    "$schema": "../_schema/states.schema.json",
+    "data": [
+        {
+            "name": "Auvergne-Rhône-Alpes",
+            "code": "fr-ara",
+            "country": "fr",
+            "population": 8163884,
+            "area": 70795.0,
+            "translation": {
+                "cs": "Auvergne-Rhône-Alpes",
+                "de": "Auvergne-Rhône-Alpes",
+                "en": "Auvergne-Rhône-Alpes",
+                "es": "Auvernia-Ródano-Alpes",
+                "fr": "Auvergne-Rhône-Alpes",
+                "hr": "Auvergne-Rona-Alpe",
+                "it": "Alvernia-Rodano-Alpi",
+                "pl": "Owernia-Rodan-Alpy",
+                "sv": "Auvergne-Rhône-Alpes"
+            }
+        },
+        {
+            "name": "Bourgogne-Franche-Comté",
+            "code": "fr-bfc",
+            "country": "fr",
+            "population": 2803977,
+            "area": 47963.14,
+            "translation": {
+                "cs": "Burgundsko-Franche-Comté",
+                "de": "Bourgogne-Franche-Comté",
+                "en": "Bourgogne-Franche-Comté",
+                "es": "Borgoña-Franco Condado",
+                "fr": "Bourgogne-Franche-Comté",
+                "hr": "Burgundija-Franche-Comté",
+                "it": "Borgogna-Franca Contea",
+                "pl": "Burgundia-Franche-Comté",
+                "sv": "Bourgogne-Franche-Comté"
+            }
+        },
+        {
+            "name": "Brittany",
+            "code": "fr-bre",
+            "country": "fr",
+            "population": 3422845,
+            "area": 27407.75,
+            "translation": {
+                "cs": "Bretaň",
+                "de": "Bretagne",
+                "en": "Brittany",
+                "es": "Bretaña",
+                "fr": "Bretagne",
+                "hr": "Bretanja",
+                "it": "Bretagna",
+                "pl": "Bretania",
+                "sv": "Bretagne"
+            }
+        },
+        {
+            "name": "Centre-Val de Loire",
+            "code": "fr-cvl",
+            "country": "fr",
+            "population": 2581597,
+            "area": 39469.75,
+            "translation": {
+                "cs": "Centre-Val de Loire",
+                "de": "Centre-Val de Loire",
+                "en": "Centre-Val de Loire",
+                "es": "Centro-Valle del Loira",
+                "fr": "Centre-Val de Loire",
+                "hr": "Centre-Val de Loire",
+                "it": "Centro-Valle della Loira",
+                "pl": "Region Centralny-Dolina Loary",
+                "sv": "Centre-Val de Loire"
+            }
+        },
+        {
+            "name": "French Guiana",
+            "code": "fr-973",
+            "country": "fr",
+            "population": 304557,
+            "area": 83846,
+            "translation": {
+                "cs": "Francouzská Guyana",
+                "de": "Französisch-Guayana",
+                "en": "French Guiana",
+                "es": "Guayana Francesa",
+                "fr": "Guyane",
+                "hr": "Francuska Gijana",
+                "it": "Guyana francese",
+                "pl": "Gujana Francuska",
+                "sv": "Franska Guyana"
+            }
+        },
+        {
+            "name": "Grand Est",
+            "code": "fr-ges",
+            "country": "fr",
+            "population": 5555778,
+            "area": 57704.90,
+            "translation": {
+                "cs": "Grand Est",
+                "de": "Grand Est",
+                "en": "Grand Est",
+                "es": "Gran Este",
+                "fr": "Grand Est",
+                "hr": "Grand Est",
+                "it": "Grande Est",
+                "pl": "Grand Est",
+                "sv": "Grand Est"
+            }
+        },
+        {
+            "name": "Guadeloupe",
+            "code": "fr-971",
+            "country": "fr",
+            "population": 395752,
+            "area": 1635.66,
+            "translation": {
+                "cs": "Guadeloupe",
+                "de": "Guadeloupe",
+                "en": "Guadeloupe",
+                "es": "Guadalupe",
+                "fr": "Guadeloupe",
+                "hr": "Gvadalupa",
+                "it": "Guadalupa",
+                "pl": "Gwadelupa",
+                "sv": "Guadeloupe"
+            }
+        },
+        {
+            "name": "Hauts-de-France",
+            "code": "fr-hdf",
+            "country": "fr",
+            "population": 5998916,
+            "area": 31813.07,
+            "translation": {
+                "cs": "Hauts-de-France",
+                "de": "Hauts-de-France",
+                "en": "Hauts-de-France",
+                "es": "Alta Francia",
+                "fr": "Hauts-de-France",
+                "hr": "Hauts-de-France",
+                "it": "Alta Francia",
+                "pl": "Hauts-de-France",
+                "sv": "Hauts-de-France"
+            }
+        },
+        {
+            "name": "Île-de-France",
+            "code": "fr-idf",
+            "country": "fr",
+            "population": 12450849,
+            "area": 12012.27,
+            "translation": {
+                "cs": "Île-de-France",
+                "de": "Île-de-France",
+                "en": "Île-de-France",
+                "es": "Isla de Francia",
+                "fr": "Île-de-France",
+                "hr": "Île-de-France",
+                "it": "Île-de-France",
+                "pl": "Île-de-France",
+                "sv": "Île-de-France"
+            }
+        },
+        {
+            "name": "Corsica",
+            "code": "fr-20r",
+            "country": "fr",
+            "population": 351276,
+            "area": 8759.82,
+            "translation": {
+                "cs": "Korsika",
+                "de": "Korsika",
+                "en": "Corsica",
+                "es": "Córcega",
+                "fr": "Corse",
+                "hr": "Korzika",
+                "it": "Corsica",
+                "pl": "Korsyka",
+                "sv": "Korsika"
+            }
+        },
+        {
+            "name": "Martinique",
+            "code": "fr-972",
+            "country": "fr",
+            "population": 347686,
+            "area": 1108.01,
+            "translation": {
+                "cs": "Martinik",
+                "de": "Martinique",
+                "en": "Martinique",
+                "es": "Martinica",
+                "fr": "Martinique",
+                "hr": "Martinik",
+                "it": "Martinica",
+                "pl": "Martynika",
+                "sv": "Martinique"
+            }
+        },
+        {
+            "name": "Mayotte",
+            "code": "fr-976",
+            "country": "fr",
+            "population": 256518,
+            "area": 376.78,
+            "translation": {
+                "cs": "Mayotte",
+                "de": "Mayotte",
+                "en": "Mayotte",
+                "es": "Mayotte",
+                "fr": "Mayotte",
+                "hr": "Mayotte",
+                "it": "Mayotte",
+                "pl": "Majotta",
+                "sv": "Mayotte"
+            }
+        },
+        {
+            "name": "Normandy",
+            "code": "fr-nor",
+            "country": "fr",
+            "population": 3339074,
+            "area": 30149.17,
+            "translation": {
+                "cs": "Normandie",
+                "de": "Normandie",
+                "en": "Normandy",
+                "es": "Región de Normandía",
+                "fr": "Normandie",
+                "hr": "Donja Normandija",
+                "it": "Normandia",
+                "pl": "Normandia",
+                "sv": "Normandie"
+            }
+        },
+        {
+            "name": "Nouvelle-Aquitaine",
+            "code": "fr-naq",
+            "country": "fr",
+            "population": 6113384,
+            "area": 84749.10,
+            "translation": {
+                "cs": "Nová Akvitánie",
+                "de": "Nouvelle-Aquitaine",
+                "en": "Nouvelle-Aquitaine",
+                "es": "Nueva Aquitania",
+                "fr": "Nouvelle-Aquitaine",
+                "hr": "Nova Akvitanija",
+                "it": "Nuova Aquitania",
+                "pl": "Nowa Akwitania",
+                "sv": "Nouvelle-Aquitaine"
+            }
+        },
+        {
+            "name": "Occitania",
+            "code": "fr-occ",
+            "country": "fr",
+            "population": 6080731,
+            "area": 73412.15,
+            "translation": {
+                "cs": "Okcitánie",
+                "de": "Okzitanien",
+                "en": "Occitania",
+                "es": "Región de Occitania",
+                "fr": "Occitanie",
+                "hr": "Akvitanija",
+                "it": "Occitania",
+                "pl": "Oksytania",
+                "sv": "Occitanien"
+            }
+        },
+        {
+            "name": "Pays de la Loire",
+            "code": "fr-pdl",
+            "country": "fr",
+            "population": 3879216,
+            "area": 32363.53,
+            "translation": {
+                "cs": "Pays de la Loire",
+                "de": "Pays de la Loire",
+                "en": "Pays de la Loire",
+                "es": "Países del Loira",
+                "fr": "Pays de la Loire",
+                "hr": "Zemlja Loire",
+                "it": "Paesi della Loira",
+                "pl": "Kraj Loary",
+                "sv": "Pays de la Loire"
+            }
+        },
+        {
+            "name": "Provence-Alpes-Côte d'Azur",
+            "code": "fr-pac",
+            "country": "fr",
+            "population": 5170312,
+            "area": 31688.83,
+            "translation": {
+                "cs": "Provence-Alpes-Côte d'Azur",
+                "de": "Provence-Alpes-Côte d’Azur",
+                "en": "Provence-Alpes-Côte d'Azur",
+                "es": "Provenza-Alpes-Costa Azul",
+                "fr": "Provence-Alpes-Côte d'Azur",
+                "hr": "Provansa-Alpe-Azurna obala",
+                "it": "Provenza-Alpi-Costa Azzurra",
+                "pl": "Prowansja-Alpy-Lazurowe Wybrzeże",
+                "sv": "Provence-Alpes-Côte d'Azur"
+            }
+        },
+        {
+            "name": "Réunion",
+            "code": "fr-974",
+            "country": "fr",
+            "population": 881348,
+            "area": 2503.08,
+            "translation": {
+                "cs": "Réunion",
+                "de": "Réunion",
+                "en": "Réunion",
+                "es": "Reunión",
+                "fr": "La Réunion",
+                "hr": "Réunion",
+                "it": "La Riunione",
+                "pl": "Reunion",
+                "sv": "Réunion"
+            }
+        }
+    ]
+}
