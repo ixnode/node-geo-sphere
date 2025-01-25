@@ -123,7 +123,7 @@ export const getStateDataByState = (
     if (svgPoint) {
         data.svgPosition = {
             x: svgPoint.x,
-            y: svgPoint.y,
+            y: -svgPoint.y,
         }
     }
 

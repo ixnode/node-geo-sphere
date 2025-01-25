@@ -146,7 +146,10 @@ export class DataConverter {
             type: "Feature",
             geometry: {
                 type: "Point",
-                coordinates: [city.coordinate.longitude, city.coordinate.latitude],
+                coordinates: [
+                    city.coordinateDisplay?.longitude ?? city.coordinate.longitude,
+                    city.coordinateDisplay?.latitude ?? city.coordinate.latitude
+                ]
             },
             properties: {
                 name: city.name,

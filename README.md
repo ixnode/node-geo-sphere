@@ -88,18 +88,18 @@ The callback function logs something like (according to the clicked country and 
 
 ```json
 {
-  "id": "de",
-  "name": "Germany",
-  "latitude": 50.304018990688554,
-  "longitude": 7.5794992771470975,
-  "screenPosition": {
-    "x": 401,
-    "y": 333
-  },
-  "svgPosition": {
-    "x": 843746,
-    "y": 6499094
-  }
+    "id": "de",
+    "name": "Germany",
+    "latitude": 50.304018990688554,
+    "longitude": 7.5794992771470975,
+    "screenPosition": {
+        "x": 401,
+        "y": 333
+    },
+    "svgPosition": {
+        "x": 843746,
+        "y": 6499094
+    }
 }
 ```
 
@@ -135,23 +135,33 @@ const App = () => (
 export default App;
 ```
 
-The callback function logs something like (according to the clicked country and the given language):
+The callback function logs something like (according to the clicked place and the given language):
 
 ```json
 {
-  "id": "place-berlin",
-  "latitude": 52.5235,
-  "longitude": 13.4115,
-  "name": "Berlin",
-  "population": 3662381,
-  "screenPosition": {
-    "x": 629,
-    "y": 295 
-  },
-  "svgPosition": {
-    "x": 1580.7000732421875,
-    "y": 6909.73095703125
-  }
+    "id": "place-berlin",
+    "latitude": 52.5235,
+    "longitude": 13.4115,
+    "name": "Berlin",
+    "population": 3662381, 
+    "country": {
+        "id": "de",
+        "name": "Germany"
+    },
+    "state": {
+        "id": "de-be",
+        "name": "Berlin",
+        "area": 891.1,
+        "population": 3662381
+    },
+    "screenPosition": {
+        "x": 629,
+        "y": 295 
+    },
+    "svgPosition": {
+        "x": 1580.7000732421875,
+        "y": 6909.73095703125
+    }
 }
 ```
 

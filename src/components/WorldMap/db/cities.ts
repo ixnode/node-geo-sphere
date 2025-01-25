@@ -37,22 +37,28 @@ export type TypeCityCoordinate = {
 };
 
 /**
-* City type
-*/
+ * City type
+ *
+ * @see: JSON schema - src/components/WorldMap/db/cities/_schema/cities.schema.json
+ */
 export type TypeCity = {
-    coordinate: TypeCityCoordinate;
-    priority: number;
-    size: TypeCitySize;
-
-    country: string;
-    type: TypeCityType;
-
+    /* General properties. */
     name: string;
+    type: TypeCityType;
     state: string|null;
+    country: string;
 
+    /* Other properties. */
+    coordinate: TypeCityCoordinate;
+    coordinateDisplay?: TypeCityCoordinate;
+    priority: number;
+    population: number|null;
+
+    /* Translations. */
     translation: TypeTranslation;
 
-    population: number|null;
+    /* Styles. */
+    size: TypeCitySize;
 }
 
 /**
@@ -151,7 +157,7 @@ export const getPlaceDataByPlace = (
     if (svgPoint) {
         data.svgPosition = {
             x: svgPoint.x,
-            y: svgPoint.y,
+            y: -svgPoint.y,
         }
     }
 

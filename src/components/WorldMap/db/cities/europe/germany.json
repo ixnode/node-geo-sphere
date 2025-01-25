@@ -197,10 +197,14 @@
             "name": "Mainz",
             "state": "de-rp",
             "priority": 2,
-            "size": "smaller",
+            "size": "standard",
             "coordinate": {
                 "longitude": 8.2473,
                 "latitude": 49.9929
+            },
+            "coordinateDisplay": {
+                "longitude": 8.2473,
+                "latitude": 49.8929
             },
             "country": "de",
             "type": "state-capital",
@@ -249,6 +253,10 @@
             "coordinate": {
                 "longitude": 13.0636,
                 "latitude": 52.3918
+            },
+            "coordinateDisplay": {
+                "longitude": 13.0636,
+                "latitude": 52.3418
             },
             "country": "de",
             "type": "state-capital",
@@ -341,7 +349,7 @@
             "name": "Wiesbaden",
             "state": "de-he",
             "priority": 2,
-            "size": "smaller",
+            "size": "standard",
             "coordinate": {
                 "longitude": 8.2398,
                 "latitude": 50.0782

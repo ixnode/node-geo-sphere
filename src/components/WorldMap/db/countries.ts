@@ -21,6 +21,7 @@ import {defaultLanguage} from "../../../config/config";
 import {getTranslatedName} from "../tools/language";
 import {textNotAvailable} from "../tools/interaction";
 import {TypeCity} from "./cities";
+import {CoordinateConverter} from "../classes/CoordinateConverter";
 
 /**
  * General types.
@@ -74,28 +75,28 @@ export const getCountryMap = (): TypeCountryData => {
 };
 
 /**
- * Get country by given country code.
+ * Get country by given country id (code).
  */
-export const getCountryByCountryCode = (countryCode: string|null): TypeCountry|null => {
+export const getCountryByCountryId = (countryId: string|null): TypeCountry|null => {
 
-    if (countryCode === null) {
+    if (countryId === null) {
         return null;
     }
 
     const countryMap = getCountryMap();
 
-    if (!(countryCode in countryMap)) {
+    if (!(countryId in countryMap)) {
         return null;
     }
 
-    return countryMap[countryCode];
+    return countryMap[countryId];
 };
 
 /**
  * Get country by given place
  */
 export const getCountryByPlace = (place: TypeCity): TypeCountry|null => {
-    return getCountryByCountryCode(place.country);
+    return getCountryByCountryId(place.country);
 }
 
 /**
@@ -118,6 +119,7 @@ export const getCountryDataByCountry = (
         name: getTranslatedName(country, language),
     };
 
+    /* Add screen point. */
     if (point) {
         data.screenPosition = {
             x: point.x,
@@ -125,11 +127,19 @@ export const getCountryDataByCountry = (
         }
     }
 
+    /* Add svg point. */
     if (svgPoint) {
+
+        /* Transform svg coordinates (mercator) to wgs84. */
+        const coordinateConverter = new CoordinateConverter();
+        const pointWgs84 = coordinateConverter.convertCoordinateMercatorToWgs84([svgPoint.x, -svgPoint.y]);
+
         data.svgPosition = {
             x: svgPoint.x,
-            y: svgPoint.y,
-        }
+            y: -svgPoint.y,
+        };
+        data.latitude = pointWgs84[1];
+        data.longitude = pointWgs84[0];
     }
 
     return data;

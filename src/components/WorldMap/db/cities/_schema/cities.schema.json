@@ -8,64 +8,76 @@
         },
         "data": {
             "type": "array",
-            "minItems": 1,
+            "minItems": 0,
             "items": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string"
-                    },
-                    "state": {
-                        "type": ["string", "null"]
-                    },
-                    "priority": {
-                        "type": "integer",
-                        "enum": [1, 2, 3]
-                    },
-                    "size": {
-                        "type": "string",
-                        "enum": ["standard", "smaller", "bigger"]
-                    },
-                    "coordinate": {
-                        "type": "object",
-                        "properties": {
-                            "latitude": {
-                                "type": "number"
-                            },
-                            "longitude": {
-                                "type": "number"
-                            }
-                        },
-                        "required": ["latitude", "longitude"],
-                        "additionalProperties": false
-                    },
-                    "country" : {
-                        "type": "string",
-                        "pattern": "^[a-z]{2}$"
-                    },
-                    "type": {
-                        "type": "string",
-                        "enum": ["capital", "state-capital", "city"]
-                    },
-                    "population": {
-                        "type": ["number", "null"]
-                    },
-                    "translation": {
-                        "type": "object",
-                        "patternProperties": {
-                            "^(cs|de|en|es|fr|hr|it|pl|sv)$": {
-                                "type": ["string", "null"]
-                            }
-                        },
-                        "required": ["cs", "de", "en", "es", "fr", "hr", "it", "pl", "sv"],
-                        "additionalProperties": false
-                    }
-                },
-                "required": ["name", "state", "priority", "size", "coordinate", "country", "type", "population", "translation"],
-                "additionalProperties": false
+                "$ref": "#/definitions/City"
             }
         }
     },
     "required": ["data"],
-    "additionalProperties": false
+    "additionalProperties": false,
+
+    "definitions": {
+        "City": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": ["string", "null"]
+                },
+                "priority": {
+                    "type": "integer",
+                    "enum": [1, 2, 3]
+                },
+                "size": {
+                    "type": "string",
+                    "enum": ["standard", "smaller", "bigger"]
+                },
+                "coordinate": {
+                    "$ref": "#/definitions/Coordinate"
+                },
+                "coordinateDisplay": {
+                    "$ref": "#/definitions/Coordinate"
+                },
+                "country": {
+                    "type": "string",
+                    "pattern": "^[a-z]{2}$"
+                },
+                "type": {
+                    "type": "string",
+                    "enum": ["capital", "state-capital", "city"]
+                },
+                "population": {
+                    "type": ["number", "null"]
+                },
+                "translation": {
+                    "type": "object",
+                    "patternProperties": {
+                        "^(cs|de|en|es|fr|hr|it|pl|sv)$": {
+                            "type": ["string", "null"]
+                        }
+                    },
+                    "required": ["cs", "de", "en", "es", "fr", "hr", "it", "pl", "sv"],
+                    "additionalProperties": false
+                }
+            },
+            "required": ["name", "state", "priority", "size", "coordinate", "country", "type", "population", "translation"],
+            "additionalProperties": false
+        },
+        "Coordinate": {
+            "type": "object",
+            "properties": {
+                "latitude": {
+                    "type": "number"
+                },
+                "longitude": {
+                    "type": "number"
+                }
+            },
+            "required": ["latitude", "longitude"],
+            "additionalProperties": false
+        }
+    }
 }

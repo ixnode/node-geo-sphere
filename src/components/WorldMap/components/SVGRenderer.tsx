@@ -59,7 +59,6 @@ import {TypeLanguagesSupported} from "../../../config/types";
 import {TypeClickCountry, TypeClickPlace, TypeDataSource, TypeSvgContent} from "../types/types";
 
 /* Import classes. */
-import {CoordinateConverter} from "../classes/CoordinateConverter";
 import {WorldMapSvg} from "../classes/WorldMapSvg";
 
 /* Import tools. */
@@ -80,7 +79,13 @@ import {
 } from "../tools/interaction";
 
 /* Import db data and types. */
-import {getCountryByCountryCode, getCountryByPlace, getCountryMap, TypeCountryData} from "../db/countries";
+import {
+    getCountryByCountryId,
+    getCountryByPlace,
+    getCountryDataByCountry,
+    getCountryMap,
+    TypeCountryData
+} from "../db/countries";
 import {getCityMap, getPlaceByPlaceId, getPlaceDataByPlace, TypeCityData} from "../db/cities";
 import {getStateByPlace} from "../db/states";
 
@@ -1243,10 +1248,12 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             return;
         }
 
+        /* Country variables. */
         const countryId = element.id;
+        const countryData = getCountryByCountryId(countryId);
 
         /* No country map found. */
-        if (!(countryId in countryMap.current)) {
+        if (!countryData) {
             onClickCountry({
                 id: countryId
             });
@@ -1254,41 +1261,11 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             return;
         }
 
-        /* Get country map data. */
-        const countryData = countryMap.current[countryId];
-
         /* Build click (callback) data. */
-        const clickData: CountryData = {
-            id: countryId,
-            name: getTranslatedName(countryData, languageReference.current)
-        };
-
-        /* Add point (screen position). */
-        if (point !== null) {
-            clickData.screenPosition = {
-                x: point.x,
-                y: point.y
-            };
-        }
-
-        /* Add svg and wgs84 point. */
-        if (svgPoint !== null) {
-
-            /* Transform svg coordinates (mercator) to wgs84. */
-            const coordinateConverter = new CoordinateConverter();
-            const pointWgs84 = coordinateConverter.convertCoordinateMercatorToWgs84([svgPoint.x, -svgPoint.y]);
-
-            /* Add data. */
-            clickData.svgPosition = {
-                x: svgPoint.x,
-                y: -svgPoint.y
-            };
-            clickData.latitude = pointWgs84[1];
-            clickData.longitude = pointWgs84[0];
-        }
+        const data: CountryData = getCountryDataByCountry(countryData, point, svgPoint, languageReference.current);
 
         /* Return date from clicked map. */
-        onClickCountry(clickData);
+        onClickCountry(data);
     };
 
     /**
@@ -1319,10 +1296,12 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             return;
         }
 
+        /* Place variables. */
         const placeId = element.id;
+        const placeData = getPlaceByPlaceId(placeId);
 
-        /* No cityMap found. */
-        if (!(placeId in cityMap.current)) {
+        /* The place was not found -> return empty data. */
+        if (!placeData) {
             onClickPlace({
                 id: placeId
             });
@@ -1330,40 +1309,11 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             return;
         }
 
-        /* Get city map data. */
-        const placeData = cityMap.current[placeId];
-
         /* Build click (callback) data. */
-        const clickData: PlaceData = {
-            id: placeId,
-            name: getTranslatedName(placeData, languageReference.current),
-            population: placeData.population,
-        };
-
-        /* Add point (screen position). */
-        if (point !== null) {
-            clickData.screenPosition = {
-                x: point.x,
-                y: point.y,
-            };
-        }
-
-        /* Add svg and wgs84 point. */
-        if (svgPoint !== null) {
-
-            /* Add data. */
-            clickData.svgPosition = {
-                x: svgPoint.x,
-                y: -svgPoint.y
-            };
-        }
-
-        /* Add coordinate of the clicked place. */
-        clickData.latitude = placeData.coordinate.latitude;
-        clickData.longitude = placeData.coordinate.longitude;
+        const data: PlaceData = getPlaceDataByPlace(placeData, point, svgPoint, languageReference.current);
 
         /* Return date from clicked map. */
-        onClickPlace(clickData);
+        onClickPlace(data);
     };
 
     /**
@@ -1379,10 +1329,6 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         svgPoint: SVGPoint|null = null
     ) => {
 
-        let countryId = elementPath.id;
-        let countryData = null;
-        let countryName = null;
-
         /* No svgPoint is given. */
         if (svgPoint === null) {
             return;
@@ -1393,11 +1339,10 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             return;
         }
 
-        /* countryMap value found. */
-        if (countryId in countryMap.current) {
-            countryData = countryMap.current[countryId];
-            countryName = getTranslatedName(countryData, languageReference.current);
-        }
+        /* Country variables. */
+        let countryId = elementPath.id;
+        let countryData = getCountryByCountryId(countryId);
+        let countryName = countryData ? getTranslatedName(countryData, languageReference.current) : null;
 
         /* Remove hover class from all svg.path[class=country] and svg.circle[class=place] elements. */
         removeHoverClassPathCountry();
@@ -1412,19 +1357,11 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         removeSubtitle();
 
         /* Execute hover callback. */
-        if (onHoverCountry !== null && (countryId in countryMap.current) && countryId !== lastHoverCountryId.current) {
-            onHoverCountry({
-                id: countryId,
-                name: countryName,
-                screenPosition: {
-                    x: point?.x,
-                    y: point?.y,
-                },
-                svgPosition: {
-                    x: svgPoint.x,
-                    y: svgPoint.y,
-                }
-            } as CountryData);
+        if (onHoverCountry !== null && countryData && countryId !== lastHoverCountryId.current) {
+            const data: CountryData = getCountryDataByCountry(countryData, point, svgPoint, languageReference.current);
+
+            /* Execute hover callback. */
+            onHoverCountry(data);
 
             /* Set last hover id. */
             lastHoverPlaceId.current = null;
@@ -1553,12 +1490,7 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
 
         /* Execute hover callback. */
         if (onHoverPlace !== null && placeData && placeId !== lastHoverPlaceId.current) {
-            let data: PlaceData = getPlaceDataByPlace(
-                placeData,
-                point,
-                svgPoint,
-                languageReference.current
-            );
+            const data: PlaceData = getPlaceDataByPlace(placeData, point, svgPoint, languageReference.current);
 
             /* Execute hover callback. */
             onHoverPlace(data);
@@ -1573,21 +1505,18 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
             return;
         }
 
-        let debugContent: DebugContent = {
+        /* Log position and element type. */
+        setDebugContent({
             "mouse position x": svgPoint.x,
             "mouse position y": -svgPoint.y,
             "type": elementG.tagName,
             "id": placeId,
             "name": placeName,
-        } as DebugContent;
-
-        if (countryId) {
-            debugContent["id (ctry.)"] = countryId;
-            debugContent["name (ctry.)"] = countryName ?? textNotAvailable;
-        }
-
-        /* Log position and element type. */
-        setDebugContent(debugContent);
+            ...(countryId && {
+                "id (ctry.)": countryId,
+                "name (ctry.)": countryName ?? textNotAvailable
+            }),
+        } as DebugContent);
     }
 
 
