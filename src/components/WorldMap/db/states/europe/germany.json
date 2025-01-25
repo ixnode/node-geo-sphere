@@ -1,0 +1,293 @@
+{
+    "$schema": "../_schema/states.schema.json",
+    "data": [
+        {
+            "name": "Baden-Württemberg",
+            "code": "de-bw",
+            "country": "de",
+            "population": 11339260,
+            "area": 35751.46,
+            "translation": {
+                "cs": "Bádensko-Württembersko",
+                "de": "Baden-Württemberg",
+                "en": "Baden-Württemberg",
+                "es": "Baden-Wurtemberg",
+                "fr": "Bade-Wurtemberg",
+                "hr": "Baden-Württemberg",
+                "it": "Baden-Württemberg",
+                "pl": "Badenia-Wirtembergia",
+                "sv": "Baden-Württemberg"
+            }
+        },
+        {
+            "name": "Bayern",
+            "code": "de-by",
+            "country": "de",
+            "population": 13435062,
+            "area": 70541.57,
+            "translation": {
+                "cs": "Bavorsko",
+                "de": "Bayern",
+                "en": "Bavaria",
+                "es": "Baviera",
+                "fr": "Bavière",
+                "hr": "Bavarska",
+                "it": "Baviera",
+                "pl": "Bawaria",
+                "sv": "Bayern"
+            }
+        },
+        {
+            "name": "Berlin",
+            "code": "de-be",
+            "country": "de",
+            "population": 3662381,
+            "area": 891.1,
+            "translation": {
+                "cs": "Berlín",
+                "de": "Berlin",
+                "en": "Berlin",
+                "es": "Berlín",
+                "fr": "Berlin",
+                "hr": "Berlin",
+                "it": "Berlino",
+                "pl": "Berlin",
+                "sv": "Berlin"
+            }
+        },
+        {
+            "name": "Brandenburg",
+            "code": "de-bb",
+            "country": "de",
+            "population": 2581667,
+            "area": 29654.16,
+            "translation": {
+                "cs": "Braniborsko",
+                "de": "Brandenburg",
+                "en": "Brandenburg",
+                "es": "Brandeburgo",
+                "fr": "Brandebourg",
+                "hr": "Brandenburg",
+                "it": "Brandeburgo",
+                "pl": "Brandenburgia",
+                "sv": "Brandenburg"
+            }
+        },
+        {
+            "name": "Bremen",
+            "code": "de-hb",
+            "country": "de",
+            "population": 691703,
+            "area": 419.38,
+            "translation": {
+                "cs": "Brémy",
+                "de": "Bremen",
+                "en": "Bremen",
+                "es": "Bremen",
+                "fr": "Brême",
+                "hr": "Bremen",
+                "it": "Brema",
+                "pl": "Brema",
+                "sv": "Bremen"
+            }
+        },
+        {
+            "name": "Hamburg",
+            "code": "de-hh",
+            "country": "de",
+            "population": 1910160,
+            "area": 755.09,
+            "translation": {
+                "cs": "Hamburk",
+                "de": "Hamburg",
+                "en": "Hamburg",
+                "es": "Hamburgo",
+                "fr": "Hambourg",
+                "hr": "Hamburg",
+                "it": "Amburgo",
+                "pl": "Hamburg",
+                "sv": "Hamburg"
+            }
+        },
+        {
+            "name": "Hessen",
+            "code": "de-he",
+            "country": "de",
+            "population": 6420729,
+            "area": 21114.94,
+            "translation": {
+                "cs": "Hesensko",
+                "de": "Hessen",
+                "en": "Hesse",
+                "es": "Hesse",
+                "fr": "Hesse",
+                "hr": "Hessen",
+                "it": "Assia",
+                "pl": "Hesja",
+                "sv": "Hessen"
+            }
+        },
+        {
+            "name": "Mecklenburg-Vorpommern",
+            "code": "de-mv",
+            "country": "de",
+            "population": 1629464,
+            "area": 23213,
+            "translation": {
+                "cs": "Meklenbursko-Přední Pomořansko",
+                "de": "Mecklenburg-Vorpommern",
+                "en": "Mecklenburg-Vorpommern",
+                "es": "Mecklemburgo-Pomerania Occidental",
+                "fr": "Mecklembourg-Poméranie-Occidentale",
+                "hr": "Mecklenburg-Zapadno Pomorje",
+                "it": "Meclemburgo-Pomerania Anteriore",
+                "pl": "Meklemburgia-Pomorze Przednie",
+                "sv": "Mecklenburg-Vorpommern"
+            }
+        },
+        {
+            "name": "Niedersachsen",
+            "code": "de-ni",
+            "country": "de",
+            "population": 8161981,
+            "area": 47709.82,
+            "translation": {
+                "cs": "Dolní Sasko",
+                "de": "Niedersachsen",
+                "en": "Lower Saxony",
+                "es": "Baja Sajonia",
+                "fr": "Basse-Saxe",
+                "hr": "Donja Saska",
+                "it": "Bassa Sassonia",
+                "pl": "Dolna Saksonia",
+                "sv": "Niedersachsen"
+            }
+        },
+        {
+            "name": "Nordrhein-Westfalen",
+            "code": "de-nw",
+            "country": "de",
+            "population": 18190422,
+            "area": 34110.26,
+            "translation": {
+                "cs": "Severní Porýní-Vestfálsko",
+                "de": "Nordrhein-Westfalen",
+                "en": "North Rhine-Westphalia",
+                "es": "Renania del Norte-Westfalia",
+                "fr": "Rhénanie-du-Nord-Westphalie",
+                "hr": "Sjeverna Rajna-Vestfalija",
+                "it": "Renania Settentrionale-Vestfalia",
+                "pl": "Nadrenia Północna-Westfalia",
+                "sv": "Nordrhein-Westfalen"
+            }
+        },
+        {
+            "name": "Rheinland-Pfalz",
+            "code": "de-rp",
+            "country": "de",
+            "population": 4174311,
+            "area": 19854.21,
+            "translation": {
+                "cs": "Porýní-Falc",
+                "de": "Rheinland-Pfalz",
+                "en": "Rhineland-Palatinate",
+                "es": "Renania-Palatinado",
+                "fr": "Rhénanie-Palatinat",
+                "hr": "Porajnje-Falačka",
+                "it": "Renania-Palatinato",
+                "pl": "Nadrenia-Palatynat",
+                "sv": "Rheinland-Pfalz"
+            }
+        },
+        {
+            "name": "Saarland",
+            "code": "de-sl",
+            "country": "de",
+            "population": 1006870,
+            "area": 2569.69,
+            "translation": {
+                "cs": "Sársko",
+                "de": "Saarland",
+                "en": "Saarland",
+                "es": "Sarre",
+                "fr": "Sarre",
+                "hr": "Saarska",
+                "it": "Saarland",
+                "pl": "Saara",
+                "sv": "Saarland"
+            }
+        },
+        {
+            "name": "Sachsen",
+            "code": "de-sn",
+            "country": "de",
+            "population": 4089467,
+            "area": 18449.9,
+            "translation": {
+                "cs": "Sasko",
+                "de": "Sachsen",
+                "en": "Saxony",
+                "es": "Sajonia",
+                "fr": "Saxe",
+                "hr": "Saska",
+                "it": "Sassonia",
+                "pl": "Saksonia",
+                "sv": "Sachsen"
+            }
+        },
+        {
+            "name": "Sachsen-Anhalt",
+            "code": "de-st",
+            "country": "de",
+            "population": 2180448,
+            "area": 20451.58,
+            "translation": {
+                "cs": "Sasko-Anhaltsko",
+                "de": "Sachsen-Anhalt",
+                "en": "Saxony-Anhalt",
+                "es": "Sajonia-Anhalt",
+                "fr": "Saxe-Anhalt",
+                "hr": "Saska-Anhalt",
+                "it": "Sassonia-Anhalt",
+                "pl": "Saksonia-Anhalt",
+                "sv": "Sachsen-Anhalt"
+            }
+        },
+        {
+            "name": "Schleswig-Holstein",
+            "code": "de-sh",
+            "country": "de",
+            "population": 2965691,
+            "area": 15799.65,
+            "translation": {
+                "cs": "Šlesvicko-Holštýnsko",
+                "de": "Schleswig-Holstein",
+                "en": "Schleswig-Holstein",
+                "es": "Schleswig-Holstein",
+                "fr": "Schleswig-Holstein",
+                "hr": "Schleswig-Holstein",
+                "it": "Schleswig-Holstein",
+                "pl": "Szlezwik-Holsztyn",
+                "sv": "Schleswig-Holstein"
+            }
+        },
+        {
+            "name": "Thüringen",
+            "code": "de-th",
+            "country": "de",
+            "population": 2122335,
+            "area": 16202.33,
+            "translation": {
+                "cs": "Durynsko",
+                "de": "Thüringen",
+                "en": "Thuringia",
+                "es": "Turingia",
+                "fr": "Thuringe",
+                "hr": "Tiringija",
+                "it": "Turingia",
+                "pl": "Turyngia",
+                "sv": "Thüringen"
+            }
+        }
+    ]
+}
