@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Changelogs
 
+### [0.1.40] - 2025-01-26
+
+* Set som zoom bounding box factors and crop bounding box settings for some countries
+
 ### [0.1.39] - 2025-01-26
 
 * Add zoom bounding box factor for liechtenstein
