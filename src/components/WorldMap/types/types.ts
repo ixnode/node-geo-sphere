@@ -55,7 +55,9 @@ export type TypeFeature = {
     properties: TypeProperties;
 };
 
-export type TypeShowBoundingBox = TypePoint[];
+export type TypeCropBoundingBox = TypePoint[];
+
+export type TypeZoomGapBoundingBoxFactor = [number, number];
 
 export interface InterfaceGeoJson extends FeatureCollection {
     type: "FeatureCollection";

@@ -8,7 +8,7 @@ import {
     TypeLine,
     TypeMultiPolygon,
     TypePoint,
-    TypePolygon, TypeShowBoundingBox
+    TypePolygon, TypeCropBoundingBox
 } from "../types/types";
 import {CoordinateConverter} from "./CoordinateConverter";
 
@@ -100,9 +100,9 @@ export class BoundingBox {
      * Calculates the bounding box from the given feature.
      *
      * @param feature
-     * @param showBoundingBox
+     * @param cropBoundingBox
      */
-    private calculateBoundingBoxCountry(feature: TypeFeature, showBoundingBox: TypeShowBoundingBox|null = null): TypeBoundingBox {
+    private calculateBoundingBoxCountry(feature: TypeFeature, cropBoundingBox: TypeCropBoundingBox|null = null): TypeBoundingBox {
         const geometry = feature.geometry;
 
         if (this.geometryChecker.isTypePointGeometry(geometry)) {
@@ -118,7 +118,7 @@ export class BoundingBox {
         }
 
         if (this.geometryChecker.isTypeMultiPolygonGeometry(geometry)) {
-            return this.calculateBoundingBoxFromMultiPolygon(geometry.coordinates, showBoundingBox);
+            return this.calculateBoundingBoxFromMultiPolygon(geometry.coordinates, cropBoundingBox);
         }
 
         throw new Error('Invalid geometry type');
@@ -163,7 +163,7 @@ export class BoundingBox {
         dataIdMap: TypeFeatureMap,
         boundingType: TypeBoundingBoxType,
         countryKey: TypeCountryKey,
-        showBoundingBox: TypeShowBoundingBox|null = null
+        cropBoundingBox: TypeCropBoundingBox|null = null
     ): TypeBoundingBox {
         let boundingBox = this.calculateBoundingBoxEmpty();
 
@@ -181,7 +181,7 @@ export class BoundingBox {
                     throw new Error('Unsupported case. Country must not be null.');
                 }
 
-                boundingBox = this.calculateBoundingBoxCountry(dataIdMap[countryKey], showBoundingBox);
+                boundingBox = this.calculateBoundingBoxCountry(dataIdMap[countryKey], cropBoundingBox);
                 break
         }
 
@@ -328,9 +328,9 @@ export class BoundingBox {
      * Calculates the bounding box from the given multipolygon.
      *
      * @param multipolygon
-     * @param showBoundingBox
+     * @param cropBoundingBox
      */
-    private calculateBoundingBoxFromMultiPolygon(multipolygon: TypeMultiPolygon, showBoundingBox: TypeShowBoundingBox|null = null): TypeBoundingBox {
+    private calculateBoundingBoxFromMultiPolygon(multipolygon: TypeMultiPolygon, cropBoundingBox: TypeCropBoundingBox|null = null): TypeBoundingBox {
         let longitudeMin = Infinity,
             latitudeMin = Infinity,
             longitudeMax = -Infinity,
@@ -341,11 +341,11 @@ export class BoundingBox {
         let coordinateLongitudeMax = null;
         let coordinateLatitudeMax = null;
 
-        if (showBoundingBox !== null) {
+        if (cropBoundingBox !== null) {
             const coordinateConverter = new CoordinateConverter();
 
-            const coordinateMin = coordinateConverter.convertCoordinateWgs84ToMercator(showBoundingBox[0]);
-            const coordinateMax = coordinateConverter.convertCoordinateWgs84ToMercator(showBoundingBox[1]);
+            const coordinateMin = coordinateConverter.convertCoordinateWgs84ToMercator(cropBoundingBox[0]);
+            const coordinateMax = coordinateConverter.convertCoordinateWgs84ToMercator(cropBoundingBox[1]);
 
             coordinateLongitudeMin = coordinateMin[0];
             coordinateLatitudeMin = coordinateMin[1];

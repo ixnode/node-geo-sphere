@@ -9,15 +9,15 @@ import {
     TypeCountryKey,
     TypeDataSource,
     TypeFeatureMap,
-    TypeShowBoundingBox,
-    TypeSvgContent
+    TypeCropBoundingBox,
+    TypeSvgContent, TypeZoomGapBoundingBoxFactor
 } from "../types/types";
 
 /* Import classes. */
 import {BoundingBox} from "./BoundingBox";
 import {DataConverter} from "./DataConverter";
 import {GeoJson2Path} from "./GeoJson2Path";
-import {countryCropBoundingBox} from "../config/countries";
+import {countryCropBoundingBox, zoomGapBoundingBoxFactor} from "../config/countries";
 
 /* WorldMapSvgOptions interface. */
 interface WorldMapSvgOptions {
@@ -201,7 +201,7 @@ export class WorldMapSvg {
         let boundingType = this.boundingBox.getBoundingType(this.country, this.countryKey, this.zoomCountry);
 
         /* Get country crop bounding box. */
-        const showBoundingBox: TypeShowBoundingBox|null = country !== null && (country in countryCropBoundingBox) ?
+        const cropBoundingBox: TypeCropBoundingBox|null = country !== null && (country in countryCropBoundingBox) ?
             countryCropBoundingBox[country] :
             null;
 
@@ -210,11 +210,21 @@ export class WorldMapSvg {
             this.dataIdMap,
             boundingType,
             this.countryKey,
-            showBoundingBox
+            cropBoundingBox
         );
 
-        const factorGapLongitude = boundingType === 'country' ? this.zoomGapBoundingBoxLongitudeFactor : this.zoomGapBoundingBoxLongitudeFactorAll;
-        const factorGapLatitude = boundingType === 'country' ? this.zoomGapBoundingBoxLatitudeFactor : this.zoomGapBoundingBoxLatitudeFactorAll;
+        /* Get country crop bounding box. */
+        const zoomBoundingBoxFactor: TypeZoomGapBoundingBoxFactor|null = country !== null && (country in zoomGapBoundingBoxFactor) ?
+            zoomGapBoundingBoxFactor[country] :
+            null;
+
+        let factorGapLongitude = boundingType === 'country' ? this.zoomGapBoundingBoxLongitudeFactor : this.zoomGapBoundingBoxLongitudeFactorAll;
+        let factorGapLatitude = boundingType === 'country' ? this.zoomGapBoundingBoxLatitudeFactor : this.zoomGapBoundingBoxLatitudeFactorAll;
+
+        if (zoomBoundingBoxFactor !== null) {
+            factorGapLongitude = zoomBoundingBoxFactor[0];
+            factorGapLatitude = zoomBoundingBoxFactor[1];
+        }
 
         /* Centers the bounding box to output svg and add a gap. */
         boundingBox = this.boundingBox.centerBoundingBox(

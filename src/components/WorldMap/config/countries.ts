@@ -1,8 +1,8 @@
 /* Import types. */
-import {TypeShowBoundingBox} from "../types/types";
+import {TypeCropBoundingBox, TypeZoomGapBoundingBoxFactor} from "../types/types";
 
 /* Crop bounding box. */
-export const countryCropBoundingBox: Record<string, TypeShowBoundingBox> = {
+export const countryCropBoundingBox: Record<string, TypeCropBoundingBox> = {
 
     /* Zoom bounding box for france. */
     fr: [
@@ -15,4 +15,11 @@ export const countryCropBoundingBox: Record<string, TypeShowBoundingBox> = {
         [-180, 24], /* longitude and latitude min. */
         [-66, 72]  /* longitude and latitude max. */
     ],
+}
+
+/* Zoom bounding box gap. */
+export const zoomGapBoundingBoxFactor: Record<string, TypeZoomGapBoundingBoxFactor> = {
+
+    /* Zoom bounding box for liechtenstein. */
+    li: [20., 20.]
 }
