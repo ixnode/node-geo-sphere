@@ -53,6 +53,9 @@
                 "population": {
                     "type": ["number", "null"]
                 },
+                "area": {
+                    "type": ["number", "null"]
+                },
                 "translation": {
                     "type": "object",
                     "patternProperties": {

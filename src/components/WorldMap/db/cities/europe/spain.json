@@ -1,0 +1,434 @@
+{
+    "$schema": "../_schema/cities.schema.json",
+    "data": [
+        {
+            "name": "Seville",
+            "state": null,
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -5.9731,
+                "latitude": 37.3828
+            },
+            "country": "es",
+            "type": "state-capital",
+            "population": 681998,
+            "area": 14131,
+            "translation": {
+                "cs": "Sevilla",
+                "de": "Sevilla",
+                "en": "Seville",
+                "es": "Sevilla",
+                "fr": "Séville",
+                "hr": "Sevilla",
+                "it": "Siviglia",
+                "pl": "Sewilla",
+                "sv": "Sevilla"
+            }
+        },
+        {
+            "name": "Zaragoza",
+            "state": null,
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -0.8830,
+                "latitude": 41.6483
+            },
+            "country": "es",
+            "type": "state-capital",
+            "population": 673010,
+            "area": 973.78,
+            "translation": {
+                "cs": "Zaragoza",
+                "de": "Saragossa",
+                "en": "Zaragoza",
+                "es": "Zaragoza",
+                "fr": "Saragosse",
+                "hr": "Zaragoza",
+                "it": "Saragozza",
+                "pl": "Saragossa",
+                "sv": "Zaragoza"
+            }
+        },
+        {
+            "name": "Oviedo",
+            "state": null,
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -5.8423,
+                "latitude": 43.3634
+            },
+            "country": "es",
+            "type": "state-capital",
+            "population": 215167,
+            "area": 186.65,
+            "translation": {
+                "cs": "Oviedo",
+                "de": "Oviedo",
+                "en": "Oviedo",
+                "es": "Oviedo",
+                "fr": "Oviedo",
+                "hr": "Oviedo",
+                "it": "Oviedo",
+                "pl": "Oviedo",
+                "sv": "Oviedo"
+            }
+        },
+        {
+            "name": "Palma de Mallorca",
+            "state": null,
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 2.6497,
+                "latitude": 39.5667
+            },
+            "country": "es",
+            "type": "state-capital",
+            "population": 415940,
+            "area": 208.63,
+            "translation": {
+                "cs": "Palma de Mallorca",
+                "de": "Palma de Mallorca",
+                "en": "Palma de Mallorca",
+                "es": "Palma de Mallorca",
+                "fr": "Palma de Majorque",
+                "hr": "Palma de Mallorca",
+                "it": "Palma di Maiorca",
+                "pl": "Palma de Mallorca",
+                "sv": "Palma de Mallorca"
+            }
+        },
+        {
+            "name": "Vitoria-Gasteiz",
+            "state": null,
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -2.6731,
+                "latitude": 42.8467
+            },
+            "country": "es",
+            "type": "state-capital",
+            "population": 253672,
+            "area": 276.81,
+            "translation": {
+                "cs": "Vitoria-Gasteiz",
+                "de": "Vitoria-Gasteiz",
+                "en": "Vitoria-Gasteiz",
+                "es": "Vitoria-Gasteiz",
+                "fr": "Vitoria-Gasteiz",
+                "hr": "Vitoria-Gazteiz",
+                "it": "Vitoria-Gasteiz",
+                "pl": "Vitoria-Gasteiz",
+                "sv": "Vitoria-Gasteiz"
+            }
+        },
+        {
+            "name": "Mérida",
+            "state": null,
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -6.3333,
+                "latitude": 38.9158
+            },
+            "country": "es",
+            "type": "state-capital",
+            "population": 59324,
+            "area": 865.61,
+            "translation": {
+                "cs": "Mérida",
+                "de": "Mérida",
+                "en": "Mérida",
+                "es": "Mérida",
+                "fr": "Mérida",
+                "hr": "Mérida",
+                "it": "Mérida",
+                "pl": "Mérida",
+                "sv": "Mérida"
+            }
+        },
+        {
+            "name": "Santiago de Compostela",
+            "state": null,
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -8.5457,
+                "latitude": 42.8805
+            },
+            "country": "es",
+            "type": "state-capital",
+            "population": 98179,
+            "area": 220.01,
+            "translation": {
+                "cs": "Santiago de Compostela",
+                "de": "Santiago de Compostela",
+                "en": "Santiago de Compostela",
+                "es": "Santiago de Compostela",
+                "fr": "Saint-Jacques-de-Compostelle",
+                "hr": "Santiago de Compostela",
+                "it": "Santiago di Compostela",
+                "pl": "Santiago de Compostela",
+                "sv": "Santiago de Compostela"
+            }
+        },
+        {
+            "name": "Santa Cruz de Tenerife",
+            "state": null,
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -16.2500,
+                "latitude": 28.4667
+            },
+            "country": "es",
+            "type": "state-capital",
+            "population": 208688,
+            "area": 150.56,
+            "translation": {
+                "cs": "Santa Cruz de Tenerife",
+                "de": "Santa Cruz de Tenerife",
+                "en": "Santa Cruz de Tenerife",
+                "es": "Santa Cruz de Tenerife",
+                "fr": "Santa Cruz de Tenerife",
+                "hr": "Santa Cruz de Tenerife",
+                "it": "Santa Cruz de Tenerife",
+                "pl": "Santa Cruz de Tenerife",
+                "sv": "Santa Cruz de Tenerife"
+            }
+        },
+        {
+            "name": "Las Palmas de Gran Canaria",
+            "state": null,
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -15.4314,
+                "latitude": 28.1272
+            },
+            "country": "es",
+            "type": "state-capital",
+            "population": 378797,
+            "area": 100.55,
+            "translation": {
+                "cs": "Las Palmas de Gran Canaria",
+                "de": "Las Palmas de Gran Canaria",
+                "en": "Las Palmas de Gran Canaria",
+                "es": "Las Palmas de Gran Canaria",
+                "fr": "Las Palmas de Grande Canarie",
+                "hr": "Las Palmas de Gran Canaria",
+                "it": "Las Palmas de Gran Canaria",
+                "pl": "Las Palmas de Gran Canaria",
+                "sv": "Las Palmas de Gran Canaria"
+            }
+        },
+        {
+            "name": "Santander",
+            "state": null,
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -3.8000,
+                "latitude": 43.4667
+            },
+            "country": "es",
+            "type": "state-capital",
+            "population": 171693,
+            "area": 34.76,
+            "translation": {
+                "cs": "Santander",
+                "de": "Santander",
+                "en": "Santander",
+                "es": "Santander",
+                "fr": "Santander",
+                "hr": "Santander",
+                "it": "Santander",
+                "pl": "Santander",
+                "sv": "Santander"
+            }
+        },
+        {
+            "name": "Valladolid",
+            "state": null,
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -4.7286,
+                "latitude": 41.6520
+            },
+            "country": "es",
+            "type": "state-capital",
+            "population": 295639,
+            "area": 197.47,
+            "translation": {
+                "cs": "Valladolid",
+                "de": "Valladolid",
+                "en": "Valladolid",
+                "es": "Valladolid",
+                "fr": "Valladolid",
+                "hr": "Valladolid",
+                "it": "Valladolid",
+                "pl": "Valladolid",
+                "sv": "Valladolid"
+            }
+        },
+        {
+            "name": "Toledo",
+            "state": null,
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -4.0167,
+                "latitude": 39.8670
+            },
+            "country": "es",
+            "type": "state-capital",
+            "population": 85085,
+            "area": 231.76,
+            "translation": {
+                "cs": "Toledo",
+                "de": "Toledo",
+                "en": "Toledo",
+                "es": "Toledo",
+                "fr": "Tolède",
+                "hr": "Toledo",
+                "it": "Toledo",
+                "pl": "Toledo",
+                "sv": "Toledo"
+            }
+        },
+        {
+            "name": "Barcelona",
+            "state": null,
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 2.1769,
+                "latitude": 41.3825
+            },
+            "country": "es",
+            "type": "state-capital",
+            "population": 1636193,
+            "area": 98.21,
+            "translation": {
+                "cs": "Barcelona",
+                "de": "Barcelona",
+                "en": "Barcelona",
+                "es": "Barcelona",
+                "fr": "Barcelone",
+                "hr": "Barcelona",
+                "it": "Barcellona",
+                "pl": "Barcelona",
+                "sv": "Barcelona"
+            }
+        },
+        {
+            "name": "Logroño",
+            "state": null,
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -2.4300,
+                "latitude": 42.4704
+            },
+            "country": "es",
+            "type": "state-capital",
+            "population": 150020,
+            "area": 79.55,
+            "translation": {
+                "cs": "Logroño",
+                "de": "Logroño",
+                "en": "Logroño",
+                "es": "Logroño",
+                "fr": "Logrogne",
+                "hr": "Logroño",
+                "it": "Logroño",
+                "pl": "Logroño",
+                "sv": "Logroño"
+            }
+        },
+        {
+            "name": "Murcia",
+            "state": null,
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -1.1415,
+                "latitude": 37.9866
+            },
+            "country": "es",
+            "type": "state-capital",
+            "population": 462979,
+            "area": 886.00,
+            "translation": {
+                "cs": "Murcia",
+                "de": "Murcia",
+                "en": "Murcia",
+                "es": "Murcia",
+                "fr": "Murcie",
+                "hr": "Murcia",
+                "it": "Murcia",
+                "pl": "Murcja",
+                "sv": "Murcia"
+            }
+        },
+        {
+            "name": "Pamplona",
+            "state": null,
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -1.6500,
+                "latitude": 42.8167
+            },
+            "coordinateDisplay": {
+                "longitude": -1.6500,
+                "latitude": 42.6667
+            },
+            "country": "es",
+            "type": "state-capital",
+            "population": 203418,
+            "area": 25.24,
+            "translation": {
+                "cs": "Pamplona",
+                "de": "Pamplona",
+                "en": "Pamplona",
+                "es": "Pamplona",
+                "fr": "Pampelune",
+                "hr": "Pamplona",
+                "it": "Pamplona",
+                "pl": "Pampeluna",
+                "sv": "Pamplona"
+            }
+        },
+        {
+            "name": "Valencia",
+            "state": null,
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": -0.3750,
+                "latitude": 39.4667
+            },
+            "country": "es",
+            "type": "state-capital",
+            "population": 792492,
+            "area": 134.63,
+            "translation": {
+                "cs": "Valencie",
+                "de": "Valencia",
+                "en": "Valencia",
+                "es": "Valencia",
+                "fr": "Valence",
+                "hr": "Valencia",
+                "it": "Valencia",
+                "pl": "Walencja",
+                "sv": "Valencia"
+            }
+        }
+    ]
+}

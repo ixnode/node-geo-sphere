@@ -8,6 +8,7 @@ import citiesOceania from './cities/oceania.json';
 /* Import europa cities. */
 import citiesEuropaFrance from './cities/europe/france.json';
 import citiesEuropaGermany from './cities/europe/germany.json';
+import citiesEuropaSpain from './cities/europe/spain.json';
 import citiesEuropaUnitedKingdom from './cities/europe/united-kingdom.json';
 
 /* Import types. */
@@ -87,6 +88,7 @@ export const getCities = (): TypeCity[] => {
         /* Europa cities. */
         ...(citiesEuropaFrance.data as TypeCity[]),
         ...(citiesEuropaGermany.data as TypeCity[]),
+        ...(citiesEuropaSpain.data as TypeCity[]),
         ...(citiesEuropaUnitedKingdom.data as TypeCity[]),
 
         /* Oceania cities. */
