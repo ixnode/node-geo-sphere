@@ -29,13 +29,13 @@ export const zoomGapBoundingBoxFactor: Record<string, TypeZoomGapBoundingBoxFact
     /* Zoom bounding box for Andorra. */
     ad: [20., 20.],
 
-    /* Zoom bounding box for Andorra. */
+    /* Zoom bounding box for Belgium */
     be: [1., 1.],
 
     /* Zoom bounding box for Liechtenstein. */
     li: [20., 20.],
 
-    /* Zoom bounding box for Liechtenstein. */
+    /* Zoom bounding box for Luxemburg. */
     lu: [10., 10.],
 
     /* Zoom bounding box for Monaco. */
