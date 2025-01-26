@@ -83,10 +83,8 @@ import {
     getCountryByCountryId,
     getCountryByPlace,
     getCountryDataByCountry,
-    getCountryMap,
-    TypeCountryData
 } from "../db/countries";
-import {getCityMap, getPlaceByPlaceId, getPlaceDataByPlace, TypeCityData} from "../db/cities";
+import {getPlaceByPlaceId, getPlaceDataByPlace} from "../db/cities";
 import {getStateByPlace} from "../db/states";
 
 /* SVGRendererProps interface. */
@@ -190,10 +188,6 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
 
     /* Delay references. */
     const delayMousePanning = useRef<number|null>(null);
-
-    /* Data references. */
-    const countryMap = useRef<TypeCountryData>(getCountryMap());
-    const cityMap = useRef<TypeCityData>(getCityMap());
 
     /* Import translation. */
     const { t } = useTranslation();

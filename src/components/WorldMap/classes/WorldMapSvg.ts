@@ -4,12 +4,20 @@ import {defaultLanguage} from "../../../config/config";
 import {TypeLanguagesSupported} from "../../../config/types";
 
 /* Import types. */
-import {InterfaceGeoJson, TypeCountryKey, TypeDataSource, TypeFeatureMap, TypeSvgContent} from "../types/types";
+import {
+    InterfaceGeoJson,
+    TypeCountryKey,
+    TypeDataSource,
+    TypeFeatureMap,
+    TypeShowBoundingBox,
+    TypeSvgContent
+} from "../types/types";
 
 /* Import classes. */
 import {BoundingBox} from "./BoundingBox";
 import {DataConverter} from "./DataConverter";
 import {GeoJson2Path} from "./GeoJson2Path";
+import {countryCropBoundingBox} from "../config/countries";
 
 /* WorldMapSvgOptions interface. */
 interface WorldMapSvgOptions {
@@ -192,11 +200,17 @@ export class WorldMapSvg {
     ): TypeSvgContent {
         let boundingType = this.boundingBox.getBoundingType(this.country, this.countryKey, this.zoomCountry);
 
+        /* Get country crop bounding box. */
+        const showBoundingBox: TypeShowBoundingBox|null = country !== null && (country in countryCropBoundingBox) ?
+            countryCropBoundingBox[country] :
+            null;
+
         /* Calculates the bounding box without gap or centering ("raw" bounding box). */
         let boundingBox = this.boundingBox.calculateBoundingBox(
             this.dataIdMap,
             boundingType,
-            this.countryKey
+            this.countryKey,
+            showBoundingBox
         );
 
         const factorGapLongitude = boundingType === 'country' ? this.zoomGapBoundingBoxLongitudeFactor : this.zoomGapBoundingBoxLongitudeFactorAll;

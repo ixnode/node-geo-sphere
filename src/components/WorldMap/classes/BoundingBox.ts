@@ -8,7 +8,7 @@ import {
     TypeLine,
     TypeMultiPolygon,
     TypePoint,
-    TypePolygon
+    TypePolygon, TypeShowBoundingBox
 } from "../types/types";
 import {CoordinateConverter} from "./CoordinateConverter";
 
@@ -100,8 +100,9 @@ export class BoundingBox {
      * Calculates the bounding box from the given feature.
      *
      * @param feature
+     * @param showBoundingBox
      */
-    private calculateBoundingBoxCountry(feature: TypeFeature): TypeBoundingBox {
+    private calculateBoundingBoxCountry(feature: TypeFeature, showBoundingBox: TypeShowBoundingBox|null = null): TypeBoundingBox {
         const geometry = feature.geometry;
 
         if (this.geometryChecker.isTypePointGeometry(geometry)) {
@@ -117,7 +118,7 @@ export class BoundingBox {
         }
 
         if (this.geometryChecker.isTypeMultiPolygonGeometry(geometry)) {
-            return this.calculateBoundingBoxFromMultiPolygon(geometry.coordinates);
+            return this.calculateBoundingBoxFromMultiPolygon(geometry.coordinates, showBoundingBox);
         }
 
         throw new Error('Invalid geometry type');
@@ -161,7 +162,8 @@ export class BoundingBox {
     public calculateBoundingBox(
         dataIdMap: TypeFeatureMap,
         boundingType: TypeBoundingBoxType,
-        countryKey: TypeCountryKey
+        countryKey: TypeCountryKey,
+        showBoundingBox: TypeShowBoundingBox|null = null
     ): TypeBoundingBox {
         let boundingBox = this.calculateBoundingBoxEmpty();
 
@@ -179,7 +181,7 @@ export class BoundingBox {
                     throw new Error('Unsupported case. Country must not be null.');
                 }
 
-                boundingBox = this.calculateBoundingBoxCountry(dataIdMap[countryKey]);
+                boundingBox = this.calculateBoundingBoxCountry(dataIdMap[countryKey], showBoundingBox);
                 break
         }
 
@@ -326,22 +328,69 @@ export class BoundingBox {
      * Calculates the bounding box from the given multipolygon.
      *
      * @param multipolygon
+     * @param showBoundingBox
      */
-    private calculateBoundingBoxFromMultiPolygon(multipolygon: TypeMultiPolygon): TypeBoundingBox {
+    private calculateBoundingBoxFromMultiPolygon(multipolygon: TypeMultiPolygon, showBoundingBox: TypeShowBoundingBox|null = null): TypeBoundingBox {
         let longitudeMin = Infinity,
             latitudeMin = Infinity,
             longitudeMax = -Infinity,
             latitudeMax = -Infinity;
 
+        let coordinateLongitudeMin = null;
+        let coordinateLatitudeMin = null;
+        let coordinateLongitudeMax = null;
+        let coordinateLatitudeMax = null;
+
+        if (showBoundingBox !== null) {
+            const coordinateConverter = new CoordinateConverter();
+
+            const coordinateMin = coordinateConverter.convertCoordinateWgs84ToMercator(showBoundingBox[0]);
+            const coordinateMax = coordinateConverter.convertCoordinateWgs84ToMercator(showBoundingBox[1]);
+
+            coordinateLongitudeMin = coordinateMin[0];
+            coordinateLatitudeMin = coordinateMin[1];
+            coordinateLongitudeMax = coordinateMax[0];
+            coordinateLatitudeMax = coordinateMax[1];
+        }
+
         for (const polygon of multipolygon) {
+            let polygonLongitudeMin = Infinity,
+                polygonLatitudeMin = Infinity,
+                polygonLongitudeMax = -Infinity,
+                polygonLatitudeMax = -Infinity;
+
             for (const ring of polygon) {
                 for (const [longitude, latitude] of ring) {
-                    if (longitude < longitudeMin) longitudeMin = longitude;
-                    if (latitude < latitudeMin) latitudeMin = latitude;
-                    if (longitude > longitudeMax) longitudeMax = longitude;
-                    if (latitude > latitudeMax) latitudeMax = latitude;
+                    if (longitude < polygonLongitudeMin) polygonLongitudeMin = longitude;
+                    if (latitude < polygonLatitudeMin) polygonLatitudeMin = latitude;
+                    if (longitude > polygonLongitudeMax) polygonLongitudeMax = longitude;
+                    if (latitude > polygonLatitudeMax) polygonLatitudeMax = latitude;
                 }
             }
+
+            if (
+                coordinateLongitudeMin !== null &&
+                coordinateLatitudeMin !== null &&
+                coordinateLongitudeMax !== null &&
+                coordinateLatitudeMax !== null &&
+                (
+                    polygonLongitudeMin < coordinateLongitudeMin ||
+                    polygonLatitudeMin < coordinateLatitudeMin ||
+                    polygonLongitudeMax > coordinateLongitudeMax ||
+                    polygonLatitudeMax > coordinateLatitudeMax
+                )
+            ) {
+                continue;
+            }
+
+            if (polygonLongitudeMin < longitudeMin) {
+                longitudeMin = polygonLongitudeMin;
+            }
+            if (polygonLatitudeMin < latitudeMin) {
+                latitudeMin = polygonLatitudeMin;
+            }
+            if (polygonLongitudeMax > longitudeMax) longitudeMax = polygonLongitudeMax;
+            if (polygonLatitudeMax > latitudeMax) latitudeMax = polygonLatitudeMax;
         }
 
         return {

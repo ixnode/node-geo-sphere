@@ -55,6 +55,8 @@ export type TypeFeature = {
     properties: TypeProperties;
 };
 
+export type TypeShowBoundingBox = TypePoint[];
+
 export interface InterfaceGeoJson extends FeatureCollection {
     type: "FeatureCollection";
     citiesAdded?: boolean;
