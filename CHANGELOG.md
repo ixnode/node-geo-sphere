@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Changelogs
 
+### [0.1.37] - 2025-01-26
+
+* Add zoom bounding box for france
+
 ### [0.1.36] - 2025-01-26
 
 * Add spanish cities
