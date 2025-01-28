@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Changelogs
 
+### [0.1.42] - 2025-01-29
+
+* Add czech and Polish states
+
 ### [0.1.41] - 2025-01-26
 
 * Update README.md documentation
