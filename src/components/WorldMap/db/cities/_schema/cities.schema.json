@@ -56,6 +56,9 @@
                 "area": {
                     "type": ["number", "null"]
                 },
+                "altitude": {
+                    "type": ["number", "null"]
+                },
                 "translation": {
                     "type": "object",
                     "patternProperties": {

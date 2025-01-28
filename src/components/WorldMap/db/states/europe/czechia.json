@@ -1,0 +1,239 @@
+{
+    "$schema": "../_schema/states.schema.json",
+    "data": [
+        {
+            "name": "Central Bohemian",
+            "code": "cz-20",
+            "country": "cz",
+            "population": 1439391,
+            "area": 11014,
+            "translation": {
+                "cs": "Středočeský kraj",
+                "de": "Středočeský kraj",
+                "en": "Central Bohemian",
+                "es": "Región de Bohemia Central",
+                "fr": "Bohême-Centrale",
+                "hr": "Središnja Češka",
+                "it": "Boemia Centrale",
+                "pl": "Kraj środkowoczeski",
+                "sv": "Mellersta Böhmen"
+            }
+        },
+        {
+            "name": "Plzeň",
+            "code": "cz-32",
+            "country": "cz",
+            "population": 605388,
+            "area": 7561,
+            "translation": {
+                "cs": "Plzeňský kraj",
+                "de": "Plzeňský kraj",
+                "en": "Plzeň",
+                "es": "Región de Pilsen",
+                "fr": "Région de Plzeň",
+                "hr": "Plzeňski kraj",
+                "it": "Regione di Plzeň",
+                "pl": "Kraj pilzneński",
+                "sv": "Plzeň"
+            }
+        },
+        {
+            "name": "Karlovy Vary",
+            "code": "cz-41",
+            "country": "cz",
+            "population": 293595,
+            "area": 3314,
+            "translation": {
+                "cs": "Karlovarský kraj",
+                "de": "Karlovarský kraj",
+                "en": "Karlovy Vary",
+                "es": "Región de Karlovy Vary",
+                "fr": "Région de Karlovy Vary",
+                "hr": "Karlovarski kraj",
+                "it": "Regione di Karlovy Vary",
+                "pl": "Kraj karlowarski",
+                "sv": "Karlovy Vary"
+            }
+        },
+        {
+            "name": "Ústí nad Labem",
+            "code": "cz-42",
+            "country": "cz",
+            "population": 812337,
+            "area": 5335,
+            "translation": {
+                "cs": "Ústecký kraj",
+                "de": "Ústecký kraj",
+                "en": "Ústí nad Labem",
+                "es": "Región de Ústí nad Labem",
+                "fr": "Région d'Ústí nad Labem",
+                "hr": "Ústečki kraj",
+                "it": "Regione di Ústí nad Labem",
+                "pl": "Kraj ustecki",
+                "sv": "Ústí nad Labem"
+            }
+        },
+        {
+            "name": "Liberec",
+            "code": "cz-51",
+            "country": "cz",
+            "population": 449177,
+            "area": 3163,
+            "translation": {
+                "cs": "Liberecký kraj",
+                "de": "Liberecký kraj",
+                "en": "Liberec",
+                "es": "Región de Liberec",
+                "fr": "Région de Liberec",
+                "hr": "Liberečki kraj",
+                "it": "Regione di Liberec",
+                "pl": "Kraj liberecki",
+                "sv": "Liberec"
+            }
+        },
+        {
+            "name": "Hradec Králové",
+            "code": "cz-52",
+            "country": "cz",
+            "population": 555267,
+            "area": 4758,
+            "translation": {
+                "cs": "Královéhradecký kraj",
+                "de": "Královéhradecký kraj",
+                "en": "Hradec Králové",
+                "es": "Región de Hradec Králové",
+                "fr": "Région de Hradec Králové",
+                "hr": "Královéhradečki kraj",
+                "it": "Regione di Hradec Králové",
+                "pl": "Kraj hradecki",
+                "sv": "Hradec Králové"
+            }
+        },
+        {
+            "name": "Pardubice",
+            "code": "cz-53",
+            "country": "cz",
+            "population": 528761,
+            "area": 4519,
+            "translation": {
+                "cs": "Pardubický kraj",
+                "de": "Pardubický kraj",
+                "en": "Pardubice",
+                "es": "Región de Pardubice",
+                "fr": "Région de Pardubice",
+                "hr": "Pardubički kraj",
+                "it": "Regione di Pardubice",
+                "pl": "Kraj pardubicki",
+                "sv": "Pardubice"
+            }
+        },
+        {
+            "name": "Vysočina",
+            "code": "cz-63",
+            "country": "cz",
+            "population": 514777,
+            "area": 6796,
+            "translation": {
+                "cs": "Kraj Vysočina",
+                "de": "Kraj Vysočina",
+                "en": "Vysočina",
+                "es": "Región de Vysočina",
+                "fr": "Région de Vysočina",
+                "hr": "Vysočina",
+                "it": "Regione di Vysočina",
+                "pl": "Kraj Wysoczyna",
+                "sv": "Vysočina"
+            }
+        },
+        {
+            "name": "South Bohemian",
+            "code": "cz-31",
+            "country": "cz",
+            "population": 652303,
+            "area": 10057,
+            "translation": {
+                "cs": "Jihočeský kraj",
+                "de": "Jihočeský kraj",
+                "en": "South Bohemian",
+                "es": "Región de Bohemia Meridional",
+                "fr": "Bohême-du-Sud",
+                "hr": "Južna Češka",
+                "it": "Boemia Meridionale",
+                "pl": "Kraj południowoczeski",
+                "sv": "Södra Böhmen"
+            }
+        },
+        {
+            "name": "South Moravian",
+            "code": "cz-64",
+            "country": "cz",
+            "population": 1217200,
+            "area": 7196.5,
+            "translation": {
+                "cs": "Jihomoravský kraj",
+                "de": "Jihomoravský kraj",
+                "en": "South Moravian",
+                "es": "Región de Moravia Meridional",
+                "fr": "Moravie-du-Sud",
+                "hr": "Južna Moravska",
+                "it": "Moravia Meridionale",
+                "pl": "Kraj południowomorawski",
+                "sv": "Södra Mähren"
+            }
+        },
+        {
+            "name": "Olomouc",
+            "code": "cz-71",
+            "country": "cz",
+            "population": 631802,
+            "area": 5267,
+            "translation": {
+                "cs": "Olomoucký kraj",
+                "de": "Olomoucký kraj",
+                "en": "Olomouc",
+                "es": "Región de Olomouc",
+                "fr": "Région d'Olomouc",
+                "hr": "Olomoučki kraj",
+                "it": "Regione di Olomouc",
+                "pl": "Kraj ołomuniecki",
+                "sv": "Olomouc"
+            }
+        },
+        {
+            "name": "Moravian-Silesian",
+            "code": "cz-80",
+            "country": "cz",
+            "population": 1189674,
+            "area": 5427,
+            "translation": {
+                "cs": "Moravskoslezský kraj",
+                "de": "Moravskoslezský kraj",
+                "en": "Moravian-Silesian",
+                "es": "Región de Moravia-Silesia",
+                "fr": "Région de Moravie-Silésie",
+                "hr": "Moravsko-šleski kraj",
+                "it": "Regione di Moravia-Slesia",
+                "pl": "Kraj morawsko-śląski",
+                "sv": "Mähren-Schlesien"
+            }
+        },
+        {
+            "name": "Zlín",
+            "code": "cz-72",
+            "country": "cz",
+            "population": 580531,
+            "area": 3964,
+            "translation": {
+                "cs": "Zlínský kraj",
+                "de": "Zlínský kraj",
+                "en": "Zlín",
+                "es": "Región de Zlín",
+                "fr": "Région de Zlín",
+                "hr": "Zlínski kraj",
+                "it": "Regione di Zlín",
+                "pl": "Kraj zliński",
+                "sv": "Zlín"
+            }
+        }
+    ]
+}

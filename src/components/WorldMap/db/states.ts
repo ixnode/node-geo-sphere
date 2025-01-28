@@ -1,6 +1,8 @@
 /* Import europa states. */
+import statesEuropaCzechia from './states/europe/czechia.json';
 import statesEuropaFrance from './states/europe/france.json';
 import statesEuropaGermany from './states/europe/germany.json';
+import statesEuropaPoland from './states/europe/poland.json';
 import statesEuropaUnitedKingdom from './states/europe/united-kingdom.json';
 
 /* Import types. */
@@ -53,8 +55,10 @@ export const getStates = (): TypeState[] => {
         /* Asia cities. */
 
         /* Europa cities. */
+        ...(statesEuropaCzechia.data as TypeState[]),
         ...(statesEuropaFrance.data as TypeState[]),
         ...(statesEuropaGermany.data as TypeState[]),
+        ...(statesEuropaPoland.data as TypeState[]),
         ...(statesEuropaUnitedKingdom.data as TypeState[]),
 
         /* Oceania cities. */

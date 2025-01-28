@@ -699,7 +699,7 @@
         },
         {
             "name": "Prag",
-            "state": null,
+            "state": "cz-20",
             "priority": 1,
             "size": "standard",
             "coordinate": {
@@ -1131,7 +1131,7 @@
         },
         {
             "name": "Warschau",
-            "state": null,
+            "state": "pl-14",
             "priority": 1,
             "size": "standard",
             "coordinate": {

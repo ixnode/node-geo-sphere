@@ -1,0 +1,293 @@
+{
+    "$schema": "../_schema/states.schema.json",
+    "data": [
+        {
+            "name": "Lower Silesian",
+            "code": "pl-02",
+            "country": "pl",
+            "population": 2891321,
+            "area": 19947,
+            "translation": {
+                "cs": "Dolnoslezské",
+                "de": "Niederschlesien",
+                "en": "Lower Silesian",
+                "es": "Baja Silesia",
+                "fr": "Basse-Silésie",
+                "hr": "Donjošlesko",
+                "it": "Bassa Slesia",
+                "pl": "Dolnośląskie",
+                "sv": "Nedre Schlesiens"
+            }
+        },
+        {
+            "name": "Kuyavian–Pomeranian",
+            "code": "pl-04",
+            "country": "pl",
+            "population": 2061942,
+            "area": 17971,
+            "translation": {
+                "cs": "Kujavsko-pomořské",
+                "de": "Kujawien-Pommern",
+                "en": "Kuyavian–Pomeranian",
+                "es": "Cuyavia y Pomerania",
+                "fr": "Couïavie-Poméranie",
+                "hr": "Kujavsko-pomeransko",
+                "it": "Cuiavia-Pomerania",
+                "pl": "Kujawsko-pomorskie",
+                "sv": "Kujavien-Pommerns"
+            }
+        },
+        {
+            "name": "Lublin",
+            "code": "pl-06",
+            "country": "pl",
+            "population": 2095258,
+            "area": 25122,
+            "translation": {
+                "cs": "Lublinské",
+                "de": "Lublin",
+                "en": "Lublin",
+                "es": "Lublin",
+                "fr": "Lublin",
+                "hr": "Lublinsko",
+                "it": "Voivodato di Lublino",
+                "pl": "Lubelskie",
+                "sv": "Lublins"
+            }
+        },
+        {
+            "name": "Lubusz",
+            "code": "pl-08",
+            "country": "pl",
+            "population": 1007145,
+            "area": 13988,
+            "translation": {
+                "cs": "Lubušské",
+                "de": "Lebus",
+                "en": "Lubusz",
+                "es": "Lubusz",
+                "fr": "Lubusz",
+                "hr": "Lubusko",
+                "it": "Voivodato di Lubusz",
+                "pl": "Lubuskie",
+                "sv": "Lubusz"
+            }
+        },
+        {
+            "name": "Łódź",
+            "code": "pl-10",
+            "country": "pl",
+            "population": 2437970,
+            "area": 18219,
+            "translation": {
+                "cs": "Lodžské",
+                "de": "Łódź",
+                "en": "Łódź",
+                "es": "Lodz",
+                "fr": "Łódź",
+                "hr": "Lodz",
+                "it": "Voivodato di Łódź",
+                "pl": "Łódzkie",
+                "sv": "Łódź"
+            }
+        },
+        {
+            "name": "Lesser Poland",
+            "code": "pl-12",
+            "country": "pl",
+            "population": 3410441,
+            "area": 15183,
+            "translation": {
+                "cs": "Malopolské",
+                "de": "Kleinpolen",
+                "en": "Lesser Poland",
+                "es": "Pequeña Polonia",
+                "fr": "Petite-Pologne",
+                "hr": "Malopoljsko",
+                "it": "Piccola Polonia",
+                "pl": "Małopolskie",
+                "sv": "Lillpolens"
+            }
+        },
+        {
+            "name": "Masovian",
+            "code": "pl-14",
+            "country": "pl",
+            "population": 5425028,
+            "area": 35558,
+            "translation": {
+                "cs": "Mazovské",
+                "de": "Masowien",
+                "en": "Masovian",
+                "es": "Mazovia",
+                "fr": "Mazovie",
+                "hr": "Mazovjecko",
+                "it": "Masovia",
+                "pl": "Mazowieckie",
+                "sv": "Masoviens"
+            }
+        },
+        {
+            "name": "Opole",
+            "code": "pl-16",
+            "country": "pl",
+            "population": 976774,
+            "area": 9412,
+            "translation": {
+                "cs": "Opolské",
+                "de": "Opole",
+                "en": "Opole",
+                "es": "Opole",
+                "fr": "Voïvodie d'Opole",
+                "hr": "Opolsko",
+                "it": "Voivodato di Opole",
+                "pl": "Opolskie",
+                "sv": "Opole"
+            }
+        },
+        {
+            "name": "Subcarpathian",
+            "code": "pl-18",
+            "country": "pl",
+            "population": 2121229,
+            "area": 17846,
+            "translation": {
+                "cs": "Podkarpatské",
+                "de": "Karpatenvorland",
+                "en": "Subcarpathian",
+                "es": "Subcarpacia",
+                "fr": "Voïvodie des Basses-Carpates",
+                "hr": "Potkarpatsko",
+                "it": "Precarpazia",
+                "pl": "Podkarpackie",
+                "sv": "Nedre Karpaternas"
+            }
+        },
+        {
+            "name": "Podlaskie",
+            "code": "pl-20",
+            "country": "pl",
+            "population": 1173286,
+            "area": 20187,
+            "translation": {
+                "cs": "Podleské",
+                "de": "Podlachien",
+                "en": "Podlaskie",
+                "es": "Podlaquia",
+                "fr": "Podlachie",
+                "hr": "Podlasko",
+                "it": "Podlachia",
+                "pl": "Podlaskie",
+                "sv": "Podlasiens"
+            }
+        },
+        {
+            "name": "Pomeranian",
+            "code": "pl-22",
+            "country": "pl",
+            "population": 2346671,
+            "area": 18324,
+            "translation": {
+                "cs": "Pomořské",
+                "de": "Pommern",
+                "en": "Pomeranian",
+                "es": "Pomerania",
+                "fr": "Poméranie",
+                "hr": "Pomeransko",
+                "it": "Pomerania",
+                "pl": "Pomorskie",
+                "sv": "Pommerns"
+            }
+        },
+        {
+            "name": "Silesian",
+            "code": "pl-24",
+            "country": "pl",
+            "population": 4492330,
+            "area": 12333,
+            "translation": {
+                "cs": "Slezské",
+                "de": "Schlesien",
+                "en": "Silesian",
+                "es": "Silesia",
+                "fr": "Silésie",
+                "hr": "Šlesko",
+                "it": "Slesia",
+                "pl": "Śląskie",
+                "sv": "Schlesiens"
+            }
+        },
+        {
+            "name": "Świętokrzyskie",
+            "code": "pl-26",
+            "country": "pl",
+            "population": 1224626,
+            "area": 11711,
+            "translation": {
+                "cs": "Svatokřížské",
+                "de": "Heiligkreuz",
+                "en": "Świętokrzyskie",
+                "es": "Świętokrzyskie",
+                "fr": "Sainte-Croix",
+                "hr": "Svetokriško",
+                "it": "Santacroce",
+                "pl": "Świętokrzyskie",
+                "sv": "Święty Krzyż"
+            }
+        },
+        {
+            "name": "Warmian–Masurian",
+            "code": "pl-28",
+            "country": "pl",
+            "population": 1416495,
+            "area": 24173,
+            "translation": {
+                "cs": "Varmijsko-mazurské",
+                "de": "Ermland-Masuren",
+                "en": "Warmian–Masurian",
+                "es": "Varmia y Masuria",
+                "fr": "Varmie-Mazurie",
+                "hr": "Varminsko-mazursko",
+                "it": "Varmia-Masuria",
+                "pl": "Warmińsko-mazurskie",
+                "sv": "Ermland-Masuriens"
+            }
+        },
+        {
+            "name": "Greater Poland",
+            "code": "pl-30",
+            "country": "pl",
+            "population": 3496450,
+            "area": 29826,
+            "translation": {
+                "cs": "Velkopolské",
+                "de": "Großpolen",
+                "en": "Greater Poland",
+                "es": "Gran Polonia",
+                "fr": "Grande-Pologne",
+                "hr": "Velikopoljsko",
+                "it": "Grande Polonia",
+                "pl": "Wielkopolskie",
+                "sv": "Storpolens"
+            }
+        },
+        {
+            "name": "West Pomeranian",
+            "code": "pl-32",
+            "country": "pl",
+            "population": 1688047,
+            "area": 22905,
+            "translation": {
+                "cs": "Západopomořanské",
+                "de": "Westpommern",
+                "en": "West Pomeranian",
+                "es": "Pomerania Occidental",
+                "fr": "Poméranie-Occidentale",
+                "hr": "Zapadnopomeransko",
+                "it": "Pomerania Occidentale",
+                "pl": "Zachodniopomorskie",
+                "sv": "Västpommerns"
+            }
+        }
+    ]
+}

@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 /* Import configuration (global). */
 import {
     defaultLanguage,
-    defaultCountry,
+    defaultCountry, defaultLanguageStorybook, defaultCountryStorybook,
 } from "../../config/config";
 
 /* Import configuration (WorldMap). */
@@ -16,7 +16,7 @@ import {
     defaultMapWidth
 } from "./config/config";
 import {CountryData, PlaceData} from "./config/interfaces";
-import {TypeLanguagesSupported} from "../../config/types";
+import {TypeLanguagesSupported, TypeLanguagesSupportedStorybook} from "../../config/types";
 import {eventWheelAsEventListener} from "./config/events";
 import {
     eventNameWheel,
@@ -77,6 +77,36 @@ export interface WorldMapProps {
     debug?: boolean;
 
     /** Should the logo be displayed? */
+    logo?: boolean;
+}
+
+/* WorldMapProps interface (Storybook before mapping). */
+export interface WorldMapProps {
+    dataSource?: TypeDataSource;
+    country?: string | null;
+    width?: number;
+    height?: number;
+    onClickCountry?: ((data: CountryData) => void) | null;
+    onClickPlace?: ((data: PlaceData) => void) | null;
+    onHoverCountry?: ((data: CountryData) => void) | null;
+    onHoverPlace?: ((data: PlaceData) => void) | null;
+    language?: TypeLanguagesSupported;
+    debug?: boolean;
+    logo?: boolean;
+}
+
+/* WorldMapProps interface (Storybook before mapping). */
+export interface WorldMapPropsStorybook {
+    dataSource?: TypeDataSource;
+    country?: string|null;
+    width?: number;
+    height?: number;
+    onClickCountry?: ((data: CountryData) => void)|null;
+    onClickPlace?: ((data: PlaceData) => void)|null;
+    onHoverCountry?: ((data: CountryData) => void)|null;
+    onHoverPlace?: ((data: PlaceData) => void)|null;
+    language?: TypeLanguagesSupportedStorybook;
+    debug?: boolean;
     logo?: boolean;
 }
 
@@ -256,3 +286,5 @@ export const WorldMap: React.FC<WorldMapProps> = ({
         </div>
     );
 };
+
+export const WorldMapStorybook: (props: WorldMapPropsStorybook) => void = () => {};

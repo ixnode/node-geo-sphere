@@ -1,0 +1,434 @@
+{
+    "$schema": "../_schema/cities.schema.json",
+    "data": [
+        {
+            "name": "Wrocław",
+            "state": "pl-02",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 17.033333333333335,
+                "latitude": 51.11666666666667
+            },
+            "country": "pl",
+            "type": "state-capital",
+            "population": 673743,
+            "area": 293,
+            "translation": {
+                "cs": "Vratislav",
+                "de": "Breslau",
+                "en": "Wrocław",
+                "es": "Breslavia",
+                "fr": "Wrocław",
+                "hr": "Wrocław",
+                "it": "Breslavia",
+                "pl": "Wrocław",
+                "sv": "Wrocław"
+            }
+        },
+        {
+            "name": "Bydgoszcz",
+            "state": "pl-04",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 18,
+                "latitude": 53.11666666666667
+            },
+            "country": "pl",
+            "type": "state-capital",
+            "population": 344091,
+            "area": 175.98,
+            "translation": {
+                "cs": "Bydhošť",
+                "de": "Bydgoszcz",
+                "en": "Bydgoszcz",
+                "es": "Bydgoszcz",
+                "fr": "Bydgoszcz",
+                "hr": "Bydgoszcz",
+                "it": "Bydgoszcz",
+                "pl": "Bydgoszcz",
+                "sv": "Bydgoszcz"
+            }
+        },
+        {
+            "name": "Toruń",
+            "state": "pl-04",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 18.6,
+                "latitude": 53.016666666666666
+            },
+            "coordinateDisplay": {
+                "longitude": 18.6,
+                "latitude": 52.9
+            },
+            "country": "pl",
+            "type": "state-capital",
+            "population": 198613,
+            "area": 115.75,
+            "translation": {
+                "cs": "Toruň",
+                "de": "Toruń",
+                "en": "Toruń",
+                "es": "Torún",
+                "fr": "Toruń",
+                "hr": "Toruń",
+                "it": "Toruń",
+                "pl": "Toruń",
+                "sv": "Toruń"
+            }
+        },
+        {
+            "name": "Lublin",
+            "state": "pl-06",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 22.566666666666666,
+                "latitude": 51.233333333333334
+            },
+            "country": "pl",
+            "type": "state-capital",
+            "population": 338586,
+            "area": 147.5,
+            "translation": {
+                "cs": "Lublin",
+                "de": "Lublin",
+                "en": "Lublin",
+                "es": "Lublin",
+                "fr": "Lublin",
+                "hr": "Lublin",
+                "it": "Lublino",
+                "pl": "Lublin",
+                "sv": "Lublin"
+            }
+        },
+        {
+            "name": "Gorzów Wielkopolski",
+            "state": "pl-08",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 15.233333333333333,
+                "latitude": 52.733333333333334
+            },
+            "country": "pl",
+            "type": "state-capital",
+            "population": 115247,
+            "area": 86,
+            "translation": {
+                "cs": "Gorzów Wielkopolski",
+                "de": "Gorzów Wielkopolski",
+                "en": "Gorzów Wielkopolski",
+                "es": "Gorzów Wielkopolski",
+                "fr": "Gorzów Wielkopolski",
+                "hr": "Gorzów Wielkopolski",
+                "it": "Gorzów Wielkopolski",
+                "pl": "Gorzów Wielkopolski",
+                "sv": "Gorzów Wielkopolski"
+            }
+        },
+        {
+            "name": "Zielona Góra",
+            "state": "pl-08",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 15.5,
+                "latitude": 51.93333333333333
+            },
+            "country": "pl",
+            "type": "state-capital",
+            "population": 140892,
+            "area": 278.32,
+            "translation": {
+                "cs": "Zelená Hora (Polsko)",
+                "de": "Zielona Góra",
+                "en": "Zielona Góra",
+                "es": "Zielona Góra",
+                "fr": "Zielona Góra",
+                "hr": "Zielona Góra",
+                "it": "Zielona Góra",
+                "pl": "Zielona Góra",
+                "sv": "Zielona Góra"
+            }
+        },
+        {
+            "name": "Łódź",
+            "state": "pl-10",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 19.466666666666665,
+                "latitude": 51.75
+            },
+            "country": "pl",
+            "type": "state-capital",
+            "population": 652015,
+            "area": 293,
+            "translation": {
+                "cs": "Lodž",
+                "de": "Łódź",
+                "en": "Łódź",
+                "es": "Lodz",
+                "fr": "Łódź",
+                "hr": "Łódź",
+                "it": "Łódź",
+                "pl": "Łódź",
+                "sv": "Łódź"
+            }
+        },
+        {
+            "name": "Kraków",
+            "state": "pl-12",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 19.933333333333334,
+                "latitude": 50.06666666666667
+            },
+            "country": "pl",
+            "type": "state-capital",
+            "population": 779966,
+            "area": 326.85,
+            "translation": {
+                "cs": "Krakov",
+                "de": "Krakau",
+                "en": "Kraków",
+                "es": "Cracovia",
+                "fr": "Cracovie",
+                "hr": "Krakov",
+                "it": "Cracovia",
+                "pl": "Kraków",
+                "sv": "Kraków"
+            }
+        },
+        {
+            "name": "Opole",
+            "state": "pl-16",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 17.933333333333334,
+                "latitude": 50.666666666666664
+            },
+            "country": "pl",
+            "type": "state-capital",
+            "population": 128140,
+            "area": 148.99,
+            "translation": {
+                "cs": "Opolí",
+                "de": "Opole",
+                "en": "Opole",
+                "es": "Opole",
+                "fr": "Opole",
+                "hr": "Opole",
+                "it": "Opole",
+                "pl": "Opole",
+                "sv": "Opole"
+            }
+        },
+        {
+            "name": "Rzeszów",
+            "state": "pl-18",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 22,
+                "latitude": 50.05
+            },
+            "country": "pl",
+            "type": "state-capital",
+            "population": 196638,
+            "area": 126.57,
+            "translation": {
+                "cs": "Řešov",
+                "de": "Rzeszów",
+                "en": "Rzeszów",
+                "es": "Rzeszów",
+                "fr": "Rzeszów",
+                "hr": "Rzeszów",
+                "it": "Rzeszów",
+                "pl": "Rzeszów",
+                "sv": "Rzeszów"
+            }
+        },
+        {
+            "name": "Białystok",
+            "state": "pl-20",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 23.15,
+                "latitude": 53.13333333333333
+            },
+            "country": "pl",
+            "type": "state-capital",
+            "population": 296958,
+            "area": 102.12,
+            "translation": {
+                "cs": "Bělostok",
+                "de": "Białystok",
+                "en": "Białystok",
+                "es": "Białystok",
+                "fr": "Białystok",
+                "hr": "Białystok",
+                "it": "Białystok",
+                "pl": "Białystok",
+                "sv": "Białystok"
+            }
+        },
+        {
+            "name": "Gdańsk",
+            "state": "pl-22",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 18.65,
+                "latitude": 54.35
+            },
+            "country": "pl",
+            "type": "state-capital",
+            "population": 470805,
+            "area": 263.4,
+            "translation": {
+                "cs": "Gdaňsk",
+                "de": "Danzig",
+                "en": "Gdańsk",
+                "es": "Gdansk",
+                "fr": "Gdańsk",
+                "hr": "Gdanjsk",
+                "it": "Danzica",
+                "pl": "Gdańsk",
+                "sv": "Gdańsk"
+            }
+        },
+        {
+            "name": "Katowice",
+            "state": "pl-24",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 19.016666666666666,
+                "latitude": 50.266666666666666
+            },
+            "country": "pl",
+            "type": "state-capital",
+            "population": 282755,
+            "area": 164.6,
+            "translation": {
+                "cs": "Katovice",
+                "de": "Katowice",
+                "en": "Katowice",
+                "es": "Katowice",
+                "fr": "Katowice",
+                "hr": "Katowice",
+                "it": "Katowice",
+                "pl": "Katowice",
+                "sv": "Katowice"
+            }
+        },
+        {
+            "name": "Kielce",
+            "state": "pl-26",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 20.65,
+                "latitude": 50.88333333333333
+            },
+            "country": "pl",
+            "type": "state-capital",
+            "population": 193415,
+            "area": 109.45,
+            "translation": {
+                "cs": "Kielce",
+                "de": "Kielce",
+                "en": "Kielce",
+                "es": "Kielce",
+                "fr": "Kielce",
+                "hr": "Kielce",
+                "it": "Kielce",
+                "pl": "Kielce",
+                "sv": "Kielce"
+            }
+        },
+        {
+            "name": "Olsztyn",
+            "state": "pl-28",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 20.483333333333334,
+                "latitude": 53.78333333333333
+            },
+            "country": "pl",
+            "type": "state-capital",
+            "population": 171249,
+            "area": 87.9,
+            "translation": {
+                "cs": "Olštýn",
+                "de": "Olsztyn",
+                "en": "Olsztyn",
+                "es": "Olsztyn",
+                "fr": "Olsztyn",
+                "hr": "Olsztyn",
+                "it": "Olsztyn",
+                "pl": "Olsztyn",
+                "sv": "Olsztyn"
+            }
+        },
+        {
+            "name": "Poznań",
+            "state": "pl-30",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 16.916666666666668,
+                "latitude": 52.4
+            },
+            "country": "pl",
+            "type": "state-capital",
+            "population": 532048,
+            "area": 261.85,
+            "translation": {
+                "cs": "Poznaň",
+                "de": "Posen",
+                "en": "Poznań",
+                "es": "Poznan",
+                "fr": "Poznań",
+                "hr": "Poznanj",
+                "it": "Poznań",
+                "pl": "Poznań",
+                "sv": "Poznań"
+            }
+        },
+        {
+            "name": "Szczecin",
+            "state": "pl-32",
+            "priority": 2,
+            "size": "standard",
+            "coordinate": {
+                "longitude": 14.55,
+                "latitude": 53.416666666666664
+            },
+            "country": "pl",
+            "type": "state-capital",
+            "population": 395513,
+            "area": 300.6,
+            "translation": {
+                "cs": "Štětín",
+                "de": "Stettin",
+                "en": "Szczecin",
+                "es": "Szczecin",
+                "fr": "Szczecin",
+                "hr": "Szczecin",
+                "it": "Stettino",
+                "pl": "Szczecin",
+                "sv": "Szczecin"
+            }
+        }
+    ]
+}

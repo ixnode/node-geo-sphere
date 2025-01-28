@@ -32,6 +32,9 @@ export const zoomGapBoundingBoxFactor: Record<string, TypeZoomGapBoundingBoxFact
     /* Zoom bounding box for Belgium */
     be: [1., 1.],
 
+    /* Zoom bounding box for Czechia */
+    cz: [.5, .5],
+
     /* Zoom bounding box for Liechtenstein. */
     li: [20., 20.],
 

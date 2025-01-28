@@ -12,18 +12,21 @@ import {
 
 /* Import configurations (global). */
 import {
-    defaultCountry,
-    defaultLanguage
+    defaultCountryStorybook,
+    defaultLanguageStorybook
 } from "../../config/config";
 
 /* Import classes. */
-import {WorldMap} from './WorldMap';
+import {WorldMap, WorldMapStorybook} from './WorldMap';
 
 /* Import tools. */
 import {getTranslatedName} from "./tools/language";
 
 /* Import db data. */
 import {getCountryMap} from "./db/countries";
+
+/* Import db data. */
+import {defaultLanguageOptions} from "../../config/i18n";
 
 /* Priority keys and language. */
 const priorityKeys = [null, 'all', 'eu', 'de', 'at', 'ch'];
@@ -61,19 +64,6 @@ const countryOptions: Record<string, string|null> = Object.fromEntries(
     })
 );
 
-/* Build options for languages. */
-const languageOptions: Record<string, string> = {
-    'Croatian': 'hr',
-    'Czech': 'cs',
-    'English': 'en',
-    'French': 'fr',
-    'German': 'de',
-    'Italian': 'it',
-    'Polish': 'pl',
-    'Spanish': 'es',
-    'Swedish': 'sv',
-};
-
 // @ts-ignore
 const meta: Meta<typeof WorldMap> = {
     title: 'Components/WorldMap',
@@ -90,19 +80,19 @@ const meta: Meta<typeof WorldMap> = {
         },
         language: {
             control: {type: 'select'},
-            options: Object.keys(languageOptions), /* Labels to show. */
-            mapping: languageOptions /* Translate labels into internal keys. */
+            options: Object.keys(defaultLanguageOptions), /* Labels to show. */
+            mapping: defaultLanguageOptions /* Translate labels into internal keys. */
         }
     },
 };
 
 export default meta;
-type Story = StoryObj<typeof WorldMap>;
+type Story = StoryObj<typeof WorldMapStorybook>;
 
 export const Default: Story = {
     args: {
         dataSource: defaultDataSource,
-        country: defaultCountry,
+        country: defaultCountryStorybook,
         width: defaultMapWidth,
         height: defaultMapHeight,
         onClickCountry: (data: CountryData) => {
@@ -117,7 +107,7 @@ export const Default: Story = {
         onHoverPlace: (data: PlaceData) => {
             console.log('onHoverPlace', data);
         },
-        language: defaultLanguage,
+        language: defaultLanguageStorybook,
         debug: defaultDebug,
         logo: defaultLogo,
     },

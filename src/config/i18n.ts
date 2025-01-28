@@ -42,3 +42,15 @@ i18n
 export {
     i18n
 };
+
+export const defaultLanguageOptions = {
+    Croatian: 'hr',
+    Czech: 'cz',
+    English: 'en',
+    French: 'fr',
+    German: 'de',
+    Italian: 'it',
+    Polish: 'pl',
+    Spanish: 'es',
+    Swedish: 'sv',
+} as const;

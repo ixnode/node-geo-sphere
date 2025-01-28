@@ -1,0 +1,317 @@
+{
+    "$schema": "../_schema/cities.schema.json",
+    "data": [
+        {
+            "name": "Plzeň",
+            "state": "cz-32",
+            "priority": 2,
+            "size": "smaller",
+            "coordinate": {
+                "longitude": 13.3833,
+                "latitude": 49.7333
+            },
+            "country": "cz",
+            "type": "state-capital",
+            "population": 181240,
+            "area": 137.65,
+            "altitude": 308,
+            "translation": {
+                "cs": "Plzeň",
+                "de": "Pilsen",
+                "en": "Plzeň",
+                "es": "Pilsen",
+                "fr": "Pilsen",
+                "hr": "Plzeň",
+                "it": "Plzeň",
+                "pl": "Pilzno",
+                "sv": "Plzeň"
+            }
+        },
+        {
+            "name": "Karlovy Vary",
+            "state": "cz-41",
+            "priority": 2,
+            "size": "smaller",
+            "coordinate": {
+                "longitude": 12.8667,
+                "latitude": 50.2333
+            },
+            "country": "cz",
+            "type": "state-capital",
+            "population": 49043,
+            "area": 59.08,
+            "altitude": 447,
+            "translation": {
+                "cs": "Karlovy Vary",
+                "de": "Karlsbad",
+                "en": "Karlovy Vary",
+                "es": "Karlovy Vary",
+                "fr": "Karlovy Vary",
+                "hr": "Karlovy Vary",
+                "it": "Karlovy Vary",
+                "pl": "Karlowe Wary",
+                "sv": "Karlovy Vary"
+            }
+        },
+        {
+            "name": "Ústí nad Labem",
+            "state": "cz-42",
+            "priority": 2,
+            "size": "smaller",
+            "coordinate": {
+                "longitude": 14.05,
+                "latitude": 50.6667
+            },
+            "country": "cz",
+            "type": "state-capital",
+            "population": 91963,
+            "area": 93.97,
+            "altitude": 218,
+            "translation": {
+                "cs": "Ústí nad Labem",
+                "de": "Ústí nad Labem",
+                "en": "Ústí nad Labem",
+                "es": "Ústí nad Labem",
+                "fr": "Ústí nad Labem",
+                "hr": "Ústí na Labi",
+                "it": "Ústí nad Labem",
+                "pl": "Uście nad Łabą",
+                "sv": "Ústí nad Labem"
+            }
+        },
+        {
+            "name": "Liberec",
+            "state": "cz-51",
+            "priority": 2,
+            "size": "smaller",
+            "coordinate": {
+                "longitude": 15.05,
+                "latitude": 50.7667
+            },
+            "country": "cz",
+            "type": "state-capital",
+            "population": 107389,
+            "area": 106.09,
+            "altitude": 374,
+            "translation": {
+                "cs": "Liberec",
+                "de": "Liberec",
+                "en": "Liberec",
+                "es": "Liberec",
+                "fr": "Liberec",
+                "hr": "Liberec",
+                "it": "Liberec",
+                "pl": "Liberec",
+                "sv": "Liberec"
+            }
+        },
+        {
+            "name": "Hradec Králové",
+            "state": "cz-52",
+            "priority": 2,
+            "size": "smaller",
+            "coordinate": {
+                "longitude": 15.8333,
+                "latitude": 50.2167
+            },
+            "country": "cz",
+            "type": "state-capital",
+            "population": 93506,
+            "area": 105.61,
+            "altitude": 235,
+            "translation": {
+                "cs": "Hradec Králové",
+                "de": "Hradec Králové",
+                "en": "Hradec Králové",
+                "es": "Hradec Králové",
+                "fr": "Hradec Králové",
+                "hr": "Kraljičin Gradac",
+                "it": "Hradec Králové",
+                "pl": "Hradec Králové",
+                "sv": "Hradec Králové"
+            }
+        },
+        {
+            "name": "Pardubice",
+            "state": "cz-53",
+            "priority": 2,
+            "size": "smaller",
+            "coordinate": {
+                "longitude": 15.7833,
+                "latitude": 50.0333
+            },
+            "country": "cz",
+            "type": "state-capital",
+            "population": 92149,
+            "area": 82.66,
+            "altitude": 237,
+            "translation": {
+                "cs": "Pardubice",
+                "de": "Pardubice",
+                "en": "Pardubice",
+                "es": "Pardubice",
+                "fr": "Pardubice",
+                "hr": "Pardubice",
+                "it": "Pardubice",
+                "pl": "Pardubice",
+                "sv": "Pardubice"
+            }
+        },
+        {
+            "name": "Jihlava",
+            "state": "cz-63",
+            "priority": 2,
+            "size": "smaller",
+            "coordinate": {
+                "longitude": 15.5833,
+                "latitude": 49.4
+            },
+            "country": "cz",
+            "type": "state-capital",
+            "population": 52548,
+            "area": 78.85,
+            "altitude": 525,
+            "translation": {
+                "cs": "Jihlava",
+                "de": "Jihlava",
+                "en": "Jihlava",
+                "es": "Jihlava",
+                "fr": "Jihlava",
+                "hr": "Jihlava",
+                "it": "Jihlava",
+                "pl": "Igława",
+                "sv": "Jihlava"
+            }
+        },
+        {
+            "name": "České Budějovice",
+            "state": "cz-31",
+            "priority": 2,
+            "size": "smaller",
+            "coordinate": {
+                "longitude": 14.4667,
+                "latitude": 48.9667
+            },
+            "country": "cz",
+            "type": "state-capital",
+            "population": 96417,
+            "area": 55.6,
+            "altitude": 381,
+            "translation": {
+                "cs": "České Budějovice",
+                "de": "Budweis",
+                "en": "České Budějovice",
+                "es": "České Budějovice",
+                "fr": "České Budějovice",
+                "hr": "České Budějovice",
+                "it": "České Budějovice",
+                "pl": "Czeskie Budziejowice",
+                "sv": "České Budějovice"
+            }
+        },
+        {
+            "name": "Brno",
+            "state": "cz-64",
+            "priority": 2,
+            "size": "smaller",
+            "coordinate": {
+                "longitude": 16.6,
+                "latitude": 49.2
+            },
+            "country": "cz",
+            "type": "state-capital",
+            "population": 396101,
+            "area": 230.2,
+            "altitude": 237,
+            "translation": {
+                "cs": "Brno",
+                "de": "Brünn",
+                "en": "Brno",
+                "es": "Brno",
+                "fr": "Brno",
+                "hr": "Brno",
+                "it": "Brno",
+                "pl": "Brno",
+                "sv": "Brno"
+            }
+        },
+        {
+            "name": "Olomouc",
+            "state": "cz-71",
+            "priority": 2,
+            "size": "smaller",
+            "coordinate": {
+                "longitude": 17.2667,
+                "latitude": 49.6
+            },
+            "country": "cz",
+            "type": "state-capital",
+            "population": 101825,
+            "area": 103.33,
+            "altitude": 219,
+            "translation": {
+                "cs": "Olomouc",
+                "de": "Olmütz",
+                "en": "Olomouc",
+                "es": "Olomouc",
+                "fr": "Olomouc",
+                "hr": "Olomouc",
+                "it": "Olomouc",
+                "pl": "Ołomuniec",
+                "sv": "Olomouc"
+            }
+        },
+        {
+            "name": "Ostrava",
+            "state": "cz-80",
+            "priority": 2,
+            "size": "smaller",
+            "coordinate": {
+                "longitude": 18.2833,
+                "latitude": 49.8333
+            },
+            "country": "cz",
+            "type": "state-capital",
+            "population": 283504,
+            "area": 214.01,
+            "altitude": 335,
+            "translation": {
+                "cs": "Ostrava",
+                "de": "Ostrava",
+                "en": "Ostrava",
+                "es": "Ostrava",
+                "fr": "Ostrava",
+                "hr": "Ostrava",
+                "it": "Ostrava",
+                "pl": "Ostrawa",
+                "sv": "Ostrava"
+            }
+        },
+        {
+            "name": "Zlín",
+            "state": "cz-72",
+            "priority": 2,
+            "size": "smaller",
+            "coordinate": {
+                "longitude": 17.6667,
+                "latitude": 49.2333
+            },
+            "country": "cz",
+            "type": "state-capital",
+            "population": 74191,
+            "area": 102.83,
+            "altitude": 230,
+            "translation": {
+                "cs": "Zlín",
+                "de": "Zlín",
+                "en": "Zlín",
+                "es": "Zlín",
+                "fr": "Zlín (ville)",
+                "hr": "Zlín",
+                "it": "Zlín",
+                "pl": "Zlin",
+                "sv": "Zlín"
+            }
+        }
+    ]
+}

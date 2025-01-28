@@ -6,8 +6,10 @@ import citiesEurope from './cities/europe.json';
 import citiesOceania from './cities/oceania.json';
 
 /* Import europa cities. */
+import citiesEuropaCzech from './cities/europe/czechia.json';
 import citiesEuropaFrance from './cities/europe/france.json';
 import citiesEuropaGermany from './cities/europe/germany.json';
+import citiesEuropaPoland from './cities/europe/poland.json';
 import citiesEuropaSpain from './cities/europe/spain.json';
 import citiesEuropaUnitedKingdom from './cities/europe/united-kingdom.json';
 
@@ -54,6 +56,7 @@ export type TypeCity = {
     coordinateDisplay?: TypeCityCoordinate;
     priority: number;
     population: number|null;
+    altitude?: number|null;
 
     /* Translations. */
     translation: TypeTranslation;
@@ -86,8 +89,10 @@ export const getCities = (): TypeCity[] => {
         /* Asia cities. */
 
         /* Europa cities. */
+        ...(citiesEuropaCzech.data as TypeCity[]),
         ...(citiesEuropaFrance.data as TypeCity[]),
         ...(citiesEuropaGermany.data as TypeCity[]),
+        ...(citiesEuropaPoland.data as TypeCity[]),
         ...(citiesEuropaSpain.data as TypeCity[]),
         ...(citiesEuropaUnitedKingdom.data as TypeCity[]),
 
