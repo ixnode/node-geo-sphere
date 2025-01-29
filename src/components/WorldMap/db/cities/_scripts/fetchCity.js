@@ -2,7 +2,9 @@
  * Open single place: https://de.wikipedia.org/wiki/Sevilla
  *
  * Or search for a single city:
- * - CZ: https://de.wikipedia.org/wiki/Verwaltungsgliederung_Tschechiens#Auflistung_der_Regionen
+ * - cz: https://de.wikipedia.org/wiki/Verwaltungsgliederung_Tschechiens#Auflistung_der_Regionen
+ * - pl: https://de.wikipedia.org/wiki/Woiwodschaft#Liste_der_Woiwodschaften
+ * - us: https://de.wikipedia.org/wiki/Liste_der_Bundesstaaten_der_Vereinigten_Staaten#Bundesstaaten
  *
  * "C:\Program Files\Google\Chrome\Application\chrome.exe" --disable-web-security --user-data-dir="C:\chrome_dev"
  *
@@ -174,15 +176,20 @@ function getCoordinate(type) {
  */
 function getPopulation() {
     const element = document.evaluate(
-        '//table[contains(@class, "wikitable") and contains(@class, "infobox")]//tr[td/a[@title="Einwohner"]]',
+        '//table//tr[td[1][contains(text(), "Einwohner")] or td[1]/b[contains(text(), "Einwohner")] or td[1]/a[contains(text(), "Einwohner")]]',
         document,
         null,
         XPathResult.FIRST_ORDERED_NODE_TYPE,
         null
     ).singleNodeValue;
     const cell = element ? element.querySelector('td:nth-of-type(2)') : null;
-    const text = cell ? cell.childNodes[0].textContent.trim() : null;
-    return text ? parseInt(text.replace(/\D/g, ''), 10) : null;
+    const text = cell ? cell.textContent.trim().replaceAll('.', '').replaceAll(',', '.') : null;
+
+    if (!text) {
+        return null;
+    }
+
+    return text ? parseInt(text) : null;
 }
 
 /**
@@ -193,7 +200,7 @@ function getPopulation() {
 function getArea() {
 
     const elementArea = document.evaluate(
-        '//table[contains(@class, "wikitable") and contains(@class, "infobox")]//tr[td/a[@title="Flächeninhalt"]]',
+        '//table//tr[td[1][contains(text(), "Fläche")] or td[1]/b[contains(text(), "Fläche")] or td[1]/a[contains(text(), "Fläche")]]',
         document,
         null,
         XPathResult.FIRST_ORDERED_NODE_TYPE,
@@ -208,7 +215,7 @@ function getArea() {
     }
 
     /* Convert german number into english one. */
-    const textArea = cellArea.textContent.trim().replace('.', '').replace(',', '.');
+    const textArea = cellArea.textContent.trim().replaceAll('.', '').replaceAll(',', '.');
 
     /* Convert value if needed. */
     let area = null;
@@ -236,7 +243,7 @@ function getArea() {
 function getSeaLevel() {
 
     const elementSeaLevel = document.evaluate(
-        '//table[contains(@class, "wikitable") and contains(@class, "infobox")]//tr[td[contains(text(), "Höhe:")]]',
+        '//table//tr[td[1][contains(text(), "Höhe")] or td[1]/b[contains(text(), "Höhe")] or td[1]/a[contains(text(), "Höhe")]]',
         document,
         null,
         XPathResult.FIRST_ORDERED_NODE_TYPE,
@@ -263,7 +270,7 @@ function getSeaLevel() {
  */
 function getCountry() {
     const element = document.evaluate(
-        '//table[contains(@class, "wikitable") and contains(@class, "infobox")]//tr[td/a[@title="Staat"]]',
+        '//table//tr[td/a[@title="Staat"]]',
         document,
         null,
         XPathResult.FIRST_ORDERED_NODE_TYPE,
@@ -283,6 +290,11 @@ function getCountry() {
             null;
 
     switch (country) {
+        /* America. */
+        case 'Vereinigte Staaten':
+            return 'us';
+
+        /* Europe. */
         case 'Polen':
             return 'pl';
         case 'Spanien':

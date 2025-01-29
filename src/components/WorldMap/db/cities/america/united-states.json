@@ -1,0 +1,1305 @@
+{
+    "$schema": "../_schema/cities.schema.json",
+    "data": [
+        {
+            "name": "Montgomery, Alabama",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -86.2833,
+                "latitude": 32.35
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 200603,
+            "area": 404.53,
+            "altitude": 73,
+            "translation": {
+                "cs": "Montgomery (Alabama)",
+                "de": "Montgomery (Alabama)",
+                "en": "Montgomery, Alabama",
+                "es": "Montgomery (Alabama)",
+                "fr": "Montgomery (Alabama)",
+                "hr": "Montgomery, Alabama",
+                "it": "Montgomery (Alabama)",
+                "pl": "Montgomery (Alabama)",
+                "sv": "Montgomery, Alabama"
+            }
+        },
+        {
+            "name": "Juneau, Alaska",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -134.5167,
+                "latitude": 58.35
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 32255,
+            "area": 8430.4,
+            "altitude": 0,
+            "translation": {
+                "cs": "Juneau",
+                "de": "Juneau",
+                "en": "Juneau, Alaska",
+                "es": "Juneau (Alaska)",
+                "fr": "Juneau",
+                "hr": "Juneau, Aljaska",
+                "it": "Juneau",
+                "pl": "Juneau",
+                "sv": "Juneau"
+            }
+        },
+        {
+            "name": "Phoenix, Arizona",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -112.0667,
+                "latitude": 33.45
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 1608139,
+            "area": 1230.5,
+            "altitude": 340,
+            "translation": {
+                "cs": "Phoenix",
+                "de": "Phoenix (Arizona)",
+                "en": "Phoenix, Arizona",
+                "es": "Phoenix",
+                "fr": "Phoenix (Arizona)",
+                "hr": "Phoenix, Arizona",
+                "it": "Phoenix",
+                "pl": "Phoenix",
+                "sv": "Phoenix"
+            }
+        },
+        {
+            "name": "Little Rock, Arkansas",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -92.2833,
+                "latitude": 34.75
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 202591,
+            "area": 302.55,
+            "altitude": 102,
+            "translation": {
+                "cs": "Little Rock",
+                "de": "Little Rock",
+                "en": "Little Rock, Arkansas",
+                "es": "Little Rock (Arkansas)",
+                "fr": "Little Rock",
+                "hr": "Little Rock, Arkansas",
+                "it": "Little Rock",
+                "pl": "Little Rock",
+                "sv": "Little Rock"
+            }
+        },
+        {
+            "name": "Denver",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -104.9833,
+                "latitude": 39.7833
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 715522,
+            "area": 401.3,
+            "altitude": 1609,
+            "translation": {
+                "cs": "Denver",
+                "de": "Denver",
+                "en": "Denver",
+                "es": "Denver",
+                "fr": "Denver",
+                "hr": "Denver, Colorado",
+                "it": "Denver",
+                "pl": "Denver",
+                "sv": "Denver"
+            }
+        },
+        {
+            "name": "Hartford, Connecticut",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -72.6833,
+                "latitude": 41.7667
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 121054,
+            "area": 46.5,
+            "altitude": 18,
+            "translation": {
+                "cs": "Hartford",
+                "de": "Hartford (Connecticut)",
+                "en": "Hartford, Connecticut",
+                "es": "Hartford",
+                "fr": "Hartford (Connecticut)",
+                "hr": "Hartford, Connecticut",
+                "it": "Hartford",
+                "pl": "Hartford",
+                "sv": "Hartford"
+            }
+        },
+        {
+            "name": "Dover, Delaware",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -75.5167,
+                "latitude": 39.15
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 39403,
+            "area": 58.8,
+            "altitude": 11,
+            "translation": {
+                "cs": "Dover (Delaware)",
+                "de": "Dover (Delaware)",
+                "en": "Dover, Delaware",
+                "es": "Dover (Delaware)",
+                "fr": "Dover (Delaware)",
+                "hr": null,
+                "it": "Dover (Delaware)",
+                "pl": "Dover (Delaware)",
+                "sv": "Dover, Delaware"
+            }
+        },
+        {
+            "name": "Tallahassee, Florida",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -84.2833,
+                "latitude": 30.4333
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 196169,
+            "area": 254.5,
+            "altitude": 24,
+            "translation": {
+                "cs": "Tallahassee",
+                "de": "Tallahassee",
+                "en": "Tallahassee, Florida",
+                "es": "Tallahassee",
+                "fr": "Tallahassee",
+                "hr": null,
+                "it": "Tallahassee",
+                "pl": "Tallahassee",
+                "sv": "Tallahassee"
+            }
+        },
+        {
+            "name": "Atlanta",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -84.3833,
+                "latitude": 33.75
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 498715,
+            "area": 343,
+            "altitude": 320,
+            "translation": {
+                "cs": "Atlanta",
+                "de": "Atlanta",
+                "en": "Atlanta",
+                "es": "Atlanta",
+                "fr": "Atlanta",
+                "hr": "Atlanta, Georgia",
+                "it": "Atlanta",
+                "pl": "Atlanta",
+                "sv": "Atlanta"
+            }
+        },
+        {
+            "name": "Honolulu",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -157.8333,
+                "latitude": 21.3167
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 350964,
+            "area": 272.1,
+            "altitude": 6,
+            "translation": {
+                "cs": "Honolulu",
+                "de": "Honolulu",
+                "en": "Honolulu",
+                "es": "Honolulu",
+                "fr": "Honolulu",
+                "hr": "Honolulu, Havaji",
+                "it": "Honolulu",
+                "pl": "Honolulu",
+                "sv": "Honolulu"
+            }
+        },
+        {
+            "name": "Boise, Idaho",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -116.215019,
+                "latitude": 43.618881
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 235684,
+            "area": 165.8,
+            "altitude": 823,
+            "translation": {
+                "cs": "Boise",
+                "de": "Boise",
+                "en": "Boise, Idaho",
+                "es": "Boise",
+                "fr": "Boise",
+                "hr": null,
+                "it": "Boise",
+                "pl": "Boise",
+                "sv": "Boise"
+            }
+        },
+        {
+            "name": "Springfield, Illinois",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -89.65,
+                "latitude": 39.7833
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 114394,
+            "area": 156,
+            "altitude": 182,
+            "translation": {
+                "cs": "Springfield (Illinois)",
+                "de": "Springfield (Illinois)",
+                "en": "Springfield, Illinois",
+                "es": "Springfield (Illinois)",
+                "fr": "Springfield (Illinois)",
+                "hr": "Springfield, Illinois",
+                "it": "Springfield (Illinois)",
+                "pl": "Springfield (Illinois)",
+                "sv": "Springfield, Illinois"
+            }
+        },
+        {
+            "name": "Indianapolis",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -86.15,
+                "latitude": 39.7667
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 887642,
+            "area": 963.5,
+            "altitude": 219,
+            "translation": {
+                "cs": "Indianapolis",
+                "de": "Indianapolis",
+                "en": "Indianapolis",
+                "es": "Indianápolis",
+                "fr": "Indianapolis",
+                "hr": "Indianapolis, Indiana",
+                "it": "Indianapolis",
+                "pl": "Indianapolis",
+                "sv": "Indianapolis"
+            }
+        },
+        {
+            "name": "Des Moines, Iowa",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -93.6167,
+                "latitude": 41.5833
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 214133,
+            "area": 200.1,
+            "altitude": 291,
+            "translation": {
+                "cs": "Des Moines",
+                "de": "Des Moines",
+                "en": "Des Moines, Iowa",
+                "es": "Des Moines",
+                "fr": "Des Moines (Iowa)",
+                "hr": "Des Moines, Iowa",
+                "it": "Des Moines",
+                "pl": "Des Moines",
+                "sv": "Des Moines"
+            }
+        },
+        {
+            "name": "Sacramento, California",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -121.4833,
+                "latitude": 38.5833
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 524943,
+            "area": 257,
+            "altitude": 8,
+            "translation": {
+                "cs": "Sacramento",
+                "de": "Sacramento",
+                "en": "Sacramento, California",
+                "es": "Sacramento (California)",
+                "fr": "Sacramento",
+                "hr": "Sacramento, Kalifornija",
+                "it": "Sacramento (California)",
+                "pl": "Sacramento",
+                "sv": "Sacramento"
+            }
+        },
+        {
+            "name": "Topeka, Kansas",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -95.6833,
+                "latitude": 39.05
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 126587,
+            "area": 147.6,
+            "altitude": 288,
+            "translation": {
+                "cs": "Topeka",
+                "de": "Topeka",
+                "en": "Topeka, Kansas",
+                "es": "Topeka",
+                "fr": "Topeka",
+                "hr": "Topeka, Kansas",
+                "it": "Topeka",
+                "pl": "Topeka",
+                "sv": "Topeka"
+            }
+        },
+        {
+            "name": "Frankfort, Kentucky",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -84.8667,
+                "latitude": 38.2
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 28602,
+            "area": 38.9,
+            "altitude": 155,
+            "translation": {
+                "cs": "Frankfort (Kentucky)",
+                "de": "Frankfort (Kentucky)",
+                "en": "Frankfort, Kentucky",
+                "es": "Frankfort (Kentucky)",
+                "fr": "Frankfort (Kentucky)",
+                "hr": null,
+                "it": "Frankfort (Kentucky)",
+                "pl": "Frankfort",
+                "sv": "Frankfort"
+            }
+        },
+        {
+            "name": "Baton Rouge, Louisiana",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -91.1333,
+                "latitude": 30.45
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 227470,
+            "area": 204.8,
+            "altitude": 14,
+            "translation": {
+                "cs": "Baton Rouge",
+                "de": "Baton Rouge",
+                "en": "Baton Rouge, Louisiana",
+                "es": "Baton Rouge",
+                "fr": "Baton Rouge",
+                "hr": "Baton Rouge, Louisiana",
+                "it": "Baton Rouge",
+                "pl": "Baton Rouge",
+                "sv": "Baton Rouge"
+            }
+        },
+        {
+            "name": "Augusta, Maine",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -69.7333,
+                "latitude": 44.3333
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 18899,
+            "area": 150.9,
+            "altitude": 37,
+            "translation": {
+                "cs": "Augusta (Maine)",
+                "de": "Augusta (Maine)",
+                "en": "Augusta, Maine",
+                "es": "Augusta (Maine)",
+                "fr": "Augusta (Maine)",
+                "hr": null,
+                "it": "Augusta (Maine)",
+                "pl": "Augusta (Maine)",
+                "sv": "Augusta, Maine"
+            }
+        },
+        {
+            "name": "Annapolis, Maryland",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -76.5,
+                "latitude": 38.9667
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 40812,
+            "area": 19.7,
+            "altitude": 12,
+            "translation": {
+                "cs": "Annapolis",
+                "de": "Annapolis (Maryland)",
+                "en": "Annapolis, Maryland",
+                "es": "Annapolis",
+                "fr": "Annapolis",
+                "hr": null,
+                "it": "Annapolis",
+                "pl": "Annapolis",
+                "sv": "Annapolis"
+            }
+        },
+        {
+            "name": "Boston",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -71.0667,
+                "latitude": 42.35
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 675647,
+            "area": 232.1,
+            "altitude": 43,
+            "translation": {
+                "cs": "Boston",
+                "de": "Boston",
+                "en": "Boston",
+                "es": "Boston",
+                "fr": "Boston",
+                "hr": "Boston, Massachusetts",
+                "it": "Boston",
+                "pl": "Boston",
+                "sv": "Boston"
+            }
+        },
+        {
+            "name": "Lansing, Michigan",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -84.55,
+                "latitude": 42.7333
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 112644,
+            "area": 91.3,
+            "altitude": 262,
+            "translation": {
+                "cs": "Lansing",
+                "de": "Lansing",
+                "en": "Lansing, Michigan",
+                "es": "Lansing",
+                "fr": "Lansing (Michigan)",
+                "hr": null,
+                "it": "Lansing",
+                "pl": "Lansing",
+                "sv": "Lansing"
+            }
+        },
+        {
+            "name": "Saint Paul, Minnesota",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -93.1,
+                "latitude": 44.95
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 311527,
+            "area": 145.5,
+            "altitude": 214,
+            "translation": {
+                "cs": "Saint Paul",
+                "de": "Saint Paul (Minnesota)",
+                "en": "Saint Paul, Minnesota",
+                "es": "Saint Paul (Minnesota)",
+                "fr": "Saint Paul (Minnesota)",
+                "hr": "Saint Paul, Minnesota",
+                "it": "Saint Paul",
+                "pl": "Saint Paul",
+                "sv": "Saint Paul, Minnesota"
+            }
+        },
+        {
+            "name": "Jackson, Mississippi",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -90.1833,
+                "latitude": 32.3
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 153701,
+            "area": 106.8,
+            "altitude": 85,
+            "translation": {
+                "cs": "Jackson (Mississippi)",
+                "de": "Jackson (Mississippi)",
+                "en": "Jackson, Mississippi",
+                "es": "Jackson (Misisipi)",
+                "fr": "Jackson (Mississippi)",
+                "hr": "Jackson, Mississippi",
+                "it": "Jackson (Mississippi)",
+                "pl": "Jackson (Missisipi)",
+                "sv": "Jackson, Mississippi"
+            }
+        },
+        {
+            "name": "Jefferson City, Missouri",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -92.1667,
+                "latitude": 38.5833
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 43228,
+            "area": 73.2,
+            "altitude": 192,
+            "translation": {
+                "cs": "Jefferson City",
+                "de": "Jefferson City",
+                "en": "Jefferson City, Missouri",
+                "es": "Jefferson City",
+                "fr": "Jefferson City (Missouri)",
+                "hr": null,
+                "it": "Jefferson City",
+                "pl": "Jefferson City",
+                "sv": "Jefferson City"
+            }
+        },
+        {
+            "name": "Helena, Montana",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -112.0167,
+                "latitude": 46.6
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 32091,
+            "area": 36.3,
+            "altitude": 1237,
+            "translation": {
+                "cs": "Helena (Montana)",
+                "de": "Helena (Montana)",
+                "en": "Helena, Montana",
+                "es": "Helena (Montana)",
+                "fr": "Helena (Montana)",
+                "hr": "Helena, Montana",
+                "it": "Helena (Montana)",
+                "pl": "Helena (Montana)",
+                "sv": "Helena, Montana"
+            }
+        },
+        {
+            "name": "Lincoln, Nebraska",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -96.6833,
+                "latitude": 40.8167
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 291082,
+            "area": 195.2,
+            "altitude": 358,
+            "translation": {
+                "cs": "Lincoln (Nebraska)",
+                "de": "Lincoln (Nebraska)",
+                "en": "Lincoln, Nebraska",
+                "es": "Lincoln (Nebraska)",
+                "fr": "Lincoln (Nebraska)",
+                "hr": "Lincoln, Nebraska",
+                "it": "Lincoln (Nebraska)",
+                "pl": "Lincoln (Nebraska)",
+                "sv": "Lincoln, Nebraska"
+            }
+        },
+        {
+            "name": "Carson City, Nevada",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -119.75,
+                "latitude": 39.1667
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 58639,
+            "area": 403.2,
+            "altitude": 1427,
+            "translation": {
+                "cs": "Carson City",
+                "de": "Carson City",
+                "en": "Carson City, Nevada",
+                "es": "Carson City",
+                "fr": "Carson City",
+                "hr": null,
+                "it": "Carson City",
+                "pl": "Carson City",
+                "sv": "Carson City"
+            }
+        },
+        {
+            "name": "Concord, New Hampshire",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -71.5333,
+                "latitude": 43.2
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 43976,
+            "area": 174.9,
+            "altitude": 88,
+            "translation": {
+                "cs": "Concord",
+                "de": "Concord (New Hampshire)",
+                "en": "Concord, New Hampshire",
+                "es": "Concord (Nuevo Hampshire)",
+                "fr": "Concord (New Hampshire)",
+                "hr": "Concord, New Hampshire",
+                "it": "Concord (New Hampshire)",
+                "pl": "Concord (New Hampshire)",
+                "sv": "Concord, New Hampshire"
+            }
+        },
+        {
+            "name": "Trenton, New Jersey",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -74.75,
+                "latitude": 40.2167
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 90871,
+            "area": 21.1,
+            "altitude": 16,
+            "translation": {
+                "cs": "Trenton",
+                "de": "Trenton (New Jersey)",
+                "en": "Trenton, New Jersey",
+                "es": "Trenton",
+                "fr": "Trenton (New Jersey)",
+                "hr": "Trenton, New Jersey",
+                "it": "Trenton (New Jersey)",
+                "pl": "Trenton",
+                "sv": "Trenton"
+            }
+        },
+        {
+            "name": "Santa Fe, New Mexico",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -105.95,
+                "latitude": 35.6833
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 87505,
+            "area": 96.9,
+            "altitude": 2231,
+            "translation": {
+                "cs": "Santa Fe (Nové Mexiko)",
+                "de": "Santa Fe (New Mexico)",
+                "en": "Santa Fe, New Mexico",
+                "es": "Santa Fe (Nuevo México)",
+                "fr": "Santa Fe (Nouveau-Mexique)",
+                "hr": "Santa Fe, Novi Meksiko",
+                "it": "Santa Fe (Nuovo Messico)",
+                "pl": "Santa Fe (Nowy Meksyk)",
+                "sv": "Santa Fe, New Mexico"
+            }
+        },
+        {
+            "name": "Albany, New York",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -73.7833,
+                "latitude": 42.6667
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 99224,
+            "area": 56.6,
+            "altitude": 60,
+            "translation": {
+                "cs": "Albany (New York)",
+                "de": "Albany (New York)",
+                "en": "Albany, New York",
+                "es": "Albany",
+                "fr": "Albany (New York)",
+                "hr": "Albany, New York",
+                "it": "Albany (New York)",
+                "pl": "Albany",
+                "sv": "Albany, New York"
+            }
+        },
+        {
+            "name": "Raleigh, North Carolina",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -78.65,
+                "latitude": 35.8167
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 467665,
+            "area": 299.3,
+            "altitude": 96,
+            "translation": {
+                "cs": "Raleigh (Severní Karolína)",
+                "de": "Raleigh (North Carolina)",
+                "en": "Raleigh, North Carolina",
+                "es": "Raleigh",
+                "fr": "Raleigh",
+                "hr": null,
+                "it": "Raleigh (Carolina del Nord)",
+                "pl": "Raleigh",
+                "sv": "Raleigh, North Carolina"
+            }
+        },
+        {
+            "name": "Bismarck, North Dakota",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -100.7833,
+                "latitude": 46.8167
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 73622,
+            "area": 71,
+            "altitude": 514,
+            "translation": {
+                "cs": "Bismarck (Severní Dakota)",
+                "de": "Bismarck (North Dakota)",
+                "en": "Bismarck, North Dakota",
+                "es": "Bismarck (Dakota del Norte)",
+                "fr": "Bismarck (Dakota du Nord)",
+                "hr": null,
+                "it": "Bismarck (Dakota del Nord)",
+                "pl": "Bismarck (Dakota Północna)",
+                "sv": "Bismarck, North Dakota"
+            }
+        },
+        {
+            "name": "Columbus, Ohio",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -83,
+                "latitude": 39.9667
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 905748,
+            "area": 550.5,
+            "altitude": 275,
+            "translation": {
+                "cs": "Columbus (Ohio)",
+                "de": "Columbus (Ohio)",
+                "en": "Columbus, Ohio",
+                "es": "Columbus (Ohio)",
+                "fr": "Columbus (Ohio)",
+                "hr": "Columbus, Ohio",
+                "it": "Columbus (Ohio)",
+                "pl": "Columbus",
+                "sv": "Columbus, Ohio"
+            }
+        },
+        {
+            "name": "Oklahoma City",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -97.5167,
+                "latitude": 35.4667
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 681054,
+            "area": 1608.8,
+            "altitude": 396,
+            "translation": {
+                "cs": "Oklahoma City",
+                "de": "Oklahoma City",
+                "en": "Oklahoma City",
+                "es": "Oklahoma City",
+                "fr": "Oklahoma City",
+                "hr": "Oklahoma City, Oklahoma",
+                "it": "Oklahoma City",
+                "pl": "Oklahoma City",
+                "sv": "Oklahoma City"
+            }
+        },
+        {
+            "name": "Salem, Oregon",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -123.0333,
+                "latitude": 44.9333
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 175535,
+            "area": 120.1,
+            "altitude": 467,
+            "translation": {
+                "cs": "Salem (Oregon)",
+                "de": "Salem (Oregon)",
+                "en": "Salem, Oregon",
+                "es": "Salem (Oregón)",
+                "fr": "Salem (Oregon)",
+                "hr": null,
+                "it": "Salem (Oregon)",
+                "pl": "Salem (Oregon)",
+                "sv": "Salem, Oregon"
+            }
+        },
+        {
+            "name": "Harrisburg, Pennsylvania",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -76.8833,
+                "latitude": 40.2667
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 50099,
+            "area": 26.9,
+            "altitude": 101,
+            "translation": {
+                "cs": "Harrisburg",
+                "de": "Harrisburg (Pennsylvania)",
+                "en": "Harrisburg, Pennsylvania",
+                "es": "Harrisburg",
+                "fr": "Harrisburg",
+                "hr": null,
+                "it": "Harrisburg",
+                "pl": "Harrisburg",
+                "sv": "Harrisburg"
+            }
+        },
+        {
+            "name": "Providence, Rhode Island",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -71.4167,
+                "latitude": 41.8333
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 190934,
+            "area": 53.2,
+            "altitude": 23,
+            "translation": {
+                "cs": "Providence",
+                "de": "Providence",
+                "en": "Providence, Rhode Island",
+                "es": "Providence (Rhode Island)",
+                "fr": "Providence (Rhode Island)",
+                "hr": "Providence, Rhode Island",
+                "it": "Providence",
+                "pl": "Providence",
+                "sv": "Providence"
+            }
+        },
+        {
+            "name": "Columbia, South Carolina",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -81.0333,
+                "latitude": 34
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 136632,
+            "area": 346.5,
+            "altitude": 89,
+            "translation": {
+                "cs": "Columbia (Jižní Karolína)",
+                "de": "Columbia (South Carolina)",
+                "en": "Columbia, South Carolina",
+                "es": "Columbia (Carolina del Sur)",
+                "fr": "Columbia (Caroline du Sud)",
+                "hr": null,
+                "it": "Columbia (Carolina del Sud)",
+                "pl": "Columbia (Karolina Południowa)",
+                "sv": "Columbia, South Carolina"
+            }
+        },
+        {
+            "name": "Pierre, South Dakota",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -100.3333,
+                "latitude": 44.3667
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 14091,
+            "area": 33.7,
+            "altitude": 442,
+            "translation": {
+                "cs": "Pierre (Jižní Dakota)",
+                "de": "Pierre (South Dakota)",
+                "en": "Pierre, South Dakota",
+                "es": "Pierre (Dakota del Sur)",
+                "fr": "Pierre (Dakota du Sud)",
+                "hr": "Pierre, Južna Dakota",
+                "it": "Pierre (Dakota del Sud)",
+                "pl": "Pierre",
+                "sv": "Pierre, South Dakota"
+            }
+        },
+        {
+            "name": "Nashville, Tennessee",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -86.7833,
+                "latitude": 36.1667
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 689447,
+            "area": 1362.6,
+            "altitude": 182,
+            "translation": {
+                "cs": "Nashville",
+                "de": "Nashville",
+                "en": "Nashville, Tennessee",
+                "es": "Nashville",
+                "fr": "Nashville",
+                "hr": "Nashville, Tennessee",
+                "it": "Nashville",
+                "pl": "Nashville",
+                "sv": "Nashville"
+            }
+        },
+        {
+            "name": "Austin, Texas",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -97.7667,
+                "latitude": 30.2667
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 961855,
+            "area": 767.28,
+            "altitude": 149,
+            "translation": {
+                "cs": "Austin",
+                "de": "Austin",
+                "en": "Austin, Texas",
+                "es": "Austin",
+                "fr": "Austin (Texas)",
+                "hr": "Austin (Teksas)",
+                "it": "Austin",
+                "pl": "Austin",
+                "sv": "Austin"
+            }
+        },
+        {
+            "name": "Salt Lake City",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -111.9,
+                "latitude": 40.75
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 199723,
+            "area": 285.9,
+            "altitude": 1288,
+            "translation": {
+                "cs": "Salt Lake City",
+                "de": "Salt Lake City",
+                "en": "Salt Lake City",
+                "es": "Salt Lake City",
+                "fr": "Salt Lake City",
+                "hr": "Salt Lake City, Utah",
+                "it": "Salt Lake City",
+                "pl": "Salt Lake City",
+                "sv": "Salt Lake City"
+            }
+        },
+        {
+            "name": "Montpelier, Vermont",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -72.5667,
+                "latitude": 44.2667
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 8074,
+            "area": 26.6,
+            "altitude": 160,
+            "translation": {
+                "cs": "Montpelier (Vermont)",
+                "de": "Montpelier (Vermont)",
+                "en": "Montpelier, Vermont",
+                "es": "Montpelier (Vermont)",
+                "fr": "Montpelier",
+                "hr": "Montpelier, Vermont",
+                "it": "Montpelier (Vermont)",
+                "pl": "Montpelier",
+                "sv": "Montpelier, Vermont"
+            }
+        },
+        {
+            "name": "Richmond, Virginia",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -77.45,
+                "latitude": 37.55
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 226610,
+            "area": 162,
+            "altitude": 45,
+            "translation": {
+                "cs": "Richmond",
+                "de": "Richmond (Virginia)",
+                "en": "Richmond, Virginia",
+                "es": "Richmond (Virginia)",
+                "fr": "Richmond (Virginie)",
+                "hr": "Richmond, Virginia",
+                "it": "Richmond (Virginia)",
+                "pl": "Richmond (Wirginia)",
+                "sv": "Richmond, Virginia"
+            }
+        },
+        {
+            "name": "Olympia, Washington",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -122.9,
+                "latitude": 47.0333
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 55605,
+            "area": 48,
+            "altitude": 29,
+            "translation": {
+                "cs": "Olympia (Washington)",
+                "de": "Olympia (Washington)",
+                "en": "Olympia, Washington",
+                "es": "Olympia (Washington)",
+                "fr": "Olympia (Washington)",
+                "hr": "Olympia, Washington",
+                "it": "Olympia (Washington)",
+                "pl": "Olympia",
+                "sv": "Olympia, Washington"
+            }
+        },
+        {
+            "name": "Charleston, West Virginia",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -81.6333,
+                "latitude": 38.35
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 48864,
+            "area": 84.7,
+            "altitude": 182,
+            "translation": {
+                "cs": "Charleston (Západní Virginie)",
+                "de": "Charleston (West Virginia)",
+                "en": "Charleston, West Virginia",
+                "es": "Charleston (Virginia Occidental)",
+                "fr": "Charleston (Virginie-Occidentale)",
+                "hr": null,
+                "it": "Charleston (Virginia Occidentale)",
+                "pl": "Charleston (Wirginia Zachodnia)",
+                "sv": "Charleston, West Virginia"
+            }
+        },
+        {
+            "name": "Madison, Wisconsin",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -89.3833,
+                "latitude": 43.0667
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 269840,
+            "area": 219.3,
+            "altitude": 267,
+            "translation": {
+                "cs": "Madison",
+                "de": "Madison (Wisconsin)",
+                "en": "Madison, Wisconsin",
+                "es": "Madison (Wisconsin)",
+                "fr": "Madison (Wisconsin)",
+                "hr": "Madison, Wisconsin",
+                "it": "Madison (Wisconsin)",
+                "pl": "Madison",
+                "sv": "Madison, Wisconsin"
+            }
+        },
+        {
+            "name": "Cheyenne, Wyoming",
+            "state": null,
+            "priority": 2,
+            "size": "bigger",
+            "coordinate": {
+                "longitude": -104.8,
+                "latitude": 41.15
+            },
+            "country": "us",
+            "type": "state-capital",
+            "population": 65132,
+            "area": 57.9,
+            "altitude": 1848,
+            "translation": {
+                "cs": "Cheyenne",
+                "de": "Cheyenne (Wyoming)",
+                "en": "Cheyenne, Wyoming",
+                "es": "Cheyenne (Wyoming)",
+                "fr": "Cheyenne (Wyoming)",
+                "hr": null,
+                "it": "Cheyenne (Wyoming)",
+                "pl": "Cheyenne",
+                "sv": "Cheyenne, Wyoming"
+            }
+        }
+    ]
+}

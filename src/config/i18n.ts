@@ -45,7 +45,7 @@ export {
 
 export const defaultLanguageOptions = {
     Croatian: 'hr',
-    Czech: 'cz',
+    Czech: 'cs',
     English: 'en',
     French: 'fr',
     German: 'de',

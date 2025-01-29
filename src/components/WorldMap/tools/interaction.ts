@@ -207,6 +207,32 @@ export const getSvgElementFromSvg = (
 };
 
 /**
+ * Sets the svg class.
+ */
+export const setSvgClass = (type: string) => {
+    const svg = document.getElementById(idSvgMap);
+
+    if (!svg) {
+        return;
+    }
+
+    svg.classList.add(type);
+}
+
+/**
+ * Resets the svg class.
+ */
+export const resetSvgClass = () => {
+    const svg = document.getElementById(idSvgMap);
+
+    if (!svg) {
+        return;
+    }
+
+    svg.classList.value = '';
+}
+
+/**
  * Remove hover class from path.country.
  */
 export const removeHoverClassPathCountry = () => {

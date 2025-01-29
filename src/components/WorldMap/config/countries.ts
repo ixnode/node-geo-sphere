@@ -19,7 +19,7 @@ export const countryCropBoundingBox: Record<string, TypeCropBoundingBox> = {
     /* Zoom bounding box for the United States. */
     us: [
         [-180, 24], /* longitude and latitude min. */
-        [-66, 72]  /* longitude and latitude max. */
+        [-66, 50]  /* longitude and latitude max. */
     ],
 }
 
@@ -49,4 +49,7 @@ export const zoomGapBoundingBoxFactor: Record<string, TypeZoomGapBoundingBoxFact
 
     /* Zoom bounding box for San Marino. */
     sm: [40., 40.]
+    ,
+    /* Zoom bounding box for the United States. */
+    us: [.05, .05],
 }

@@ -24,7 +24,7 @@ import {
 } from "../config/cities";
 
 /* Import db data and types. */
-import {getCityMap, TypeCityType} from "../db/cities";
+import {getCityMap, TypeCitySize, TypeCityType} from "../db/cities";
 import {getCountryMap} from "../db/countries";
 
 /* GeoJson2PathOptions interface. */
@@ -283,7 +283,7 @@ export class GeoJson2Path {
                 <circle class="${classNameSvgCircle}" cx="${x}" cy="${y}"${fill !== undefined ? ` fill="${fill}"` : ''}${r !== undefined ? ` r="${r}"` : ''}>
                     <title>${nameTranslated}</title>
                 </circle>
-                <text class="${classNameSvgText}" x="${x + (r || distanceCityTypeNameCity) * 2 + this.getSvgPlaceTextDistance(element.placeType)}" y="${y + 2}"${fill !== undefined ? ` fill="${fill}"` : ''}>${nameTranslated}</text>
+                <text class="${classNameSvgText}" x="${x + (r || distanceCityTypeNameCity) * 2 + this.getSvgPlaceTextDistance(element.placeType, element.size)}" y="${y + 2}"${fill !== undefined ? ` fill="${fill}"` : ''}>${nameTranslated}</text>
             </g>
         `;
     };
@@ -310,18 +310,22 @@ export class GeoJson2Path {
      * Returns the SVG place class name.
      *
      * @param cityType
+     * @param size
      * @private
      */
-    private getSvgPlaceTextDistance(cityType: TypeCityType): number {
+    private getSvgPlaceTextDistance(cityType: TypeCityType, size: TypeCitySize): number {
+
+        const correction = size === 'bigger' ? 8 : (size === 'smaller' ? 1 : 2);
+
         if (cityType === typeCityTypeNameCapital) {
-            return distanceCityTypeNameCapital;
+            return correction * distanceCityTypeNameCapital;
         }
 
         if (cityType === typeCityTypeNameStateCapital) {
-            return distanceCityTypeNameStateCapital;
+            return correction * distanceCityTypeNameStateCapital;
         }
 
-        return distanceCityTypeNameCity;
+        return correction * distanceCityTypeNameCity;
     }
 
 }

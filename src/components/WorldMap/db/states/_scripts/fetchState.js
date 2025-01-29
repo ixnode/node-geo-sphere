@@ -4,6 +4,7 @@
  * Or search for a single state:
  * - cz: https://de.wikipedia.org/wiki/Verwaltungsgliederung_Tschechiens#Auflistung_der_Regionen
  * - pl: https://de.wikipedia.org/wiki/Woiwodschaft#Liste_der_Woiwodschaften
+ * - us: https://de.wikipedia.org/wiki/Liste_der_Bundesstaaten_der_Vereinigten_Staaten#Bundesstaaten
  *
  * Open browser without web security (cmd):
  *

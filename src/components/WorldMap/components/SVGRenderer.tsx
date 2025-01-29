@@ -73,8 +73,8 @@ import {
     getSvgPointFromSvg,
     removeHoverClassCirclePlace,
     removeHoverClassGPlaceGroup,
-    removeHoverClassPathCountry, removeSubtitle,
-    resetTitle,
+    removeHoverClassPathCountry, removeSubtitle, resetSvgClass,
+    resetTitle, setSvgClass,
     textNotAvailable
 } from "../tools/interaction";
 
@@ -343,6 +343,9 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         /* Get SVG dimensions. */
         const svgRect = svgRef.current.getBoundingClientRect();
 
+        /* Set cursor to pointer. */
+        setSvgClass('move');
+
         /* Calculate moved distance. */
         const distanceX = (startPoint.x - event.clientX) * (viewBox.width / svgRect.width);
         const distanceY = (startPoint.y - event.clientY) * (viewBox.height / svgRect.height);
@@ -384,6 +387,9 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         setIsMouseDown(false, delayMousePanning.current);
         setIsMouseMove(false, delayMousePanning.current);
 
+        /* Set cursor to pointer. */
+        resetSvgClass();
+
         /* Set last element. */
         lastEvent.current = null;
     };
@@ -399,6 +405,9 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         /* Disable isMouseDownGlobal */
         setIsMouseDown(false);
         setIsMouseMove(false);
+
+        /* Set cursor to pointer. */
+        resetSvgClass();
 
         /* Remover hover classes. */
         removeHoverClassPathCountry();

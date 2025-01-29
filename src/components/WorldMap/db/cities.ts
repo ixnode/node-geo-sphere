@@ -5,6 +5,9 @@ import citiesAsia from './cities/asia.json';
 import citiesEurope from './cities/europe.json';
 import citiesOceania from './cities/oceania.json';
 
+/* Import american cities. */
+import citiesAmericaUnitedStates from './cities/america/united-states.json';
+
 /* Import europa cities. */
 import citiesEuropaCzech from './cities/europe/czechia.json';
 import citiesEuropaFrance from './cities/europe/france.json';
@@ -80,15 +83,16 @@ export const getCities = (): TypeCity[] => {
         ...(citiesAmerica.data as TypeCity[]),
         ...(citiesAsia.data as TypeCity[]),
         ...(citiesEurope.data as TypeCity[]),
-        ...(citiesOceania.data as TypeCity[]),
 
         /* Africa cities. */
 
         /* America cities. */
+        ...(citiesAmericaUnitedStates.data as TypeCity[]),
 
         /* Asia cities. */
 
         /* Europa cities. */
+        ...(citiesOceania.data as TypeCity[]),
         ...(citiesEuropaCzech.data as TypeCity[]),
         ...(citiesEuropaFrance.data as TypeCity[]),
         ...(citiesEuropaGermany.data as TypeCity[]),
