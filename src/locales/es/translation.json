@@ -1,5 +1,10 @@
 {
     "TEXT_HOLD_CTRL_AND_SCROLL": "Mantén pulsada la tecla Ctrl y desplázate para ampliar el mapa.",
 
-    "TEXT_WORD_POPULATION": "población"
+    "TEXT_WORD_ALTITUDE": "altitud",
+    "TEXT_WORD_AREA": "superficie",
+    "TEXT_WORD_COORDINATE": "coordenada",
+    "TEXT_WORD_COUNTRY": "país",
+    "TEXT_WORD_POPULATION": "población",
+    "TEXT_WORD_REGION": "región"
 }

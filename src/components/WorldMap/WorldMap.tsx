@@ -43,6 +43,7 @@ import {Logo} from "../../helper/Logo/Logo";
 
 /* Import translation libraries. */
 import { i18n } from "../../config/i18n";
+import CityInfo from "./components/CityInfo";
 
 /* WorldMapProps interface. */
 export interface WorldMapProps {
@@ -135,6 +136,10 @@ export const WorldMap: React.FC<WorldMapProps> = ({
     const [stateZoomIn, setStateZoomIn] = useState<number>(0);
     const [stateZoomOut, setStateZoomOut] = useState<number>(0);
 
+    /* City info states. */
+    const [isCityInfoVisible, setIsCityInfoVisible] = useState(false);
+    const [cityInfoData, setCityInfoData] = useState<PlaceData|null>(null);
+
     /* Set refs. */
     const hintsRef = useRef<HTMLDivElement|null>(null);
     const title = useRef<string>(textDefaultWorldMapTitle);
@@ -142,6 +147,31 @@ export const WorldMap: React.FC<WorldMapProps> = ({
 
     /* Import translation. */
     const { t } = useTranslation();
+
+    /**
+     * Proxy functions for onClickPlace.
+     *
+     * @param data
+     */
+    const onClickPlaceProxy = (data: PlaceData): void => {
+        if (onClickPlace !== null) {
+            onClickPlace(data);
+        }
+
+        setCityInfoData(data);
+        setIsCityInfoVisible(true);
+    }
+
+    /**
+     * Proxy functions for onClickPlace.
+     *
+     * @param data
+     */
+    const onClickCountryProxy = (data: CountryData): void => {
+        if (onClickCountry !== null) {
+            onClickCountry(data);
+        }
+    }
 
     /**
      * Function to handle zoom in (+).
@@ -232,6 +262,10 @@ export const WorldMap: React.FC<WorldMapProps> = ({
             </div>
 
             {
+                isCityInfoVisible && cityInfoData && <CityInfo data={cityInfoData} setVisible={setIsCityInfoVisible} language={language} />
+            }
+
+            {
                 logo && <div className="world-map__logo">
                     <Logo size="small" type="css"/>
                 </div>
@@ -271,8 +305,8 @@ export const WorldMap: React.FC<WorldMapProps> = ({
                     country={country}
                     language={language}
 
-                    onClickCountry={onClickCountry}
-                    onClickPlace={onClickPlace}
+                    onClickCountry={onClickCountryProxy}
+                    onClickPlace={onClickPlaceProxy}
 
                     onHoverCountry={onHoverCountry}
                     onHoverPlace={onHoverPlace}

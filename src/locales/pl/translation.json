@@ -1,5 +1,10 @@
 {
     "TEXT_HOLD_CTRL_AND_SCROLL": "Przytrzymaj klawisz Ctrl i przewiń, aby powiększyć mapę.",
 
-    "TEXT_WORD_POPULATION": "populacja"
+    "TEXT_WORD_ALTITUDE": "höjd",
+    "TEXT_WORD_AREA": "área",
+    "TEXT_WORD_COORDINATE": "koordynacja",
+    "TEXT_WORD_COUNTRY": "kraj",
+    "TEXT_WORD_POPULATION": "populacja",
+    "TEXT_WORD_REGION": "region"
 }

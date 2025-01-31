@@ -1,5 +1,10 @@
 {
     "TEXT_HOLD_CTRL_AND_SCROLL": "Držite Ctrl i pomičite se za zumiranje karte.",
 
-    "TEXT_WORD_POPULATION": "stanovništva"
+    "TEXT_WORD_ALTITUDE": "visina",
+    "TEXT_WORD_AREA": "površina",
+    "TEXT_WORD_COORDINATE": "koordinata",
+    "TEXT_WORD_COUNTRY": "zemlja",
+    "TEXT_WORD_POPULATION": "stanovništva",
+    "TEXT_WORD_REGION": "regija"
 }

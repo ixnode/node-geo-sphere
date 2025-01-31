@@ -42,6 +42,10 @@ export type TypeCityCoordinate = {
     longitude: number;
     latitude: number;
 };
+export type TypeCityMoveText = {
+    x: number;
+    y: number;
+};
 export type TypeSvgClass = "move"|"zoom"|"pointer";
 
 /**
@@ -59,8 +63,10 @@ export type TypeCity = {
     /* Other properties. */
     coordinate: TypeCityCoordinate;
     coordinateDisplay?: TypeCityCoordinate;
+    moveText?: TypeCityMoveText;
     priority: number;
     population: number|null;
+    area?: number|null;
     altitude?: number|null;
 
     /* Translations. */
@@ -185,6 +191,21 @@ export const getPlaceDataByPlace = (
     const state = getStateByPlace(place);
     if (state) {
         data.state = getStateDataByState(state, null, null, language);
+    }
+
+    /* Add population. */
+    if (place.population) {
+        data.population = place.population;
+    }
+
+    /* Add area. */
+    if (place.area) {
+         data.area = place.area;
+    }
+
+    /* Add altitude. */
+    if (place.altitude) {
+         data.altitude = place.altitude;
     }
 
     return data;

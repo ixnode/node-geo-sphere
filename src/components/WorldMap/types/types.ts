@@ -4,7 +4,7 @@ import { FeatureCollection } from 'geojson';
 import {CountryData, PlaceData} from "../config/interfaces";
 
 /* Import db types. */
-import {TypeCityAlignment, TypeCitySize, TypeCityType} from "../db/cities";
+import {TypeCityAlignment, TypeCityMoveText, TypeCitySize, TypeCityType} from "../db/cities";
 
 export type TypeProperties = {
     name?: string;
@@ -128,6 +128,7 @@ export type TypeSvgPlace = {
     priority: number;
     size: TypeCitySize;
     alignment: TypeCityAlignment;
+    moveText: TypeCityMoveText;
 
     /* Position. */
     x: number;

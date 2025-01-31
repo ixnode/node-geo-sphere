@@ -1,5 +1,10 @@
 {
     "TEXT_HOLD_CTRL_AND_SCROLL": "Håll ned Ctrl och scrolla för att zooma kartan.",
 
-    "TEXT_WORD_POPULATION": "befolkning"
+    "TEXT_WORD_ALTITUDE": "höjd",
+    "TEXT_WORD_AREA": "yta",
+    "TEXT_WORD_COORDINATE": "koordinat",
+    "TEXT_WORD_COUNTRY": "land",
+    "TEXT_WORD_POPULATION": "befolkning",
+    "TEXT_WORD_REGION": "region"
 }

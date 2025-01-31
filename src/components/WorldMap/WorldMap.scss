@@ -10,9 +10,9 @@ $svg-path-fill-hover-mix: #000;
 $svg-path-fill-hover-mix-percent: 80%;
 $svg-path-stroke: #a0a0a0;
 $svg-circle-fill: #333;
-$svg-circle-fill-hover: #660000;
+$svg-circle-fill-hover: #990000;
 $svg-text-fill: #333;
-$svg-text-fill-hover: #660000;
+$svg-text-fill-hover: #990000;
 $color-text: #333;
 
 /* Place sizes. */
@@ -21,15 +21,15 @@ $size-place-font-size-standard: 150%;
 
 /* Place sizes (capital). */
 $size-place-capital-radius-smallest: 2;
-$size-place-capital-font-size-smallest: 150%;
+$size-place-capital-font-size-smallest: 175%;
 $size-place-capital-radius-smaller: 3;
-$size-place-capital-font-size-smaller: 180%;
+$size-place-capital-font-size-smaller: 205%;
 $size-place-capital-radius-standard: 5;
-$size-place-capital-font-size-standard: 225%;
+$size-place-capital-font-size-standard: 250%;
 $size-place-capital-radius-bigger: 6;
-$size-place-capital-font-size-bigger: 300%;
+$size-place-capital-font-size-bigger: 325%;
 $size-place-capital-radius-biggest: 8;
-$size-place-capital-font-size-biggest: 400%;
+$size-place-capital-font-size-biggest: 425%;
 
 /* Place sizes (state capital). */
 $size-place-state-capital-radius-smallest: 2;
@@ -131,6 +131,53 @@ $size-place-city-font-size-biggest: 300%;
         border-top: 1px solid #a0a0a0;
         font-style: italic;
         font-size: 0.8em;
+    }
+
+    .world-map__city-info {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 50%;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-left: 1px solid #a0a0a0;
+        z-index: 1000;
+        padding: 2em;
+        box-sizing: border-box;
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+
+            svg {
+                width: 24px;
+                height: 24px;
+                stroke: #333;
+                transition: stroke 0.2s ease-in-out;
+            }
+
+            &:hover {
+                svg {
+                    stroke: red;
+                }
+            }
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        p {
+            margin-top: .75em;
+            margin-bottom: 0;
+        }
     }
 
     .world-map__logo {

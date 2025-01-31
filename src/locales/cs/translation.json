@@ -1,5 +1,10 @@
 {
     "TEXT_HOLD_CTRL_AND_SCROLL": "Podržením klávesy Ctrl a rolováním mapu přiblížíte.",
 
-    "TEXT_WORD_POPULATION": "obyvatelstvo"
+    "TEXT_WORD_ALTITUDE": "výše",
+    "TEXT_WORD_AREA": "plocha povrchu",
+    "TEXT_WORD_COORDINATE": "koordinát",
+    "TEXT_WORD_COUNTRY": "země",
+    "TEXT_WORD_POPULATION": "obyvatelstvo",
+    "TEXT_WORD_REGION": "region"
 }

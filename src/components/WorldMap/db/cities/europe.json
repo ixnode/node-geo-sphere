@@ -149,7 +149,7 @@
             "name": "Bratislava",
             "state": null,
             "priority": 1,
-            "size": "smaller",
+            "size": "standard",
             "coordinate": {
                 "longitude": 17.1547,
                 "latitude": 48.2116
@@ -1157,7 +1157,8 @@
             "name": "Wien",
             "state": null,
             "priority": 1,
-            "size": "smaller",
+            "size": "standard",
+            "alignment": "right",
             "coordinate": {
                 "longitude": 16.3728,
                 "latitude": 48.2092

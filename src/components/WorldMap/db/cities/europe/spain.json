@@ -110,6 +110,10 @@
                 "longitude": -2.6731,
                 "latitude": 42.8467
             },
+            "moveText": {
+                "x": 0,
+                "y": -15
+            },
             "country": "es",
             "type": "state-capital",
             "population": 253672,
@@ -385,9 +389,9 @@
                 "longitude": -1.6500,
                 "latitude": 42.8167
             },
-            "coordinateDisplay": {
-                "longitude": -1.6500,
-                "latitude": 42.6667
+            "moveText": {
+                "x": 0,
+                "y": 12
             },
             "country": "es",
             "type": "state-capital",

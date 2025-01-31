@@ -46,6 +46,19 @@
                 "coordinateDisplay": {
                     "$ref": "#/definitions/Coordinate"
                 },
+                "moveText": {
+                    "type": "object",
+                    "properties": {
+                        "x": {
+                            "type": "number"
+                        },
+                        "y": {
+                            "type": "number"
+                        }
+                    },
+                    "required": ["x", "y"],
+                    "additionalProperties": false
+                },
                 "country": {
                     "type": "string",
                     "pattern": "^[a-z]{2}$"

@@ -1,5 +1,10 @@
 {
     "TEXT_HOLD_CTRL_AND_SCROLL": "Hold Ctrl and scroll to zoom the map.",
 
-    "TEXT_WORD_POPULATION": "population"
+    "TEXT_WORD_ALTITUDE": "altitude",
+    "TEXT_WORD_AREA": "area",
+    "TEXT_WORD_COORDINATE": "coordinate",
+    "TEXT_WORD_COUNTRY": "country",
+    "TEXT_WORD_POPULATION": "population",
+    "TEXT_WORD_REGION": "region"
 }

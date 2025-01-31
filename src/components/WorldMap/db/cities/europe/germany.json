@@ -106,6 +106,10 @@
                 "longitude": 9.9937,
                 "latitude": 53.5511
             },
+            "moveText": {
+                "x": 0,
+                "y": 5
+            },
             "country": "de",
             "type": "state-capital",
             "population": 1910160,
@@ -202,9 +206,9 @@
                 "longitude": 8.2473,
                 "latitude": 49.9929
             },
-            "coordinateDisplay": {
-                "longitude": 8.2473,
-                "latitude": 49.8929
+            "moveText": {
+                "x": 0,
+                "y": 8
             },
             "country": "de",
             "type": "state-capital",
@@ -254,9 +258,9 @@
                 "longitude": 13.0636,
                 "latitude": 52.3918
             },
-            "coordinateDisplay": {
-                "longitude": 13.0636,
-                "latitude": 52.3418
+            "moveText": {
+                "x": 0,
+                "y": 5
             },
             "country": "de",
             "type": "state-capital",
@@ -353,6 +357,10 @@
             "coordinate": {
                 "longitude": 8.2398,
                 "latitude": 50.0782
+            },
+            "moveText": {
+                "x": 0,
+                "y": -8
             },
             "country": "de",
             "type": "state-capital",

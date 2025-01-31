@@ -92,6 +92,12 @@ export interface PlaceData {
     /* Population of the place. */
     population?: number|null;
 
+    /* Area of the place. */
+    area?: number|null;
+
+    /* Altitude of the place. */
+    altitude?: number|null;
+
     /* Latitude on svg. */
     latitude?: number;
 

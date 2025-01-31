@@ -136,6 +136,7 @@
             "state": "us-ct",
             "priority": 2,
             "size": "biggest",
+            "alignment": "right",
             "coordinate": {
                 "longitude": -72.6833,
                 "latitude": 41.7667
@@ -162,6 +163,10 @@
             "state": "us-de",
             "priority": 2,
             "size": "biggest",
+            "moveText": {
+                "x": 0,
+                "y": -40
+            },
             "coordinate": {
                 "longitude": -75.5167,
                 "latitude": 39.15
@@ -322,9 +327,9 @@
                 "longitude": -86.15,
                 "latitude": 39.7667
             },
-            "coordinateDisplay": {
-                "longitude": -86.15,
-                "latitude": 39.5667
+            "moveText": {
+                "x": 0,
+                "y": 20
             },
             "country": "us",
             "type": "state-capital",
@@ -972,6 +977,7 @@
             "state": "us-pa",
             "priority": 2,
             "size": "biggest",
+            "alignment": "right",
             "coordinate": {
                 "longitude": -76.8833,
                 "latitude": 40.2667
@@ -1153,7 +1159,8 @@
             "name": "Montpelier",
             "state": "us-vt",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
+            "alignment": "right",
             "coordinate": {
                 "longitude": -72.5667,
                 "latitude": 44.2667

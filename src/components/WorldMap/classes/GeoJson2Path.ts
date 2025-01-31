@@ -152,6 +152,14 @@ export class GeoJson2Path {
                     priority: cityMapElement ? cityMapElement.priority : 1,
                     size: cityMapElement ? cityMapElement.size : 'standard',
                     alignment: cityMapElement && cityMapElement.alignment ? cityMapElement.alignment : 'left',
+                    moveText: cityMapElement && cityMapElement.moveText ?
+                        {
+                            x: cityMapElement.moveText.x,
+                            y: this.invertY(-cityMapElement.moveText.y)
+                        } : {
+                            x: 0,
+                            y: this.invertY(0)
+                        },
 
                     /* Position. */
                     x: x,
@@ -279,8 +287,8 @@ export class GeoJson2Path {
             nameTranslated = getTranslatedName(dataCity, this.options.language);
         }
 
-        let textPositionX = x;
-        let textPositionY = y;
+        let textPositionX = x + element.moveText.x;
+        let textPositionY = y + element.moveText.y;
 
         switch (element.alignment) {
             case "left":
