@@ -1,6 +1,6 @@
 {
   "name": "@ixnode/geo-sphere",
-  "version": "0.1.44",
+  "version": "0.1.45",
   "description": "A Node.js package for rendering interactive world maps with Mercator projection, customizable languages, and advanced interactivity features such as zoom, pan, and click events.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",

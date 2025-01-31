@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Changelogs
 
+### [0.1.45] - 2025-02-01
+
+* Add country data layer
+
 ### [0.1.44] - 2025-02-01
 
 * Add city data layer
