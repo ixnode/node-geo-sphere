@@ -1,0 +1,905 @@
+{
+    "$schema": "../_schema/states.schema.json",
+    "data": [
+        {
+            "name": "Alabama",
+            "code": "us-al",
+            "country": "us",
+            "population": 5024279,
+            "area": 135765,
+            "translation": {
+                "cs": "Alabama",
+                "de": "Alabama",
+                "en": "Alabama",
+                "es": "Alabama",
+                "fr": "Alabama",
+                "hr": "Alabama",
+                "it": "Alabama",
+                "pl": "Alabama",
+                "sv": "Alabama"
+            }
+        },
+        {
+            "name": "Alaska",
+            "code": "us-ak",
+            "country": "us",
+            "population": 733391,
+            "area": 1717854,
+            "translation": {
+                "cs": "Aljaška",
+                "de": "Alaska",
+                "en": "Alaska",
+                "es": "Alaska",
+                "fr": "Alaska",
+                "hr": "Aljaska",
+                "it": "Alaska",
+                "pl": "Alaska",
+                "sv": "Alaska"
+            }
+        },
+        {
+            "name": "Arizona",
+            "code": "us-az",
+            "country": "us",
+            "population": 7151502,
+            "area": 295254,
+            "translation": {
+                "cs": "Arizona",
+                "de": "Arizona",
+                "en": "Arizona",
+                "es": "Arizona",
+                "fr": "Arizona",
+                "hr": "Arizona",
+                "it": "Arizona",
+                "pl": "Arizona",
+                "sv": "Arizona"
+            }
+        },
+        {
+            "name": "Arkansas",
+            "code": "us-ar",
+            "country": "us",
+            "population": 3011524,
+            "area": 137732,
+            "translation": {
+                "cs": "Arkansas",
+                "de": "Arkansas",
+                "en": "Arkansas",
+                "es": "Arkansas",
+                "fr": "Arkansas",
+                "hr": "Arkansas",
+                "it": "Arkansas",
+                "pl": "Arkansas",
+                "sv": "Arkansas"
+            }
+        },
+        {
+            "name": "Colorado",
+            "code": "us-co",
+            "country": "us",
+            "population": 5877610,
+            "area": 269601,
+            "translation": {
+                "cs": "Colorado",
+                "de": "Colorado",
+                "en": "Colorado",
+                "es": "Colorado",
+                "fr": "Colorado",
+                "hr": "Colorado",
+                "it": "Colorado",
+                "pl": "Kolorado",
+                "sv": "Colorado"
+            }
+        },
+        {
+            "name": "Connecticut",
+            "code": "us-ct",
+            "country": "us",
+            "population": 3605944,
+            "area": 14357,
+            "translation": {
+                "cs": "Connecticut",
+                "de": "Connecticut",
+                "en": "Connecticut",
+                "es": "Connecticut",
+                "fr": "Connecticut",
+                "hr": "Connecticut",
+                "it": "Connecticut",
+                "pl": "Connecticut",
+                "sv": "Connecticut"
+            }
+        },
+        {
+            "name": "Delaware",
+            "code": "us-de",
+            "country": "us",
+            "population": 989948,
+            "area": 6447,
+            "translation": {
+                "cs": "Delaware",
+                "de": "Delaware",
+                "en": "Delaware",
+                "es": "Delaware",
+                "fr": "Delaware",
+                "hr": "Delaware",
+                "it": "Delaware",
+                "pl": "Delaware",
+                "sv": "Delaware"
+            }
+        },
+        {
+            "name": "Florida",
+            "code": "us-fl",
+            "country": "us",
+            "population": 21538187,
+            "area": 170304,
+            "translation": {
+                "cs": "Florida",
+                "de": "Florida",
+                "en": "Florida",
+                "es": "Florida",
+                "fr": "Floride",
+                "hr": "Florida",
+                "it": "Florida",
+                "pl": "Floryda",
+                "sv": "Florida"
+            }
+        },
+        {
+            "name": "Georgia",
+            "code": "us-ga",
+            "country": "us",
+            "population": 10711908,
+            "area": 153909,
+            "translation": {
+                "cs": "Georgie",
+                "de": "Georgia",
+                "en": "Georgia",
+                "es": "Georgia",
+                "fr": "Géorgie",
+                "hr": "Georgia",
+                "it": "Georgia",
+                "pl": "Georgia",
+                "sv": "Georgia"
+            }
+        },
+        {
+            "name": "Hawaii",
+            "code": "us-hi",
+            "country": "us",
+            "population": 1455271,
+            "area": 28311,
+            "translation": {
+                "cs": "Havaj",
+                "de": "Hawaii",
+                "en": "Hawaii",
+                "es": "Hawái",
+                "fr": "Hawaï",
+                "hr": "Havaji",
+                "it": "Hawaii",
+                "pl": "Hawaje",
+                "sv": "Hawaii"
+            }
+        },
+        {
+            "name": "Idaho",
+            "code": "us-id",
+            "country": "us",
+            "population": 1839106,
+            "area": 216446,
+            "translation": {
+                "cs": "Idaho",
+                "de": "Idaho",
+                "en": "Idaho",
+                "es": "Idaho",
+                "fr": "Idaho",
+                "hr": "Idaho",
+                "it": "Idaho",
+                "pl": "Idaho",
+                "sv": "Idaho"
+            }
+        },
+        {
+            "name": "Illinois",
+            "code": "us-il",
+            "country": "us",
+            "population": 12812508,
+            "area": 149998,
+            "translation": {
+                "cs": "Illinois",
+                "de": "Illinois",
+                "en": "Illinois",
+                "es": "Illinois",
+                "fr": "Illinois",
+                "hr": "Illinois",
+                "it": "Illinois",
+                "pl": "Illinois",
+                "sv": "Illinois"
+            }
+        },
+        {
+            "name": "Indiana",
+            "code": "us-in",
+            "country": "us",
+            "population": 6785528,
+            "area": 94321,
+            "translation": {
+                "cs": "Indiana",
+                "de": "Indiana",
+                "en": "Indiana",
+                "es": "Indiana",
+                "fr": "Indiana",
+                "hr": "Indiana",
+                "it": "Indiana",
+                "pl": "Indiana",
+                "sv": "Indiana"
+            }
+        },
+        {
+            "name": "Iowa",
+            "code": "us-ia",
+            "country": "us",
+            "population": 3155070,
+            "area": 145743,
+            "translation": {
+                "cs": "Iowa",
+                "de": "Iowa",
+                "en": "Iowa",
+                "es": "Iowa",
+                "fr": "Iowa",
+                "hr": "Iowa",
+                "it": "Iowa",
+                "pl": "Iowa",
+                "sv": "Iowa"
+            }
+        },
+        {
+            "name": "California",
+            "code": "us-ca",
+            "country": "us",
+            "population": 39538223,
+            "area": 423970,
+            "translation": {
+                "cs": "Kalifornie",
+                "de": "Kalifornien",
+                "en": "California",
+                "es": "California",
+                "fr": "Californie",
+                "hr": "Kalifornija",
+                "it": "California",
+                "pl": "Kalifornia",
+                "sv": "Kalifornien"
+            }
+        },
+        {
+            "name": "Kansas",
+            "code": "us-ks",
+            "country": "us",
+            "population": 2937880,
+            "area": 213096,
+            "translation": {
+                "cs": "Kansas",
+                "de": "Kansas",
+                "en": "Kansas",
+                "es": "Kansas",
+                "fr": "Kansas",
+                "hr": "Kansas",
+                "it": "Kansas",
+                "pl": "Kansas",
+                "sv": "Kansas"
+            }
+        },
+        {
+            "name": "Kentucky",
+            "code": "us-ky",
+            "country": "us",
+            "population": 4512310,
+            "area": 104659,
+            "translation": {
+                "cs": "Kentucky",
+                "de": "Kentucky",
+                "en": "Kentucky",
+                "es": "Kentucky",
+                "fr": "Kentucky",
+                "hr": "Kentucky",
+                "it": "Kentucky",
+                "pl": "Kentucky",
+                "sv": "Kentucky"
+            }
+        },
+        {
+            "name": "Louisiana",
+            "code": "us-la",
+            "country": "us",
+            "population": 4657757,
+            "area": 134264,
+            "translation": {
+                "cs": "Louisiana",
+                "de": "Louisiana",
+                "en": "Louisiana",
+                "es": "Luisiana",
+                "fr": "Louisiane",
+                "hr": "Louisiana",
+                "it": "Louisiana",
+                "pl": "Luizjana",
+                "sv": "Louisiana"
+            }
+        },
+        {
+            "name": "Maine",
+            "code": "us-me",
+            "country": "us",
+            "population": 1362359,
+            "area": 91646,
+            "translation": {
+                "cs": "Maine",
+                "de": "Maine",
+                "en": "Maine",
+                "es": "Maine",
+                "fr": "Maine",
+                "hr": "Maine",
+                "it": "Maine",
+                "pl": "Maine",
+                "sv": "Maine"
+            }
+        },
+        {
+            "name": "Maryland",
+            "code": "us-md",
+            "country": "us",
+            "population": 6177224,
+            "area": 32133,
+            "translation": {
+                "cs": "Maryland",
+                "de": "Maryland",
+                "en": "Maryland",
+                "es": "Maryland",
+                "fr": "Maryland",
+                "hr": "Maryland",
+                "it": "Maryland",
+                "pl": "Maryland",
+                "sv": "Maryland"
+            }
+        },
+        {
+            "name": "Massachusetts",
+            "code": "us-ma",
+            "country": "us",
+            "population": 7029917,
+            "area": 27336,
+            "translation": {
+                "cs": "Massachusetts",
+                "de": "Massachusetts",
+                "en": "Massachusetts",
+                "es": "Massachusetts",
+                "fr": "Massachusetts",
+                "hr": "Massachusetts",
+                "it": "Massachusetts",
+                "pl": "Massachusetts",
+                "sv": "Massachusetts"
+            }
+        },
+        {
+            "name": "Michigan",
+            "code": "us-mi",
+            "country": "us",
+            "population": 10077331,
+            "area": 250494,
+            "translation": {
+                "cs": "Michigan",
+                "de": "Michigan",
+                "en": "Michigan",
+                "es": "Míchigan",
+                "fr": "Michigan",
+                "hr": "Michigan",
+                "it": "Michigan",
+                "pl": "Michigan",
+                "sv": "Michigan"
+            }
+        },
+        {
+            "name": "Minnesota",
+            "code": "us-mn",
+            "country": "us",
+            "population": 5706494,
+            "area": 225171,
+            "translation": {
+                "cs": "Minnesota",
+                "de": "Minnesota",
+                "en": "Minnesota",
+                "es": "Minnesota",
+                "fr": "Minnesota",
+                "hr": "Minnesota",
+                "it": "Minnesota",
+                "pl": "Minnesota",
+                "sv": "Minnesota"
+            }
+        },
+        {
+            "name": "Mississippi",
+            "code": "us-ms",
+            "country": "us",
+            "population": 2961279,
+            "area": 125443,
+            "translation": {
+                "cs": "Mississippi",
+                "de": "Mississippi",
+                "en": "Mississippi",
+                "es": "Misisipi",
+                "fr": "Mississippi",
+                "hr": "Mississippi",
+                "it": "Mississippi",
+                "pl": "Missisipi",
+                "sv": "Mississippi"
+            }
+        },
+        {
+            "name": "Missouri",
+            "code": "us-mo",
+            "country": "us",
+            "population": 6154913,
+            "area": 180533,
+            "translation": {
+                "cs": "Missouri",
+                "de": "Missouri",
+                "en": "Missouri",
+                "es": "Misuri",
+                "fr": "Missouri",
+                "hr": "Missouri",
+                "it": "Missouri",
+                "pl": "Missouri",
+                "sv": "Missouri"
+            }
+        },
+        {
+            "name": "Montana",
+            "code": "us-mt",
+            "country": "us",
+            "population": 1084225,
+            "area": 380838,
+            "translation": {
+                "cs": "Montana",
+                "de": "Montana",
+                "en": "Montana",
+                "es": "Montana",
+                "fr": "Montana",
+                "hr": "Montana",
+                "it": "Montana",
+                "pl": "Montana",
+                "sv": "Montana"
+            }
+        },
+        {
+            "name": "Nebraska",
+            "code": "us-ne",
+            "country": "us",
+            "population": 1961504,
+            "area": 200520,
+            "translation": {
+                "cs": "Nebraska",
+                "de": "Nebraska",
+                "en": "Nebraska",
+                "es": "Nebraska",
+                "fr": "Nebraska",
+                "hr": "Nebraska",
+                "it": "Nebraska",
+                "pl": "Nebraska",
+                "sv": "Nebraska"
+            }
+        },
+        {
+            "name": "Nevada",
+            "code": "us-nv",
+            "country": "us",
+            "population": 3108462,
+            "area": 286351,
+            "translation": {
+                "cs": "Nevada",
+                "de": "Nevada",
+                "en": "Nevada",
+                "es": "Nevada",
+                "fr": "Nevada",
+                "hr": "Nevada",
+                "it": "Nevada",
+                "pl": "Nevada",
+                "sv": "Nevada"
+            }
+        },
+        {
+            "name": "New Hampshire",
+            "code": "us-nh",
+            "country": "us",
+            "population": 1377529,
+            "area": 24216,
+            "translation": {
+                "cs": "New Hampshire",
+                "de": "New Hampshire",
+                "en": "New Hampshire",
+                "es": "Nuevo Hampshire",
+                "fr": "New Hampshire",
+                "hr": "New Hampshire",
+                "it": "New Hampshire",
+                "pl": "New Hampshire",
+                "sv": "New Hampshire"
+            }
+        },
+        {
+            "name": "New Jersey",
+            "code": "us-nj",
+            "country": "us",
+            "population": 9288994,
+            "area": 22588,
+            "translation": {
+                "cs": "New Jersey",
+                "de": "New Jersey",
+                "en": "New Jersey",
+                "es": "Nueva Jersey",
+                "fr": "New Jersey",
+                "hr": "New Jersey",
+                "it": "New Jersey",
+                "pl": "New Jersey",
+                "sv": "New Jersey"
+            }
+        },
+        {
+            "name": "New Mexico",
+            "code": "us-nm",
+            "country": "us",
+            "population": 2117522,
+            "area": 314915,
+            "translation": {
+                "cs": "Nové Mexiko",
+                "de": "New Mexico",
+                "en": "New Mexico",
+                "es": "Nuevo México",
+                "fr": "Nouveau-Mexique",
+                "hr": "Novi Meksiko",
+                "it": "Nuovo Messico",
+                "pl": "Nowy Meksyk",
+                "sv": "New Mexico"
+            }
+        },
+        {
+            "name": "New York",
+            "code": "us-ny",
+            "country": "us",
+            "population": 20215751,
+            "area": 141299,
+            "translation": {
+                "cs": "New York",
+                "de": "New York",
+                "en": "New York",
+                "es": "Nueva York",
+                "fr": "New York",
+                "hr": "New York",
+                "it": "New York",
+                "pl": "Nowy Jork",
+                "sv": "New York"
+            }
+        },
+        {
+            "name": "North Carolina",
+            "code": "us-nc",
+            "country": "us",
+            "population": 10439388,
+            "area": 139389,
+            "translation": {
+                "cs": "Severní Karolína",
+                "de": "North Carolina",
+                "en": "North Carolina",
+                "es": "Carolina del Norte",
+                "fr": "Caroline du Nord",
+                "hr": "Sjeverna Karolina",
+                "it": "Carolina del Nord",
+                "pl": "Karolina Północna",
+                "sv": "North Carolina"
+            }
+        },
+        {
+            "name": "North Dakota",
+            "code": "us-nd",
+            "country": "us",
+            "population": 779094,
+            "area": 183112,
+            "translation": {
+                "cs": "Severní Dakota",
+                "de": "North Dakota",
+                "en": "North Dakota",
+                "es": "Dakota del Norte",
+                "fr": "Dakota du Nord",
+                "hr": "Sjeverna Dakota",
+                "it": "Dakota del Nord",
+                "pl": "Dakota Północna",
+                "sv": "North Dakota"
+            }
+        },
+        {
+            "name": "Ohio",
+            "code": "us-oh",
+            "country": "us",
+            "population": 11799448,
+            "area": 116096,
+            "translation": {
+                "cs": "Ohio",
+                "de": "Ohio",
+                "en": "Ohio",
+                "es": "Ohio",
+                "fr": "Ohio",
+                "hr": "Ohio",
+                "it": "Ohio",
+                "pl": "Ohio",
+                "sv": "Ohio"
+            }
+        },
+        {
+            "name": "Oklahoma",
+            "code": "us-ok",
+            "country": "us",
+            "population": 3959353,
+            "area": 181035,
+            "translation": {
+                "cs": "Oklahoma",
+                "de": "Oklahoma",
+                "en": "Oklahoma",
+                "es": "Oklahoma",
+                "fr": "Oklahoma",
+                "hr": "Oklahoma",
+                "it": "Oklahoma",
+                "pl": "Oklahoma",
+                "sv": "Oklahoma"
+            }
+        },
+        {
+            "name": "Oregon",
+            "code": "us-or",
+            "country": "us",
+            "population": 4237256,
+            "area": 254805,
+            "translation": {
+                "cs": "Oregon",
+                "de": "Oregon",
+                "en": "Oregon",
+                "es": "Oregón",
+                "fr": "Oregon",
+                "hr": "Oregon",
+                "it": "Oregon",
+                "pl": "Oregon",
+                "sv": "Oregon"
+            }
+        },
+        {
+            "name": "Pennsylvania",
+            "code": "us-pa",
+            "country": "us",
+            "population": 13002700,
+            "area": 119283,
+            "translation": {
+                "cs": "Pensylvánie",
+                "de": "Pennsylvania",
+                "en": "Pennsylvania",
+                "es": "Pensilvania",
+                "fr": "Pennsylvanie",
+                "hr": "Pennsylvania",
+                "it": "Pennsylvania",
+                "pl": "Pensylwania",
+                "sv": "Pennsylvania"
+            }
+        },
+        {
+            "name": "Rhode Island",
+            "code": "us-ri",
+            "country": "us",
+            "population": 1097379,
+            "area": 3144,
+            "translation": {
+                "cs": "Rhode Island",
+                "de": "Rhode Island",
+                "en": "Rhode Island",
+                "es": "Rhode Island",
+                "fr": "Rhode Island",
+                "hr": "Rhode Island",
+                "it": "Rhode Island",
+                "pl": "Rhode Island",
+                "sv": "Rhode Island"
+            }
+        },
+        {
+            "name": "South Carolina",
+            "code": "us-sc",
+            "country": "us",
+            "population": 5118425,
+            "area": 82932,
+            "translation": {
+                "cs": "Jižní Karolína",
+                "de": "South Carolina",
+                "en": "South Carolina",
+                "es": "Carolina del Sur",
+                "fr": "Caroline du Sud",
+                "hr": "Južna Karolina",
+                "it": "Carolina del Sud",
+                "pl": "Karolina Południowa",
+                "sv": "South Carolina"
+            }
+        },
+        {
+            "name": "South Dakota",
+            "code": "us-sd",
+            "country": "us",
+            "population": 886667,
+            "area": 199731,
+            "translation": {
+                "cs": "Jižní Dakota",
+                "de": "South Dakota",
+                "en": "South Dakota",
+                "es": "Dakota del Sur",
+                "fr": "Dakota du Sud",
+                "hr": "Južna Dakota",
+                "it": "Dakota del Sud",
+                "pl": "Dakota Południowa",
+                "sv": "South Dakota"
+            }
+        },
+        {
+            "name": "Tennessee",
+            "code": "us-tn",
+            "country": "us",
+            "population": 6916897,
+            "area": 109151,
+            "translation": {
+                "cs": "Tennessee",
+                "de": "Tennessee",
+                "en": "Tennessee",
+                "es": "Tennessee",
+                "fr": "Tennessee",
+                "hr": "Tennessee",
+                "it": "Tennessee",
+                "pl": "Tennessee",
+                "sv": "Tennessee"
+            }
+        },
+        {
+            "name": "Texas",
+            "code": "us-tx",
+            "country": "us",
+            "population": 29145505,
+            "area": 695621,
+            "translation": {
+                "cs": "Texas",
+                "de": "Texas",
+                "en": "Texas",
+                "es": "Texas",
+                "fr": "Texas",
+                "hr": "Teksas",
+                "it": "Texas",
+                "pl": "Teksas",
+                "sv": "Texas"
+            }
+        },
+        {
+            "name": "Utah",
+            "code": "us-ut",
+            "country": "us",
+            "population": 3271616,
+            "area": 219887,
+            "translation": {
+                "cs": "Utah",
+                "de": "Utah",
+                "en": "Utah",
+                "es": "Utah",
+                "fr": "Utah",
+                "hr": "Utah",
+                "it": "Utah",
+                "pl": "Utah",
+                "sv": "Utah"
+            }
+        },
+        {
+            "name": "Vermont",
+            "code": "us-vt",
+            "country": "us",
+            "population": 643077,
+            "area": 23871,
+            "translation": {
+                "cs": "Vermont",
+                "de": "Vermont",
+                "en": "Vermont",
+                "es": "Vermont",
+                "fr": "Vermont",
+                "hr": "Vermont",
+                "it": "Vermont",
+                "pl": "Vermont",
+                "sv": "Vermont"
+            }
+        },
+        {
+            "name": "Virginia",
+            "code": "us-va",
+            "country": "us",
+            "population": 8631393,
+            "area": 110785,
+            "translation": {
+                "cs": "Virginie",
+                "de": "Virginia",
+                "en": "Virginia",
+                "es": "Virginia",
+                "fr": "Virginie",
+                "hr": "Virginia",
+                "it": "Virginia",
+                "pl": "Wirginia",
+                "sv": "Virginia"
+            }
+        },
+        {
+            "name": "Washington",
+            "code": "us-wa",
+            "country": "us",
+            "population": 7705281,
+            "area": 184665,
+            "translation": {
+                "cs": "Washington",
+                "de": "Washington",
+                "en": "Washington",
+                "es": "Washington",
+                "fr": "Washington",
+                "hr": "Washington",
+                "it": "Washington",
+                "pl": "Waszyngton",
+                "sv": "Washington"
+            }
+        },
+        {
+            "name": "West Virginia",
+            "code": "us-wv",
+            "country": "us",
+            "population": 1793716,
+            "area": 62755,
+            "translation": {
+                "cs": "Západní Virginie",
+                "de": "West Virginia",
+                "en": "West Virginia",
+                "es": "Virginia Occidental",
+                "fr": "Virginie-Occidentale",
+                "hr": "Zapadna Virginia",
+                "it": "Virginia Occidentale",
+                "pl": "Wirginia Zachodnia",
+                "sv": "West Virginia"
+            }
+        },
+        {
+            "name": "Wisconsin",
+            "code": "us-wi",
+            "country": "us",
+            "population": 5893718,
+            "area": 169639,
+            "translation": {
+                "cs": "Wisconsin",
+                "de": "Wisconsin",
+                "en": "Wisconsin",
+                "es": "Wisconsin",
+                "fr": "Wisconsin",
+                "hr": "Wisconsin",
+                "it": "Wisconsin",
+                "pl": "Wisconsin",
+                "sv": "Wisconsin"
+            }
+        },
+        {
+            "name": "Wyoming",
+            "code": "us-wy",
+            "country": "us",
+            "population": 576851,
+            "area": 253336,
+            "translation": {
+                "cs": "Wyoming",
+                "de": "Wyoming",
+                "en": "Wyoming",
+                "es": "Wyoming",
+                "fr": "Wyoming",
+                "hr": "Wyoming",
+                "it": "Wyoming",
+                "pl": "Wyoming",
+                "sv": "Wyoming"
+            }
+        }
+    ]
+}

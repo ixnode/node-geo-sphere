@@ -28,7 +28,7 @@ import {ucFirst} from "./string";
 
 /* Import db data and types. */
 import {getCountryMap, TypeCountry} from "../db/countries";
-import {getCityMap, TypeCity} from "../db/cities";
+import {getCityMap, TypeCity, TypeSvgClass} from "../db/cities";
 
 /**
  * Default texts
@@ -209,7 +209,7 @@ export const getSvgElementFromSvg = (
 /**
  * Sets the svg class.
  */
-export const setSvgClass = (type: string) => {
+export const setSvgClass = (type: TypeSvgClass) => {
     const svg = document.getElementById(idSvgMap);
 
     if (!svg) {

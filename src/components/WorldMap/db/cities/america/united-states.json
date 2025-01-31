@@ -2,10 +2,10 @@
     "$schema": "../_schema/cities.schema.json",
     "data": [
         {
-            "name": "Montgomery, Alabama",
-            "state": null,
+            "name": "Montgomery",
+            "state": "us-al",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -86.2833,
                 "latitude": 32.35
@@ -16,22 +16,22 @@
             "area": 404.53,
             "altitude": 73,
             "translation": {
-                "cs": "Montgomery (Alabama)",
-                "de": "Montgomery (Alabama)",
-                "en": "Montgomery, Alabama",
-                "es": "Montgomery (Alabama)",
-                "fr": "Montgomery (Alabama)",
-                "hr": "Montgomery, Alabama",
-                "it": "Montgomery (Alabama)",
-                "pl": "Montgomery (Alabama)",
-                "sv": "Montgomery, Alabama"
+                "cs": "Montgomery",
+                "de": "Montgomery",
+                "en": "Montgomery",
+                "es": "Montgomery",
+                "fr": "Montgomery",
+                "hr": "Montgomery",
+                "it": "Montgomery",
+                "pl": "Montgomery",
+                "sv": "Montgomery"
             }
         },
         {
-            "name": "Juneau, Alaska",
-            "state": null,
+            "name": "Juneau",
+            "state": "us-ak",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -134.5167,
                 "latitude": 58.35
@@ -44,20 +44,20 @@
             "translation": {
                 "cs": "Juneau",
                 "de": "Juneau",
-                "en": "Juneau, Alaska",
-                "es": "Juneau (Alaska)",
+                "en": "Juneau",
+                "es": "Juneau",
                 "fr": "Juneau",
-                "hr": "Juneau, Aljaska",
+                "hr": "Juneau",
                 "it": "Juneau",
                 "pl": "Juneau",
                 "sv": "Juneau"
             }
         },
         {
-            "name": "Phoenix, Arizona",
-            "state": null,
+            "name": "Phoenix",
+            "state": "us-az",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -112.0667,
                 "latitude": 33.45
@@ -69,21 +69,21 @@
             "altitude": 340,
             "translation": {
                 "cs": "Phoenix",
-                "de": "Phoenix (Arizona)",
-                "en": "Phoenix, Arizona",
+                "de": "Phoenix",
+                "en": "Phoenix",
                 "es": "Phoenix",
-                "fr": "Phoenix (Arizona)",
-                "hr": "Phoenix, Arizona",
+                "fr": "Phoenix",
+                "hr": "Phoenix",
                 "it": "Phoenix",
                 "pl": "Phoenix",
                 "sv": "Phoenix"
             }
         },
         {
-            "name": "Little Rock, Arkansas",
-            "state": null,
+            "name": "Little Rock",
+            "state": "us-ar",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -92.2833,
                 "latitude": 34.75
@@ -96,10 +96,10 @@
             "translation": {
                 "cs": "Little Rock",
                 "de": "Little Rock",
-                "en": "Little Rock, Arkansas",
-                "es": "Little Rock (Arkansas)",
+                "en": "Little Rock",
+                "es": "Little Rock",
                 "fr": "Little Rock",
-                "hr": "Little Rock, Arkansas",
+                "hr": "Little Rock",
                 "it": "Little Rock",
                 "pl": "Little Rock",
                 "sv": "Little Rock"
@@ -107,9 +107,9 @@
         },
         {
             "name": "Denver",
-            "state": null,
+            "state": "us-co",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -104.9833,
                 "latitude": 39.7833
@@ -125,17 +125,17 @@
                 "en": "Denver",
                 "es": "Denver",
                 "fr": "Denver",
-                "hr": "Denver, Colorado",
+                "hr": "Denver",
                 "it": "Denver",
                 "pl": "Denver",
                 "sv": "Denver"
             }
         },
         {
-            "name": "Hartford, Connecticut",
-            "state": null,
+            "name": "Hartford",
+            "state": "us-ct",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -72.6833,
                 "latitude": 41.7667
@@ -147,21 +147,21 @@
             "altitude": 18,
             "translation": {
                 "cs": "Hartford",
-                "de": "Hartford (Connecticut)",
-                "en": "Hartford, Connecticut",
+                "de": "Hartford",
+                "en": "Hartford",
                 "es": "Hartford",
-                "fr": "Hartford (Connecticut)",
-                "hr": "Hartford, Connecticut",
+                "fr": "Hartford",
+                "hr": "Hartford",
                 "it": "Hartford",
                 "pl": "Hartford",
                 "sv": "Hartford"
             }
         },
         {
-            "name": "Dover, Delaware",
-            "state": null,
+            "name": "Dover",
+            "state": "us-de",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -75.5167,
                 "latitude": 39.15
@@ -172,22 +172,22 @@
             "area": 58.8,
             "altitude": 11,
             "translation": {
-                "cs": "Dover (Delaware)",
-                "de": "Dover (Delaware)",
-                "en": "Dover, Delaware",
-                "es": "Dover (Delaware)",
-                "fr": "Dover (Delaware)",
-                "hr": null,
-                "it": "Dover (Delaware)",
-                "pl": "Dover (Delaware)",
-                "sv": "Dover, Delaware"
+                "cs": "Dover",
+                "de": "Dover",
+                "en": "Dover",
+                "es": "Dover",
+                "fr": "Dover",
+                "hr": "Dover",
+                "it": "Dover",
+                "pl": "Dover",
+                "sv": "Dover"
             }
         },
         {
-            "name": "Tallahassee, Florida",
-            "state": null,
+            "name": "Tallahassee",
+            "state": "us-fl",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -84.2833,
                 "latitude": 30.4333
@@ -200,10 +200,10 @@
             "translation": {
                 "cs": "Tallahassee",
                 "de": "Tallahassee",
-                "en": "Tallahassee, Florida",
+                "en": "Tallahassee",
                 "es": "Tallahassee",
                 "fr": "Tallahassee",
-                "hr": null,
+                "hr": "Tallahassee",
                 "it": "Tallahassee",
                 "pl": "Tallahassee",
                 "sv": "Tallahassee"
@@ -211,9 +211,9 @@
         },
         {
             "name": "Atlanta",
-            "state": null,
+            "state": "us-ga",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -84.3833,
                 "latitude": 33.75
@@ -229,7 +229,7 @@
                 "en": "Atlanta",
                 "es": "Atlanta",
                 "fr": "Atlanta",
-                "hr": "Atlanta, Georgia",
+                "hr": "Atlanta",
                 "it": "Atlanta",
                 "pl": "Atlanta",
                 "sv": "Atlanta"
@@ -237,9 +237,9 @@
         },
         {
             "name": "Honolulu",
-            "state": null,
+            "state": "us-hi",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -157.8333,
                 "latitude": 21.3167
@@ -255,17 +255,17 @@
                 "en": "Honolulu",
                 "es": "Honolulu",
                 "fr": "Honolulu",
-                "hr": "Honolulu, Havaji",
+                "hr": "Honolulu",
                 "it": "Honolulu",
                 "pl": "Honolulu",
                 "sv": "Honolulu"
             }
         },
         {
-            "name": "Boise, Idaho",
-            "state": null,
+            "name": "Boise",
+            "state": "us-id",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -116.215019,
                 "latitude": 43.618881
@@ -278,20 +278,20 @@
             "translation": {
                 "cs": "Boise",
                 "de": "Boise",
-                "en": "Boise, Idaho",
+                "en": "Boise",
                 "es": "Boise",
                 "fr": "Boise",
-                "hr": null,
+                "hr": "Boise",
                 "it": "Boise",
                 "pl": "Boise",
                 "sv": "Boise"
             }
         },
         {
-            "name": "Springfield, Illinois",
-            "state": null,
+            "name": "Springfield",
+            "state": "us-il",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -89.65,
                 "latitude": 39.7833
@@ -302,25 +302,29 @@
             "area": 156,
             "altitude": 182,
             "translation": {
-                "cs": "Springfield (Illinois)",
-                "de": "Springfield (Illinois)",
-                "en": "Springfield, Illinois",
-                "es": "Springfield (Illinois)",
-                "fr": "Springfield (Illinois)",
-                "hr": "Springfield, Illinois",
-                "it": "Springfield (Illinois)",
-                "pl": "Springfield (Illinois)",
-                "sv": "Springfield, Illinois"
+                "cs": "Springfield",
+                "de": "Springfield",
+                "en": "Springfield",
+                "es": "Springfield",
+                "fr": "Springfield",
+                "hr": "Springfield",
+                "it": "Springfield",
+                "pl": "Springfield",
+                "sv": "Springfield"
             }
         },
         {
             "name": "Indianapolis",
-            "state": null,
+            "state": "us-in",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -86.15,
                 "latitude": 39.7667
+            },
+            "coordinateDisplay": {
+                "longitude": -86.15,
+                "latitude": 39.5667
             },
             "country": "us",
             "type": "state-capital",
@@ -333,17 +337,17 @@
                 "en": "Indianapolis",
                 "es": "Indianápolis",
                 "fr": "Indianapolis",
-                "hr": "Indianapolis, Indiana",
+                "hr": "Indianapolis",
                 "it": "Indianapolis",
                 "pl": "Indianapolis",
                 "sv": "Indianapolis"
             }
         },
         {
-            "name": "Des Moines, Iowa",
-            "state": null,
+            "name": "Des Moines",
+            "state": "us-ia",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -93.6167,
                 "latitude": 41.5833
@@ -356,20 +360,20 @@
             "translation": {
                 "cs": "Des Moines",
                 "de": "Des Moines",
-                "en": "Des Moines, Iowa",
+                "en": "Des Moines",
                 "es": "Des Moines",
-                "fr": "Des Moines (Iowa)",
-                "hr": "Des Moines, Iowa",
+                "fr": "Des Moines",
+                "hr": "Des Moines",
                 "it": "Des Moines",
                 "pl": "Des Moines",
                 "sv": "Des Moines"
             }
         },
         {
-            "name": "Sacramento, California",
-            "state": null,
+            "name": "Sacramento",
+            "state": "us-ca",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -121.4833,
                 "latitude": 38.5833
@@ -382,20 +386,20 @@
             "translation": {
                 "cs": "Sacramento",
                 "de": "Sacramento",
-                "en": "Sacramento, California",
-                "es": "Sacramento (California)",
+                "en": "Sacramento",
+                "es": "Sacramento",
                 "fr": "Sacramento",
-                "hr": "Sacramento, Kalifornija",
-                "it": "Sacramento (California)",
+                "hr": "Sacramento",
+                "it": "Sacramento",
                 "pl": "Sacramento",
                 "sv": "Sacramento"
             }
         },
         {
-            "name": "Topeka, Kansas",
-            "state": null,
+            "name": "Topeka",
+            "state": "us-ks",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -95.6833,
                 "latitude": 39.05
@@ -408,20 +412,20 @@
             "translation": {
                 "cs": "Topeka",
                 "de": "Topeka",
-                "en": "Topeka, Kansas",
+                "en": "Topeka",
                 "es": "Topeka",
                 "fr": "Topeka",
-                "hr": "Topeka, Kansas",
+                "hr": "Topeka",
                 "it": "Topeka",
                 "pl": "Topeka",
                 "sv": "Topeka"
             }
         },
         {
-            "name": "Frankfort, Kentucky",
-            "state": null,
+            "name": "Frankfort",
+            "state": "us-ky",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -84.8667,
                 "latitude": 38.2
@@ -432,22 +436,22 @@
             "area": 38.9,
             "altitude": 155,
             "translation": {
-                "cs": "Frankfort (Kentucky)",
-                "de": "Frankfort (Kentucky)",
-                "en": "Frankfort, Kentucky",
-                "es": "Frankfort (Kentucky)",
-                "fr": "Frankfort (Kentucky)",
-                "hr": null,
-                "it": "Frankfort (Kentucky)",
+                "cs": "Frankfort",
+                "de": "Frankfort",
+                "en": "Frankfort",
+                "es": "Frankfort",
+                "fr": "Frankfort",
+                "hr": "Frankfort",
+                "it": "Frankfort",
                 "pl": "Frankfort",
                 "sv": "Frankfort"
             }
         },
         {
-            "name": "Baton Rouge, Louisiana",
-            "state": null,
+            "name": "Baton Rouge",
+            "state": "us-la",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -91.1333,
                 "latitude": 30.45
@@ -460,20 +464,20 @@
             "translation": {
                 "cs": "Baton Rouge",
                 "de": "Baton Rouge",
-                "en": "Baton Rouge, Louisiana",
+                "en": "Baton Rouge",
                 "es": "Baton Rouge",
                 "fr": "Baton Rouge",
-                "hr": "Baton Rouge, Louisiana",
+                "hr": "Baton Rouge",
                 "it": "Baton Rouge",
                 "pl": "Baton Rouge",
                 "sv": "Baton Rouge"
             }
         },
         {
-            "name": "Augusta, Maine",
-            "state": null,
+            "name": "Augusta",
+            "state": "us-me",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -69.7333,
                 "latitude": 44.3333
@@ -484,22 +488,22 @@
             "area": 150.9,
             "altitude": 37,
             "translation": {
-                "cs": "Augusta (Maine)",
-                "de": "Augusta (Maine)",
-                "en": "Augusta, Maine",
-                "es": "Augusta (Maine)",
-                "fr": "Augusta (Maine)",
-                "hr": null,
-                "it": "Augusta (Maine)",
-                "pl": "Augusta (Maine)",
-                "sv": "Augusta, Maine"
+                "cs": "Augusta",
+                "de": "Augusta",
+                "en": "Augusta",
+                "es": "Augusta",
+                "fr": "Augusta",
+                "hr": "Augusta",
+                "it": "Augusta",
+                "pl": "Augusta",
+                "sv": "Augusta"
             }
         },
         {
-            "name": "Annapolis, Maryland",
-            "state": null,
+            "name": "Annapolis",
+            "state": "us-md",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -76.5,
                 "latitude": 38.9667
@@ -511,11 +515,11 @@
             "altitude": 12,
             "translation": {
                 "cs": "Annapolis",
-                "de": "Annapolis (Maryland)",
-                "en": "Annapolis, Maryland",
+                "de": "Annapolis",
+                "en": "Annapolis",
                 "es": "Annapolis",
                 "fr": "Annapolis",
-                "hr": null,
+                "hr": "Annapolis",
                 "it": "Annapolis",
                 "pl": "Annapolis",
                 "sv": "Annapolis"
@@ -523,9 +527,9 @@
         },
         {
             "name": "Boston",
-            "state": null,
+            "state": "us-ma",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -71.0667,
                 "latitude": 42.35
@@ -541,17 +545,17 @@
                 "en": "Boston",
                 "es": "Boston",
                 "fr": "Boston",
-                "hr": "Boston, Massachusetts",
+                "hr": "Boston",
                 "it": "Boston",
                 "pl": "Boston",
                 "sv": "Boston"
             }
         },
         {
-            "name": "Lansing, Michigan",
-            "state": null,
+            "name": "Lansing",
+            "state": "us-mi",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -84.55,
                 "latitude": 42.7333
@@ -564,20 +568,20 @@
             "translation": {
                 "cs": "Lansing",
                 "de": "Lansing",
-                "en": "Lansing, Michigan",
+                "en": "Lansing",
                 "es": "Lansing",
-                "fr": "Lansing (Michigan)",
-                "hr": null,
+                "fr": "Lansing",
+                "hr": "Lansing",
                 "it": "Lansing",
                 "pl": "Lansing",
                 "sv": "Lansing"
             }
         },
         {
-            "name": "Saint Paul, Minnesota",
-            "state": null,
+            "name": "Saint Paul",
+            "state": "us-mn",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -93.1,
                 "latitude": 44.95
@@ -589,21 +593,21 @@
             "altitude": 214,
             "translation": {
                 "cs": "Saint Paul",
-                "de": "Saint Paul (Minnesota)",
-                "en": "Saint Paul, Minnesota",
-                "es": "Saint Paul (Minnesota)",
-                "fr": "Saint Paul (Minnesota)",
-                "hr": "Saint Paul, Minnesota",
+                "de": "Saint Paul",
+                "en": "Saint Paul",
+                "es": "Saint Paul",
+                "fr": "Saint Paul",
+                "hr": "Saint Paul",
                 "it": "Saint Paul",
                 "pl": "Saint Paul",
-                "sv": "Saint Paul, Minnesota"
+                "sv": "Saint Paul"
             }
         },
         {
-            "name": "Jackson, Mississippi",
-            "state": null,
+            "name": "Jackson",
+            "state": "us-ms",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -90.1833,
                 "latitude": 32.3
@@ -614,22 +618,22 @@
             "area": 106.8,
             "altitude": 85,
             "translation": {
-                "cs": "Jackson (Mississippi)",
-                "de": "Jackson (Mississippi)",
-                "en": "Jackson, Mississippi",
-                "es": "Jackson (Misisipi)",
-                "fr": "Jackson (Mississippi)",
-                "hr": "Jackson, Mississippi",
-                "it": "Jackson (Mississippi)",
-                "pl": "Jackson (Missisipi)",
-                "sv": "Jackson, Mississippi"
+                "cs": "Jackson",
+                "de": "Jackson",
+                "en": "Jackson",
+                "es": "Jackson",
+                "fr": "Jackson",
+                "hr": "Jackson",
+                "it": "Jackson",
+                "pl": "Jackson",
+                "sv": "Jackson"
             }
         },
         {
-            "name": "Jefferson City, Missouri",
-            "state": null,
+            "name": "Jefferson City",
+            "state": "us-mo",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -92.1667,
                 "latitude": 38.5833
@@ -642,20 +646,20 @@
             "translation": {
                 "cs": "Jefferson City",
                 "de": "Jefferson City",
-                "en": "Jefferson City, Missouri",
+                "en": "Jefferson City",
                 "es": "Jefferson City",
-                "fr": "Jefferson City (Missouri)",
-                "hr": null,
+                "fr": "Jefferson City",
+                "hr": "Jefferson City",
                 "it": "Jefferson City",
                 "pl": "Jefferson City",
                 "sv": "Jefferson City"
             }
         },
         {
-            "name": "Helena, Montana",
-            "state": null,
+            "name": "Helena",
+            "state": "us-mt",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -112.0167,
                 "latitude": 46.6
@@ -666,22 +670,22 @@
             "area": 36.3,
             "altitude": 1237,
             "translation": {
-                "cs": "Helena (Montana)",
-                "de": "Helena (Montana)",
-                "en": "Helena, Montana",
-                "es": "Helena (Montana)",
-                "fr": "Helena (Montana)",
-                "hr": "Helena, Montana",
-                "it": "Helena (Montana)",
-                "pl": "Helena (Montana)",
-                "sv": "Helena, Montana"
+                "cs": "Helena",
+                "de": "Helena",
+                "en": "Helena",
+                "es": "Helena",
+                "fr": "Helena",
+                "hr": "Helena",
+                "it": "Helena",
+                "pl": "Helena",
+                "sv": "Helena"
             }
         },
         {
-            "name": "Lincoln, Nebraska",
-            "state": null,
+            "name": "Lincoln",
+            "state": "us-ne",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -96.6833,
                 "latitude": 40.8167
@@ -692,22 +696,22 @@
             "area": 195.2,
             "altitude": 358,
             "translation": {
-                "cs": "Lincoln (Nebraska)",
-                "de": "Lincoln (Nebraska)",
-                "en": "Lincoln, Nebraska",
-                "es": "Lincoln (Nebraska)",
-                "fr": "Lincoln (Nebraska)",
-                "hr": "Lincoln, Nebraska",
-                "it": "Lincoln (Nebraska)",
-                "pl": "Lincoln (Nebraska)",
-                "sv": "Lincoln, Nebraska"
+                "cs": "Lincoln",
+                "de": "Lincoln",
+                "en": "Lincoln",
+                "es": "Lincoln",
+                "fr": "Lincoln",
+                "hr": "Lincoln",
+                "it": "Lincoln",
+                "pl": "Lincoln",
+                "sv": "Lincoln"
             }
         },
         {
-            "name": "Carson City, Nevada",
-            "state": null,
+            "name": "Carson City",
+            "state": "us-nv",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -119.75,
                 "latitude": 39.1667
@@ -720,20 +724,20 @@
             "translation": {
                 "cs": "Carson City",
                 "de": "Carson City",
-                "en": "Carson City, Nevada",
+                "en": "Carson City",
                 "es": "Carson City",
                 "fr": "Carson City",
-                "hr": null,
+                "hr": "Carson City",
                 "it": "Carson City",
                 "pl": "Carson City",
                 "sv": "Carson City"
             }
         },
         {
-            "name": "Concord, New Hampshire",
-            "state": null,
+            "name": "Concord",
+            "state": "us-nh",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -71.5333,
                 "latitude": 43.2
@@ -745,21 +749,21 @@
             "altitude": 88,
             "translation": {
                 "cs": "Concord",
-                "de": "Concord (New Hampshire)",
-                "en": "Concord, New Hampshire",
-                "es": "Concord (Nuevo Hampshire)",
-                "fr": "Concord (New Hampshire)",
-                "hr": "Concord, New Hampshire",
-                "it": "Concord (New Hampshire)",
-                "pl": "Concord (New Hampshire)",
-                "sv": "Concord, New Hampshire"
+                "de": "Concord",
+                "en": "Concord",
+                "es": "Concord",
+                "fr": "Concord",
+                "hr": "Concord",
+                "it": "Concord",
+                "pl": "Concord",
+                "sv": "Concord"
             }
         },
         {
-            "name": "Trenton, New Jersey",
-            "state": null,
+            "name": "Trenton",
+            "state": "us-nj",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -74.75,
                 "latitude": 40.2167
@@ -771,21 +775,21 @@
             "altitude": 16,
             "translation": {
                 "cs": "Trenton",
-                "de": "Trenton (New Jersey)",
-                "en": "Trenton, New Jersey",
+                "de": "Trenton",
+                "en": "Trenton",
                 "es": "Trenton",
-                "fr": "Trenton (New Jersey)",
-                "hr": "Trenton, New Jersey",
-                "it": "Trenton (New Jersey)",
+                "fr": "Trenton",
+                "hr": "Trenton",
+                "it": "Trenton",
                 "pl": "Trenton",
                 "sv": "Trenton"
             }
         },
         {
-            "name": "Santa Fe, New Mexico",
-            "state": null,
+            "name": "Santa Fe",
+            "state": "us-nm",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -105.95,
                 "latitude": 35.6833
@@ -796,22 +800,22 @@
             "area": 96.9,
             "altitude": 2231,
             "translation": {
-                "cs": "Santa Fe (Nové Mexiko)",
-                "de": "Santa Fe (New Mexico)",
-                "en": "Santa Fe, New Mexico",
-                "es": "Santa Fe (Nuevo México)",
-                "fr": "Santa Fe (Nouveau-Mexique)",
-                "hr": "Santa Fe, Novi Meksiko",
-                "it": "Santa Fe (Nuovo Messico)",
-                "pl": "Santa Fe (Nowy Meksyk)",
-                "sv": "Santa Fe, New Mexico"
+                "cs": "Santa Fe",
+                "de": "Santa Fe",
+                "en": "Santa Fe",
+                "es": "Santa Fe",
+                "fr": "Santa Fe",
+                "hr": "Santa Fe",
+                "it": "Santa Fe",
+                "pl": "Santa Fe",
+                "sv": "Santa Fe"
             }
         },
         {
-            "name": "Albany, New York",
-            "state": null,
+            "name": "Albany",
+            "state": "us-ny",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -73.7833,
                 "latitude": 42.6667
@@ -822,22 +826,22 @@
             "area": 56.6,
             "altitude": 60,
             "translation": {
-                "cs": "Albany (New York)",
-                "de": "Albany (New York)",
-                "en": "Albany, New York",
+                "cs": "Albany",
+                "de": "Albany",
+                "en": "Albany",
                 "es": "Albany",
-                "fr": "Albany (New York)",
-                "hr": "Albany, New York",
-                "it": "Albany (New York)",
+                "fr": "Albany",
+                "hr": "Albany",
+                "it": "Albany",
                 "pl": "Albany",
-                "sv": "Albany, New York"
+                "sv": "Albany"
             }
         },
         {
-            "name": "Raleigh, North Carolina",
-            "state": null,
+            "name": "Raleigh",
+            "state": "us-nc",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -78.65,
                 "latitude": 35.8167
@@ -848,22 +852,22 @@
             "area": 299.3,
             "altitude": 96,
             "translation": {
-                "cs": "Raleigh (Severní Karolína)",
-                "de": "Raleigh (North Carolina)",
-                "en": "Raleigh, North Carolina",
+                "cs": "Raleigh",
+                "de": "Raleigh",
+                "en": "Raleigh",
                 "es": "Raleigh",
                 "fr": "Raleigh",
-                "hr": null,
-                "it": "Raleigh (Carolina del Nord)",
+                "hr": "Raleigh",
+                "it": "Raleigh",
                 "pl": "Raleigh",
-                "sv": "Raleigh, North Carolina"
+                "sv": "Raleigh"
             }
         },
         {
-            "name": "Bismarck, North Dakota",
-            "state": null,
+            "name": "Bismarck",
+            "state": "us-nd",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -100.7833,
                 "latitude": 46.8167
@@ -874,22 +878,22 @@
             "area": 71,
             "altitude": 514,
             "translation": {
-                "cs": "Bismarck (Severní Dakota)",
-                "de": "Bismarck (North Dakota)",
-                "en": "Bismarck, North Dakota",
-                "es": "Bismarck (Dakota del Norte)",
-                "fr": "Bismarck (Dakota du Nord)",
-                "hr": null,
-                "it": "Bismarck (Dakota del Nord)",
-                "pl": "Bismarck (Dakota Północna)",
-                "sv": "Bismarck, North Dakota"
+                "cs": "Bismarck",
+                "de": "Bismarck",
+                "en": "Bismarck",
+                "es": "Bismarck",
+                "fr": "Bismarck",
+                "hr": "Bismarck",
+                "it": "Bismarck",
+                "pl": "Bismarck",
+                "sv": "Bismarck"
             }
         },
         {
-            "name": "Columbus, Ohio",
-            "state": null,
+            "name": "Columbus",
+            "state": "us-oh",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -83,
                 "latitude": 39.9667
@@ -900,22 +904,22 @@
             "area": 550.5,
             "altitude": 275,
             "translation": {
-                "cs": "Columbus (Ohio)",
-                "de": "Columbus (Ohio)",
-                "en": "Columbus, Ohio",
-                "es": "Columbus (Ohio)",
-                "fr": "Columbus (Ohio)",
-                "hr": "Columbus, Ohio",
-                "it": "Columbus (Ohio)",
+                "cs": "Columbus",
+                "de": "Columbus",
+                "en": "Columbus",
+                "es": "Columbus",
+                "fr": "Columbus",
+                "hr": "Columbus",
+                "it": "Columbus",
                 "pl": "Columbus",
-                "sv": "Columbus, Ohio"
+                "sv": "Columbus"
             }
         },
         {
             "name": "Oklahoma City",
-            "state": null,
+            "state": "us-ok",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -97.5167,
                 "latitude": 35.4667
@@ -931,17 +935,17 @@
                 "en": "Oklahoma City",
                 "es": "Oklahoma City",
                 "fr": "Oklahoma City",
-                "hr": "Oklahoma City, Oklahoma",
+                "hr": "Oklahoma City",
                 "it": "Oklahoma City",
                 "pl": "Oklahoma City",
                 "sv": "Oklahoma City"
             }
         },
         {
-            "name": "Salem, Oregon",
-            "state": null,
+            "name": "Salem",
+            "state": "us-or",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -123.0333,
                 "latitude": 44.9333
@@ -952,22 +956,22 @@
             "area": 120.1,
             "altitude": 467,
             "translation": {
-                "cs": "Salem (Oregon)",
-                "de": "Salem (Oregon)",
-                "en": "Salem, Oregon",
-                "es": "Salem (Oregón)",
-                "fr": "Salem (Oregon)",
-                "hr": null,
-                "it": "Salem (Oregon)",
-                "pl": "Salem (Oregon)",
-                "sv": "Salem, Oregon"
+                "cs": "Salem",
+                "de": "Salem",
+                "en": "Salem",
+                "es": "Salem",
+                "fr": "Salem",
+                "hr": "Salem",
+                "it": "Salem",
+                "pl": "Salem",
+                "sv": "Salem"
             }
         },
         {
-            "name": "Harrisburg, Pennsylvania",
-            "state": null,
+            "name": "Harrisburg",
+            "state": "us-pa",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -76.8833,
                 "latitude": 40.2667
@@ -979,21 +983,21 @@
             "altitude": 101,
             "translation": {
                 "cs": "Harrisburg",
-                "de": "Harrisburg (Pennsylvania)",
-                "en": "Harrisburg, Pennsylvania",
+                "de": "Harrisburg",
+                "en": "Harrisburg",
                 "es": "Harrisburg",
                 "fr": "Harrisburg",
-                "hr": null,
+                "hr": "Harrisburg",
                 "it": "Harrisburg",
                 "pl": "Harrisburg",
                 "sv": "Harrisburg"
             }
         },
         {
-            "name": "Providence, Rhode Island",
-            "state": null,
+            "name": "Providence",
+            "state": "us-ri",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -71.4167,
                 "latitude": 41.8333
@@ -1006,20 +1010,20 @@
             "translation": {
                 "cs": "Providence",
                 "de": "Providence",
-                "en": "Providence, Rhode Island",
-                "es": "Providence (Rhode Island)",
-                "fr": "Providence (Rhode Island)",
-                "hr": "Providence, Rhode Island",
+                "en": "Providence",
+                "es": "Providence",
+                "fr": "Providence",
+                "hr": "Providence",
                 "it": "Providence",
                 "pl": "Providence",
                 "sv": "Providence"
             }
         },
         {
-            "name": "Columbia, South Carolina",
-            "state": null,
+            "name": "Columbia",
+            "state": "us-sc",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -81.0333,
                 "latitude": 34
@@ -1030,22 +1034,22 @@
             "area": 346.5,
             "altitude": 89,
             "translation": {
-                "cs": "Columbia (Jižní Karolína)",
-                "de": "Columbia (South Carolina)",
-                "en": "Columbia, South Carolina",
-                "es": "Columbia (Carolina del Sur)",
-                "fr": "Columbia (Caroline du Sud)",
-                "hr": null,
-                "it": "Columbia (Carolina del Sud)",
-                "pl": "Columbia (Karolina Południowa)",
-                "sv": "Columbia, South Carolina"
+                "cs": "Columbia",
+                "de": "Columbia",
+                "en": "Columbia",
+                "es": "Columbia",
+                "fr": "Columbia",
+                "hr": "Columbia",
+                "it": "Columbia",
+                "pl": "Columbia",
+                "sv": "Columbia"
             }
         },
         {
-            "name": "Pierre, South Dakota",
-            "state": null,
+            "name": "Pierre",
+            "state": "us-sd",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -100.3333,
                 "latitude": 44.3667
@@ -1056,22 +1060,22 @@
             "area": 33.7,
             "altitude": 442,
             "translation": {
-                "cs": "Pierre (Jižní Dakota)",
-                "de": "Pierre (South Dakota)",
-                "en": "Pierre, South Dakota",
-                "es": "Pierre (Dakota del Sur)",
-                "fr": "Pierre (Dakota du Sud)",
-                "hr": "Pierre, Južna Dakota",
-                "it": "Pierre (Dakota del Sud)",
+                "cs": "Pierre",
+                "de": "Pierre",
+                "en": "Pierre",
+                "es": "Pierre",
+                "fr": "Pierre",
+                "hr": "Pierre",
+                "it": "Pierre",
                 "pl": "Pierre",
-                "sv": "Pierre, South Dakota"
+                "sv": "Pierre"
             }
         },
         {
-            "name": "Nashville, Tennessee",
-            "state": null,
+            "name": "Nashville",
+            "state": "us-tn",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -86.7833,
                 "latitude": 36.1667
@@ -1084,20 +1088,20 @@
             "translation": {
                 "cs": "Nashville",
                 "de": "Nashville",
-                "en": "Nashville, Tennessee",
+                "en": "Nashville",
                 "es": "Nashville",
                 "fr": "Nashville",
-                "hr": "Nashville, Tennessee",
+                "hr": "Nashville",
                 "it": "Nashville",
                 "pl": "Nashville",
                 "sv": "Nashville"
             }
         },
         {
-            "name": "Austin, Texas",
-            "state": null,
+            "name": "Austin",
+            "state": "us-tx",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -97.7667,
                 "latitude": 30.2667
@@ -1110,10 +1114,10 @@
             "translation": {
                 "cs": "Austin",
                 "de": "Austin",
-                "en": "Austin, Texas",
+                "en": "Austin",
                 "es": "Austin",
-                "fr": "Austin (Texas)",
-                "hr": "Austin (Teksas)",
+                "fr": "Austin",
+                "hr": "Austin",
                 "it": "Austin",
                 "pl": "Austin",
                 "sv": "Austin"
@@ -1121,9 +1125,9 @@
         },
         {
             "name": "Salt Lake City",
-            "state": null,
+            "state": "us-ut",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -111.9,
                 "latitude": 40.75
@@ -1139,15 +1143,15 @@
                 "en": "Salt Lake City",
                 "es": "Salt Lake City",
                 "fr": "Salt Lake City",
-                "hr": "Salt Lake City, Utah",
+                "hr": "Salt Lake City",
                 "it": "Salt Lake City",
                 "pl": "Salt Lake City",
                 "sv": "Salt Lake City"
             }
         },
         {
-            "name": "Montpelier, Vermont",
-            "state": null,
+            "name": "Montpelier",
+            "state": "us-vt",
             "priority": 2,
             "size": "bigger",
             "coordinate": {
@@ -1160,22 +1164,22 @@
             "area": 26.6,
             "altitude": 160,
             "translation": {
-                "cs": "Montpelier (Vermont)",
-                "de": "Montpelier (Vermont)",
-                "en": "Montpelier, Vermont",
-                "es": "Montpelier (Vermont)",
+                "cs": "Montpelier",
+                "de": "Montpelier",
+                "en": "Montpelier",
+                "es": "Montpelier",
                 "fr": "Montpelier",
-                "hr": "Montpelier, Vermont",
-                "it": "Montpelier (Vermont)",
+                "hr": "Montpelier",
+                "it": "Montpelier",
                 "pl": "Montpelier",
-                "sv": "Montpelier, Vermont"
+                "sv": "Montpelier"
             }
         },
         {
-            "name": "Richmond, Virginia",
-            "state": null,
+            "name": "Richmond",
+            "state": "us-va",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -77.45,
                 "latitude": 37.55
@@ -1187,21 +1191,21 @@
             "altitude": 45,
             "translation": {
                 "cs": "Richmond",
-                "de": "Richmond (Virginia)",
-                "en": "Richmond, Virginia",
-                "es": "Richmond (Virginia)",
-                "fr": "Richmond (Virginie)",
-                "hr": "Richmond, Virginia",
-                "it": "Richmond (Virginia)",
-                "pl": "Richmond (Wirginia)",
-                "sv": "Richmond, Virginia"
+                "de": "Richmond",
+                "en": "Richmond",
+                "es": "Richmond",
+                "fr": "Richmond",
+                "hr": "Richmond",
+                "it": "Richmond",
+                "pl": "Richmond",
+                "sv": "Richmond"
             }
         },
         {
-            "name": "Olympia, Washington",
-            "state": null,
+            "name": "Olympia",
+            "state": "us-wa",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -122.9,
                 "latitude": 47.0333
@@ -1212,22 +1216,22 @@
             "area": 48,
             "altitude": 29,
             "translation": {
-                "cs": "Olympia (Washington)",
-                "de": "Olympia (Washington)",
-                "en": "Olympia, Washington",
-                "es": "Olympia (Washington)",
-                "fr": "Olympia (Washington)",
-                "hr": "Olympia, Washington",
-                "it": "Olympia (Washington)",
+                "cs": "Olympia",
+                "de": "Olympia",
+                "en": "Olympia",
+                "es": "Olympia",
+                "fr": "Olympia",
+                "hr": "Olympia",
+                "it": "Olympia",
                 "pl": "Olympia",
-                "sv": "Olympia, Washington"
+                "sv": "Olympia"
             }
         },
         {
-            "name": "Charleston, West Virginia",
-            "state": null,
+            "name": "Charleston",
+            "state": "us-wv",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -81.6333,
                 "latitude": 38.35
@@ -1238,22 +1242,22 @@
             "area": 84.7,
             "altitude": 182,
             "translation": {
-                "cs": "Charleston (Západní Virginie)",
-                "de": "Charleston (West Virginia)",
-                "en": "Charleston, West Virginia",
-                "es": "Charleston (Virginia Occidental)",
-                "fr": "Charleston (Virginie-Occidentale)",
-                "hr": null,
-                "it": "Charleston (Virginia Occidentale)",
-                "pl": "Charleston (Wirginia Zachodnia)",
-                "sv": "Charleston, West Virginia"
+                "cs": "Charleston",
+                "de": "Charleston",
+                "en": "Charleston",
+                "es": "Charleston",
+                "fr": "Charleston",
+                "hr": "Charleston",
+                "it": "Charleston",
+                "pl": "Charleston",
+                "sv": "Charleston"
             }
         },
         {
-            "name": "Madison, Wisconsin",
-            "state": null,
+            "name": "Madison",
+            "state": "us-wi",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -89.3833,
                 "latitude": 43.0667
@@ -1265,21 +1269,21 @@
             "altitude": 267,
             "translation": {
                 "cs": "Madison",
-                "de": "Madison (Wisconsin)",
-                "en": "Madison, Wisconsin",
-                "es": "Madison (Wisconsin)",
-                "fr": "Madison (Wisconsin)",
-                "hr": "Madison, Wisconsin",
-                "it": "Madison (Wisconsin)",
+                "de": "Madison",
+                "en": "Madison",
+                "es": "Madison",
+                "fr": "Madison",
+                "hr": "Madison",
+                "it": "Madison",
                 "pl": "Madison",
-                "sv": "Madison, Wisconsin"
+                "sv": "Madison"
             }
         },
         {
-            "name": "Cheyenne, Wyoming",
-            "state": null,
+            "name": "Cheyenne",
+            "state": "us-wy",
             "priority": 2,
-            "size": "bigger",
+            "size": "biggest",
             "coordinate": {
                 "longitude": -104.8,
                 "latitude": 41.15
@@ -1291,14 +1295,14 @@
             "altitude": 1848,
             "translation": {
                 "cs": "Cheyenne",
-                "de": "Cheyenne (Wyoming)",
-                "en": "Cheyenne, Wyoming",
-                "es": "Cheyenne (Wyoming)",
-                "fr": "Cheyenne (Wyoming)",
-                "hr": null,
-                "it": "Cheyenne (Wyoming)",
+                "de": "Cheyenne",
+                "en": "Cheyenne",
+                "es": "Cheyenne",
+                "fr": "Cheyenne",
+                "hr": "Cheyenne",
+                "it": "Cheyenne",
                 "pl": "Cheyenne",
-                "sv": "Cheyenne, Wyoming"
+                "sv": "Cheyenne"
             }
         }
     ]

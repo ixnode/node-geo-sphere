@@ -1181,7 +1181,8 @@
             "name": "Washington, D.C.",
             "state": null,
             "priority": 1,
-            "size": "bigger",
+            "size": "biggest",
+            "alignment": "right",
             "coordinate": {
                 "longitude": -77.0241,
                 "latitude": 38.8921

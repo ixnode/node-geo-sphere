@@ -136,15 +136,20 @@ function getText(selector) {
  */
 function getPopulation() {
     const element = document.evaluate(
-        '//table//tr[td/a[@title="Einwohner"]]',
+        '//table//tr[td[1][contains(text(), "Einwohner")] or td[1]/b[contains(text(), "Einwohner")] or td[1]/a[contains(text(), "Einwohner")]]',
         document,
         null,
         XPathResult.FIRST_ORDERED_NODE_TYPE,
         null
     ).singleNodeValue;
     const cell = element ? element.querySelector('td:nth-of-type(2)') : null;
-    const text = cell ? cell.childNodes[0].textContent.trim() : null;
-    return text ? parseInt(text.replace(/\D/g, ''), 10) : null;
+    const text = cell ? cell.textContent.trim().replaceAll('.', '').replaceAll(',', '.') : null;
+
+    if (!text) {
+        return null;
+    }
+
+    return text ? parseInt(text) : null;
 }
 
 /**
@@ -155,7 +160,7 @@ function getPopulation() {
 function getArea() {
 
     const elementArea = document.evaluate(
-        '//table//tr[td/a[@title="Flächeninhalt"]]',
+        '//table//tr[td[1][contains(text(), "Fläche")] or td[1]/b[contains(text(), "Fläche")] or td[1]/a[contains(text(), "Fläche")]]',
         document,
         null,
         XPathResult.FIRST_ORDERED_NODE_TYPE,
@@ -170,7 +175,7 @@ function getArea() {
     }
 
     /* Convert german number into english one. */
-    const textArea = cellArea.textContent.trim().replace('.', '').replace(',', '.');
+    const textArea = cellArea.textContent.trim().replaceAll('.', '').replaceAll(',', '.');
 
     /* Convert value if needed. */
     let area = null;
@@ -214,7 +219,7 @@ function getCountry() {
 function getIsoCode() {
 
     const element = document.evaluate(
-        '//table//tr[td[a[contains(text(), "ISO 3166-2")]] or td[contains(text(), "ISO 3166-2")]]',
+        '//table//tr[td[b[a[contains(text(), "ISO")]]] or td[a[contains(text(), "ISO")]] or td[contains(text(), "ISO")]]',
         document,
         null,
         XPathResult.FIRST_ORDERED_NODE_TYPE,
@@ -236,7 +241,8 @@ function getIsoCode() {
         return null;
     }
 
-    return isoCode.toLowerCase();
+    const isoCodeExtracted = isoCode.toLowerCase().match(/\b([a-z]{2}-[a-z0-9]{2,3})\b/);
+    return isoCodeExtracted ? isoCodeExtracted[1] : null;
 }
 
 /* Gets titles. */

@@ -151,6 +151,7 @@ export class GeoJson2Path {
                     placeType: cityMapElement ? cityMapElement.type : typeCityTypeNameCity,
                     priority: cityMapElement ? cityMapElement.priority : 1,
                     size: cityMapElement ? cityMapElement.size : 'standard',
+                    alignment: cityMapElement && cityMapElement.alignment ? cityMapElement.alignment : 'left',
 
                     /* Position. */
                     x: x,
@@ -278,12 +279,39 @@ export class GeoJson2Path {
             nameTranslated = getTranslatedName(dataCity, this.options.language);
         }
 
+        let textPositionX = x;
+        let textPositionY = y;
+
+        switch (element.alignment) {
+            case "left":
+                textPositionX += (r || distanceCityTypeNameCity) * 2 + this.getSvgPlaceTextDistance(element.placeType, element.size);
+                textPositionY += 2;
+                break;
+
+            case "right":
+                textPositionX -= this.getSvgPlaceTextDistance(element.placeType, element.size);
+                textPositionY += 2;
+                break;
+
+            case "bottom":
+                /* TODO */
+                break;
+
+            case "top":
+                /* TODO */
+                break;
+        }
+
         return `
             <g class="${[classNameSvgG, `${classNameSvgG}-${size}`, this.getSvgPlaceClassNameType(element.placeType)].filter(Boolean).join(' ')}" id="${idName}">
                 <circle class="${classNameSvgCircle}" cx="${x}" cy="${y}"${fill !== undefined ? ` fill="${fill}"` : ''}${r !== undefined ? ` r="${r}"` : ''}>
                     <title>${nameTranslated}</title>
                 </circle>
-                <text class="${classNameSvgText}" x="${x + (r || distanceCityTypeNameCity) * 2 + this.getSvgPlaceTextDistance(element.placeType, element.size)}" y="${y + 2}"${fill !== undefined ? ` fill="${fill}"` : ''}>${nameTranslated}</text>
+                <text
+                    class="${[classNameSvgText, element.alignment === 'left' ? classNameSvgText + '-left' : classNameSvgText + '-right'].filter(Boolean).join(' ')}"
+                    x="${textPositionX}" y="${textPositionY}"
+                    text-anchor="${element.alignment === 'right' ? 'end' : 'start'}"
+                    ${fill !== undefined ? ` fill="${fill}"` : ''}>${nameTranslated}</text>
             </g>
         `;
     };
@@ -315,7 +343,25 @@ export class GeoJson2Path {
      */
     private getSvgPlaceTextDistance(cityType: TypeCityType, size: TypeCitySize): number {
 
-        const correction = size === 'bigger' ? 8 : (size === 'smaller' ? 1 : 2);
+        let correction = 0;
+
+        switch (size) {
+            case "smallest":
+                correction = 1;
+                break;
+            case "smaller":
+                correction = 2;
+                break;
+            case "standard":
+                correction = 3;
+                break;
+            case "bigger":
+                correction = 5;
+                break;
+            case "biggest":
+                correction = 6;
+                break;
+        }
 
         if (cityType === typeCityTypeNameCapital) {
             return correction * distanceCityTypeNameCapital;

@@ -34,7 +34,11 @@
                 },
                 "size": {
                     "type": "string",
-                    "enum": ["standard", "smaller", "bigger"]
+                    "enum": ["smallest", "smaller", "standard", "bigger", "biggest"]
+                },
+                "alignment": {
+                    "type": "string",
+                    "enum": ["left", "right", "bottom", "top"]
                 },
                 "coordinate": {
                     "$ref": "#/definitions/Coordinate"

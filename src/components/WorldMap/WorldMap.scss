@@ -10,10 +10,50 @@ $svg-path-fill-hover-mix: #000;
 $svg-path-fill-hover-mix-percent: 80%;
 $svg-path-stroke: #a0a0a0;
 $svg-circle-fill: #333;
-$svg-circle-fill-hover: #000033;
+$svg-circle-fill-hover: #660000;
 $svg-text-fill: #333;
-$svg-text-fill-hover: #333366;
+$svg-text-fill-hover: #660000;
 $color-text: #333;
+
+/* Place sizes. */
+$size-place-radius-standard: 2;
+$size-place-font-size-standard: 150%;
+
+/* Place sizes (capital). */
+$size-place-capital-radius-smallest: 2;
+$size-place-capital-font-size-smallest: 150%;
+$size-place-capital-radius-smaller: 3;
+$size-place-capital-font-size-smaller: 180%;
+$size-place-capital-radius-standard: 5;
+$size-place-capital-font-size-standard: 225%;
+$size-place-capital-radius-bigger: 6;
+$size-place-capital-font-size-bigger: 300%;
+$size-place-capital-radius-biggest: 8;
+$size-place-capital-font-size-biggest: 400%;
+
+/* Place sizes (state capital). */
+$size-place-state-capital-radius-smallest: 2;
+$size-place-state-capital-font-size-smallest: 150%;
+$size-place-state-capital-radius-smaller: 3;
+$size-place-state-capital-font-size-smaller: 180%;
+$size-place-state-capital-radius-standard: 5;
+$size-place-state-capital-font-size-standard: 225%;
+$size-place-state-capital-radius-bigger: 6;
+$size-place-state-capital-font-size-bigger: 300%;
+$size-place-state-capital-radius-biggest: 8;
+$size-place-state-capital-font-size-biggest: 400%;
+
+/* Place sizes (city). */
+$size-place-city-radius-smallest: 2;
+$size-place-city-font-size-smallest: 140%;
+$size-place-city-radius-smaller: 2;
+$size-place-city-font-size-smaller: 150%;
+$size-place-city-radius-standard: 3;
+$size-place-city-font-size-standard: 180%;
+$size-place-city-radius-bigger: 5;
+$size-place-city-font-size-bigger: 225%;
+$size-place-city-radius-biggest: 6;
+$size-place-city-font-size-biggest: 300%;
 
 .gs-world-map {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -175,7 +215,11 @@ $color-text: #333;
         background-color: #a7c9fc;
 
         &.move {
-            cursor: move;
+            cursor: move !important;
+        }
+
+        &.pointer {
+            cursor: pointer;
         }
 
         &.zoom {
@@ -204,99 +248,183 @@ $color-text: #333;
         }
 
         g.place-group {
+            /* Place -> Standard size. */
             circle.place {
-                r: 2;
-
+                r: $size-place-radius-standard;
                 fill: $svg-circle-fill;
                 stroke: transparent;
                 stroke-width: 5;
             }
-
             text.title {
-                font-size: 150%;
-
+                font-size: $size-place-font-size-standard;
                 alignment-baseline: middle;
                 fill: $svg-text-fill;
             }
 
+            /* Hover Place changes. */
             &.hover {
                 circle.place {
                     fill: $svg-circle-fill-hover;
                 }
-
                 text.title {
                     fill: $svg-text-fill-hover;
                 }
             }
 
+            /* Capital changes. */
             &.place-group-capital {
-                circle.place {
-                    r: 5;
-                }
 
+                /* Capital -> Standard size. */
+                circle.place {
+                    r: $size-place-capital-radius-standard;
+                }
                 text.title {
-                    font-size: 225%;
+                    font-size: $size-place-capital-font-size-standard;
                     font-weight: bold;
                 }
 
-                &.place-group-smaller {
+                /* Capital -> Smallest size. */
+                &.place-group-smallest {
                     circle.place {
-                        r: 3;
+                        r: $size-place-capital-radius-smallest;
                     }
-
                     text.title {
-                        font-size: 180%;
+                        font-size: $size-place-capital-font-size-smallest;
                     }
                 }
 
+                /* Capital -> Smaller size. */
+                &.place-group-smaller {
+                    circle.place {
+                        r: $size-place-capital-radius-smaller;
+                    }
+                    text.title {
+                        font-size: $size-place-capital-font-size-smaller;
+                    }
+                }
+
+                /* Capital -> Bigger size. */
                 &.place-group-bigger {
                     circle.place {
-                        r: 8;
+                        r: $size-place-capital-radius-bigger;
                     }
-
                     text.title {
-                        font-size: 400%;
+                        font-size: $size-place-capital-font-size-bigger;
+                    }
+                }
+
+                /* Capital -> Biggest size. */
+                &.place-group-biggest {
+                    circle.place {
+                        r: $size-place-capital-radius-biggest;
+                    }
+                    text.title {
+                        font-size: $size-place-capital-font-size-biggest;
                     }
                 }
             }
 
+            /* State capital changes. */
             &.place-group-state-capital {
+
+                /* State capital -> Standard size. */
                 circle.place {
-                    r: 3;
+                    r: $size-place-state-capital-radius-standard;
                 }
-
                 text.title {
-                    font-size: 180%;
+                    font-size: $size-place-state-capital-font-size-standard;
                 }
 
+                /* State capital -> Smallest size. */
+                &.place-group-smallest {
+                    circle.place {
+                        r: $size-place-state-capital-radius-smallest;
+                    }
+                    text.title {
+                        font-size: $size-place-state-capital-font-size-smallest;
+                    }
+                }
+
+                /* State capital -> Smallest size. */
                 &.place-group-smaller {
                     circle.place {
-                        r: 2;
+                        r: $size-place-state-capital-radius-smaller;
                     }
-
                     text.title {
-                        font-size: 110%;
+                        font-size: $size-place-state-capital-font-size-smaller;
                     }
                 }
 
+                /* State capital -> Smallest size. */
                 &.place-group-bigger {
                     circle.place {
-                        r: 10;
+                        r: $size-place-state-capital-radius-bigger;
                     }
-
                     text.title {
-                        font-size: 400%;
+                        font-size: $size-place-state-capital-font-size-bigger;
+                    }
+                }
+
+                /* State capital -> Smallest size. */
+                &.place-group-biggest {
+                    circle.place {
+                        r: $size-place-state-capital-radius-biggest;
+                    }
+                    text.title {
+                        font-size: $size-place-state-capital-font-size-biggest;
                     }
                 }
             }
 
+            /* City changes. */
             &.place-group-city {
+
+                /* City -> Standard size. */
                 circle.place {
-                    r: 2;
+                    r: $size-place-city-radius-standard;
+                }
+                text.title {
+                    font-size: $size-place-city-font-size-standard;
                 }
 
-                text.title {
-                    font-size: 110%;
+                /* City -> Smallest size. */
+                &.place-group-smallest {
+                    circle.place {
+                        r: $size-place-city-radius-smallest;
+                    }
+                    text.title {
+                        font-size: $size-place-city-font-size-smallest;
+                    }
+                }
+
+                /* City -> Smallest size. */
+                &.place-group-smaller {
+                    circle.place {
+                        r: $size-place-city-radius-smaller;
+                    }
+                    text.title {
+                        font-size: $size-place-city-font-size-smaller;
+                    }
+                }
+
+                /* City -> Smallest size. */
+                &.place-group-bigger {
+                    circle.place {
+                        r: $size-place-city-radius-bigger;
+                    }
+                    text.title {
+                        font-size: $size-place-city-font-size-bigger;
+                    }
+                }
+
+                /* City -> Smallest size. */
+                &.place-group-biggest {
+                    circle.place {
+                        r: $size-place-city-radius-biggest;
+                    }
+                    text.title {
+                        font-size: $size-place-city-font-size-biggest;
+                    }
                 }
             }
 

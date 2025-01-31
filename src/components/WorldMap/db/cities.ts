@@ -36,11 +36,13 @@ import {getStateByPlace, getStateDataByState} from "./states";
  */
 export type TypeCityData = {[key: string]: TypeCity};
 export type TypeCityType = "capital"|"state-capital"|"city";
-export type TypeCitySize = "standard"|"smaller"|"bigger";
+export type TypeCitySize = "smallest"|"smaller"|"standard"|"bigger"|"biggest";
+export type TypeCityAlignment = "left"|"right"|"top"|"bottom";
 export type TypeCityCoordinate = {
     longitude: number;
     latitude: number;
 };
+export type TypeSvgClass = "move"|"zoom"|"pointer";
 
 /**
  * City type
@@ -66,6 +68,7 @@ export type TypeCity = {
 
     /* Styles. */
     size: TypeCitySize;
+    alignment?: TypeCityAlignment;
 }
 
 /**

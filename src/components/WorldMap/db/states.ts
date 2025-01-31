@@ -1,3 +1,6 @@
+/* Import american cities. */
+import statesAmericaUnitedStates from './states/america/united-states.json';
+
 /* Import europa states. */
 import statesEuropaCzechia from './states/europe/czechia.json';
 import statesEuropaFrance from './states/europe/france.json';
@@ -48,20 +51,21 @@ let cachedStateMap: TypeStateData|null = null;
  */
 export const getStates = (): TypeState[] => {
     return [
-        /* Africa cities. */
+        /* Africa states. */
 
-        /* America cities. */
+        /* America states. */
+        ...(statesAmericaUnitedStates.data as TypeState[]),
 
-        /* Asia cities. */
+        /* Asia states. */
 
-        /* Europa cities. */
+        /* Europa states. */
         ...(statesEuropaCzechia.data as TypeState[]),
         ...(statesEuropaFrance.data as TypeState[]),
         ...(statesEuropaGermany.data as TypeState[]),
         ...(statesEuropaPoland.data as TypeState[]),
         ...(statesEuropaUnitedKingdom.data as TypeState[]),
 
-        /* Oceania cities. */
+        /* Oceania states. */
     ];
 };
 

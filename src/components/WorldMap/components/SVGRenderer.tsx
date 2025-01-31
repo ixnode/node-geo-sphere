@@ -1355,6 +1355,9 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         /* Add hover to current element. */
         addHoverClass(elementPath);
 
+        /* Set cursor to pointer. */
+        resetSvgClass();
+
         /* Add title. */
         addHoverTitle(countryName ?? textNotAvailable);
         removeSubtitle();
@@ -1481,6 +1484,9 @@ const SVGRenderer: React.FC<SVGRendererProps> = ({
         /* Add hover to current element. */
         addHoverClass(elementG);
         countryId && addHoverClass(countryId);
+
+        /* Set cursor to pointer. */
+        setSvgClass('pointer');
 
         /* Add title and subtitle. */
         addHoverTitle(countryName ?? textNotAvailable);
