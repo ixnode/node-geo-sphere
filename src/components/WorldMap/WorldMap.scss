@@ -180,6 +180,53 @@ $size-place-city-font-size-biggest: 300%;
         }
     }
 
+    .world-map__country-info {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 50%;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-left: 1px solid #a0a0a0;
+        z-index: 1000;
+        padding: 2em;
+        box-sizing: border-box;
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+
+            svg {
+                width: 24px;
+                height: 24px;
+                stroke: #333;
+                transition: stroke 0.2s ease-in-out;
+            }
+
+            &:hover {
+                svg {
+                    stroke: red;
+                }
+            }
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        p {
+            margin-top: .75em;
+            margin-bottom: 0;
+        }
+    }
+
     .world-map__logo {
         position: absolute;
         left: 0;

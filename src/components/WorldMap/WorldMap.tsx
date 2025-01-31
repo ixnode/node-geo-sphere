@@ -44,6 +44,7 @@ import {Logo} from "../../helper/Logo/Logo";
 /* Import translation libraries. */
 import { i18n } from "../../config/i18n";
 import CityInfo from "./components/CityInfo";
+import CountryInfo from "./components/CountryInfo";
 
 /* WorldMapProps interface. */
 export interface WorldMapProps {
@@ -140,6 +141,10 @@ export const WorldMap: React.FC<WorldMapProps> = ({
     const [isCityInfoVisible, setIsCityInfoVisible] = useState(false);
     const [cityInfoData, setCityInfoData] = useState<PlaceData|null>(null);
 
+    /* Country info states. */
+    const [isCountryInfoVisible, setIsCountryInfoVisible] = useState(false);
+    const [countryInfoData, setCountryInfoData] = useState<CountryData|null>(null);
+
     /* Set refs. */
     const hintsRef = useRef<HTMLDivElement|null>(null);
     const title = useRef<string>(textDefaultWorldMapTitle);
@@ -171,6 +176,9 @@ export const WorldMap: React.FC<WorldMapProps> = ({
         if (onClickCountry !== null) {
             onClickCountry(data);
         }
+
+        setCountryInfoData(data);
+        setIsCountryInfoVisible(true);
     }
 
     /**
@@ -263,6 +271,10 @@ export const WorldMap: React.FC<WorldMapProps> = ({
 
             {
                 isCityInfoVisible && cityInfoData && <CityInfo data={cityInfoData} setVisible={setIsCityInfoVisible} language={language} />
+            }
+
+            {
+                isCountryInfoVisible && countryInfoData && <CountryInfo data={countryInfoData} setVisible={setIsCountryInfoVisible} language={language} />
             }
 
             {
