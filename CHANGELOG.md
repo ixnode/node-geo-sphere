@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Changelogs
 
+### [0.1.46] - 2025-02-01
+
+* Add Spanish autonomous communities
+
 ### [0.1.45] - 2025-02-01
 
 * Add country data layer
