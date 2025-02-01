@@ -531,7 +531,7 @@
         },
         {
             "name": "Madrid",
-            "state": null,
+            "state": "es-md",
             "priority": 1,
             "size": "standard",
             "coordinate": {

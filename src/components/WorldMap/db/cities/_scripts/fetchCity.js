@@ -3,6 +3,7 @@
  *
  * Or search for a single city:
  * - cz: https://de.wikipedia.org/wiki/Verwaltungsgliederung_Tschechiens#Auflistung_der_Regionen
+ * - es: https://de.wikipedia.org/wiki/Autonome_Gemeinschaften_Spaniens
  * - pl: https://de.wikipedia.org/wiki/Woiwodschaft#Liste_der_Woiwodschaften
  * - us: https://de.wikipedia.org/wiki/Liste_der_Bundesstaaten_der_Vereinigten_Staaten#Bundesstaaten
  *

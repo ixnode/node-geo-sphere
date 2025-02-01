@@ -26,30 +26,6 @@
             }
         },
         {
-            "name": "Basse-Terre",
-            "state": null,
-            "priority": 1,
-            "size": "standard",
-            "coordinate": {
-                "longitude": -61.7220,
-                "latitude": 15.9985
-            },
-            "country": "gp",
-            "type": "capital",
-            "population": null,
-            "translation": {
-                "cs": null,
-                "de": "Basse-Terre",
-                "en": null,
-                "es": null,
-                "fr": null,
-                "hr": null,
-                "it": null,
-                "pl": null,
-                "sv": null
-            }
-        },
-        {
             "name": "Basseterre",
             "state": null,
             "priority": 1,

@@ -3,7 +3,7 @@
     "data": [
         {
             "name": "Seville",
-            "state": null,
+            "state": "es-an",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -28,7 +28,7 @@
         },
         {
             "name": "Zaragoza",
-            "state": null,
+            "state": "es-ar",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -53,7 +53,7 @@
         },
         {
             "name": "Oviedo",
-            "state": null,
+            "state": "es-as",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -78,7 +78,7 @@
         },
         {
             "name": "Palma de Mallorca",
-            "state": null,
+            "state": "es-ib",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -103,7 +103,7 @@
         },
         {
             "name": "Vitoria-Gasteiz",
-            "state": null,
+            "state": "es-pv",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -132,7 +132,7 @@
         },
         {
             "name": "Mérida",
-            "state": null,
+            "state": "es-ex",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -157,7 +157,7 @@
         },
         {
             "name": "Santiago de Compostela",
-            "state": null,
+            "state": "es-ga",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -182,7 +182,7 @@
         },
         {
             "name": "Santa Cruz de Tenerife",
-            "state": null,
+            "state": "es-cn",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -207,7 +207,7 @@
         },
         {
             "name": "Las Palmas de Gran Canaria",
-            "state": null,
+            "state": "es-cn",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -232,7 +232,7 @@
         },
         {
             "name": "Santander",
-            "state": null,
+            "state": "es-cb",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -257,7 +257,7 @@
         },
         {
             "name": "Valladolid",
-            "state": null,
+            "state": "es-cl",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -282,7 +282,7 @@
         },
         {
             "name": "Toledo",
-            "state": null,
+            "state": "es-cm",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -307,7 +307,7 @@
         },
         {
             "name": "Barcelona",
-            "state": null,
+            "state": "es-ct",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -332,7 +332,7 @@
         },
         {
             "name": "Logroño",
-            "state": null,
+            "state": "es-ri",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -357,7 +357,7 @@
         },
         {
             "name": "Murcia",
-            "state": null,
+            "state": "es-mc",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -382,7 +382,7 @@
         },
         {
             "name": "Pamplona",
-            "state": null,
+            "state": "es-nc",
             "priority": 2,
             "size": "standard",
             "coordinate": {
@@ -411,7 +411,7 @@
         },
         {
             "name": "Valencia",
-            "state": null,
+            "state": "es-vc",
             "priority": 2,
             "size": "standard",
             "coordinate": {

@@ -1,0 +1,347 @@
+{
+    "$schema": "../_schema/states.schema.json",
+    "data": [
+        {
+            "name": "Andalusia",
+            "code": "es-an",
+            "country": "es",
+            "population": 8500187,
+            "area": 87582.7,
+            "translation": {
+                "cs": "Andalusie",
+                "de": "Andalusien",
+                "en": "Andalusia",
+                "es": "Andalucía",
+                "fr": "Andalousie",
+                "hr": "Andaluzija",
+                "it": "Andalusia",
+                "pl": "Andaluzja",
+                "sv": "Andalusien"
+            }
+        },
+        {
+            "name": "Aragon",
+            "code": "es-ar",
+            "country": "es",
+            "population": 1326233,
+            "area": 47716.77,
+            "translation": {
+                "cs": "Aragonie",
+                "de": "Aragonien",
+                "en": "Aragon",
+                "es": "Aragón",
+                "fr": "Aragon",
+                "hr": "Aragonija",
+                "it": "Aragona",
+                "pl": "Aragonia",
+                "sv": "Aragonien"
+            }
+        },
+        {
+            "name": "Asturias",
+            "code": "es-as",
+            "country": "es",
+            "population": 1004686,
+            "area": 10602.41,
+            "translation": {
+                "cs": "Asturie",
+                "de": "Asturien",
+                "en": "Asturias",
+                "es": "Asturias",
+                "fr": "Asturies",
+                "hr": "Asturija",
+                "it": "Asturie",
+                "pl": "Asturia",
+                "sv": "Asturien"
+            }
+        },
+        {
+            "name": "Balearic Islands",
+            "code": "es-ib",
+            "country": "es",
+            "population": 1176659,
+            "area": 4992,
+            "translation": {
+                "cs": "Baleáry",
+                "de": "Balearische Inseln",
+                "en": "Balearic Islands",
+                "es": "Islas Baleares",
+                "fr": "Îles Baléares",
+                "hr": "Baleari",
+                "it": "Isole Baleari",
+                "pl": "Baleary",
+                "sv": "Balearerna"
+            }
+        },
+        {
+            "name": "Canary Islands",
+            "code": "es-cn",
+            "country": "es",
+            "population": 2177701,
+            "area": 7446.94,
+            "translation": {
+                "cs": "Kanárské ostrovy",
+                "de": "Kanarische Inseln",
+                "en": "Canary Islands",
+                "es": "Canarias",
+                "fr": "Îles Canaries",
+                "hr": "Kanari",
+                "it": "Isole Canarie",
+                "pl": "Wyspy Kanaryjskie",
+                "sv": "Kanarieöarna"
+            }
+        },
+        {
+            "name": "Cantabria",
+            "code": "es-cb",
+            "country": "es",
+            "population": 585402,
+            "area": 5321.33,
+            "translation": {
+                "cs": "Kantábrie",
+                "de": "Kantabrien",
+                "en": "Cantabria",
+                "es": "Cantabria",
+                "fr": "Cantabrie",
+                "hr": "Kantabrija",
+                "it": "Cantabria",
+                "pl": "Kantabria",
+                "sv": "Kantabrien"
+            }
+        },
+        {
+            "name": "Castilla–La Mancha",
+            "code": "es-cm",
+            "country": "es",
+            "population": 2069423,
+            "area": 79463,
+            "translation": {
+                "cs": "Kastilie – La Mancha",
+                "de": "Kastilien-La Mancha",
+                "en": "Castilla–La Mancha",
+                "es": "Castilla-La Mancha",
+                "fr": "Castille-La Manche",
+                "hr": "Kastilja-La Mancha",
+                "it": "Castiglia-La Mancia",
+                "pl": "Kastylia-La Mancha",
+                "sv": "Kastilien-La Mancha"
+            }
+        },
+        {
+            "name": "Castile and León",
+            "code": "es-cl",
+            "country": "es",
+            "population": 2372495,
+            "area": 94223,
+            "translation": {
+                "cs": "Kastilie a León",
+                "de": "Kastilien und León",
+                "en": "Castile and León",
+                "es": "Castilla y León",
+                "fr": "Castille-et-León",
+                "hr": "Kastilja i León",
+                "it": "Castiglia e León",
+                "pl": "Kastylia i León",
+                "sv": "Kastilien och León"
+            }
+        },
+        {
+            "name": "Catalonia",
+            "code": "es-ct",
+            "country": "es",
+            "population": 7792611,
+            "area": 32091,
+            "translation": {
+                "cs": "Katalánsko",
+                "de": "Katalonien",
+                "en": "Catalonia",
+                "es": "Cataluña",
+                "fr": "Catalogne",
+                "hr": "Katalonija",
+                "it": "Catalogna",
+                "pl": "Katalonia",
+                "sv": "Katalonien"
+            }
+        },
+        {
+            "name": "Extremadura",
+            "code": "es-ex",
+            "country": "es",
+            "population": 1054776,
+            "area": 41633.99,
+            "translation": {
+                "cs": "Extremadura",
+                "de": "Extremadura",
+                "en": "Extremadura",
+                "es": "Extremadura",
+                "fr": "Estrémadure",
+                "hr": "Ekstremadura",
+                "it": "Estremadura",
+                "pl": "Estremadura",
+                "sv": "Extremadura"
+            }
+        },
+        {
+            "name": "Galicia",
+            "code": "es-ga",
+            "country": "es",
+            "population": 2696161,
+            "area": 29574,
+            "translation": {
+                "cs": "Galicie",
+                "de": "Galicien",
+                "en": "Galicia",
+                "es": "Galicia",
+                "fr": "Galice",
+                "hr": "Galicija",
+                "it": "Galizia",
+                "pl": "Galicja",
+                "sv": "Galicien"
+            }
+        },
+        {
+            "name": "La Rioja",
+            "code": "es-ri",
+            "country": "es",
+            "population": 319892,
+            "area": 5045,
+            "translation": {
+                "cs": "La Rioja",
+                "de": "La Rioja",
+                "en": "La Rioja",
+                "es": "La Rioja",
+                "fr": "La Rioja",
+                "hr": "La Rioja",
+                "it": "La Rioja",
+                "pl": "La Rioja",
+                "sv": "La Rioja"
+            }
+        },
+        {
+            "name": "Community of Madrid",
+            "code": "es-md",
+            "country": "es",
+            "population": 6750336,
+            "area": 8028,
+            "translation": {
+                "cs": "Madridské společenství",
+                "de": "Autonome Gemeinschaft Madrid",
+                "en": "Community of Madrid",
+                "es": "Comunidad de Madrid",
+                "fr": "Communauté de Madrid",
+                "hr": "Zajednica Madrida",
+                "it": "Comunità autonoma di Madrid",
+                "pl": "Wspólnota autonomiczna Madrytu",
+                "sv": "Autonoma regionen Madrid"
+            }
+        },
+        {
+            "name": "Region of Murcia",
+            "code": "es-mc",
+            "country": "es",
+            "population": 1531878,
+            "area": 11314,
+            "translation": {
+                "cs": "Murcijský region",
+                "de": "Murcia",
+                "en": "Region of Murcia",
+                "es": "Región de Murcia",
+                "fr": "Région de Murcie",
+                "hr": "Regija Murcia",
+                "it": "Murcia",
+                "pl": "Murcja",
+                "sv": "Murcia"
+            }
+        },
+        {
+            "name": "Navarre",
+            "code": "es-nc",
+            "country": "es",
+            "population": 664117,
+            "area": 10385,
+            "translation": {
+                "cs": "Navarra",
+                "de": "Navarra",
+                "en": "Navarre",
+                "es": "Navarra",
+                "fr": "Navarre",
+                "hr": "Navara",
+                "it": "Navarra",
+                "pl": "Nawarra",
+                "sv": "Navarra"
+            }
+        },
+        {
+            "name": "Basque Country",
+            "code": "es-pv",
+            "country": "es",
+            "population": 2208174,
+            "area": 7229.51,
+            "translation": {
+                "cs": "Baskicko",
+                "de": "Baskenland",
+                "en": "Basque Country",
+                "es": "País Vasco",
+                "fr": "Pays basque",
+                "hr": "Baskija",
+                "it": "Paesi Baschi",
+                "pl": "Kraj Basków",
+                "sv": "Baskien"
+            }
+        },
+        {
+            "name": "Valencian Community",
+            "code": "es-vc",
+            "country": "es",
+            "population": 5097967,
+            "area": 23254.44,
+            "translation": {
+                "cs": "Valencijské společenství",
+                "de": "Valencianische Gemeinschaft",
+                "en": "Valencian Community",
+                "es": "Comunidad Valenciana",
+                "fr": "Communauté valencienne",
+                "hr": "Valencijska Zajednica",
+                "it": "Comunità Valenciana",
+                "pl": "Walencja",
+                "sv": "Valencianska gemenskapen"
+            }
+        },
+        {
+            "name": "Ceuta",
+            "code": "es-ce",
+            "country": "es",
+            "population": 83117,
+            "area": 18.5,
+            "translation": {
+                "cs": "Ceuta",
+                "de": "Ceuta",
+                "en": "Ceuta",
+                "es": "Ceuta",
+                "fr": "Ceuta",
+                "hr": "Ceuta",
+                "it": "Ceuta",
+                "pl": "Ceuta",
+                "sv": "Ceuta"
+            }
+        },
+        {
+            "name": "Melilla",
+            "code": "es-ml",
+            "country": "es",
+            "population": 85170,
+            "area": 13.4,
+            "translation": {
+                "cs": "Melilla",
+                "de": "Melilla",
+                "en": "Melilla",
+                "es": "Melilla",
+                "fr": "Melilla",
+                "hr": "Melilla",
+                "it": "Melilla",
+                "pl": "Melilla",
+                "sv": "Melilla"
+            }
+        }
+    ]
+}

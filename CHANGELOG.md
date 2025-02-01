@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### [0.1.43] - 2025-01-31
 
-* Add states and cities of the united states
+* Add states and cities of the United States
 * Add pointer cursor to cities
 
 ### [0.1.42] - 2025-01-29

@@ -37,10 +37,10 @@ const CityInfo: React.FC<CityInfoProps> = ({
 
             <h2>{data.name}</h2>
             {
-                data.country && <p><strong>{ucFirst(t('TEXT_WORD_COUNTRY' as any))}</strong>: {data.country.name}</p>
+                data.country && <p><strong>{ucFirst(t('TEXT_WORD_COUNTRY' as any))}</strong>: {data.country.name} (<pre>{data.country.id}</pre>)</p>
             }
             {
-                data.state && <p><strong>{ucFirst(t('TEXT_WORD_REGION' as any))}</strong>: {data.state.name}</p>
+                data.state && <p><strong>{ucFirst(t('TEXT_WORD_REGION' as any))}</strong>: {data.state.name} (<pre>{data.state.id}</pre>)</p>
             }
             {
                 data.population && <p><strong>{ucFirst(t('TEXT_WORD_POPULATION' as any))}</strong>: {formatNumber(data.population, language)}</p>
