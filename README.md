@@ -40,9 +40,13 @@ yarn add @ixnode/geo-sphere
 
 ### Display example
 
-**Example**: France is selected, but the mouse is hovering over Berlin, Germany.
+#### **Example**: France is selected, but the mouse is hovering over Berlin, Germany.
 
 ![Basic world.](docs/images/map.png "Example map.")
+
+#### **Example**: The United States are selected. The city Austin was clicked.
+
+![Basic world.](docs/images/map2.png "Example map.")
 
 ### Basic Usage
 
@@ -243,7 +247,7 @@ npm run storybook
 
 Open: http://localhost:6006/
 
-**Example**: The country Spain and language spanisch is selected, but the mouse is hovering over Lisbon, Portugal.
+#### **Example**: The country Portugal and language spanisch is selected, but the mouse is hovering over Madrid, Spain.
 
 ![Storybook](docs/images/storybook.png "Storybook")
 
